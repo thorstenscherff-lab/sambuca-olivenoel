@@ -1,0 +1,7 @@
+Code-IDs: 285  ·  in docs gefunden: 285
+Fehlend in docs (0): –
+Phantom-IDs in docs (0): –
+Veraltete GENERATED-Blöcke: CHARACTERS.md (erneuert)
+Ereignisse ohne Auslöser: –
+Hotspots ohne Handler: –
+Minispiel-Komponenten im Code: MiniHaggle, MiniHarvest, MiniPress, MiniRescue, MiniTalk

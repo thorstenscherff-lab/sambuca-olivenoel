@@ -3,6 +3,15 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
+## Doku-Audit – 02.11.2026 (keine Versionsänderung, Spiel bleibt v0.7.1)
+**Feedback:** „Was ist mit den Personen in Spiel? Sind die auch dokumentiert?“ Daraus wurde ein vollständiges Audit des Spiels.
+
+**Änderungen (nur Doku und Werkzeuge, kein Spielcode):**
+- Neue Doku: CHARACTERS, EVENTS, MINIGAMES, ECONOMY, CALENDAR, LOCATIONS, UI, SAVEGAME, OPEN_ISSUES.
+- ID-System für alle Spielelemente. Die Tabellen werden aus dem Code erzeugt (`source/tools/export_inventory.py`, Prüfung mit `--check`).
+- Porträt-Master (13) und Sprite liegen in `source/portraits/` mit sha256. Die Prompts sind verloren und wurden rekonstruiert beschrieben. Dazu kommt `make_portrait_sprite.py`.
+- RULES: Schwelle für den Sindaco korrigiert (Kennenlernen ★ 35, Audienz ★ 50), Dolores ★ 20 ergänzt.
+
 ## v0.7.1 – 02.11.2026 (Commit 3d729c4) + Doku
 **Feedback zu v0.7:** „Die Bilder sind gut und können so bleiben. Beide Karten sind nicht gut. Die Positionen sind nicht exakt und die Micro macro Karte fand ich besser. Wir haben sowohl die Stadtkarte als auch das Umland bereits in Hochauflösung. Das muss besser werden.“
 **Änderungen:**

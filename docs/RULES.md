@@ -76,8 +76,8 @@ Kontakte muss man sich erarbeiten. Je höher die Schwierigkeit, desto mehr verla
 | 1 | Carmela, Salvo |
 | 2 | Wang, Rosalia, Ciccio, Padre Vito |
 | 3 | Turi, Giusi, Chiara, Klaus |
-| 4 | Dolores |
-| 5 | Sindaco Bonura (erst ab Ruf ≥ 50 im Rathaus) |
+| 4 | Dolores (Kennenlernen erst ab Ruf ≥ 20) |
+| 5 | Sindaco Bonura (Kennenlernen ab Ruf ≥ 35; Audienz im Rathaus `UI-sindaco` ab Ruf ≥ 50) |
 
 ## Feste (FEST)
 | Monat | Fest |
@@ -94,3 +94,5 @@ Zio Turi Ciaccio, Cooperativa Rocca und Baronessa Inglese.
 
 ## Plattform
 Nur Smartphone im Hochformat. Alle Spieltexte sind auf Deutsch.
+
+Details mit allen Werten und Code-Stellen: [ECONOMY.md](ECONOMY.md), [EVENTS.md](EVENTS.md), [CHARACTERS.md](CHARACTERS.md), [CALENDAR.md](CALENDAR.md). Monate in dieser Datei zählen ab 0 (= Jan), IDs der Form `FEST-<MM>` und `GOAL-<MM>` ab 1.

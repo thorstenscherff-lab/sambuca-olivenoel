@@ -1,3 +1,4 @@
 source/harness/node_modules/
 source/harness/game.tsx
 source/harness/out.js
+__pycache__/

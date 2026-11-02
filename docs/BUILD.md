@@ -48,7 +48,7 @@ source/
   game/src/c.tsx           Ereignisse (EVX), Feste (FEST), Monatsziele (GOALS), Perks, Nebenorte (MINOR), Laden (SHOP)
   game/evs.tsx             großer Ereigniskatalog (EVS)
   game/src/d.tsx           Spiellogik: newGame, act, endMonth, score, Highscore
-  game/ui_old.tsx          Minispiele/UI-Bausteine aus v0.4
+  game/ui_old.tsx          Minispiele und Oberflächen-Bausteine aus v0.4
   game/src/e.tsx           Szenen (SCN), Büro-Stufen (offStage), Minispiele Talk/Rescue
   game/src/f.tsx           App, Karten (Pins PS/PU, Zoom), Sheets
   harness/                 main.jsx, shim/grok-canvas.js, types/, tsconfig.json, package(-lock).json

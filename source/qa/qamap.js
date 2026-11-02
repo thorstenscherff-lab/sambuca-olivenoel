@@ -1,0 +1,28 @@
+const p=require('puppeteer-core');const S=ms=>new Promise(r=>setTimeout(r,ms));
+const URL=process.argv[2],DIR=process.argv[3];require('fs').mkdirSync(DIR,{recursive:true});
+(async()=>{const b=await p.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});const pg=await b.newPage();await pg.setViewport({width:390,height:844,isMobile:true,hasTouch:true,deviceScaleFactor:3});
+const errs=[];pg.on('pageerror',e=>errs.push(e.message));pg.on('console',m=>{if(m.type()==='error')errs.push(m.text())});pg.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))errs.push(r.status()+' '+r.url())});
+const shot=async t=>pg.screenshot({path:`${DIR}/${t}.png`});
+const txt=async t=>{const r=await pg.evaluate(t=>{const e=[...document.querySelectorAll('button')].filter(e=>!e.disabled&&e.textContent.includes(t)).pop();if(!e)return null;const r=e.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]},t);if(!r)return false;await pg.touchscreen.tap(...r);await S(300);return true};
+const click=async sel=>{await pg.evaluate(s=>document.querySelector(s).click(),sel);await S(500)};
+const center=async pin=>{await pg.evaluate(pin=>{const el=document.querySelector('[data-map]');const b=document.querySelector(`[data-pin="${pin}"]`);const r=b.getBoundingClientRect(),c=el.getBoundingClientRect();el.scrollLeft+=r.left+r.width/2-(c.left+c.width/2);el.scrollTop+=r.top+r.height-(c.top+c.height/2)},pin);await S(400)};
+const info=()=>pg.evaluate(()=>{const im=document.querySelector('[data-map] img');return {nat:[im.naturalWidth,im.naturalHeight],css:[im.offsetWidth,im.offsetHeight],ok:im.complete&&im.naturalWidth>0,ver:document.title}});
+await pg.goto(URL,{waitUntil:'networkidle0'});await pg.evaluate(()=>localStorage.clear());await pg.reload({waitUntil:'networkidle0'});
+await pg.type('input','QA');await txt('Neues Spiel');await S(600);
+const rep={};
+await click('[data-tab="stadt"]');await S(800);rep.s=await info();await shot('01_stadt_z1');
+for(const [i,pin] of [['02','caffe'],['03','casa'],['04','chiesa'],['05','palazzo']]){}
+await click('[data-zoom="in"]');await center('caffe');await shot('02_stadt_z1.6_corso');
+await click('[data-zoom="in"]');await center('caffe');await shot('03_stadt_z2.6_bar_banca');
+await center('casa');await shot('04_stadt_z2.6_casa_municipio');
+await center('chiesa');await shot('05_stadt_z2.6_chiesa_belvedere');
+await center('palazzo');await shot('06_stadt_z2.6_teatro');
+await click('[data-zoom="in"]');await center('caffe');rep.s4=await info();await shot('07_stadt_z4_corso_detail');
+await click('[data-tab="umland"]');await S(800);rep.u=await info();await shot('10_umland_z1');
+await pg.evaluate(()=>{const el=document.querySelector('[data-map]');el.scrollLeft=0});await S(300);await shot('11_umland_z1_west_feudo');
+await click('[data-zoom="in"]');await center('hain');await shot('12_umland_z1.6_torre_hain');
+await click('[data-zoom="in"]');await center('hain');await shot('13_umland_z2.6_torre_hain');
+await center('frantoio');await shot('14_umland_z2.6_frantoio_sambuca');
+await center('lago');await shot('15_umland_z2.6_lago');
+await center('feudo');await shot('16_umland_z2.6_feudo');
+console.log(JSON.stringify(rep));console.log('errors',JSON.stringify(errs));await b.close()})();

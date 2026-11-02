@@ -1,0 +1,5 @@
+[out:json][timeout:60];
+(nwr["historic"](37.665,13.06,37.70,13.11);
+ nwr["man_made"="tower"](37.665,13.06,37.70,13.11);
+ nwr["name"~"Torre|Masseria|Baglio",i](37.665,13.06,37.70,13.11););
+out center tags;

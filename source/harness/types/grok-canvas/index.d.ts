@@ -1,0 +1,1 @@
+declare module "grok/canvas" { export { useState, useRef, useEffect, Fragment } from "react"; export type { CSSProperties, ReactNode } from "react"; export function useGrokTheme(): { bg: { base: string } }; }

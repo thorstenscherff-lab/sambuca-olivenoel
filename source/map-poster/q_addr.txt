@@ -1,0 +1,1 @@
+[out:json][timeout:60];nwr["addr:street"~"Delfino"](37.64,13.10,37.66,13.12);out center tags;

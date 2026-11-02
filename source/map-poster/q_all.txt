@@ -1,0 +1,6 @@
+[out:json][timeout:120];
+(nwr["amenity"~"restaurant|bar|cafe|pub|fast_food|ice_cream|pharmacy|bank|post_office|fuel|animal_shelter|veterinary"](37.60,13.05,37.70,13.17);
+ nwr["shop"](37.60,13.05,37.70,13.17);
+ nwr["craft"](37.60,13.05,37.70,13.17);
+ nwr["office"](37.63,13.09,37.66,13.13););
+out center tags;

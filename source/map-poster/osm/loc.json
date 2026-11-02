@@ -1,0 +1,372 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-27T14:12:21Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 869310055,
+  "lat": 37.5788681,
+  "lon": 13.2187400,
+  "tags": {
+    "alt_name": "Piano della Matrice",
+    "name": "Piano della Madrice",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 869315400,
+  "lat": 37.5771930,
+  "lon": 13.2100497,
+  "tags": {
+    "name": "San Benedetto Calvario",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 992820349,
+  "lat": 37.6240809,
+  "lon": 13.2533973,
+  "tags": {
+    "name": "San Carlo",
+    "name:scn": "San Carru",
+    "place": "hamlet",
+    "population": "107",
+    "wikidata": "Q2501436",
+    "wikipedia": "it:San Carlo (Chiusa Sclafani)"
+  }
+},
+{
+  "type": "node",
+  "id": 2460492101,
+  "lat": 37.6760215,
+  "lon": 13.1330158,
+  "tags": {
+    "name": "Contrada Adragna",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 2654162507,
+  "lat": 37.7392104,
+  "lon": 13.1423585,
+  "tags": {
+    "name": "Piano Cavaliere",
+    "place": "hamlet",
+    "population": "51",
+    "wikidata": "Q18467379"
+  }
+},
+{
+  "type": "node",
+  "id": 2654186159,
+  "lat": 37.7309132,
+  "lon": 13.1604747,
+  "tags": {
+    "name": "Cozzo Finocchio",
+    "place": "hamlet",
+    "population": "18"
+  }
+},
+{
+  "type": "node",
+  "id": 4150793455,
+  "lat": 37.6419382,
+  "lon": 13.2774850,
+  "tags": {
+    "name": "Coste di Sant'Antonio",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 5315438812,
+  "lat": 37.6290602,
+  "lon": 13.2138437,
+  "tags": {
+    "name": "Casa Ferrantelli",
+    "place": "isolated_dwelling"
+  }
+},
+{
+  "type": "node",
+  "id": 5315466834,
+  "lat": 37.6189396,
+  "lon": 13.2267773,
+  "tags": {
+    "name": "Casa De Micheli",
+    "place": "isolated_dwelling"
+  }
+},
+{
+  "type": "node",
+  "id": 5315523192,
+  "lat": 37.6290007,
+  "lon": 13.2054376,
+  "tags": {
+    "name": "Contrada Taia di Sotto",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 5315523193,
+  "lat": 37.6419831,
+  "lon": 13.1909108,
+  "tags": {
+    "name": "Contrada Taia di Sopra",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 5316001490,
+  "lat": 37.7292999,
+  "lon": 13.2077631,
+  "tags": {
+    "name": "Case Battellaro di Sopra",
+    "place": "isolated_dwelling"
+  }
+},
+{
+  "type": "node",
+  "id": 5339494461,
+  "lat": 37.7340516,
+  "lon": 13.2471514,
+  "tags": {
+    "name": "Giancavallo",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 5339600387,
+  "lat": 37.6880104,
+  "lon": 13.2092947,
+  "tags": {
+    "name": "Masseria Favarotti",
+    "place": "isolated_dwelling"
+  }
+},
+{
+  "type": "node",
+  "id": 5342163390,
+  "lat": 37.6178348,
+  "lon": 13.1687021,
+  "tags": {
+    "name": "Contrada Docchiara",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 5942080557,
+  "lat": 37.7353551,
+  "lon": 13.1287828,
+  "tags": {
+    "name": "Bagnitelle",
+    "place": "farm"
+  }
+},
+{
+  "type": "node",
+  "id": 5963751532,
+  "lat": 37.7274033,
+  "lon": 13.1721782,
+  "tags": {
+    "name": "San Calògero",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 5963756028,
+  "lat": 37.7385952,
+  "lon": 13.2421437,
+  "tags": {
+    "name": "Case Giancavallo",
+    "place": "isolated_dwelling"
+  }
+},
+{
+  "type": "node",
+  "id": 5969313281,
+  "lat": 37.7364698,
+  "lon": 13.0500251,
+  "tags": {
+    "name": "Mazzaporro",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 6615223090,
+  "lat": 37.7068777,
+  "lon": 12.9716134,
+  "tags": {
+    "description": "abbandonato dopo il terremoto del 1968",
+    "name": "Montevago Vecchia",
+    "place": "locality",
+    "ruins": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6831736643,
+  "lat": 37.6391710,
+  "lon": 13.1579438,
+  "tags": {
+    "name": "San Biagio",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 6833429647,
+  "lat": 37.6993709,
+  "lon": 13.1422828,
+  "tags": {
+    "name": "Castagnola",
+    "place": "hamlet"
+  }
+},
+{
+  "type": "node",
+  "id": 7055977334,
+  "lat": 37.6865713,
+  "lon": 13.2574725,
+  "tags": {
+    "name": "Contrada Quaranta",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 7503749895,
+  "lat": 37.7000614,
+  "lon": 13.2516038,
+  "tags": {
+    "name": "Piano di Catrini",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 9883143557,
+  "lat": 37.6499561,
+  "lon": 13.1137429,
+  "tags": {
+    "name": "Quartiere Saraceno",
+    "place": "neighbourhood"
+  }
+},
+{
+  "type": "node",
+  "id": 10965348116,
+  "lat": 37.6458123,
+  "lon": 13.2737991,
+  "tags": {
+    "name": "Gole del Sosio",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 11365743010,
+  "lat": 37.6149434,
+  "lon": 12.9753301,
+  "tags": {
+    "name": "Contrada Sant'Anna",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 11384713642,
+  "lat": 37.5996582,
+  "lon": 12.9711616,
+  "tags": {
+    "name": "Quartiere Arena",
+    "place": "neighbourhood"
+  }
+},
+{
+  "type": "node",
+  "id": 11385733898,
+  "lat": 37.5951579,
+  "lon": 12.9605412,
+  "tags": {
+    "name": "Contrada Puccia",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 11414388173,
+  "lat": 37.7028561,
+  "lon": 12.9864086,
+  "tags": {
+    "name": "Villaggio Trieste",
+    "place": "neighbourhood"
+  }
+},
+{
+  "type": "node",
+  "id": 11434417889,
+  "lat": 37.7039407,
+  "lon": 12.9801241,
+  "tags": {
+    "name": "Villaggio Bergamo",
+    "place": "neighbourhood"
+  }
+},
+{
+  "type": "node",
+  "id": 11513469220,
+  "lat": 37.6843638,
+  "lon": 12.9928350,
+  "tags": {
+    "name": "Cotrada Cannitello",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 11513469222,
+  "lat": 37.6932784,
+  "lon": 13.0090946,
+  "tags": {
+    "name": "Contrada Madonna D'Idria",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 12642722766,
+  "lat": 37.6054304,
+  "lon": 13.2752161,
+  "tags": {
+    "name": "Croce di Burgio",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 13992528238,
+  "lat": 37.6806113,
+  "lon": 13.1334422,
+  "tags": {
+    "name": "Casa Francesco Sciamè",
+    "place": "isolated_dwelling"
+  }
+}
+
+  ]
+}

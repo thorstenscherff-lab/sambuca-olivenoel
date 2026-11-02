@@ -1,0 +1,612 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-27T14:59:07Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 2094692842,
+  "lat": 37.6472784,
+  "lon": 13.1109771,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "146",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "amenity": "pharmacy",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Ferrara",
+    "operator": "Ferrara Marianna",
+    "ref:msal": "14513",
+    "source": "nodo SITR Provincia regionale di Agrigento",
+    "website": "https://www.ordinefarmacisti.ag.it/farmacie/?s=2&id=108"
+  }
+},
+{
+  "type": "node",
+  "id": 2094693171,
+  "lat": 37.6468180,
+  "lon": 13.1099931,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "89",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "amenity": "pharmacy",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Miceli",
+    "operator": "Antonino Miceli",
+    "ref:msal": "14487",
+    "source": "nodo SITR Provincia regionale di Agrigento",
+    "website": "https://www.ordinefarmacisti.ag.it/farmacie/?s=2&id=106"
+  }
+},
+{
+  "type": "node",
+  "id": 2094693320,
+  "lat": 37.6482790,
+  "lon": 13.1119694,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "143",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "amenity": "pharmacy",
+    "dispensing": "yes",
+    "healthcare": "pharmacy",
+    "name": "Farmacia Palminteri",
+    "operator": "Carmela Palminteri",
+    "ref:msal": "14486"
+  }
+},
+{
+  "type": "node",
+  "id": 4364711790,
+  "lat": 37.6504190,
+  "lon": 13.1145706,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "local;italian;pizza",
+    "name": "Lu Saracenu",
+    "name:it": "Lu Saracenu"
+  }
+},
+{
+  "type": "node",
+  "id": 5851830990,
+  "lat": 37.6446271,
+  "lon": 13.1071994,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Esso",
+    "brand:wikidata": "Q867662",
+    "name": "Esso",
+    "operator": "Maggio Antonio",
+    "ref:mise": "9474"
+  }
+},
+{
+  "type": "node",
+  "id": 6390386071,
+  "lat": 37.6470359,
+  "lon": 13.1106766,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "136",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "amenity": "cafe",
+    "brand": "Espresso House",
+    "brand:wikidata": "Q10489162",
+    "brand:wikipedia": "en:Espresso House",
+    "name": "Espresso House",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6903684280,
+  "lat": 37.6462518,
+  "lon": 13.1096604,
+  "tags": {
+    "addr:housenumber": "98",
+    "addr:street": "Corso Umberto I",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "delivery": "yes",
+    "name": "Desiderio Pizzeria",
+    "opening_hours": "Mo, We-Su 12:00-14:00; Mo, We-Su 18:00-01:30",
+    "phone": "+39 0925 195 0704"
+  }
+},
+{
+  "type": "node",
+  "id": 6904605451,
+  "lat": 37.6473309,
+  "lon": 13.1110468,
+  "tags": {
+    "addr:housenumber": "148",
+    "addr:street": "Corso Umberto I",
+    "amenity": "cafe",
+    "name": "Caffè Beccadelli"
+  }
+},
+{
+  "type": "node",
+  "id": 6939549813,
+  "lat": 37.6487826,
+  "lon": 13.1127246,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "191",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "payment:cash": "yes",
+    "shop": "stationery"
+  }
+},
+{
+  "type": "node",
+  "id": 6939744833,
+  "lat": 37.6522817,
+  "lon": 13.1147975,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "name": "Stop & Shop",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 6939772922,
+  "lat": 37.6522715,
+  "lon": 13.1136692,
+  "tags": {
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 6945627013,
+  "lat": 37.6481552,
+  "lon": 13.1121596,
+  "tags": {
+    "amenity": "bar",
+    "name": "Caffè dell'Arpa"
+  }
+},
+{
+  "type": "node",
+  "id": 6948766763,
+  "lat": 37.6446764,
+  "lon": 13.1077251,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "8",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "name": "Campo Elletronica",
+    "operator": "Gianpaolo Campo",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "electronics",
+    "website": "https://www.campoelettronica.it"
+  }
+},
+{
+  "type": "node",
+  "id": 6955070386,
+  "lat": 37.6469037,
+  "lon": 13.1063436,
+  "tags": {
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 6955175056,
+  "lat": 37.6453256,
+  "lon": 13.1080249,
+  "tags": {
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 6955193802,
+  "lat": 37.6453252,
+  "lon": 13.1079639,
+  "tags": {
+    "shop": "tobacco"
+  }
+},
+{
+  "type": "node",
+  "id": 6955216337,
+  "lat": 37.6468929,
+  "lon": 13.1091348,
+  "tags": {
+    "shop": "tobacco"
+  }
+},
+{
+  "type": "node",
+  "id": 6966756728,
+  "lat": 37.6521938,
+  "lon": 13.1134175,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "57",
+    "addr:postcode": "92017",
+    "addr:street": "Viale Antonio Gramsci",
+    "amenity": "bar",
+    "name": "Cafè de l'Avenida",
+    "shop": "wine"
+  }
+},
+{
+  "type": "node",
+  "id": 6977451077,
+  "lat": 37.6466021,
+  "lon": 13.1101032,
+  "tags": {
+    "name": "L'oasi della frutta",
+    "shop": "farm"
+  }
+},
+{
+  "type": "node",
+  "id": 6987895684,
+  "lat": 37.6514391,
+  "lon": 13.1108587,
+  "tags": {
+    "name": "Prodè",
+    "shop": "chemist"
+  }
+},
+{
+  "type": "node",
+  "id": 6987926047,
+  "lat": 37.6514239,
+  "lon": 13.1107711,
+  "tags": {
+    "description": "Local meats, cheeses, wines, etc.",
+    "name": "Antiche Tradizioni",
+    "shop": "deli"
+  }
+},
+{
+  "type": "node",
+  "id": 6987945599,
+  "lat": 37.6514722,
+  "lon": 13.1119892,
+  "tags": {
+    "name": "Cartolibreria La Pergamena",
+    "shop": "stationery"
+  }
+},
+{
+  "type": "node",
+  "id": 9148428707,
+  "lat": 37.6487559,
+  "lon": 13.1066096,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "addr:street": "Viale Enrico Berlinguer",
+    "name": "Un mare di sapori",
+    "shop": "seafood"
+  }
+},
+{
+  "type": "node",
+  "id": 9193689934,
+  "lat": 37.6538768,
+  "lon": 13.0986135,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "craft": "metal_construction",
+    "name": "COMART srl",
+    "website": "https://officinacomartsrl.mystrikingly.com"
+  }
+},
+{
+  "type": "node",
+  "id": 9825042039,
+  "lat": 37.6471341,
+  "lon": 13.1118237,
+  "tags": {
+    "addr:housenumber": "42",
+    "addr:street": "Via Baglio Grande",
+    "craft": "bakery",
+    "name": "Pasticceria Enrico Pendola",
+    "phone": "+39 0925 941080"
+  }
+},
+{
+  "type": "node",
+  "id": 12367622676,
+  "lat": 37.6481573,
+  "lon": 13.1111226,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "24",
+    "addr:postcode": "92017",
+    "addr:street": "Via Roma",
+    "amenity": "restaurant",
+    "contact:instagram": "al.enobanco",
+    "cuisine": "italian;burger",
+    "name": "LA' Enobanco",
+    "phone": "+393792918028"
+  }
+},
+{
+  "type": "node",
+  "id": 12371337556,
+  "lat": 37.6463412,
+  "lon": 13.1097712,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "100",
+    "addr:postcode": "92017",
+    "addr:street": "Corso Umberto I",
+    "amenity": "restaurant",
+    "cuisine": "wine;snack",
+    "name": "L'enoteca del Re",
+    "phone": "+393206151731"
+  }
+},
+{
+  "type": "node",
+  "id": 13967631924,
+  "lat": 37.6520186,
+  "lon": 13.1072714,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "5",
+    "addr:postcode": "92017",
+    "addr:street": "Piazza Regione Siciliana",
+    "email": "storretta@yahoo.it",
+    "name": "Centro Gomme e Autolavaggio di Torretta Giuseppe",
+    "phone": "0925 1903042",
+    "shop": "car_repair",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13979958072,
+  "lat": 37.6498250,
+  "lon": 13.1049271,
+  "tags": {
+    "amenity": "fuel",
+    "name": "GAN",
+    "operator": "Gandolfo Srl",
+    "website": "https://www.gan.srl"
+  }
+},
+{
+  "type": "node",
+  "id": 13979958073,
+  "lat": 37.6499489,
+  "lon": 13.1046410,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Bar Cabuca",
+    "website": "https://www.gan.srl/cabuca/"
+  }
+},
+{
+  "type": "node",
+  "id": 13979997273,
+  "lat": 37.6493064,
+  "lon": 13.1053047,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "name": "I Piciotti"
+  }
+},
+{
+  "type": "node",
+  "id": 14078454084,
+  "lat": 37.6321197,
+  "lon": 13.0558910,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "addr:street": "Lago Arancio",
+    "craft": "winery",
+    "name": "Cantina DiPrima",
+    "opening_hours": "Mo-Sa 11:00-13:00, 18:00-20:00",
+    "phone": "+393357711610",
+    "website": "https://www.diprimavini.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 14214397593,
+  "lat": 37.6479160,
+  "lon": 13.1111884,
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:housenumber": "10",
+    "addr:postcode": "92017",
+    "addr:street": "Via Roma",
+    "amenity": "restaurant",
+    "contact:instagram": "solesale_cantinasocial",
+    "cuisine": "italian;regional",
+    "name": "Sol e Sale",
+    "opening_hours": "Fr-Mo 12:00-15:00,18:30-01:00",
+    "outdoor_seating": "yes",
+    "phone": "+39 351 478 6831"
+  }
+},
+{
+  "type": "way",
+  "id": 114429754,
+  "center": {
+    "lat": 37.6519170,
+    "lon": 13.0994005
+  },
+  "tags": {
+    "brand": "Sisa",
+    "brand:wikidata": "Q3943661",
+    "building": "yes",
+    "name": "Sisa",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 524579478,
+  "center": {
+    "lat": 37.6502084,
+    "lon": 13.0941386
+  },
+  "tags": {
+    "building": "yes",
+    "craft": "winery",
+    "name": "Cantina Cellaro"
+  }
+},
+{
+  "type": "way",
+  "id": 734431825,
+  "center": {
+    "lat": 37.6579267,
+    "lon": 13.1028442
+  },
+  "tags": {
+    "building": "industrial",
+    "craft": "oil_mill"
+  }
+},
+{
+  "type": "way",
+  "id": 734431826,
+  "center": {
+    "lat": 37.6581836,
+    "lon": 13.1037106
+  },
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "addr:street": "Contrada Mendolazza",
+    "building": "yes",
+    "craft": "winery",
+    "description": "B&B, winery, and olive oil production",
+    "email": "info@oliovivo.com",
+    "guest_house": "agritourism",
+    "name": "Antico Frantoio",
+    "phone": "+39 0925 943316",
+    "rooms": "6",
+    "tourism": "guest_house",
+    "website": "http://www.oliovivo.com"
+  }
+},
+{
+  "type": "way",
+  "id": 741352409,
+  "center": {
+    "lat": 37.6525464,
+    "lon": 13.1141470
+  },
+  "tags": {
+    "amenity": "post_office",
+    "atm": "yes",
+    "name": "Sambuca di Sicilia",
+    "opening_hours": "Mo-Fr 08:20-13:45; Sa 08:20-12:45; PH off",
+    "operator": "Poste Italiane",
+    "operator:wikidata": "Q495026",
+    "operator:wikipedia": "it:Poste italiane",
+    "ref": "29036",
+    "website": "https://www.poste.it"
+  }
+},
+{
+  "type": "way",
+  "id": 742228159,
+  "center": {
+    "lat": 37.6444559,
+    "lon": 13.1060568
+  },
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "brand": "Spar",
+    "brand:wikidata": "Q610492",
+    "brand:wikipedia": "en:Spar (retailer)",
+    "building": "yes",
+    "name": "Despar",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 1069512634,
+  "center": {
+    "lat": 37.6695131,
+    "lon": 13.1383338
+  },
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "italian;pizza",
+    "name": "La Panoramica",
+    "phone": "+39 0925 943430"
+  }
+},
+{
+  "type": "way",
+  "id": 1069516008,
+  "center": {
+    "lat": 37.6666721,
+    "lon": 13.1272194
+  },
+  "tags": {
+    "addr:city": "Sambuca di Sicilia",
+    "addr:postcode": "92017",
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "italian;pizza",
+    "name": "Antico Mulino",
+    "opening_hours": "Tu-Su 13:00-15:30, 19:00-02:00",
+    "phone": "+39 0925 946130"
+  }
+},
+{
+  "type": "way",
+  "id": 1547887186,
+  "center": {
+    "lat": 37.6320768,
+    "lon": 13.0558982
+  },
+  "tags": {
+    "building": "yes",
+    "craft": "winery",
+    "name": "Cantina DiPrima"
+  }
+}
+
+  ]
+}

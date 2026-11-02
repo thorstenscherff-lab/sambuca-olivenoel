@@ -1,0 +1,41 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-27T14:30:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 2134910852,
+  "lat": 37.5685578,
+  "lon": 12.9575553,
+  "tags": {
+    "name": "Lido Fiori",
+    "place": "village",
+    "population": "254",
+    "source:population": "Istat 2021"
+  }
+},
+{
+  "type": "node",
+  "id": 4294667989,
+  "lat": 37.5669854,
+  "lon": 12.9614863,
+  "tags": {
+    "addr:housenumber": "28",
+    "addr:postcode": "92013",
+    "addr:street": "viale delle margherite",
+    "email": "ioalfio@live.it",
+    "internet_access": "wlan",
+    "name": "Lido Fiori",
+    "opening_hours": "24/7",
+    "phone": "+39 320 8256430",
+    "tourism": "hotel"
+  }
+}
+
+  ]
+}

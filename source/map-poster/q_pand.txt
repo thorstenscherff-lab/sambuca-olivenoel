@@ -1,0 +1,4 @@
+[out:json][timeout:60];
+(nwr["name"~"Pandolfin|Boomerang",i](37.45,12.85,37.75,13.40);
+ nwr["name"~"Lido",i](37.55,12.90,37.62,13.10););
+out center tags;

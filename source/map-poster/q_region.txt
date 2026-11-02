@@ -1,0 +1,17 @@
+[out:json][timeout:180];
+(
+  way["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified)$"](37.55,12.94,37.70,13.38);
+  way["waterway"~"^(river|stream)$"](37.55,12.94,37.70,13.38);
+  nwr["natural"="water"](37.55,12.94,37.70,13.38);
+  nwr["place"~"^(town|village|hamlet)$"](37.55,12.94,37.70,13.38);
+  nwr["craft"~"winery|oil_mill|distillery|cheese"](37.55,12.94,37.70,13.38);
+  nwr["man_made"="works"](37.55,12.94,37.70,13.38);
+  nwr["industrial"](37.55,12.94,37.70,13.38);
+  nwr["shop"="wine"](37.55,12.94,37.70,13.38);
+  nwr["natural"="peak"](37.55,12.94,37.70,13.38);
+  nwr["historic"="archaeological_site"](37.55,12.94,37.70,13.38);
+  nwr["landuse"~"^(vineyard|orchard|forest)$"](37.55,12.94,37.70,13.38);
+  nwr["leisure"="nature_reserve"](37.55,12.94,37.70,13.38);
+  nwr["boundary"="protected_area"](37.55,12.94,37.70,13.38);
+);
+out body geom;

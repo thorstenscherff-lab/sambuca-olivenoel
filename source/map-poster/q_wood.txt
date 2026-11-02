@@ -1,0 +1,6 @@
+[out:json][timeout:120];
+(way["natural"~"wood|scrub|heath"](37.55,12.94,37.70,13.38);
+ relation["natural"~"wood|scrub"](37.55,12.94,37.70,13.38);
+ way["landuse"="forest"](37.55,12.94,37.70,13.38);
+ relation["landuse"="forest"](37.55,12.94,37.70,13.38););
+out geom;

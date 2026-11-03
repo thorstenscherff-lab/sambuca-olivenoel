@@ -1,6 +1,6 @@
 # Figuren – Sambuca Olivenöl (v0.9.0)
 
-Alle Figuren sind **frei erfunden**. Ähnlichkeiten mit realen Personen aus Sambuca di Sicilia sind nicht beabsichtigt. Es liegen **keine echten Fotos** von Thorsten im Repo. Die Porträts wurden per Bildgenerierung erzeugt, Die Prompts der Porträts 0–12 sind verloren, die der Porträts 13–22 (v0.9.0) sind dokumentiert (siehe unten).
+Alle Figuren sind **frei erfunden**. Ähnlichkeiten mit realen Personen aus Sambuca di Sicilia sind nicht beabsichtigt. Es liegen **keine echten Fotos** von Thorsten im Repo. Die Porträts wurden per Bildgenerierung erzeugt, Die Prompts der Porträts 0–12 sind verloren, die der Porträts 13–22 (v0.9.0) sind sinngemäß dokumentiert (siehe unten).
 
 Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte → [LOCATIONS.md](LOCATIONS.md), Gesprächs-Minispiel → [MINIGAMES.md](MINIGAMES.md#mg-talk), Perks/Deals → [ECONOMY.md](ECONOMY.md).
 
@@ -480,11 +480,11 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 
 ## Porträts
 
-**Herkunft:** Generiert am 02.11.2026 (Europe/Berlin) mit dem Bildwerkzeug der Arbeitsumgebung. Die Indizes 0–8 stammen aus Sitzung v0.4, die Indizes 9–12 aus Sitzung v0.5, die Indizes 13–22 (Ladenbesitzer, FB-40) aus Sitzung v0.9.0 am 03.11.2026 – deren Prompts sind erhalten (unten und in `docs/prompts/generate_image_calls.jsonl`).
+**Herkunft:** Generiert am 02.11.2026 (Europe/Berlin) mit dem Bildwerkzeug der Arbeitsumgebung. Die Indizes 0–8 stammen aus Sitzung v0.4, die Indizes 9–12 aus Sitzung v0.5, die Indizes 13–22 (Ladenbesitzer, FB-40) aus Sitzung v0.9.0 am 03.11.2026 – deren Prompts sind sinngemäß festgehalten (unten und in `docs/prompts/generate_image_calls.jsonl`).
 
 **Stil (alle Porträts):** illustrierter Comic-/Graphic-Novel-Look mit kräftigen Konturen. Hochformat 864×1152 px, Brustbild. Hintergrund ist ein violett-orange glühender Sonnenuntergang über den Dächern und Hügeln von Sambuca.
 
-**Prompt (Porträts 0–12):** verloren – nachträglich beschrieben (rekonstruiert). **Porträts 13–22:** Prompt im Wortlaut = Präfix + Subjekt + Suffix (siehe Tabelle), Referenzbilder `5-salvo.jpg` und `9-carmela.jpg`, Seitenverhältnis 3:4.
+**Prompt (Porträts 0–12):** verloren – nachträglich beschrieben (rekonstruiert). **Porträts 13–22:** Prompt (sinngemäß, aus der Sitzung rekonstruiert) = Präfix + Subjekt + Suffix (siehe Tabelle), Referenzbilder `5-salvo.jpg` und `9-carmela.jpg`, Seitenverhältnis 3:4.
 
 Präfix: `Character portrait 3:4, head and shoulders, in the exact art style of the reference portraits: bold GTA loading-screen comic illustration, thick black ink outlines, cel shading, saturated magenta-orange-purple sunset sky behind, Sicilian hill town silhouette (or countryside hills). Subject:`  
 Suffix: `Fictional person. No text.`

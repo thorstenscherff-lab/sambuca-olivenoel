@@ -282,4 +282,4 @@ Die übrigen Feste (Udienza, Vendemmia/Fiera, Raccolta, Natale) nutzen weiter `0
 
 ## v0.9.0
 - **Porträt-Sprite** `source/portraits/port_sprite.webp`: 23 Zellen à 96×128 px (2208×128), neu gebaut mit `python3 source/tools/make_portrait_sprite.py`; eingebettet als `IMG_P` in `imgs.tsx` (`python3 source/tools/build_imgs.py`).
-- **10 neue Porträts** (Indizes 13–22, Ladenbesitzer): Master `source/portraits/13-lin.jpg` … `22-ragioniere.jpg`, 864×1152. Prompts im Wortlaut: CHARACTERS.md („Porträts“) und `docs/prompts/generate_image_calls.jsonl` (`"version": "v0.9.0"`).
+- **10 neue Porträts** (Indizes 13–22, Ladenbesitzer): Master `source/portraits/13-lin.jpg` … `22-ragioniere.jpg`, 864×1152. Prompts (sinngemäß): CHARACTERS.md („Porträts“) und `docs/prompts/generate_image_calls.jsonl` (`"version": "v0.9.0"`).

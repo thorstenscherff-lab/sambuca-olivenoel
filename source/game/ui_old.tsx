@@ -126,10 +126,11 @@ const CSS4 = `
 @keyframes sbZoom{from{transform:scale(1.15)}to{transform:scale(1)}}
 .sb3 .gta{font-family:${FONT};font-weight:900;letter-spacing:.01em;text-shadow:0 2px 6px rgba(0,0,0,.85)}
 `;
+const PORT_N = 23; // Zellen im Porträt-Sprite (v0.9.0: 13 → 23)
 function Portrait(p: { id: string; size: number; tilt?: number; ring?: string }): ReactNode {
   const c = CHM[p.id]; const w = p.size, h = Math.round(p.size * 4 / 3);
   return <span style={{ display: "inline-block", position: "relative", width: w, height: h, flex: "none", borderRadius: 6, border: `3px solid ${p.ring || "#000"}`, outline: "2px solid #000", boxShadow: "4px 4px 0 rgba(0,0,0,.6)", overflow: "hidden", transform: `rotate(${p.tilt ?? 0}deg)`, background: c ? c.c : "#333" }}>
-    <span role="img" aria-label={c ? c.n : ""} style={{ position: "absolute", inset: 0, backgroundImage: `url(${IMG_P})`, backgroundSize: `${w * 13}px ${h}px`, backgroundPosition: `${-(c ? c.i : 0) * w}px 0`, backgroundRepeat: "no-repeat" }} /></span>;
+    <span role="img" aria-label={c ? c.n : ""} style={{ position: "absolute", inset: 0, backgroundImage: `url(${IMG_P})`, backgroundSize: `${w * PORT_N}px ${h}px`, backgroundPosition: `${-(c ? c.i : 0) * w}px 0`, backgroundRepeat: "no-repeat" }} /></span>;
 }
 function Money(p: { v: number; size: number }): ReactNode {
   const [d, setD] = useState(p.v); const cur = useRef(p.v);

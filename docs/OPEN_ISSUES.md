@@ -56,3 +56,5 @@
 2. Balancing der v0.8.2-Werte (OI-046) nach dem Review.
 3. Offene Wünsche: Sprachwahl DE/EN/IT (OI-005), Offline/App (OI-006).
 4. Supabase-Region/Organisation im Dashboard nachtragen (OI-045).
+
+- OI-045: erledigt 03.11.2026 (Region Central EU Frankfurt, Org thorstenscherff-lab, Plan FREE in BACKEND.md).

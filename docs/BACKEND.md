@@ -40,3 +40,6 @@ curl -s "https://aqgigngeksgpbhcdaiar.supabase.co/rest/v1/highscores?select=*&or
 **DB-Passwort zurücksetzen:** Dashboard → Project Settings → Database → „Reset database password“. Das Spiel nutzt das Passwort nicht (nur REST mit Publishable Key); ein Reset ändert am Spiel nichts.
 
 **Testeinträge löschen:** Dashboard → Table Editor → `highscores` → Zeile markieren → Delete (oder SQL: `delete from public.highscores where name like 'TEST QA%';`).
+
+
+**Projekt-Metadaten (abgelesen 03.11.2026):** Region Central EU (Frankfurt), Organisation `thorstenscherff-lab`, Plan FREE, Projektname `sambuca-olivenoel` (Branch main, PRODUCTION). OI-045 erledigt.

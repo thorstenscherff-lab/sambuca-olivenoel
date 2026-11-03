@@ -50,6 +50,10 @@
 | OI-044 | mittel | offen | Prozess | FB-29/FB-30 (v0.8.1) wurden erst nach der Umsetzung in Notion eingetragen; Regel: erst Notion + Doku, dann Bau. Am 03.11. ~02:30 ging zudem ungepushte Arbeit durch ein Box-Zurücksetzen verloren; Regel jetzt: nach jedem Zwischenschritt Commit + Push auf WIP-Branch. | README.md (Prozess) |
 | OI-045 | niedrig | offen | Doku | Supabase-Region und -Organisation sind nicht dokumentiert (nur im Dashboard sichtbar, ohne Zugang nicht ermittelbar). | BACKEND.md |
 | OI-046 | niedrig | offen | Balancing | v0.8.2-Werte (Kamm-Deckel 40, Crew +1/s, Kaltpress +8, Rettungsziele 10/8) sind nur per QA-Skript geprüft, nicht im echten Spiel balanciert. | MINIGAMES.md |
+| OI-047 | hoch | in Arbeit | Review (Beta, FB-37) | Sprachwahl Deutsch/Englisch/Italienisch einmal beim Spielstart, im Spielstand gespeichert; UI, Figuren, Orte, Ereignisse übersetzt (löst OI-005) | UI · SAVEGAME · I18N.md |
+| OI-048 | hoch | in Arbeit | Review (Beta, FB-38) | Kontakte zu leicht – im 1. Monat alle kennenlernbar. Gating je Figur (frühester Monat, Ruf ★, Ort, Voraussetzung), max. 1 neuer Kontakt pro Monat | CHARACTERS · d.tsx present/meet |
+| OI-049 | hoch | in Arbeit | Review (Beta, FB-39) | Vitamin B: bestimmte Figuren nur über Vorstellung durch bekannten Kontakt mit genug ♥ | CHARACTERS (Vitamin-B-Kette) |
+| OI-050 | mittel | in Arbeit | Review (Beta, FB-40) | Mehr Figuren: Ladenbesitzer kennenlernbar (eigene Porträts, Vorteile) | CHARACTERS · ASSETS |
 
 ## Nächste Schritte (Stand 03.11.2026, nach v0.8.2)
 1. Thorsten spielt v0.8.2 auf dem Handy und reviewt per Plaud (Ernte mit Kamm/Crew, eigene Presse, Sturm/Flut mit Geräten).

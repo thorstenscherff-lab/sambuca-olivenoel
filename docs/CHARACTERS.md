@@ -21,25 +21,25 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 | Inventar | Anzahl |
 |---|---|
 | Figuren | 13 |
-| Ereignisse gesamt | 60 |
-| · davon Zufall | 40 |
-| · davon Katastrophen | 10 |
+| Ereignisse gesamt | 61 |
+| · davon Zufall | 41 |
+| · davon Katastrophen | 11 |
 | · davon Fest-Ereignisse | 14 |
 | · nur als Folge/fix | 6 |
-| Wahlmöglichkeiten | 157 |
+| Wahlmöglichkeiten | 162 |
 | Feste | 6 |
 | Monatsziele | 12 |
 | Perks | 20 |
 | Deals | 11 |
-| Szenen | 13 |
-| Hotspots | 25 |
-| Karten-Pins | 13 |
-| Kleine Orte | 14 |
-| Begegnungen | 27 |
-| Laden-Artikel | 11 |
-| Minispiele | 7 |
-| Sheets (UI) | 15 |
-| Spielstand-Felder G | 41 |
+| Szenen | 16 |
+| Hotspots | 30 |
+| Karten-Pins | 16 |
+| Kleine Orte | 16 |
+| Begegnungen | 32 |
+| Laden-Artikel | 13 |
+| Minispiele | 8 |
+| Sheets (UI) | 16 |
+| Spielstand-Felder G | 42 |
 <!-- END GENERATED:counts -->
 
 ## Alle Figuren (aus dem Code erzeugt)
@@ -48,40 +48,40 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 ### Nonna Pina (`nonna`)
 
 - **Rolle:** Deine Nonna · Minni di Virgini
-- **Orte:** Chiesa Madre, Panificio
+- **Orte:** Chiesa Madre, Panificio, Santuario
 - **Feste (Gast):** 3: SETTIMANA SANTA & SAN GIORGIO; 11: NATALE A SAMBUCA
 - **Schwierigkeit:** 0 → Gesprächs-Score ≥ 0 %
 - **Mag:** essen, familie · **mag nicht:** technik
 - **Sprüche:** ♥ niedrig „Iss erst mal was, du bist ganz dünn!“ · mittel „Dein Nonno wäre stolz. Ein bisschen.“ · hoch „Die ganze Familie hilft dir. Basta!“
-- **Aktionen (Perks):** 👪 Familien-Crew (ab ♥ 65, einmalig: Die Familie erntet mit – Crew gratis; `source/game/src/c.tsx:65`)
+- **Aktionen (Perks):** 👪 Familien-Crew (ab ♥ 65, einmalig: Die Familie erntet mit – Crew gratis; `source/game/src/c.tsx:72`)
 - **Deals:** `family` Familien-Crew (Nonna)
-- **Ereignisse/Begegnungen:** Reisebus aus Palermo (`touristen`, `source/game/evs.tsx:19-22`); Nonnas Geheimrezept (`rezept`, `source/game/evs.tsx:66-68`); Settimana Santa: Prozession des Cristo Morto (`santa`, `source/game/evs.tsx:164-167`); Udienza Tag 4: Palio & Minna Fest (`ud2`, Hauptfigur, `source/game/evs.tsx:177-180`); Festa dei Vassalli (5. August) (`vassalli`, Hauptfigur, `source/game/evs.tsx:194-197`)
-- **Begegnungen an kleinen Orten:** Panificio: „Frische Cuccidati für die Nonna?“ → Kaufen (6 €) (`source/game/src/c.tsx:93`); Apicoltore Nino: „Honig gegen Öl?“ → 5 l tauschen (`source/game/src/c.tsx:114`)
+- **Ereignisse/Begegnungen:** Reisebus aus Palermo (`touristen`, `source/game/evs.tsx:19-22`); Nonnas Geheimrezept (`rezept`, `source/game/evs.tsx:73-75`); Settimana Santa: Prozession des Cristo Morto (`santa`, `source/game/evs.tsx:171-174`); Udienza Tag 4: Palio & Minna Fest (`ud2`, Hauptfigur, `source/game/evs.tsx:184-187`); Festa dei Vassalli (5. August) (`vassalli`, Hauptfigur, `source/game/evs.tsx:201-204`)
+- **Begegnungen an kleinen Orten:** Panificio: „Frische Cuccidati für die Nonna?“ → Kaufen (6 €) (`source/game/src/c.tsx:110`); Apicoltore Nino: „Honig gegen Öl?“ → 5 l tauschen (`source/game/src/c.tsx:131`)
 - **Definition:** `source/game/src/a.tsx:27` · Porträt-Index `i: 3`
 
 ### Salvo (`salvo`)
 
 - **Rolle:** Bar del Corso · hört alles
-- **Orte:** Bar del Corso
+- **Orte:** Bar del Corso, → Lido Boomerang
 - **Feste (Gast):** –
 - **Schwierigkeit:** 1 → Gesprächs-Score ≥ 30 %
 - **Mag:** calcio, essen · **mag nicht:** politik
 - **Sprüche:** ♥ niedrig „Un caffè? 1,20. Gerüchte kosten extra.“ · mittel „Setz dich. Ich hab was gehört …“ · hoch „Für dich: Insider-Tipps, gratis.“
-- **Aktionen (Perks):** 📈 Insider-Tipp Ölpreis (ab ♥ 35, monatlich: Trend für nächsten Monat; `source/game/src/c.tsx:68`); ☕ Öl über die Bar verkaufen (ab ♥ 60, monatlich: bis 40 l zu 135 %; `source/game/src/c.tsx:69`)
+- **Aktionen (Perks):** 📈 Insider-Tipp Ölpreis (ab ♥ 35, monatlich: Trend für nächsten Monat; `source/game/src/c.tsx:75`); ☕ Öl über die Bar verkaufen (ab ♥ 60, monatlich: bis 40 l zu 135 %; `source/game/src/c.tsx:76`)
 - **Deals:** –
-- **Ereignisse/Begegnungen:** Olio-Novello-Hype (`novello`, `source/game/evs.tsx:44-47`); Olivendiebe unterwegs (`diebe`, `source/game/evs.tsx:54-57`); Nonnas Geheimrezept (`rezept`, `source/game/evs.tsx:66-68`); Salvos Wette: Palermo gegen Catania (`wette`, `source/game/evs.tsx:69-72`); Turi redet schlecht über dein Öl (`turi1`, `source/game/evs.tsx:111-114`)
+- **Ereignisse/Begegnungen:** Olio-Novello-Hype (`novello`, `source/game/evs.tsx:44-47`); Olivendiebe unterwegs (`diebe`, `source/game/evs.tsx:60-64`); Nonnas Geheimrezept (`rezept`, `source/game/evs.tsx:73-75`); Salvos Wette: Palermo gegen Catania (`wette`, `source/game/evs.tsx:76-79`); Turi redet schlecht über dein Öl (`turi1`, `source/game/evs.tsx:118-121`)
 - **Begegnungen an kleinen Orten:** –
 - **Definition:** `source/game/src/a.tsx:29` · Porträt-Index `i: 5`
 
 ### Zia Carmela (`carmela`)
 
 - **Rolle:** Nachbarin · weiß alles zuerst
-- **Orte:** Büro (zuhause), Panificio, Chiesa Madre, Feste
+- **Orte:** Büro (zuhause), Panificio, Chiesa Madre, Feste, Santuario
 - **Feste (Gast):** 3: SETTIMANA SANTA & SAN GIORGIO; 4: MADONNA DELL'UDIENZA; 7: VASSALLI & CALICI DI STELLE; 11: NATALE A SAMBUCA
 - **Schwierigkeit:** 1 → Gesprächs-Score ≥ 30 %
 - **Mag:** essen, kirche · **mag nicht:** geld
 - **Sprüche:** ♥ niedrig „Ah, der Neue von nebenan!“ · mittel „Komm, ich hab Zitronen für dich.“ · hoch „Wenn ein Sturm kommt, sag ich dir’s vor dem Wetterbericht.“
-- **Aktionen (Perks):** 🌦️ Wetter-Tratsch (ab ♥ 30, monatlich: verrät Katastrophen im nächsten Monat; `source/game/src/c.tsx:66`); 🍋 Zitronen-Öl (Agrumato) (ab ♥ 50, monatlich: 20 l Öl → 30 Fläschchen à 18 €; `source/game/src/c.tsx:67`)
+- **Aktionen (Perks):** 🌦️ Wetter-Tratsch (ab ♥ 30, monatlich: verrät Katastrophen im nächsten Monat; `source/game/src/c.tsx:73`); 🍋 Zitronen-Öl (Agrumato) (ab ♥ 50, monatlich: 20 l Öl → 30 Fläschchen à 18 €; `source/game/src/c.tsx:74`)
 - **Deals:** –
 - **Ereignisse/Begegnungen:** Es klopft: die Nachbarin (`carmela1`, `source/game/src/c.tsx:28-30`)
 - **Begegnungen an kleinen Orten:** –
@@ -90,124 +90,124 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 ### Padre Vito (`padre`)
 
 - **Rolle:** Pfarrer · Chiesa Madre
-- **Orte:** Chiesa Madre, Feste
+- **Orte:** Chiesa Madre, Feste, Santuario
 - **Feste (Gast):** 3: SETTIMANA SANTA & SAN GIORGIO; 4: MADONNA DELL'UDIENZA; 11: NATALE A SAMBUCA
 - **Schwierigkeit:** 2 → Gesprächs-Score ≥ 45 %
 - **Mag:** kirche, familie · **mag nicht:** geld
 - **Sprüche:** ♥ niedrig „Ich sehe Sie selten bei der Messe.“ · mittel „Die Madonna segnet die Fleißigen.“ · hoch „Sie gehören jetzt zur Gemeinde.“
-- **Aktionen (Perks):** ⛪ Feldsegen bestellen (ab ♥ 45, 1×/Jahr: 1×/Jahr: Haine +8 %, ★ +3; `source/game/src/c.tsx:63`)
+- **Aktionen (Perks):** ⛪ Feldsegen bestellen (ab ♥ 45, 1×/Jahr: 1×/Jahr: Haine +8 %, ★ +3; `source/game/src/c.tsx:70`)
 - **Deals:** –
-- **Ereignisse/Begegnungen:** Hagel über dem Monte Genuardo (`hagel`, `source/game/evs.tsx:7-10`); Hochzeit in der Matrice (`hochzeit`, `source/game/evs.tsx:85-87`); Sabotage am Bewässerungsschlauch (`turi2`, `source/game/evs.tsx:115-118`); Das Dach der Matrice leckt (`padre1`, Hauptfigur, `source/game/evs.tsx:143-147`); Settimana Santa: Prozession des Cristo Morto (`santa`, Hauptfigur, `source/game/evs.tsx:164-167`); San Giorgio: Feldsegnung am 23. April (`giorgio`, Hauptfigur, `source/game/evs.tsx:168-172`); Udienza Tag 1: Pilgerweg vom Cellaro (`ud1`, Hauptfigur, `source/game/evs.tsx:173-176`); Udienza Tag 6: Sponsor der Luminarie (`ud3`, `source/game/evs.tsx:181-184`); Udienza Finale: La Nisciuta (`ud5`, Hauptfigur, `source/game/evs.tsx:189-193`); Natale a Sambuca: Krippe in den Vicoli (`zabut`, `source/game/evs.tsx:208-211`)
+- **Ereignisse/Begegnungen:** Hagel über dem Monte Genuardo (`hagel`, `source/game/evs.tsx:7-10`); Hochzeit in der Matrice (`hochzeit`, `source/game/evs.tsx:92-94`); Sabotage am Bewässerungsschlauch (`turi2`, `source/game/evs.tsx:122-125`); Das Dach der Matrice leckt (`padre1`, Hauptfigur, `source/game/evs.tsx:150-154`); Settimana Santa: Prozession des Cristo Morto (`santa`, Hauptfigur, `source/game/evs.tsx:171-174`); San Giorgio: Feldsegnung am 23. April (`giorgio`, Hauptfigur, `source/game/evs.tsx:175-179`); Udienza Tag 1: Pilgerweg vom Cellaro (`ud1`, Hauptfigur, `source/game/evs.tsx:180-183`); Udienza Tag 6: Sponsor der Luminarie (`ud3`, `source/game/evs.tsx:188-191`); Udienza Finale: La Nisciuta (`ud5`, Hauptfigur, `source/game/evs.tsx:196-200`); Natale a Sambuca: Krippe in den Vicoli (`zabut`, `source/game/evs.tsx:215-218`)
 - **Begegnungen an kleinen Orten:** –
 - **Definition:** `source/game/src/a.tsx:33` · Porträt-Index `i: 1`
 
 ### Signora Rosalia (`rosalia`)
 
 - **Rolle:** Frantoio · presst seit 30 Jahren
-- **Orte:** Frantoio, Chiesa Madre, Feste
+- **Orte:** Frantoio, Chiesa Madre, Feste, Santuario
 - **Feste (Gast):** 3: SETTIMANA SANTA & SAN GIORGIO; 7: VASSALLI & CALICI DI STELLE; 9: RACCOLTA
 - **Schwierigkeit:** 2 → Gesprächs-Score ≥ 45 %
 - **Mag:** oliven, familie · **mag nicht:** politik
 - **Sprüche:** ♥ niedrig „Hinten anstellen. Wie alle.“ · mittel „Deine Oliven sind besser geworden.“ · hoch „Für dich lass ich die Presse auch nachts laufen.“
-- **Aktionen (Perks):** ⚙️ Mühlen-Deal (ab ♥ 55, einmalig: Mahlgebühr dauerhaft −50 %; `source/game/src/c.tsx:64`)
+- **Aktionen (Perks):** ⚙️ Mühlen-Deal (ab ♥ 55, einmalig: Mahlgebühr dauerhaft −50 %; `source/game/src/c.tsx:71`)
 - **Deals:** `mill` Mühlen-Deal (Rosalia)
-- **Ereignisse/Begegnungen:** Stromausfall im Frantoio (`strom`, `source/game/evs.tsx:76-78`); Turi will gemeinsam mahlen (`turi3`, `source/game/evs.tsx:119-121`); Fiera del Bestiame (21.–22. Sept.) (`fiera`, `source/game/evs.tsx:203-207`)
+- **Ereignisse/Begegnungen:** Stromausfall im Frantoio (`strom`, `source/game/evs.tsx:83-85`); Turi will gemeinsam mahlen (`turi3`, `source/game/evs.tsx:126-128`); Fiera del Bestiame (21.–22. Sept.) (`fiera`, `source/game/evs.tsx:210-214`)
 - **Begegnungen an kleinen Orten:** –
 - **Definition:** `source/game/src/a.tsx:31` · Porträt-Index `i: 2`
 
 ### Signor Wang (`wang`)
 
 - **Rolle:** Ferramenta Cinese · hat alles, billig
-- **Orte:** Ferramenta Cinese, Bar del Corso
+- **Orte:** Ferramenta Cinese, Bar del Corso, Sicilbanca
 - **Feste (Gast):** 8: VENDEMMIA & FIERA
 - **Schwierigkeit:** 2 → Gesprächs-Score ≥ 45 %
 - **Mag:** technik, geld · **mag nicht:** wein
 - **Sprüche:** ♥ niedrig „Spaten? 19 Euro! Hält … eine Weile.“ · mittel „Für Stammkunden: Großhandelspreis.“ · hoch „Freund! Ich bestelle dir direkt aus Ningbo.“
-- **Aktionen (Perks):** 🚢 Direktimport aus Ningbo (ab ♥ 55, einmalig: neuer Rüttler für 700 € (hält); `source/game/src/c.tsx:70`)
+- **Aktionen (Perks):** 🚢 Direktimport aus Ningbo (ab ♥ 55, einmalig: neuer Rüttler für 700 € (hält); `source/game/src/c.tsx:77`)
 - **Deals:** `ningbo` Direktimport (Wang)
 - **Ereignisse/Begegnungen:** Container-Lieferung bei Signor Wang (`wang1`, `source/game/src/c.tsx:25-27`)
-- **Begegnungen an kleinen Orten:** Ferramenta Cinese: „Ein Bauer reklamiert lautstark seinen kaputten Spaten.“ → Mitlachen (`source/game/src/c.tsx:87`); Ferramenta Cinese: „Wang zeigt dir ein Video vom Großhandel in Palermo.“ → Zuschauen (`source/game/src/c.tsx:89`)
+- **Begegnungen an kleinen Orten:** Ferramenta Cinese: „Ein Bauer reklamiert lautstark seinen kaputten Spaten.“ → Mitlachen (`source/game/src/c.tsx:104`); Ferramenta Cinese: „Wang zeigt dir ein Video vom Großhandel in Palermo.“ → Zuschauen (`source/game/src/c.tsx:106`)
 - **Definition:** `source/game/src/a.tsx:30` · Porträt-Index `i: 11`
 
 ### Ciccio u Pasturi (`ciccio`)
 
 - **Rolle:** Schäfer · Vorarbeiter der Erntehelfer
-- **Orte:** Ciccios Weide, Bar del Corso, Feste
+- **Orte:** Ciccios Weide, Bar del Corso, Feste, Belvedere, Dein Hain
 - **Feste (Gast):** 3: SETTIMANA SANTA & SAN GIORGIO; 8: VENDEMMIA & FIERA; 9: RACCOLTA
 - **Schwierigkeit:** 2 → Gesprächs-Score ≥ 45 %
 - **Mag:** calcio, oliven · **mag nicht:** technik
 - **Sprüche:** ♥ niedrig „Hm.“ · mittel „Meine Jungs pflücken schneller als jede Maschine.“ · hoch „Die Crew gehört dir. Auch zur Vendemmia.“
-- **Aktionen (Perks):** 👷 Ciccios Crew anheuern (ab ♥ 40, 1×/Jahr: Erntehelfer, Lohn −25 %, Ertrag +10 %; `source/game/src/c.tsx:71`)
+- **Aktionen (Perks):** 👷 Ciccios Crew anheuern (ab ♥ 40, 1×/Jahr: Erntehelfer, Lohn −25 %, Ertrag +10 %; `source/game/src/c.tsx:78`)
 - **Deals:** –
 - **Ereignisse/Begegnungen:** –
-- **Begegnungen an kleinen Orten:** Macelleria: „Ciccio liefert gerade Lämmer ab.“ → Hallo sagen (`source/game/src/c.tsx:108`); Ciccios Weide: „Die Schafe könnten unter deinen Bäumen weiden.“ → Erlauben (`source/game/src/c.tsx:120`); Ciccios Weide: „Frische Ricotta, noch warm.“ → Probieren (3 €) (`source/game/src/c.tsx:121`)
+- **Begegnungen an kleinen Orten:** Macelleria: „Ciccio liefert gerade Lämmer ab.“ → Hallo sagen (`source/game/src/c.tsx:125`); Ciccios Weide: „Die Schafe könnten unter deinen Bäumen weiden.“ → Erlauben (`source/game/src/c.tsx:137`); Ciccios Weide: „Frische Ricotta, noch warm.“ → Probieren (3 €) (`source/game/src/c.tsx:138`)
 - **Definition:** `source/game/src/a.tsx:32` · Porträt-Index `i: 12`
 
 ### Giusi Ferrante (`giusi`)
 
 - **Rolle:** Winzerin · Cantina am Lago
-- **Orte:** Feudo Arancio, Feste
+- **Orte:** Feudo Arancio, Feste, Sicilbanca, Hotel Don Giovanni
 - **Feste (Gast):** 4: MADONNA DELL'UDIENZA; 7: VASSALLI & CALICI DI STELLE; 8: VENDEMMIA & FIERA
 - **Schwierigkeit:** 3 → Gesprächs-Score ≥ 60 %
 - **Mag:** wein, geld · **mag nicht:** calcio
 - **Sprüche:** ♥ niedrig „Öl? Wein ist das Geschäft hier, caro.“ · mittel „Wein und Öl – zusammen unschlagbar.“ · hoch „Socio! Meine Leute sind deine Leute.“
-- **Aktionen (Perks):** 🍷 Wein-Nebenlinie (ab ♥ 40, 1×/Jahr: 600 Flaschen, Verkauf ab Nov.; `source/game/src/c.tsx:72`); 🍾 Rosso Pandolfina verkaufen (ab ♥ 0, monatlich: 600 Flaschen à ~4 €; `source/game/src/c.tsx:73`); 🤝 Wein-Kooperation (ab ♥ 65, einmalig: Crew & Gerät teilen: Löhne −30 %; `source/game/src/c.tsx:74`)
+- **Aktionen (Perks):** 🍷 Wein-Nebenlinie (ab ♥ 40, 1×/Jahr: 600 Flaschen, Verkauf ab Nov.; `source/game/src/c.tsx:79`); 🍾 Rosso Pandolfina verkaufen (ab ♥ 0, monatlich: 600 Flaschen à ~4 €; `source/game/src/c.tsx:80`); 🤝 Wein-Kooperation (ab ♥ 65, einmalig: Crew & Gerät teilen: Löhne −30 %; `source/game/src/c.tsx:81`)
 - **Deals:** –
-- **Ereignisse/Begegnungen:** Die Weinlese ruft – deine Crew wackelt (`vend1`, Hauptfigur, `source/game/evs.tsx:148-151`); Vendemmia-Chaos (`vend2`, Hauptfigur, `source/game/evs.tsx:152-156`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, `source/game/evs.tsx:185-188`); Calici di Stelle am Belvedere (10. August) (`calici`, Hauptfigur, `source/game/evs.tsx:198-202`); Natale a Sambuca: Krippe in den Vicoli (`zabut`, `source/game/evs.tsx:208-211`)
+- **Ereignisse/Begegnungen:** Die Weinlese ruft – deine Crew wackelt (`vend1`, Hauptfigur, `source/game/evs.tsx:155-158`); Vendemmia-Chaos (`vend2`, Hauptfigur, `source/game/evs.tsx:159-163`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, `source/game/evs.tsx:192-195`); Calici di Stelle am Belvedere (10. August) (`calici`, Hauptfigur, `source/game/evs.tsx:205-209`); Natale a Sambuca: Krippe in den Vicoli (`zabut`, `source/game/evs.tsx:215-218`)
 - **Begegnungen an kleinen Orten:** –
 - **Definition:** `source/game/src/a.tsx:35` · Porträt-Index `i: 4`
 
 ### Chiara Mulè (`chiara`)
 
 - **Rolle:** Pro Loco · Tourismus
-- **Orte:** Municipio, Bar del Corso, Feste
+- **Orte:** Municipio, Bar del Corso, Feste, Teatro & Palazzo, → Lido Boomerang
 - **Feste (Gast):** 4: MADONNA DELL'UDIENZA; 11: NATALE A SAMBUCA
 - **Schwierigkeit:** 3 → Gesprächs-Score ≥ 60 %
 - **Mag:** technik, reisen · **mag nicht:** geld
 - **Sprüche:** ♥ niedrig „Hast du ein Instagram? Nein? Madonna …“ · mittel „Die Busse aus Palermo suchen echte Erlebnisse!“ · hoch „Du bist jetzt auf jeder Tour!“
-- **Aktionen (Perks):** 🍞 Verkostung für Tourist:innen (ab ♥ 40, monatlich: Apr–Okt: bis 25 l zu 145 %, ★ +2; `source/game/src/c.tsx:75`); 🚌 Tourismus-Deal (ab ♥ 65, einmalig: Monatseinnahmen von der Pro Loco; `source/game/src/c.tsx:76`)
+- **Aktionen (Perks):** 🍞 Verkostung für Tourist:innen (ab ♥ 40, monatlich: Apr–Okt: bis 25 l zu 145 %, ★ +2; `source/game/src/c.tsx:82`); 🚌 Tourismus-Deal (ab ♥ 65, einmalig: Monatseinnahmen von der Pro Loco; `source/game/src/c.tsx:83`)
 - **Deals:** `tour` Tourismus-Deal (Pro Loco)
-- **Ereignisse/Begegnungen:** Foodbloggerin aus Mailand (`blogger`, `source/game/evs.tsx:11-14`); Reisebus aus Palermo (`touristen`, `source/game/evs.tsx:19-22`); RAI-Sendung „Linea Verde“ (`rai`, `source/game/evs.tsx:91-93`); EU-Topf bewilligt! (`sindaco2`, `source/game/evs.tsx:140-142`); Udienza Tag 1: Pilgerweg vom Cellaro (`ud1`, `source/game/evs.tsx:173-176`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, `source/game/evs.tsx:185-188`); Natale a Sambuca: Krippe in den Vicoli (`zabut`, Hauptfigur, `source/game/evs.tsx:208-211`)
+- **Ereignisse/Begegnungen:** Foodbloggerin aus Mailand (`blogger`, `source/game/evs.tsx:11-14`); Reisebus aus Palermo (`touristen`, `source/game/evs.tsx:19-22`); RAI-Sendung „Linea Verde“ (`rai`, `source/game/evs.tsx:98-100`); EU-Topf bewilligt! (`sindaco2`, `source/game/evs.tsx:147-149`); Udienza Tag 1: Pilgerweg vom Cellaro (`ud1`, `source/game/evs.tsx:180-183`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, `source/game/evs.tsx:192-195`); Natale a Sambuca: Krippe in den Vicoli (`zabut`, Hauptfigur, `source/game/evs.tsx:215-218`)
 - **Begegnungen an kleinen Orten:** –
 - **Definition:** `source/game/src/a.tsx:36` · Porträt-Index `i: 6`
 
 ### Klaus Berger (`klaus`)
 
 - **Rolle:** Aussteiger aus München
-- **Orte:** Bar del Corso, Lago Arancio, Feste (nur Monate [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+- **Orte:** Bar del Corso, Lago Arancio, Feste, Hotel Don Giovanni, Belvedere (nur Monate [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 - **Feste (Gast):** 4: MADONNA DELL'UDIENZA; 7: VASSALLI & CALICI DI STELLE
 - **Schwierigkeit:** 3 → Gesprächs-Score ≥ 60 %
 - **Mag:** reisen, essen · **mag nicht:** calcio
 - **Sprüche:** ♥ niedrig „Grüß Gott! Ich mach hier was mit Tourismus.“ · mittel „Mein Spezl in München hat ein Feinkostgeschäft …“ · hoch „Partner! Das wird das Agriturismo vom ganzen Belice!“
-- **Aktionen (Perks):** 🇩🇪 Export nach München (ab ♥ 60, einmalig: alle Verkäufe +8 %; `source/game/src/c.tsx:77`)
+- **Aktionen (Perks):** 🇩🇪 Export nach München (ab ♥ 60, einmalig: alle Verkäufe +8 %; `source/game/src/c.tsx:84`)
 - **Deals:** –
-- **Ereignisse/Begegnungen:** Klaus will ein Agriturismo (`klaus1`, Hauptfigur, `source/game/evs.tsx:122-125`); Die Baugenehmigung hakt (`klaus2`, `source/game/evs.tsx:126-129`); Eröffnung: Agriturismo Pandolfina (`klaus3`, Hauptfigur, `source/game/evs.tsx:130-132`); Bestellung aus München (`export2`, Hauptfigur, `source/game/evs.tsx:133-136`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, Hauptfigur, `source/game/evs.tsx:185-188`); Calici di Stelle am Belvedere (10. August) (`calici`, `source/game/evs.tsx:198-202`)
+- **Ereignisse/Begegnungen:** Klaus will ein Agriturismo (`klaus1`, Hauptfigur, `source/game/evs.tsx:129-132`); Die Baugenehmigung hakt (`klaus2`, `source/game/evs.tsx:133-136`); Eröffnung: Agriturismo Pandolfina (`klaus3`, Hauptfigur, `source/game/evs.tsx:137-139`); Bestellung aus München (`export2`, Hauptfigur, `source/game/evs.tsx:140-143`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, Hauptfigur, `source/game/evs.tsx:192-195`); Calici di Stelle am Belvedere (10. August) (`calici`, `source/game/evs.tsx:205-209`)
 - **Begegnungen an kleinen Orten:** –
 - **Definition:** `source/game/src/a.tsx:37` · Porträt-Index `i: 7`
 
 ### Zio Turi (`turi`)
 
 - **Rolle:** Rivale vom Nachbarhang
-- **Orte:** Bar del Corso, Feste, Torre di Pandolfina
+- **Orte:** Bar del Corso, Feste, Torre di Pandolfina, Dein Hain
 - **Feste (Gast):** 4: MADONNA DELL'UDIENZA; 7: VASSALLI & CALICI DI STELLE; 8: VENDEMMIA & FIERA
 - **Schwierigkeit:** 3 → Gesprächs-Score ≥ 60 %
 - **Mag:** oliven, calcio · **mag nicht:** reisen
 - **Sprüche:** ♥ niedrig „Was schaust du? Das ist MEIN Hang.“ · mittel „Deine Bäume sehen besser aus als letztes Jahr.“ · hoch „Wir Bauern müssen zusammenhalten.“
-- **Aktionen (Perks):** 🕊️ Waffenstillstand (ab ♥ 55, einmalig: keine Sabotage mehr, ★ +4; `source/game/src/c.tsx:78`)
+- **Aktionen (Perks):** 🕊️ Waffenstillstand (ab ♥ 55, einmalig: keine Sabotage mehr, ★ +4; `source/game/src/c.tsx:85`)
 - **Deals:** `coop` Mahl-Gemeinschaft (Turi), `truce` Waffenstillstand (Turi)
-- **Ereignisse/Begegnungen:** Nachtfrost angesagt (`frost`, `source/game/evs.tsx:3-6`); Der alte Fiat-Traktor streikt (`traktor`, `source/game/evs.tsx:58-61`); Turi redet schlecht über dein Öl (`turi1`, Hauptfigur, `source/game/evs.tsx:111-114`); Sabotage am Bewässerungsschlauch (`turi2`, Hauptfigur, `source/game/evs.tsx:115-118`); Turi will gemeinsam mahlen (`turi3`, Hauptfigur, `source/game/evs.tsx:119-121`); San Giorgio: Feldsegnung am 23. April (`giorgio`, `source/game/evs.tsx:168-172`); Udienza Finale: La Nisciuta (`ud5`, `source/game/evs.tsx:189-193`); Festa dei Vassalli (5. August) (`vassalli`, `source/game/evs.tsx:194-197`); Fiera del Bestiame (21.–22. Sept.) (`fiera`, Hauptfigur, `source/game/evs.tsx:203-207`)
-- **Begegnungen an kleinen Orten:** Panificio: „Schlange vor der Theke – alle reden über Zio Turi.“ → Zuhören (`source/game/src/c.tsx:92`)
+- **Ereignisse/Begegnungen:** Nachtfrost angesagt (`frost`, `source/game/evs.tsx:3-6`); Der alte Fiat-Traktor streikt (`traktor`, `source/game/evs.tsx:65-68`); Turi redet schlecht über dein Öl (`turi1`, Hauptfigur, `source/game/evs.tsx:118-121`); Sabotage am Bewässerungsschlauch (`turi2`, Hauptfigur, `source/game/evs.tsx:122-125`); Turi will gemeinsam mahlen (`turi3`, Hauptfigur, `source/game/evs.tsx:126-128`); San Giorgio: Feldsegnung am 23. April (`giorgio`, `source/game/evs.tsx:175-179`); Udienza Finale: La Nisciuta (`ud5`, `source/game/evs.tsx:196-200`); Festa dei Vassalli (5. August) (`vassalli`, `source/game/evs.tsx:201-204`); Fiera del Bestiame (21.–22. Sept.) (`fiera`, Hauptfigur, `source/game/evs.tsx:210-214`)
+- **Begegnungen an kleinen Orten:** Panificio: „Schlange vor der Theke – alle reden über Zio Turi.“ → Zuhören (`source/game/src/c.tsx:109`)
 - **Definition:** `source/game/src/a.tsx:34` · Porträt-Index `i: 8`
 
 ### Dolores Whitfield (`dolores`)
 
 - **Rolle:** Reiche Amerikanerin · Villa am Lago
-- **Orte:** Feste, Bar del Corso, Lago Arancio (nur Monate [4, 5, 6, 7, 8])
+- **Orte:** Feste, Bar del Corso, Lago Arancio, Teatro & Palazzo, Hotel Don Giovanni, → Lido Boomerang (nur Monate [4, 5, 6, 7, 8])
 - **Feste (Gast):** 4: MADONNA DELL'UDIENZA; 7: VASSALLI & CALICI DI STELLE
 - **Schwierigkeit:** 4 → Gesprächs-Score ≥ 70 %; Voraussetzung: Ansehen ★ 20
 - **Mag:** reisen, wein · **mag nicht:** politik
 - **Sprüche:** ♥ niedrig „Darling, I only drink champagne.“ · mittel „My friends at the Times would LOVE this place.“ · hoch „Honey, half of Texas will fly in for your oil!“
-- **Aktionen (Perks):** 📰 US-Presse: Reportage in New York (ab ♥ 50, einmalig: 1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich; `source/game/src/c.tsx:79`); 🇺🇸 Container nach Texas (ab ♥ 70, 1×/Jahr: 1×/Jahr: bis 120 l zu 220 %; `source/game/src/c.tsx:80`)
+- **Aktionen (Perks):** 📰 US-Presse: Reportage in New York (ab ♥ 50, einmalig: 1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich; `source/game/src/c.tsx:86`); 🇺🇸 Container nach Texas (ab ♥ 70, 1×/Jahr: 1×/Jahr: bis 120 l zu 220 %; `source/game/src/c.tsx:87`)
 - **Deals:** –
 - **Ereignisse/Begegnungen:** Eine Amerikanerin kauft die Villa am Lago (`dolores1`, `source/game/src/c.tsx:22-24`)
 - **Begegnungen an kleinen Orten:** –
@@ -221,10 +221,10 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 - **Schwierigkeit:** 5 → Gesprächs-Score ≥ 80 %; Voraussetzung: Ansehen ★ 35
 - **Mag:** politik, geld · **mag nicht:** technik
 - **Sprüche:** ♥ niedrig „Und Sie sind …? Mein Sekretär macht Termine.“ · mittel „Ah, der Olivenmensch! Sambuca braucht Leute wie Sie.“ · hoch „Für Sie ist die Tür im Palazzo immer offen.“
-- **Aktionen (Perks):** 🏛️ Fördertopf anzapfen (ab ♥ 50, 1×/Jahr: 1×/Jahr: 1.500–3.500 € PSR-Mittel; `source/game/src/c.tsx:61`); 🏅 DOP auf dem kurzen Dienstweg (ab ♥ 65, einmalig: DOP für 600 € statt 1.200 €; `source/game/src/c.tsx:62`)
+- **Aktionen (Perks):** 🏛️ Fördertopf anzapfen (ab ♥ 50, 1×/Jahr: 1×/Jahr: 1.500–3.500 € PSR-Mittel; `source/game/src/c.tsx:68`); 🏅 DOP auf dem kurzen Dienstweg (ab ♥ 65, einmalig: DOP für 600 € statt 1.200 €; `source/game/src/c.tsx:69`)
 - **Deals:** –
-- **Ereignisse/Begegnungen:** Kontrolle der Forstbehörde (`kontrolle`, `source/game/evs.tsx:15-18`); Giornale di Sicilia will ein Interview (`zeitung`, `source/game/evs.tsx:62-65`); Hochzeit in der Matrice (`hochzeit`, `source/game/evs.tsx:85-87`); Die Baugenehmigung hakt (`klaus2`, Hauptfigur, `source/game/evs.tsx:126-129`); Der Sindaco braucht Unterstützer (`sindaco1`, Hauptfigur, `source/game/evs.tsx:137-139`); EU-Topf bewilligt! (`sindaco2`, Hauptfigur, `source/game/evs.tsx:140-142`); Settimana Santa: Prozession des Cristo Morto (`santa`, `source/game/evs.tsx:164-167`); Udienza Tag 1: Pilgerweg vom Cellaro (`ud1`, `source/game/evs.tsx:173-176`); Udienza Tag 6: Sponsor der Luminarie (`ud3`, Hauptfigur, `source/game/evs.tsx:181-184`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, `source/game/evs.tsx:185-188`)
-- **Begegnungen an kleinen Orten:** Barbiere Gaspare: „Gaspare rasiert sonst den Sekretär des Sindaco.“ → Gutes Wort einlegen (50 €) (`source/game/src/c.tsx:99`)
+- **Ereignisse/Begegnungen:** Kontrolle der Forstbehörde (`kontrolle`, `source/game/evs.tsx:15-18`); Incendio! Flächenbrand am Hang (`brand`, `source/game/evs.tsx:55-59`); Giornale di Sicilia will ein Interview (`zeitung`, `source/game/evs.tsx:69-72`); Hochzeit in der Matrice (`hochzeit`, `source/game/evs.tsx:92-94`); Die Baugenehmigung hakt (`klaus2`, Hauptfigur, `source/game/evs.tsx:133-136`); Der Sindaco braucht Unterstützer (`sindaco1`, Hauptfigur, `source/game/evs.tsx:144-146`); EU-Topf bewilligt! (`sindaco2`, Hauptfigur, `source/game/evs.tsx:147-149`); Settimana Santa: Prozession des Cristo Morto (`santa`, `source/game/evs.tsx:171-174`); Udienza Tag 1: Pilgerweg vom Cellaro (`ud1`, `source/game/evs.tsx:180-183`); Udienza Tag 6: Sponsor der Luminarie (`ud3`, Hauptfigur, `source/game/evs.tsx:188-191`); Udienza Tag 8: Empfang im Palazzo dell'Arpa (`ud4`, `source/game/evs.tsx:192-195`)
+- **Begegnungen an kleinen Orten:** Barbiere Gaspare: „Gaspare rasiert sonst den Sekretär des Sindaco.“ → Gutes Wort einlegen (50 €) (`source/game/src/c.tsx:116`)
 - **Definition:** `source/game/src/a.tsx:39` · Porträt-Index `i: 0`
 
 <!-- END GENERATED:characters -->
@@ -234,26 +234,26 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 <!-- BEGIN GENERATED:perks -->
 | ID | Figur | Aktion | Wirkung | ab ♥ | Takt | Code |
 |---|---|---|---|---|---|---|
-| `PERK-topf` | CH-sindaco | 🏛️ Fördertopf anzapfen | 1×/Jahr: 1.500–3.500 € PSR-Mittel | 50 | 1×/Jahr | `source/game/src/c.tsx:61` |
-| `PERK-dopx` | CH-sindaco | 🏅 DOP auf dem kurzen Dienstweg | DOP für 600 € statt 1.200 € | 65 | einmalig | `source/game/src/c.tsx:62` |
-| `PERK-segen` | CH-padre | ⛪ Feldsegen bestellen | 1×/Jahr: Haine +8 %, ★ +3 | 45 | 1×/Jahr | `source/game/src/c.tsx:63` |
-| `PERK-mill` | CH-rosalia | ⚙️ Mühlen-Deal | Mahlgebühr dauerhaft −50 % | 55 | einmalig | `source/game/src/c.tsx:64` |
-| `PERK-fam` | CH-nonna | 👪 Familien-Crew | Die Familie erntet mit – Crew gratis | 65 | einmalig | `source/game/src/c.tsx:65` |
-| `PERK-tratsch` | CH-carmela | 🌦️ Wetter-Tratsch | verrät Katastrophen im nächsten Monat | 30 | 1×/Monat | `source/game/src/c.tsx:66` |
-| `PERK-agrum` | CH-carmela | 🍋 Zitronen-Öl (Agrumato) | 20 l Öl → 30 Fläschchen à 18 € | 50 | 1×/Monat | `source/game/src/c.tsx:67` |
-| `PERK-tipp` | CH-salvo | 📈 Insider-Tipp Ölpreis | Trend für nächsten Monat | 35 | 1×/Monat | `source/game/src/c.tsx:68` |
-| `PERK-barsell` | CH-salvo | ☕ Öl über die Bar verkaufen | bis 40 l zu 135 % | 60 | 1×/Monat | `source/game/src/c.tsx:69` |
-| `PERK-ningbo` | CH-wang | 🚢 Direktimport aus Ningbo | neuer Rüttler für 700 € (hält) | 55 | einmalig | `source/game/src/c.tsx:70` |
-| `PERK-crew` | CH-ciccio | 👷 Ciccios Crew anheuern | Erntehelfer, Lohn −25 %, Ertrag +10 % | 40 | 1×/Jahr | `source/game/src/c.tsx:71` |
-| `PERK-wein` | CH-giusi | 🍷 Wein-Nebenlinie | 600 Flaschen, Verkauf ab Nov. | 40 | 1×/Jahr | `source/game/src/c.tsx:72` |
-| `PERK-winesell` | CH-giusi | 🍾 Rosso Pandolfina verkaufen | 600 Flaschen à ~4 € | 0 | 1×/Monat | `source/game/src/c.tsx:73` |
-| `PERK-coopw` | CH-giusi | 🤝 Wein-Kooperation | Crew & Gerät teilen: Löhne −30 % | 65 | einmalig | `source/game/src/c.tsx:74` |
-| `PERK-tast` | CH-chiara | 🍞 Verkostung für Tourist:innen | Apr–Okt: bis 25 l zu 145 %, ★ +2 | 40 | 1×/Monat | `source/game/src/c.tsx:75` |
-| `PERK-tour` | CH-chiara | 🚌 Tourismus-Deal | Monatseinnahmen von der Pro Loco | 65 | einmalig | `source/game/src/c.tsx:76` |
-| `PERK-exp` | CH-klaus | 🇩🇪 Export nach München | alle Verkäufe +8 % | 60 | einmalig | `source/game/src/c.tsx:77` |
-| `PERK-truce` | CH-turi | 🕊️ Waffenstillstand | keine Sabotage mehr, ★ +4 | 55 | einmalig | `source/game/src/c.tsx:78` |
-| `PERK-press` | CH-dolores | 📰 US-Presse: Reportage in New York | 1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich | 50 | einmalig | `source/game/src/c.tsx:79` |
-| `PERK-texas` | CH-dolores | 🇺🇸 Container nach Texas | 1×/Jahr: bis 120 l zu 220 % | 70 | 1×/Jahr | `source/game/src/c.tsx:80` |
+| `PERK-topf` | CH-sindaco | 🏛️ Fördertopf anzapfen | 1×/Jahr: 1.500–3.500 € PSR-Mittel | 50 | 1×/Jahr | `source/game/src/c.tsx:68` |
+| `PERK-dopx` | CH-sindaco | 🏅 DOP auf dem kurzen Dienstweg | DOP für 600 € statt 1.200 € | 65 | einmalig | `source/game/src/c.tsx:69` |
+| `PERK-segen` | CH-padre | ⛪ Feldsegen bestellen | 1×/Jahr: Haine +8 %, ★ +3 | 45 | 1×/Jahr | `source/game/src/c.tsx:70` |
+| `PERK-mill` | CH-rosalia | ⚙️ Mühlen-Deal | Mahlgebühr dauerhaft −50 % | 55 | einmalig | `source/game/src/c.tsx:71` |
+| `PERK-fam` | CH-nonna | 👪 Familien-Crew | Die Familie erntet mit – Crew gratis | 65 | einmalig | `source/game/src/c.tsx:72` |
+| `PERK-tratsch` | CH-carmela | 🌦️ Wetter-Tratsch | verrät Katastrophen im nächsten Monat | 30 | 1×/Monat | `source/game/src/c.tsx:73` |
+| `PERK-agrum` | CH-carmela | 🍋 Zitronen-Öl (Agrumato) | 20 l Öl → 30 Fläschchen à 18 € | 50 | 1×/Monat | `source/game/src/c.tsx:74` |
+| `PERK-tipp` | CH-salvo | 📈 Insider-Tipp Ölpreis | Trend für nächsten Monat | 35 | 1×/Monat | `source/game/src/c.tsx:75` |
+| `PERK-barsell` | CH-salvo | ☕ Öl über die Bar verkaufen | bis 40 l zu 135 % | 60 | 1×/Monat | `source/game/src/c.tsx:76` |
+| `PERK-ningbo` | CH-wang | 🚢 Direktimport aus Ningbo | neuer Rüttler für 700 € (hält) | 55 | einmalig | `source/game/src/c.tsx:77` |
+| `PERK-crew` | CH-ciccio | 👷 Ciccios Crew anheuern | Erntehelfer, Lohn −25 %, Ertrag +10 % | 40 | 1×/Jahr | `source/game/src/c.tsx:78` |
+| `PERK-wein` | CH-giusi | 🍷 Wein-Nebenlinie | 600 Flaschen, Verkauf ab Nov. | 40 | 1×/Jahr | `source/game/src/c.tsx:79` |
+| `PERK-winesell` | CH-giusi | 🍾 Rosso Pandolfina verkaufen | 600 Flaschen à ~4 € | 0 | 1×/Monat | `source/game/src/c.tsx:80` |
+| `PERK-coopw` | CH-giusi | 🤝 Wein-Kooperation | Crew & Gerät teilen: Löhne −30 % | 65 | einmalig | `source/game/src/c.tsx:81` |
+| `PERK-tast` | CH-chiara | 🍞 Verkostung für Tourist:innen | Apr–Okt: bis 25 l zu 145 %, ★ +2 | 40 | 1×/Monat | `source/game/src/c.tsx:82` |
+| `PERK-tour` | CH-chiara | 🚌 Tourismus-Deal | Monatseinnahmen von der Pro Loco | 65 | einmalig | `source/game/src/c.tsx:83` |
+| `PERK-exp` | CH-klaus | 🇩🇪 Export nach München | alle Verkäufe +8 % | 60 | einmalig | `source/game/src/c.tsx:84` |
+| `PERK-truce` | CH-turi | 🕊️ Waffenstillstand | keine Sabotage mehr, ★ +4 | 55 | einmalig | `source/game/src/c.tsx:85` |
+| `PERK-press` | CH-dolores | 📰 US-Presse: Reportage in New York | 1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich | 50 | einmalig | `source/game/src/c.tsx:86` |
+| `PERK-texas` | CH-dolores | 🇺🇸 Container nach Texas | 1×/Jahr: bis 120 l zu 220 % | 70 | 1×/Jahr | `source/game/src/c.tsx:87` |
 <!-- END GENERATED:perks -->
 
 ## Deals

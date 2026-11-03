@@ -95,3 +95,7 @@ Diese Screenshots stammen aus dem Spiel. Sie sind nicht im Repo, weil sie nur di
 ## Ältere Kartenstände
 - v0.2–v0.6: gezeichnete Spielkarten (`designs/v2/maps.py`), Pins über `proj.py` (150 dpi) – ungenau, deshalb in v0.7.1 ersetzt.
 - v0.7: dieselben Karten, nur nachgeschärft. Thorsten fand sie nicht gut (siehe oben).
+
+## v0.8
+- Nebenorte haben echte Poster-Positionen (`px`): panif, ferr, tabac, barb, farm, edic, mac, casal, dogs. Der Imker liegt bei [84.5, 62] (ungefähr) und nicht mehr auf dem Tierheim.
+- Neue Pins: Santuario, Hotel und Lido (Wegweiser am Rand, weil der Lido außerhalb der Karte liegt). Angebote im Besitz von NPCs zeigen 🔒. Neben „Dein Hain“ gibt es keinen zweiten Hain-Pin mehr.

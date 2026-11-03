@@ -106,7 +106,7 @@ for sc in scenes:
         h["handled"] = h["id"].startswith("pin:") or f'"{h["id"]}"' in handled
 minors = []; cm = None
 for i, l in enumerate(src[C]):
-    m = re.match(r'\s*\{ id: "(\w+)", n: "([^"]+)", e: "([^"]+)", x: ([\d.]+), y: ([\d.]+), map: "(\w)"', l)
+    m = re.match(r'\s*\{ id: "(\w+)", n: "([^"]+)", e: "([^"]+)", x: ([\d.]+), y: ([\d.]+), (?:px: \[[^\]]*\], )?map: "(\w)"', l)  # v0.8: optionales px vor map
     if m: cm = dict(id=m.group(1), n=m.group(2), e=m.group(3), map="Stadt" if m.group(6) == "s" else "Umland", enc=[], loc=f"{C}:{i+1}"); minors.append(cm); continue
     if cm and l.strip().startswith('{ t: "'):
         cm["enc"].append(dict(t=s(l, "t"), l=s(l, "l"), d=s(l, "d"), ok=bool(re.search(r"\bok: ", l)), loc=f"{C}:{i+1}"))

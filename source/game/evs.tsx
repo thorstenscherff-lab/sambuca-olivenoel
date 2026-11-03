@@ -20,9 +20,9 @@ const EVS: EvDef[] = [
     { l: "Verkostung (−150 €)", d: "bis 60 l zu 160 %", ok: (g) => g.oil > 0, f: (g) => { pay(g, 150); repAdd(g, 4); return "Verkostung! " + sellAt(g, 60, 1.6, "Tourist:innen") + rel(g, "chiara", 4); } },
     { l: "Zu Nonna Pina schicken", d: "Minni di Virgini, Nonna ♥+6, +120 €", f: (g) => { g.money += 120; return "Die Tourist:innen kaufen Nonnas komplettes Gebäck." + rel(g, "nonna", 6); } },
     no("Keine Zeit")] },
-  { id: "duerre", dis: true, icon: "☀️", t: "Dürre-Warnung", months: [5, 6, 7], text: "Seit sechs Wochen kein Regen. Ohne Wasser verlieren die Bäume ihre Früchte.", ch: [
+  { id: "duerre", dis: true, icon: "☀️", t: "Dürre-Warnung", months: [5, 6, 7], text: "Seit sechs Wochen kein Regen. Ohne Wasser verlieren die Bäume ihre Früchte. (Tipp: Das 💧 Wasserrecht am Lago schützt dauerhaft.)", ch: [
     { l: "Tankwagen bestellen", d: "1 €/Baum, alle geschützt", f: (g) => { pay(g, trees(g)); return `Tankwagen rollt an (−${eur(trees(g))}).`; } },
-    { l: "Auf Regen hoffen", d: "70 %: ungeschützte Haine −20 %", f: (g, r) => { if (r < 0.7 && !g.water) { condAll(g, -20, (x) => !x.irr); return "Kein Regen. Ungeschützte Haine −20 %."; } return g.water ? "Dein Wasserrecht am Lago rettet dich." : "Ein Gewitter in letzter Minute!"; } }] },
+    { l: "Auf Regen hoffen", d: "70 %: ungeschützte Haine −20 % · mit 💧 Wasserrecht kein Schaden", f: (g, r) => { if (r < 0.7 && !g.water) { condAll(g, -20, (x) => !x.irr); return "Kein Regen. Ungeschützte Haine −20 %."; } return g.water ? "Dein Wasserrecht am Lago rettet dich." : "Ein Gewitter in letzter Minute!"; } }] },
   { id: "fliege", icon: "🪰", t: "Olivenfliege im Anflug", months: [6, 7, 8], dis: true, text: "Die Nachbarn melden Larven in den Früchten. Fallen helfen vorbeugend – oder du jagst sie selbst.", ch: [
     { l: "Kaolin spritzen", d: "1,50 €/Baum", f: (g) => { const c = Math.round(trees(g) * 1.5); pay(g, c); return `Weiße Bäume, gesunde Oliven (−${eur(c)}).`; } },
     { l: "🎮 Fliegen jagen", d: "Minispiel: Haine ohne Fallen bis −20 %", mg: "fliege", f: (g, r, s) => { const d = Math.round(20 * (1 - s)); condAll(g, -d, (x) => !x.traps); return g.groves.every((x) => x.traps) ? "Deine Fallen halten die Fliege fern." : `Haine ohne Fallen −${d} %.`; } },
@@ -50,11 +50,18 @@ const EVS: EvDef[] = [
     { l: "Einfach freuen", d: "Ertrag +6 %", f: (g) => { g.yieldMod += 0.06; return "Die Bienen summen."; } }] },
   { id: "scirocco", dis: true, icon: "🌬️", t: "Scirocco aus Afrika", months: [5, 6, 7], text: "Heißer Wind mit rotem Sand. 42 °C im Schatten.", ch: [
     { l: "Nachts extra wässern", d: "0,80 €/Baum", f: (g) => { const c = Math.round(trees(g) * 0.8); pay(g, c); return `Die Bäume überstehen den Scirocco (−${eur(c)}).`; } },
-    { l: "Durchhalten", d: "Haine ohne Bewässerung −10 %", f: (g) => { condAll(g, -10, (x) => !x.irr && !g.water); return "Die Blätter rollen sich ein."; } }] },
+    { l: "Durchhalten", d: "Haine ohne Bewässerung −10 % · mit 💧 Wasserrecht kein Schaden", f: (g) => { condAll(g, -10, (x) => !x.irr && !g.water); return "Die Blätter rollen sich ein."; } }] },
+  // v0.8 OI-035: Brand (Wald-/Flächenbrand im Sommer)
+  { id: "brand", dis: true, icon: "🔥", t: "Incendio! Flächenbrand am Hang", months: [6, 7], text: "Trockenes Gras, Scirocco, ein weggeworfener Zigarettenstummel: Über der Contrada steigt Rauch auf. Das Feuer läuft auf deine Haine zu.", ch: [
+    { l: "Die Brandschneise hält", d: "nur mit 🚜 Brandschneise (Consorzio, dieses Jahr gemäht): kein Schaden", ok: (g) => g.fl.schneise !== undefined && abs(g) - g.fl.schneise < 12, f: (g) => { repAdd(g, 2); return "Das Feuer frisst sich bis an deine gemähte Schneise und erstickt dort. ★ +2"; } },
+    { l: "Protezione Civile rufen", d: "Sindaco ♥ ≥ 40: Löschflugzeug, nur −5 % Zustand", ok: (g) => R(g, "sindaco") >= 40, f: (g) => { condAll(g, -5); return "Der Sindaco telefoniert, zehn Minuten später kommt der Canadair vom Lago. Nur Ränder angesengt (−5 %)." + rel(g, "sindaco", 2); } },
+    { l: "🎮 Selbst löschen", d: "Minispiel: bis −30 % Zustand, −10 % Bäume, Ertrag −10 %", mg: "brand", f: (g, r, s) => { const k = 1 - s; const d = Math.round(30 * k); condAll(g, -d); const lost = burn(g, 0.1 * k); g.yieldMod -= 0.1 * k; return s >= 0.8 ? "Mit Nachbarn, Eimern und Ästen schlagt ihr das Feuer aus. Gerettet!" : `Zustand −${d} %, ${lost} Bäume verbrannt.`; } },
+    { l: "Abwarten und beten", d: "−30 % Zustand, −10 % Bäume, Ertrag −15 %", f: (g) => { condAll(g, -30); const lost = burn(g, 0.1); g.yieldMod -= 0.15; return `Schwarze Stämme, Asche im Wind. ${lost} Bäume verbrannt, Ertrag −15 %.`; } }] },
   { id: "diebe", icon: "🔦", t: "Olivendiebe unterwegs", months: [9, 10], text: "In Contrada Misilifurmi fehlen über Nacht ganze Bäume voller Oliven.", ch: [
     { l: "Nachtwache (200 €)", d: "sicher", f: (g) => { pay(g, 200); return "Deine Wache sieht nur Füchse."; } },
     { l: "Salvo hört sich um", d: "Salvo ♥ ≥ 40, ★ +3", ok: (g) => R(g, "salvo") >= 40, f: (g) => { repAdd(g, 3); return "Salvo kennt den Schwager des Diebes. Die Oliven bleiben, wo sie sind." + rel(g, "salvo", 3); } },
-    { l: "Wird schon gutgehen", d: "40 %: Ertrag −15 %", f: (g, r) => { if (r < 0.4) { g.yieldMod -= 0.15; return "Bestohlen! Ertrag −15 %."; } return "Diesmal trifft es andere."; } }] },
+    { l: "Die Wachhunde aufpassen lassen", d: "nur mit 🐕 Wachhund (O-Dogs Garden): sicher, gratis", ok: (g) => !!g.fl.dog, f: (g) => "Die Hunde bellen die ganze Nacht. Bei dir fehlt keine einzige Olive." },
+    { l: "Wird schon gutgehen", d: "40 %: Ertrag −15 % (mit 🐕 nur 10 %)", f: (g, r) => { if (r < (g.fl.dog ? 0.1 : 0.4)) { g.yieldMod -= 0.15; return "Bestohlen! Ertrag −15 %."; } return "Diesmal trifft es andere."; } }] },
   { id: "traktor", icon: "🚜", t: "Der alte Fiat-Traktor streikt", months: [0, 1, 2, 3], text: "Kupplung durch. Ohne Traktor wird jede Arbeit teurer.", ch: [
     { l: "Reparieren (450 €)", d: "sicher", f: (g) => { pay(g, 450); return "Der Fiat brummt wieder."; } },
     { l: "Turi um seinen bitten", d: "gratis, Turi ♥ ≥ 35", ok: (g) => R(g, "turi") >= 35, f: (g) => "Turi leiht ihn dir – mit einem langen Vortrag über Pflege." + rel(g, "turi", 5) },

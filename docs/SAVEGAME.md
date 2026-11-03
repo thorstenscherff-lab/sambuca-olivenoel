@@ -59,14 +59,15 @@ Speicherung erfolgt im Browser per `localStorage`, **nur lokal auf dem Gerät**.
 | `SAVE-fl` | `Record<string, number>` |
 | `SAVE-ap` | `number` |
 | `SAVE-best` | `number` |
+| `SAVE-yhist` | `number[]` |
 
 **Stats-Felder:** `harvest`, `oilMade`, `sold`, `revenue`, `goals`, `n`, `soldM`, `mg`, `met`
 
 **Grove-Felder:** `id`, `name`, `trees`, `cond`, `lease`, `prune`, `fert`, `irr`, `traps`, `harvested`, `x`, `y`
 
-**Flags `g.fl.*` (im Code gefunden):** `agri`, `apb`, `bees`, `carmelaHere`, `cheap`, `dach`, `dog`, `drain`, `early`, `lyG`, `lyH`, `lyO`, `lyR`, `metM`, `netz`, `po_`, `pray`, `py_`, `sand`, `share`, `trapdisc`, `try_`
+**Flags `g.fl.*` (im Code gefunden):** `agri`, `apb`, `bees`, `carmelaHere`, `cheap`, `dach`, `dog`, `drain`, `early`, `lyG`, `lyH`, `lyO`, `lyR`, `metM`, `netz`, `office`, `po_`, `pray`, `py_`, `sand`, `schneise`, `share`, `trapdisc`, `try_`
 
 **Monats-Sperren `g.acts` (Präfixe):** `enc`, `gift`, `pk`, `sp`
 
-**localStorage-Schlüssel:** `sambuca5_hs`, `sambuca5_name`, `sambuca5_save`
+**localStorage-Schlüssel:** `sambuca5_hs`, `sambuca5_name`, `sambuca5_save`, `sambuca5_seen`
 <!-- END GENERATED:save -->

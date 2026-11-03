@@ -17,7 +17,10 @@ def webp(path, size, q):
     b = io.BytesIO(); im.save(b, "WEBP", quality=q, method=6); return b.getvalue()
 SC = {'buero1': '01_buero1_start', 'buero2': '02_buero2_bescheiden', 'buero3': '03_buero3_erfolg', 'buero4': '04_buero4_padrino',
       'rathaus': '05_rathaus', 'bar': '06_bar_del_corso', 'chiesa': '07_chiesa', 'feudo': '09_feudo', 'frantoio': '10_frantoio',
-      'hain': '11_hain', 'belv': '12_belvedere', 'lago': '13_lago', 'teatro': '14_teatro_palazzo', 'ruine': '15_ruine_adranone', 'banca': '16_banca'}
+      'hain': '11_hain', 'belv': '12_belvedere', 'lago': '13_lago', 'teatro': '14_teatro_palazzo', 'banca': '16_banca',
+      # v0.8: neue Szenen (FB-01/07/13/15/18/25); 15_ruine_adranone bleibt als Quelldatei, wird aber nicht mehr eingebettet
+      'start': '17_start_hain', 'torre': '18_torre_pandolfina', 'hotel': '19_hotel_pool', 'santa': '20_settimana_santa',
+      'lido': '21_lido', 'santuario': '22_santuario', 'vassalli': '23_fest_vassalli', 'giorgio': '24_fest_giorgio'}
 parts = re.split(r'\n(?=const )', open(F).read()); out = []
 for p in parts:
     m = re.match(r'const (\w+)', p); n = m.group(1) if m else None

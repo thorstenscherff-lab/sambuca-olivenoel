@@ -6,12 +6,13 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 | ID | Komponente | Code |
 |---|---|---|
 | `MG-talk` | MiniTalk | `source/game/src/e.tsx:2` |
-| `MG-harvest` | MiniHarvest | `source/game/ui_old.tsx:25` |
-| `MG-press` | MiniPress | `source/game/ui_old.tsx:56` |
-| `MG-haggle` | MiniHaggle | `source/game/ui_old.tsx:78` |
-| `MG-rescue-sturm` | MiniRescue kind="sturm" | `source/game/src/e.tsx:43` |
-| `MG-rescue-flut` | MiniRescue kind="flut" | `source/game/src/e.tsx:44` |
-| `MG-rescue-fliege` | MiniRescue kind="fliege" | `source/game/src/e.tsx:45` |
+| `MG-harvest` | MiniHarvest | `source/game/ui_old.tsx:27` |
+| `MG-press` | MiniPress | `source/game/ui_old.tsx:58` |
+| `MG-haggle` | MiniHaggle | `source/game/ui_old.tsx:80` |
+| `MG-rescue-sturm` | MiniRescue kind="sturm" | `source/game/src/e.tsx:46` |
+| `MG-rescue-flut` | MiniRescue kind="flut" | `source/game/src/e.tsx:47` |
+| `MG-rescue-brand` | MiniRescue kind="brand" | `source/game/src/e.tsx:48` |
+| `MG-rescue-fliege` | MiniRescue kind="fliege" | `source/game/src/e.tsx:49` |
 <!-- END GENERATED:minigames -->
 
 ## MG-talk – Gespräch (Kennenlernen, Plaudern, Telefonat)
@@ -62,3 +63,7 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 - **Ablauf:** 8 s, Ziele antippen. Das Ziel liegt bei 14 Treffern (Sturm/Flut) bzw. 16 (Fliege).
 - **Ergebnis:** Schutz s = min(1, Treffer/Ziel). Der Schaden sinkt um s (siehe ECO-DMG).
 - **Code:** `src/e.tsx:47` (MiniRescue), `src/d.tsx` (`MGK`).
+
+## v0.8
+- MiniRescue hat die Variante `brand` („FEUER!“): Flammen 🔥 antippen, Ziel 15 Treffer in 8 s. Schutz s = Treffer/15.
+- MiniTalk zieht Antworten ohne Wiederholung (FB-10).

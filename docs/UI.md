@@ -34,6 +34,7 @@ Optimiert für Telefon im Hochformat (Thorstens Vorgabe). Ein Desktop zeigt dies
 | `UI-report` |
 | `UI-shop` |
 | `UI-sindaco` |
+| `UI-spot` |
 | `UI-talk` |
 | `UI-tel` |
 | `UI-year` |
@@ -59,3 +60,10 @@ Optimiert für Telefon im Hochformat (Thorstens Vorgabe). Ein Desktop zeigt dies
 
 ## Sprache
 Nur Deutsch, alle Texte stehen fest im Code → OI-005.
+
+## v0.8
+- Schrift: Nunito 600–900 (`fonts/nunito-latin-600-900.woff2`, OFL). `.gta` hat Gewicht 900 und weichen Schatten, keine Outline.
+- Farben: `C.pinkT` #ffa8d0 für Text auf Dunkel, `C.bad` #ff8f8f.
+- Karte: bei Zoom < 1.6 glitzernde Icon-Pins (`sbGlint`), ab 1.6 beschriftete Pins.
+- Spot-Sheet (`k:"spot"`) zeigt Beschreibung, Ergebnis und „wieder ab <Monat>“.
+- Intro: Startbild `start`, Untertitel „v0.8“, Mogul-Ziel.

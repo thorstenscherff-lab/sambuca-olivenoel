@@ -1,4 +1,4 @@
-type Pin = { id: string; label: string; role: string; x: number; y: number; scene?: string; below?: boolean; al?: "l" };
+type Pin = { id: string; label: string; role: string; x: number; y: number; scene?: string; below?: boolean; al?: "l"; e?: string };
 const PS: Pin[] = [
   { id: "casa", label: "Casa (Via Delfino)", role: "Dein Büro", x: 69.64, y: 38.94, scene: "buero" },
   { id: "banca", label: "Sicilbanca", role: "Kredit", x: 58.85, y: 63.77, scene: "banca" },
@@ -7,6 +7,8 @@ const PS: Pin[] = [
   { id: "caffe", label: "Bar del Corso", role: "Leute & Gerüchte", x: 59.5, y: 65.57, scene: "bar", below: true },
   { id: "chiesa", label: "Chiesa Madre", role: "Gemeinde", x: 83.02, y: 36.39, scene: "chiesa" },
   { id: "belv", label: "Belvedere", role: "Ausblick", x: 89.55, y: 33.58, scene: "belv" },
+  // v0.8 (FB-07/OI-019): Santuario della Madonna dell'Udienza – echte Lage (OSM), Karten-%
+  { id: "santuario", label: "Santuario", role: "Madonna dell'Udienza", x: 65.56, y: 59.44, scene: "santuario", below: true },
 ];
 const PU: Pin[] = [
   { id: "torre", label: "Torre di Pandolfina", role: "Turis Hang", x: 69.48, y: 20.89, scene: "ruine", al: "l" },
@@ -15,7 +17,26 @@ const PU: Pin[] = [
   { id: "feudo", label: "Feudo Arancio", role: "Großkunde", x: 18.07, y: 60.9, scene: "feudo" },
   { id: "lago", label: "Lago Arancio", role: "Wasser · Villen", x: 54.74, y: 84.54, scene: "lago" },
   { id: "sambuca", label: "Sambuca", role: "Zur Stadt", x: 88.3, y: 68.2 },
+  // v0.8 (FB-15/OI-027): Hotel Don Giovanni – echte Lage, Karten-%
+  { id: "hotel", label: "Hotel Don Giovanni", role: "Pool · Küche", x: 64.87, y: 39.88, scene: "hotel" },
+  // v0.8 (FB-18/OI-028): Lido Boomerang liegt am Meer außerhalb der Karte → Wegweiser am linken Rand, Höhe SP41 (13,44 % / 73,87 %)
+  { id: "lido", label: "→ Lido Boomerang", role: "Meer · über SP41", x: 7.5, y: 73.87, scene: "lido" },
 ];
+// v0.8 (FB-27/OI-033): Symbol je Ort für die herausgezoomte Karte (nur Icons, glitzernd)
+const PIN_E: Record<string, string> = { casa: "🏠", banca: "🏦", muni: "🏛️", palazzo: "🎭", caffe: "☕", chiesa: "⛪", belv: "🔭", santuario: "✨", torre: "🗼", frantoio: "🫒", hain: "🌳", feudo: "🍷", lago: "⛵", sambuca: "🏘️", hotel: "🏊", lido: "🏖️" };
+// v0.8 (FB-08/09/11/OI-020): Beschreibung je Aktionspunkt in Szenen – [Titel, Erklärung, Kosten €, ⏳]
+const SPOT_INFO: Record<string, [string, string, number, number]> = {
+  caffe: ["☕ Caffè & Gerüchte", "Ein Espresso an der Theke. Du hörst den Dorftratsch: Ölpreis-Trend oder was demnächst passiert.", 2, 0],
+  wette: ["📺 Calcio-Wette bei Salvo", `Einsatz 50 €. Chance ${Math.round(BET.p * 100)} %, dass Palermo gewinnt. Auszahlung ${BET.win} € (Quote ${(BET.win / 50).toFixed(1).replace(".", ",")}× = ${BET.win - 50} € Gewinn). Erwartungswert: ${Math.round(BET.p * BET.win - 50)} € pro Wette.`, 50, 1],
+  kerze: ["🕯️ Kerze für die Madonna", "Eine Kerze vor der Madonna dell'Udienza. Ansehen ★ +1 und die NÄCHSTE Katastrophe (Sturm, Flut …) wird gemildert.", 5, 0],
+  spende: ["💶 Opferstock", "150 € für die Kirche: Ansehen ★ +3 und Padre Vito ♥+5.", 150, 0],
+  beichte: ["🙏 Beichtstuhl", "Eine Viertelstunde bei Padre Vito. Gut fürs Gewissen und für die Beziehung zum Padre.", 0, 1],
+  aushang: ["📌 Aushang am Rathaus", "Was steht am Brett? Nächstes Fest und wie viele Haine Don Calogero gerade anbietet.", 0, 0],
+  pooldeal: ["🏊 Hotelküche", "Der Küchenchef kauft 20 l Öl zu 160 % des Marktpreises (braucht 20 l).", 0, 1],
+  aperitivo: ["🍹 Aperitivo an der Poolbar", "12 € für einen Spritz. Ansehen ★ +1, und wenn du Gäste kennst (Klaus, Dolores, Giusi), ♥+4 bei einer/einem davon.", 12, 0],
+  strand: ["🏖️ Strandtag", "Ein Tag am Meer. Kostet 20 € und 1 ⏳ jetzt – dafür hast du nächsten Monat +1 ⏳.", 20, 1],
+  lidodeal: ["🍤 Lido-Restaurant", "Nur Juni–September: Die Küche kauft 15 l zu 150 % des Marktpreises.", 0, 1],
+};
 // v0.7.1: Karten = Original-Ausschnitte der Micro-Macro-Karte v12 (300 dpi). Alte Spielkoordinaten (Minors, Haine, Angebote) werden umgerechnet.
 const MAPAR = { s: 4961 / 3897, u: 4600 / 3000 };
 const cvXY = (m: "s" | "u", x: number, y: number): [number, number] => m === "s" ? [x * 0.75267 + 24.7128, y * 0.53888 + 15.8327] : [x * 0.9913, y * 0.85533 + 6.6667];
@@ -33,7 +54,7 @@ const store = { get: (k: string): string | null => { try { return window.localSt
 const buzz = (ms: number = 12): void => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { } };
 const SAVE = "sambuca5_save";
 type Sheet = null | { k: "missions" } | { k: "tel" } | { k: "regal" } | { k: "kal" } | { k: "person"; id: string } | { k: "talk"; id: string; mode: "meet" | "chat" | "call" }
-  | { k: "mg"; t: "h" | "p" | "s" | "r"; id?: string; n?: number; kind?: string } | { k: "pin"; id: string } | { k: "minor"; id: string } | { k: "shop"; at: string } | { k: "sindaco" }
+  | { k: "mg"; t: "h" | "p" | "s" | "r"; id?: string; n?: number; kind?: string } | { k: "pin"; id: string } | { k: "minor"; id: string } | { k: "shop"; at: string } | { k: "sindaco" } | { k: "spot"; id: string }
   | { k: "report"; lines: string[] } | { k: "year" } | { k: "end" } | { k: "log" };
 
 export default function SambucaGame(): ReactNode {
@@ -56,6 +77,7 @@ export default function SambucaGame(): ReactNode {
   const run = (a: A): void => {
     if (!g) return; const before = g; const n = act(g, a); setG(n);
     if (n.log[0] !== before.log[0] && n.log.length) setToast(n.log[0]);
+    if (n.used.length) store.set("sambuca5_seen", JSON.stringify(Array.from(new Set([...n.used, ...(n.prev || [])])).slice(-40)));
     if (a.k === "end" && n !== before) {
       const k = n.log.length - before.log.length; const lines = n.log.slice(0, Math.max(1, Math.min(k + 2, 14)));
       setScene(null); setScr("buero");
@@ -66,15 +88,16 @@ export default function SambucaGame(): ReactNode {
     }
     if (n.over && !before.over && a.k !== "end") { setHs(hsPut(n, name)); setSheet({ k: "end" }); }
   };
-  const start = (): void => { const n = newGame(); store.set("sambuca5_name", name); setG(n); setScr("buero"); setScene(null); setSheet(null); setSplash(-1); };
+  const start = (): void => { let seen: string[] = []; try { seen = JSON.parse(store.get("sambuca5_seen") || "[]") as string[]; } catch { } const n = newGame(seen); store.set("sambuca5_name", name); setG(n); setScr("buero"); setScene(null); setSheet(null); setSplash(-1); };
 
   const css = <style>{CSS + CSS4}</style>;
   if (!boot) return <div className="sb3" style={{ background: C.bar, minHeight: "100vh" }}>{css}</div>;
   // ---------- Intro ----------
-  if (!g) return <div className="sb3" style={{ minHeight: "100vh", background: `linear-gradient(180deg,rgba(23,11,38,.2),${C.bar} 70%), url(${IMG_B}) center top/cover no-repeat`, color: "#fff", fontFamily: SANS, padding: "40px 18px 30px", display: "flex", flexDirection: "column", gap: 12, maxWidth: 520, margin: "0 auto" }}>{css}
+  if (!g) return <div className="sb3" style={{ minHeight: "100vh", background: `linear-gradient(180deg,rgba(23,11,38,.2),${C.bar} 70%), url(${IMG_SC.start}) center top/cover no-repeat`, color: "#fff", fontFamily: SANS, padding: "40px 18px 30px", display: "flex", flexDirection: "column", gap: 12, maxWidth: 520, margin: "0 auto" }}>{css}
     <div className="gta" style={{ fontSize: 50, color: C.fg, lineHeight: 0.95, marginTop: 120 }}>SAMBUCA</div>
-    <div className="gta" style={{ fontSize: 22, color: C.pink }}>DAS ÖL DER MADONNA · v0.7.1</div>
-    <p style={{ margin: 0, fontWeight: 600, textShadow: "1px 1px 0 #000" }}>Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr. Ziel: so reich wie möglich werden.</p>
+    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.8</div>
+    <p style={{ margin: 0, fontWeight: 600, textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.</p>
+    <div style={{ fontWeight: 900, fontSize: 18, color: C.gold, textShadow: "0 2px 6px rgba(0,0,0,.85)" }}>🏆 Werde der größte Olivenöl-Mogul Sambucas!</div>
     <label style={{ fontWeight: 700, fontSize: 14 }}>Dein Name für den Highscore
       <input value={name} maxLength={18} onChange={(e) => setName(e.target.value)} placeholder="z. B. Thorsten" style={{ display: "block", width: "100%", marginTop: 4, padding: "12px 14px", fontSize: 16, borderRadius: 12, border: "2px solid #6b4a90", background: C.panel, color: "#fff" }} /></label>
     <button onClick={start} style={bigBtn(C.pink)}>▶ Neues Spiel</button>
@@ -90,8 +113,8 @@ export default function SambucaGame(): ReactNode {
       case "pc": open({ k: "missions" }); break; case "tel": open({ k: "tel" }); break; case "regal": open({ k: "regal" }); break; case "kal": open({ k: "kal" }); break;
       case "fenster": setScr("stadt"); setScene(null); break; case "tuer": setScr("umland"); setScene(null); break;
       case "schalter": open({ k: "shop", at: "muni" }); break; case "sindaco": open({ k: "sindaco" }); break;
-      case "aushang": run({ k: "spot", id: "aushang" }); break; case "caffe": case "wette": case "kerze": case "spende": case "beichte": run({ k: "spot", id: h }); break;
-      case "zeitung": open({ k: "regal" }); break; case "altar": setToast("✨ Die Madonna dell'Udienza. Im Mai wird sie durch die Gassen getragen."); break;
+      case "aushang": case "caffe": case "wette": case "kerze": case "spende": case "beichte": case "pooldeal": case "aperitivo": case "strand": case "lidodeal": open({ k: "spot", id: h }); break;
+      case "zeitung": open({ k: "regal" }); break; case "altar": setToast("✨ Die Madonna dell'Udienza (16. Jh.). Am 3. Sonntag im Mai wird sie durch die Gassen getragen – das große Fest."); break;
       case "prog": open({ k: "missions" }); break;
       default: if (h.startsWith("pin:")) open({ k: "pin", id: h.slice(4) });
     }
@@ -102,7 +125,7 @@ export default function SambucaGame(): ReactNode {
   const mapView = (which: "s" | "u"): ReactNode => {
     const z = mz; const mh = Math.round(H * z); const mw = Math.round(H * MAPAR[which] * z); const pins = which === "s" ? PS : PU;
     const extra: { id: string; x: number; y: number; l: string; e: string; c: string }[] = [];
-    if (which === "u") { g.groves.forEach((x) => { const [cx, cy] = cvXY("u", x.x, x.y); extra.push({ id: "g:" + x.id, x: cx, y: cy, l: x.name, e: "🌳", c: C.ok }); }); g.offers.forEach((o) => { const [cx, cy] = cvXY("u", o.x, o.y); extra.push({ id: "o:" + o.id, x: cx, y: cy, l: `${o.name} · zu haben`, e: "🏷️", c: C.gold }); }); }
+    if (which === "u") { g.groves.forEach((x) => { const [cx, cy] = cvXY("u", x.x, x.y); if (Math.hypot(cx - 76.02, cy - 21.74) < 4.5) return; /* v0.8 FB-12: Erbhain = Pin „Dein Hain“ */ extra.push({ id: "g:" + x.id, x: cx, y: cy, l: x.name, e: "🌳", c: C.ok }); }); g.offers.forEach((o) => { const [cx, cy] = cvXY("u", o.x, o.y); extra.push({ id: "o:" + o.id, x: cx, y: cy, l: o.own ? `${o.name} · 🔒 ${CHM[o.own].n}` : `${o.name} · zu haben`, e: o.own ? "🔒" : "🏷️", c: o.own ? C.fg : C.gold }); }); }
     if (which === "s" && fest) extra.push({ id: "festa", x: cvXY("s", 68.8, 73)[0], y: cvXY("s", 68.8, 73)[1], l: fest.n, e: "🎆", c: C.pink });
     const zoomTo = (nz: number): void => { const el = mapRef.current; const c = Math.max(1, Math.min(4, nz)); if (el) { const fx = (el.scrollLeft + el.clientWidth / 2) / el.scrollWidth, fy = (el.scrollTop + el.clientHeight / 2) / el.scrollHeight; requestAnimationFrame(() => { el.scrollLeft = fx * el.scrollWidth - el.clientWidth / 2; el.scrollTop = fy * el.scrollHeight - el.clientHeight / 2; }); } setMz(c); };
     const tdist = (e: React.TouchEvent): number => Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
@@ -111,8 +134,9 @@ export default function SambucaGame(): ReactNode {
       <div style={{ position: "relative", width: mw, height: mh }}>
         <img src={which === "s" ? IMG_S : IMG_U} alt={which === "s" ? "Stadtplan Sambuca" : "Umland Sambuca"} draggable={false} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block", userSelect: "none" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(rgba(139,92,246,.22),rgba(255,79,160,.16))", mixBlendMode: "multiply", pointerEvents: "none" }} />
-        {MINOR.filter((m) => m.map === which).map((m) => { const [mx, my] = cvXY(which, m.x, m.y); return <button key={m.id} data-minor={m.id} onClick={() => open({ k: "minor", id: m.id })} style={{ position: "absolute", left: mx + "%", top: my + "%", transform: "translate(-50%,-50%)", width: 30, height: 30, borderRadius: 15, border: "2px solid #000", background: g.acts.includes("enc_" + m.id) ? "#9a8aa8" : "#fff", fontSize: 15, padding: 0, boxShadow: "2px 2px 0 rgba(0,0,0,.5)", cursor: "pointer" }} aria-label={m.n}>{m.e}</button>; })}
-        {pins.map((p) => <button key={p.id} data-pin={p.id} onClick={() => { buzz(); if (p.scene) { if (p.scene === "buero") { setScr("buero"); setScene(null); } else setScene(p.scene); } else if (p.id === "sambuca") { setScr("stadt"); setScene(null); } else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: p.below ? "translate(-50%,0)" : p.al === "l" ? "translate(calc(-100% + 9px),-100%)" : "translate(-50%,-100%)", background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: p.below ? "column-reverse" : "column", alignItems: p.al === "l" ? "flex-end" : "center" }}>
+        {MINOR.filter((m) => m.map === which).map((m) => { const [mx, my] = m.px || cvXY(which, m.x, m.y); return <button key={m.id} data-minor={m.id} onClick={() => open({ k: "minor", id: m.id })} style={{ position: "absolute", left: mx + "%", top: my + "%", transform: "translate(-50%,-50%)", width: 30, height: 30, borderRadius: 15, border: "2px solid #000", background: g.acts.includes("enc_" + m.id) ? "#9a8aa8" : "#fff", fontSize: 15, padding: 0, boxShadow: "2px 2px 0 rgba(0,0,0,.5)", cursor: "pointer" }} aria-label={m.n}>{m.e}</button>; })}
+        {z < 1.6 && pins.map((p) => <button key={p.id} data-pin={p.id} aria-label={p.label} onClick={() => { buzz(); if (p.scene) { if (p.scene === "buero") { setScr("buero"); setScene(null); } else setScene(p.scene); } else if (p.id === "sambuca") { setScr("stadt"); setScene(null); } else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: "translate(-50%,-50%)", width: 46, height: 46, borderRadius: 23, background: "rgba(23,11,38,.9)", border: `3px solid ${p.scene ? C.pink : C.fg}`, fontSize: 24, padding: 0, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", animation: "sbGlint 2.4s infinite", boxShadow: "0 3px 10px rgba(0,0,0,.6)" }}>{PIN_E[p.id] || "📍"}</button>)}
+        {z >= 1.6 && pins.map((p) => <button key={p.id} data-pin={p.id} onClick={() => { buzz(); if (p.scene) { if (p.scene === "buero") { setScr("buero"); setScene(null); } else setScene(p.scene); } else if (p.id === "sambuca") { setScr("stadt"); setScene(null); } else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: p.below ? "translate(-50%,0)" : p.al === "l" ? "translate(calc(-100% + 9px),-100%)" : "translate(-50%,-100%)", background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: p.below ? "column-reverse" : "column", alignItems: p.al === "l" ? "flex-end" : "center" }}>
           <span style={{ background: C.bar, color: "#fff", border: `2px solid ${p.scene ? C.pink : C.fg}`, borderRadius: 10, padding: "3px 8px", fontSize: 12, fontWeight: 800, whiteSpace: "nowrap", boxShadow: "3px 3px 0 #000" }}>{p.label}<span style={{ display: "block", fontSize: 10, color: C.fg, fontWeight: 600 }}>{p.role}{p.scene && p.scene !== "buero" ? ` · ${present(g, SCN[p.scene].venue).length} 👤` : ""}</span></span>
           <span style={{ width: 0, height: 0, marginRight: p.al === "l" ? 2 : 0, borderLeft: "7px solid transparent", borderRight: "7px solid transparent", [p.below ? "borderBottom" : "borderTop"]: `9px solid ${p.scene ? C.pink : C.fg}` }} /></button>)}
         {extra.map((p) => <button key={p.id} data-pin={p.id} onClick={() => { buzz(); if (p.id === "festa") setScene("fest"); else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: "translate(-50%,-50%)", background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -152,8 +176,10 @@ export default function SambucaGame(): ReactNode {
   const sub = (s: string): ReactNode => <div style={{ fontSize: 12, opacity: 0.75 }}>{s}</div>;
   const btn = (l: string, on: () => void, ok: boolean = true, col: string = C.pink, key?: string): ReactNode => <button key={key || l} disabled={!ok} onClick={on} style={{ ...bigBtn(ok ? col : "#3b2a4f", ok ? "#000" : "#9a8aa8"), marginTop: 6, fontSize: 15, minHeight: 44 }}>{l}</button>;
   const peopleRow = (venue: string): ReactNode => { const l = present(g, venue); if (!l.length) return null; return <div style={{ display: "flex", gap: 10, flexWrap: "wrap", margin: "6px 0 10px" }}>{l.map((id) => <button key={id} data-person={id} onClick={() => person(id)} style={{ background: "transparent", border: "none", padding: 0, color: "#fff", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}><Portrait id={id} size={50} ring={g.met.includes(id) ? CHM[id].c : "#fff"} /><span style={{ fontSize: 11, fontWeight: 700 }}>{g.met.includes(id) ? CHM[id].n.split(" ")[0] : "❓"}</span></button>)}</div>; };
+  const buyOk = (o: Offer): boolean => g.money >= o.price && SEASON.buy.includes(g.m) && (!o.own || (abs(g) >= (o.from || 0) && R(g, o.own) >= 40));
   const evCard = (id: string): ReactNode => { const e = EVM[id]; if (!e) return null; const done = g.pick[id] !== undefined;
-    return <div key={id} style={{ ...card, border: `2px solid ${done ? "#3b2a4f" : e.fest ? C.gold : e.dis ? C.bad : C.pink}` }}>
+    return <div key={id} style={{ ...card, border: "none", boxShadow: "0 4px 14px rgba(0,0,0,.45)", opacity: done ? 0.85 : 1 }}>
+      {EV_IMG[id] && <div style={{ height: 120, margin: "-4px -4px 8px", borderRadius: 10, background: `url(${IMG_SC[EV_IMG[id]]}) center 40%/cover` }} />}
       <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>{e.who && g.met.includes(e.who) ? <Portrait id={e.who} size={46} /> : <span style={{ fontSize: 34 }}>{e.icon}</span>}<div><b>{e.icon} {e.t}</b><div style={{ fontSize: 14, marginTop: 3 }}>{e.text}</div></div></div>
       {done ? <div style={{ marginTop: 8, color: C.ok, fontWeight: 700 }}>✔ {g.res[id]}</div> : e.ch.map((c, i) => { const ok = !c.ok || c.ok(g); return <button key={i} data-choice={id + ":" + i} disabled={!ok} onClick={() => { if (c.mg) open({ k: "mg", t: "r", id, n: i, kind: c.mg }); else run({ k: "choice", id, n: i }); }} style={{ display: "block", width: "100%", textAlign: "left", marginTop: 6, padding: "9px 12px", borderRadius: 12, border: `2px solid ${ok ? (c.mg ? C.gold : "#6b4a90") : "#3b2a4f"}`, background: ok ? C.panel : "#1a0d29", color: ok ? "#fff" : "#7a6a88", fontWeight: 700, fontSize: 14 }}>{c.l}{c.d && <span style={{ display: "block", fontSize: 12, fontWeight: 500, color: ok ? C.fg : "#7a6a88" }}>{c.d}</span>}</button>; })}
     </div>; };
@@ -167,25 +193,32 @@ export default function SambucaGame(): ReactNode {
         <div style={card}><b>🎯 Monatsziel:</b> {GOALS[g.m].t}</div></>; break;
     case "tel": { shT = "☎️ Telefon"; const l = g.met;
       sh = <>{sub("Nur Leute, die du kennst. Telefonieren bringt weniger ♥ als ein Treffen. Kostet 1 ⏳.")}
-        {l.map((id) => { const c = CHM[id]; const done = g.talked.includes(id); return <div key={id} style={{ ...card, display: "flex", gap: 10, alignItems: "center" }}><Portrait id={id} size={40} /><div style={{ flex: 1 }}><b>{c.n}</b> <span style={{ color: C.pink }}>♥ {R(g, id)}</span>{sub(c.r)}</div>
+        {l.map((id) => { const c = CHM[id]; const done = g.talked.includes(id); return <div key={id} style={{ ...card, display: "flex", gap: 10, alignItems: "center" }}><Portrait id={id} size={40} /><div style={{ flex: 1 }}><b>{c.n}</b> <span style={{ color: C.pinkT }}>♥ {R(g, id)}</span>{sub(c.r)}</div>
           <button disabled={done || g.ap < 1} data-call={id} onClick={() => open({ k: "talk", id, mode: "call" })} style={{ ...bigBtn(done || g.ap < 1 ? "#3b2a4f" : C.ok), width: 64, minHeight: 40, fontSize: 18 }}>{done ? "✔" : "☎️"}</button>
           <button onClick={() => person(id)} style={{ ...bigBtn(C.fg), width: 44, minHeight: 40, fontSize: 16 }}>›</button></div>; })}
         <div style={{ ...card, opacity: 0.8, fontSize: 13 }}>Noch {CHARS.length - l.length} Leute im Dorf, die du nicht kennst. Triff sie in der Bar, Kirche, im Rathaus, auf Festen und an kleinen Orten der Karte.</div></>; break; }
     case "regal": { shT = "🗄️ Lager, Haine & Markt"; const mx = Math.max(...g.hist), mn = Math.min(...g.hist);
-      sh = <><div style={card}><div>🫙 Öl: <b>{g.oil} l</b> · Qualität {g.q} · 🫒 {g.olives} kg Oliven</div><div>💶 Marktpreis: <b>{price(g).toFixed(2)} €/l</b> (deins: {unit(g).toFixed(2)} €/l)</div>
-        <div>🪓 Spaten: {g.spade > 0 ? `${g.spade}×` : "keiner (Pflege +25 %)"} · 🔧 Rüttler: {g.gear ? (g.fl.cheap ? "billig" : "ja") : "nein"} · 👷 Crew: {g.crew ? "ja" : "nein"}</div>
-        <div>🛡️ Schutz: {g.fl.netz ? `Netze ×${g.fl.netz}` : "keine Netze"} · {g.fl.drain ? "Drainage" : "keine Drainage"} · {g.fl.sand ? `Sandsäcke ×${g.fl.sand}` : "keine Sandsäcke"}{g.wine ? ` · 🍷 ${g.wine} Fl.` : ""}</div>
+      // v0.8 (FB-04/OI-016): Status als Chips mit Abstand statt Fließtext
+      const chip = (t: string, on: boolean): ReactNode => <span key={t} style={{ display: "inline-block", padding: "5px 10px", margin: "0 6px 6px 0", borderRadius: 999, background: on ? "rgba(74,222,128,.16)" : "rgba(255,255,255,.07)", color: on ? "#bff5cf" : "#d9cfe6", fontSize: 13, fontWeight: 700 }}>{t}</span>;
+      const st = offStage(g); const nc = OFFICE_COST[st + 1];
+      sh = <><div style={card}><div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 8, fontSize: 15 }}><span>🫙 <b>{g.oil} l</b> Öl</span><span>⭐ Qualität <b>{g.q}</b></span><span>🫒 <b>{g.olives}</b> kg</span></div>
+        <div style={{ marginBottom: 8 }}>💶 Marktpreis <b>{price(g).toFixed(2)} €/l</b> · deiner {unit(g).toFixed(2)} €/l</div>
+        <div style={{ fontSize: 12, color: C.fg, margin: "6px 0 4px", fontWeight: 800, letterSpacing: 0.5 }}>AUSRÜSTUNG</div>
+        <div>{chip(g.spade > 0 ? `🪓 Spaten ×${g.spade}` : "🪓 kein Spaten (Pflege +25 %)", g.spade > 0)}{chip(`🔧 Rüttler ${g.gear ? (g.fl.cheap ? "(billig)" : "✔") : "–"}`, !!g.gear)}{chip(`👷 Crew ${g.crew ? "✔" : "–"}`, !!g.crew)}{g.wine ? chip(`🍷 ${g.wine} Fl.`, true) : null}</div>
+        <div style={{ fontSize: 12, color: C.fg, margin: "6px 0 4px", fontWeight: 800, letterSpacing: 0.5 }}>SCHUTZ</div>
+        <div>{chip(g.fl.netz ? `🕸️ Netze ×${g.fl.netz}` : "🕸️ keine Netze", !!g.fl.netz)}{chip(g.fl.drain ? "🚧 Drainage" : "🚧 keine Drainage", !!g.fl.drain)}{chip(g.fl.sand ? `🧱 Sandsäcke ×${g.fl.sand}` : "🧱 keine Sandsäcke", !!g.fl.sand)}{chip(g.water ? "💧 Wasserrecht: Dürre-Schutz, alles bewässert" : "💧 kein Wasserrecht", !!g.water)}{chip(g.fl.dog ? "🐕 Wachhund" : "🐕 kein Wachhund", !!g.fl.dog)}</div>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 50, marginTop: 8 }}>{g.hist.map((v, i) => <span key={i} style={{ flex: 1, height: `${20 + ((v - mn) / Math.max(0.01, mx - mn)) * 80}%`, background: i === g.hist.length - 1 ? C.pink : "#6b4a90", borderRadius: 2 }} />)}</div>{sub("Ölpreis der letzten Monate")}</div>
         {g.groves.map((x) => <div key={x.id} style={card}><b>🌳 {x.name}</b> · {x.trees} Bäume · Zustand <b style={{ color: x.cond >= 60 ? C.ok : x.cond >= 35 ? C.gold : C.bad }}>{x.cond} %</b>{x.lease ? ` · Pacht ${x.lease} €` : ""}
           {sub(`${x.prune ? "✂️" : "·"} ${x.fert ? "🌱" : "·"} ${x.irr || g.water ? "💧" : "·"} ${x.traps ? "🪤" : "·"} ${x.harvested ? "🧺 geerntet" : ""}`)}</div>)}
         <b>Arbeit diesen Monat</b>{careList()}
+        <div style={card}><b>🏠 Büro: Stufe {st}/4</b>{sub(OFFN[st])}{nc ? btn(`Umziehen: ${OFFN[st + 1].split("·")[1]?.trim() || "Stufe " + (st + 1)} · ${eur(nc)}`, () => run({ k: "office" }), g.money >= nc, C.gold) : sub("Größtes Büro erreicht.")}</div>
         {btn("📜 Tagebuch", () => open({ k: "log" }), true, C.fg)}</>; break; }
     case "kal": shT = `📅 ${YEAR0 + g.y - 1}`;
       sh = <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6 }}>{MONATE.map((n, i) => <div key={n} style={{ ...card, padding: 8, marginBottom: 0, border: i === g.m ? `2px solid ${C.pink}` : "2px solid transparent", opacity: i < g.m ? 0.55 : 1 }}><b style={{ fontSize: 13 }}>{n}</b><div style={{ fontSize: 11 }}>{FEST[i] ? "🎆 " + FEST[i].n.split(" ")[0] : SAISON[i]}</div><div style={{ fontSize: 11 }}>{g.goalDone[i] === true ? "🎯✔" : g.goalDone[i] === false ? "🎯✗" : ""}</div></div>)}</div>; break;
     case "person": { const c = CHM[sheet.id]; const met = g.met.includes(c.id); const tried = g.fl["try_" + c.id] === abs(g); const needOk = !c.need || c.need[1](g);
       shT = met ? c.n : "❓ Unbekannt";
       sh = <><div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 8 }}><Portrait id={c.id} size={80} tilt={-3} ring={c.c} /><div><b style={{ fontSize: 18 }}>{met ? c.n : c.r.split("·")[0]}</b>{sub(met ? c.r : `Man nennt sie/ihn „${c.n}“`)}
-        {met ? <div style={{ color: C.pink, fontWeight: 800 }}>♥ {R(g, c.id)}</div> : <div style={{ color: C.gold, fontSize: 13 }}>Schwierigkeit {"★".repeat(c.diff)}{"☆".repeat(5 - c.diff)}</div>}
+        {met ? <div style={{ color: C.pinkT, fontWeight: 800 }}>♥ {R(g, c.id)}</div> : <div style={{ color: C.gold, fontSize: 13 }}>Schwierigkeit {"★".repeat(c.diff)}{"☆".repeat(5 - c.diff)}</div>}
         <div style={{ fontStyle: "italic", fontSize: 14, marginTop: 4 }}>{met ? (R(g, c.id) >= 60 ? c.hi : R(g, c.id) >= 35 ? c.mid : c.lo) : c.lo}</div></div></div>
         {!met ? <>{!needOk && <div style={{ ...card, color: C.bad }}>Nicht interessiert an dir. Nötig: {c.need ? c.need[0] : ""}</div>}
           {sub(`Tipp: Sie/er mag ${c.likes.map((k) => TOP[k][0]).join(" ")} … vielleicht. Hör genau hin.`)}
@@ -194,7 +227,7 @@ export default function SambucaGame(): ReactNode {
             {btn("🎁 5 l Öl schenken (♥ +6)", () => run({ k: "gift", id: c.id }), g.oil >= 5 && !g.acts.includes("gift_" + c.id), C.fg)}
             <b style={{ display: "block", marginTop: 10 }}>Was {c.n.split(" ")[0]} für dich tun kann</b>
             {PERKS.filter((p) => p.who === c.id).map((p) => { const ok = perkOk(g, p) && g.ap > 0; const lock = R(g, c.id) < p.min; return <div key={p.id} style={{ ...card, opacity: lock ? 0.6 : 1, marginTop: 6 }}><b>{p.e} {p.n}</b>{sub(`${p.d}${p.cost ? ` · ${eur(p.cost(g))}` : ""} · ${lock ? `🔒 ab ♥ ${p.min}` : p.per === "y" ? "1×/Jahr" : p.per === "m" ? "1×/Monat" : "einmalig"}`)}
-              {!lock && btn(ok ? "Machen · 1 ⏳" : "gerade nicht möglich", () => run({ k: "perk", id: p.id }), ok, C.ok)}</div>; })}</>}</>; break; }
+              {g.notes?.["pk_" + p.id] ? <div style={{ marginTop: 6, padding: "8px 10px", borderRadius: 10, background: "rgba(74,222,128,.12)", fontSize: 14 }}>✔ {g.notes["pk_" + p.id]}</div> : !lock && btn(ok ? "Machen · 1 ⏳" : "gerade nicht möglich", () => run({ k: "perk", id: p.id }), ok, C.ok)}</div>; })}</>}</>; break; }
     case "talk": shT = sheet.mode === "call" ? "☎️ Telefonat" : "💬 Plaudern";
       sh = <MiniTalk key={sheet.id + sheet.mode} id={sheet.id} mode={sheet.mode} onCancel={() => setSheet(null)} onDone={(s) => { const id = sheet.id; run({ k: sheet.mode === "meet" ? "meet" : sheet.mode, id, f: s }); setSheet({ k: "person", id }); }} />; break;
     case "mg": shT = sheet.t === "h" ? "🧺 Ernte" : sheet.t === "p" ? "⚙️ Frantoio" : sheet.t === "s" ? "🤝 Feilschen" : "🚨 Rettung!";
@@ -205,21 +238,25 @@ export default function SambucaGame(): ReactNode {
       break;
     case "pin": { const id = sheet.id;
       if (id.startsWith("g:")) { const gr = g.groves.find((x) => "g:" + x.id === id); if (gr) { shT = "🌳 " + gr.name; sh = <><div style={card}>{gr.trees} Bäume · Zustand {gr.cond} %{gr.lease ? ` · Pacht ${gr.lease} €/Monat` : " · Eigentum"}</div>{careList(gr.id)}{id === "g:erbe" && peopleRow("torre")}</>; } }
-      else if (id.startsWith("o:")) { const o = g.offers.find((x) => "o:" + x.id === id); if (o) { shT = "🏷️ " + o.name; sh = <><div style={card}>{o.trees} Bäume · Zustand {o.cond} %<br />Kauf {eur(o.price)} oder Pacht {o.lease} €/Monat<br /><span style={{ color: C.bad }}>⚔️ {RIV[o.rival].n} will ihn bis Ende {MONATE[o.until]}!</span></div>{sub("Verhandelt wird im Palazzo Panitteri (Stadt) bei Don Calogero – oder direkt hier.")}
-        {btn(`Kaufen · ${eur(o.price)}`, () => { run({ k: "buy", id: o.id }); setSheet(null); }, g.money >= o.price && SEASON.buy.includes(g.m))}{btn(`Pachten · ${o.lease} €/Monat`, () => { run({ k: "lease", id: o.id }); setSheet(null); }, SEASON.buy.includes(g.m), C.fg)}</>; } }
+      else if (id.startsWith("o:")) { const o = g.offers.find((x) => "o:" + x.id === id); if (o) { shT = "🏷️ " + o.name; sh = <><div style={card}>{o.trees} Bäume · Zustand {o.cond} %<br />Kauf {eur(o.price)} oder Pacht {o.lease} €/Monat<br />{o.own ? <span style={{ color: C.fg }}>🔒 Besitz von {CHM[o.own].n} – verkauft erst ab Jahr {Math.floor((o.from || 0) / 12) + 1} und ab ♥ 40</span> : <span style={{ color: C.bad }}>⚔️ {RIV[o.rival].n} will ihn bis Ende {MONATE[o.until]}!</span>}</div>{sub("Verhandelt wird im Palazzo Panitteri (Stadt) bei Don Calogero – oder direkt hier.")}
+        {btn(`Kaufen · ${eur(o.price)}`, () => { run({ k: "buy", id: o.id }); setSheet(null); }, buyOk(o))}{!o.own && btn(`Pachten · ${o.lease} €/Monat`, () => { run({ k: "lease", id: o.id }); setSheet(null); }, SEASON.buy.includes(g.m), C.fg)}</>; } }
       else { const P = [...PS, ...PU].find((x) => x.id === id); shT = P ? P.label : id;
         sh = <><div style={{ fontSize: 14, marginBottom: 8 }}>{PIN_TXT[id] || ""}</div>{peopleRow(id)}
           {id === "banca" && <><div style={card}>Kredit: {eur(g.debt)} · Zins 1 %/Monat</div>{btn("+5.000 € Kredit", () => run({ k: "loan" }), g.debt < 15000 + 5000 * (g.y - 1))}{btn("5.000 € tilgen", () => run({ k: "repay" }), g.debt > 0 && g.money > 0, C.fg)}</>}
-          {id === "palazzo" && (g.offers.length ? g.offers.map((o) => <div key={o.id} style={card}><b>{o.name}</b>{sub(`${o.trees} Bäume · Zustand ${o.cond} % · ⚔️ ${RIV[o.rival].n} bis ${MONATE[o.until]}`)}{btn(`Kaufen · ${eur(o.price)}`, () => run({ k: "buy", id: o.id }), g.money >= o.price && SEASON.buy.includes(g.m))}{btn(`Pachten · ${o.lease} €/Monat`, () => run({ k: "lease", id: o.id }), SEASON.buy.includes(g.m), C.fg)}</div>) : <div style={card}>„Im Moment nichts. Nächstes Jahr wieder, Signore.“</div>)}
+          {id === "palazzo" && (g.offers.length ? g.offers.map((o) => <div key={o.id} style={card}><b>{o.name}</b>{sub(`${o.trees} Bäume · Zustand ${o.cond} % · ${o.own ? `🔒 Besitz von ${CHM[o.own].n}, ab Jahr ${Math.floor((o.from || 0) / 12) + 1} & ♥ 40` : `⚔️ ${RIV[o.rival].n} bis ${MONATE[o.until]}`}`)}{btn(`Kaufen · ${eur(o.price)}`, () => run({ k: "buy", id: o.id }), buyOk(o))}{!o.own && btn(`Pachten · ${o.lease} €/Monat`, () => run({ k: "lease", id: o.id }), SEASON.buy.includes(g.m), C.fg)}</div>) : <div style={card}>„Im Moment nichts. Nächstes Jahr wieder, Signore.“</div>)}
           {id === "frantoio" && btn(g.olives > 0 ? `⚙️ ${g.olives} kg pressen · 1 ⏳` : "Keine Oliven zum Pressen", () => open({ k: "mg", t: "p" }), g.olives > 0 && g.ap > 0, C.ok)}
           {id === "feudo" && btn(g.oil > 0 ? `🤝 Öl verkaufen (Feilschen) · ${g.oil} l · 1 ⏳` : "Kein Öl", () => open({ k: "mg", t: "s" }), g.oil > 0 && g.ap > 0, C.ok)}
-          {id === "lago" && SHOP.filter((s) => s.at === "lago").map((s) => btn(`${s.n} · ${eur(s.cost(g))}`, () => run({ k: "shop", id: s.id }), s.ok(g) && g.money >= s.cost(g), C.ok, s.id))}
+          {id === "lago" && SHOP.filter((s) => s.at === "lago").map((s) => <div key={s.id} style={card}><b>{s.n}</b> · {eur(s.cost(g))}{sub(s.d)}{btn(s.ok(g) ? "Kaufen" : "✔ besitzt du", () => run({ k: "shop", id: s.id }), s.ok(g) && g.money >= s.cost(g), C.ok)}</div>)}
         </>; }
       break; }
     case "minor": { const mi = MINOR.find((x) => x.id === sheet.id); if (!mi) break; const e = mi.enc[encIdx(g, mi)]; const done = g.acts.includes("enc_" + mi.id); const ok = (!e.ok || e.ok(g)) && g.ap > 0 && !done;
       shT = `${mi.e} ${mi.n}`;
       sh = <>{peopleRow(mi.id)}<div style={card}><div style={{ fontSize: 15 }}>{e.t}</div>{done ? <div style={{ color: C.ok, marginTop: 6 }}>✔ Diesen Monat erledigt.</div> : btn(`${e.l}${e.d ? ` – ${e.d}` : ""} · 1 ⏳`, () => run({ k: "enc", id: mi.id }), ok, C.ok)}</div>
         {SHOP.filter((s) => s.at === mi.id).length > 0 && <><b>Laden{mi.id === "ferr" && disc(g) < 1 ? " (Stammkunden-Rabatt −20 %)" : ""}</b>{SHOP.filter((s) => s.at === mi.id).map((s) => <div key={s.id} style={card}><b>{s.n}</b> · {eur(s.cost(g))}{sub(s.d)}{btn("Kaufen", () => run({ k: "shop", id: s.id }), s.ok(g) && g.money >= s.cost(g), C.fg)}</div>)}</>}</>; break; }
+    case "spot": { const id = sheet.id; const I = SPOT_INFO[id]; if (!I) break; const done = g.acts.includes("sp_" + id); const note = g.notes?.["sp_" + id]; const ok = !done && g.money >= I[2] && g.ap >= I[3];
+      shT = I[0]; sh = <><div style={{ ...card, fontSize: 15 }}>{I[1]}{sub(`Kosten: ${I[2] ? eur(I[2]) : "gratis"} · ${I[3] ? I[3] + " ⏳" : "kein ⏳"} · 1× pro Monat`)}</div>
+        {note && <div style={{ ...card, background: "rgba(74,222,128,.12)", fontSize: 15 }}><b>Ergebnis:</b> {note}</div>}
+        {done ? sub(`✔ Diesen Monat schon erledigt – wieder ab ${MONATE[(g.m + 1) % 12]}.`) : btn(I[2] ? `Machen · ${eur(I[2])}${I[3] ? " · 1 ⏳" : ""}` : `Machen${I[3] ? " · 1 ⏳" : ""}`, () => run({ k: "spot", id }), ok, C.ok)}</>; break; }
     case "shop": shT = "🛎️ Schalter · Anträge"; sh = <>{sub("Papierkram braucht keine Kontakte – nur Geld und Geduld.")}{SHOP.filter((s) => s.at === sheet.at).map((s) => <div key={s.id} style={card}><b>{s.n}</b> · {eur(s.cost(g))}{sub(s.d)}{btn(s.ok(g) ? "Beantragen" : "✔ erledigt", () => run({ k: "shop", id: s.id }), s.ok(g) && g.money >= s.cost(g), C.fg)}</div>)}</>; break;
     case "sindaco": shT = "🚪 Büro des Sindaco"; {
       const here = present(g, "muni").includes("sindaco");
@@ -253,9 +290,9 @@ export default function SambucaGame(): ReactNode {
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxHeight: "86%", overflowY: "auto", background: C.panel, borderRadius: "20px 20px 0 0", border: "2px solid #000", borderBottom: "none", padding: "12px 14px 22px", animation: "sbUp .25s" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}><b style={{ fontSize: 17 }}>{shT}</b>{canClose && <button aria-label="Schließen" onClick={() => setSheet(null)} style={{ width: 40, height: 40, borderRadius: 20, border: "2px solid #6b4a90", background: "transparent", color: "#fff", fontSize: 18 }}>✕</button>}</div>
         {sh}</div></div>}
-    {splash >= 0 && FEST[splash] && <div onClick={() => setSplash(-1)} style={{ position: "absolute", inset: 0, zIndex: 30, background: `linear-gradient(rgba(23,11,38,.3),rgba(23,11,38,.9)), url(${IMG_F}) center/cover`, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "30px 18px 60px", animation: "sbFade .3s" }}>
-      <Luminarie /><Fireworks n={5} /><div className="gta" style={{ fontSize: 15, color: C.pink, animation: "sbSweep .6s" }}>FESTA IN SAMBUCA</div>
-      <div className="gta" style={{ fontSize: 38, color: C.fg, lineHeight: 1, animation: "sbStamp .6s" }}>{FEST[splash].n}</div><div style={{ fontWeight: 700, margin: "8px 0 16px", textShadow: "1px 1px 0 #000" }}>{FEST[splash].s}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.</div>
+    {splash >= 0 && FEST[splash] && <div onClick={() => setSplash(-1)} style={{ position: "absolute", inset: 0, zIndex: 30, background: `linear-gradient(rgba(23,11,38,.3),rgba(23,11,38,.9)), url(${festImg(splash)}) center/cover`, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "30px 18px 60px", animation: "sbFade .3s" }}>
+      <Luminarie /><Fireworks n={5} /><div className="gta" style={{ fontSize: 15, color: C.pinkT, animation: "sbSweep .6s" }}>FESTA IN SAMBUCA</div>
+      <div className="gta" style={{ fontSize: 38, color: C.fg, lineHeight: 1, animation: "sbStamp .6s" }}>{FEST[splash].n}</div><div style={{ fontWeight: 700, margin: "8px 0 16px", textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>{FEST[splash].s}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.</div>
       <button onClick={(e) => { e.stopPropagation(); setSplash(-1); setScr("stadt"); setScene("fest"); }} style={bigBtn(C.pink)}>Zum Fest ▶</button></div>}
     {toast && <div key={toast} style={{ position: "absolute", left: 12, right: 12, top: HUD + 8, zIndex: 40, background: "rgba(23,11,38,.95)", border: `2px solid ${C.pink}`, borderRadius: 12, padding: "8px 12px", fontSize: 13, fontWeight: 700, animation: "sbToast 2.6s forwards", pointerEvents: "none" }}>{toast}</div>}
   </div>;

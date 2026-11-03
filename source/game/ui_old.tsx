@@ -1,6 +1,7 @@
-const C = { bar: "#170b26", bar2: "#241038", fg: "#ffd9a0", pink: "#ff4fa0", violet: "#8b5cf6", panel: "#1f0f33", card: "#2a1543", ok: "#7dffb0", bad: "#ff6b6b", gold: "#ffc94a" };
-const FONT = "Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Black', sans-serif";
-const SANS = "system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif";
+const C = { bar: "#170b26", bar2: "#241038", fg: "#ffd9a0", pink: "#ff4fa0", violet: "#8b5cf6", panel: "#1f0f33", card: "#2a1543", ok: "#7dffb0", bad: "#ff8f8f", gold: "#ffc94a", pinkT: "#ffa8d0" }; // v0.8 (FB-03): pinkT = helles Pink für Text, bad heller
+// v0.8 (FB-03/OI-018): runde Nunito (OFL, lokal in fonts/) statt Impact mit Kontur – weniger „Pixel/Comic“
+const FONT = "'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+const SANS = "'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif";
 const CSS = `
 .sb3 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 .sb3 button{font-family:${SANS};touch-action:manipulation;transition:transform .08s ease, filter .15s}
@@ -10,6 +11,7 @@ const CSS = `
 @keyframes sbFade{from{opacity:0}to{opacity:1}}
 @keyframes sbPop{0%{transform:scale(1)}35%{transform:scale(1.22)}100%{transform:scale(1)}}
 @keyframes sbToast{0%{opacity:0;transform:translateY(16px) scale(.9)}12%{opacity:1;transform:none}80%{opacity:1}100%{opacity:0;transform:translateY(-26px)}}
+@keyframes sbGlint{0%,100%{filter:brightness(1);box-shadow:0 3px 10px rgba(0,0,0,.6)}50%{filter:brightness(1.35);box-shadow:0 0 14px 3px rgba(255,201,74,.7)}}
 @keyframes sbPulse{0%{box-shadow:0 0 0 0 rgba(255,79,160,.75)}100%{box-shadow:0 0 0 16px rgba(255,79,160,0)}}
 @keyframes sbGlow{0%,100%{border-color:#ff4fa0}50%{border-color:#ffd9a0}}
 @keyframes sbSweep{0%{transform:translateX(-60%);opacity:0}25%{transform:none;opacity:1}100%{transform:none;opacity:1}}
@@ -42,7 +44,7 @@ function MiniHarvest(p: { name: string; onDone: (f: number) => void; onSkip: () 
       <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(115deg,rgba(255,255,255,.04) 0 14px,transparent 14px 30px)" }} />
       {ol.map((o) => <button key={o.id} data-x="1" aria-label="Olive" onClick={() => hit(o)} style={{ position: "absolute", left: o.x + "%", top: o.y + "%", width: 52, height: 52, padding: 0, border: "none", background: "transparent", cursor: "pointer", animation: "sbBob .8s ease-in-out infinite", transform: "translate(-50%,-50%)" }}>
         <span style={{ display: "block", width: 34, height: 42, margin: "0 auto", borderRadius: "50%", background: o.gold ? "radial-gradient(circle at 35% 30%,#fff6b0,#ffc94a 45%,#b27b00)" : "radial-gradient(circle at 35% 30%,#b58ad6,#5b2a86 50%,#2a0f45)", boxShadow: "0 3px 6px rgba(0,0,0,.5)", transform: "rotate(-20deg)" }} /></button>)}
-      {pops.map((q) => <span key={"p" + q.id} style={{ position: "absolute", left: q.x + "%", top: q.y + "%", fontFamily: FONT, fontSize: 26, color: q.s === "+3" ? C.gold : "#fff", textShadow: "2px 2px 0 #000", animation: "sbFloat .7s ease-out forwards", pointerEvents: "none" }}>{q.s}</span>)}
+      {pops.map((q) => <span key={"p" + q.id} style={{ position: "absolute", left: q.x + "%", top: q.y + "%", fontFamily: FONT, fontSize: 26, color: q.s === "+3" ? C.gold : "#fff", textShadow: "0 2px 6px rgba(0,0,0,.8)", animation: "sbFloat .7s ease-out forwards", pointerEvents: "none" }}>{q.s}</span>)}
       {!run && <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, background: "rgba(20,8,34,.55)", animation: "sbFade .3s" }}>
         {done ? <><div style={{ fontFamily: FONT, fontSize: 34, color: C.fg, animation: "sbPop .5s" }}>{n >= 24 ? "BRAVISSIMO!" : n >= 14 ? "BENE!" : "NA JA…"}</div><div>{n} Oliven · Ertrag ×{f.toFixed(2)}</div></>
           : <div style={{ fontFamily: FONT, fontSize: 30, color: "#fff" }}>{p.name}</div>}
@@ -111,7 +113,7 @@ const CSS4 = `
 @keyframes sbBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes sbSplash{0%{opacity:0}10%{opacity:1}85%{opacity:1}100%{opacity:0}}
 @keyframes sbZoom{from{transform:scale(1.15)}to{transform:scale(1)}}
-.sb3 .gta{font-family:${FONT};letter-spacing:.02em;-webkit-text-stroke:1.5px #000;text-shadow:3px 3px 0 #000}
+.sb3 .gta{font-family:${FONT};font-weight:900;letter-spacing:.01em;text-shadow:0 2px 6px rgba(0,0,0,.85)}
 `;
 function Portrait(p: { id: string; size: number; tilt?: number; ring?: string }): ReactNode {
   const c = CHM[p.id]; const w = p.size, h = Math.round(p.size * 4 / 3);
@@ -122,7 +124,7 @@ function Money(p: { v: number; size: number }): ReactNode {
   const [d, setD] = useState(p.v); const cur = useRef(p.v);
   useEffect(() => { const from = cur.current, to = p.v; if (from === to) return; let k = 0; const iv = setInterval(() => { k++; const v = Math.round(from + (to - from) * Math.min(1, k / 14)); cur.current = v; setD(v); if (k >= 14) clearInterval(iv); }, 35); return () => clearInterval(iv); }, [p.v]);
   const up = p.v >= d;
-  return <span style={{ fontFamily: FONT, fontSize: p.size, color: p.v < 0 ? C.bad : d !== p.v ? (up ? C.ok : C.bad) : "#7dffb0", WebkitTextStroke: "1.5px #000", textShadow: "2px 2px 0 #000", whiteSpace: "nowrap" }}>{d < 0 ? "-€" : "€"}{Math.abs(d).toLocaleString("de-DE")}</span>;
+  return <span style={{ fontFamily: FONT, fontSize: p.size, color: p.v < 0 ? C.bad : d !== p.v ? (up ? C.ok : C.bad) : "#7dffb0", fontWeight: 900, textShadow: "0 1px 4px rgba(0,0,0,.8)", whiteSpace: "nowrap" }}>{d < 0 ? "-€" : "€"}{Math.abs(d).toLocaleString("de-DE")}</span>;
 }
 function Fireworks(p: { n: number }): ReactNode {
   return <>{Array.from({ length: p.n }).map((_, i) => <span key={i} style={{ position: "absolute", left: `${10 + (i * 29) % 80}%`, top: `${6 + (i * 17) % 35}%`, width: 70, height: 70, marginLeft: -35, marginTop: -35, borderRadius: "50%", background: `radial-gradient(circle, transparent 30%, ${["#ffc94a", "#ff4fa0", "#8be0ff", "#7dffb0"][i % 4]} 32%, transparent 40%), repeating-conic-gradient(${["#ffc94a", "#ff4fa0", "#8be0ff", "#7dffb0"][i % 4]} 0 4deg, transparent 4deg 22deg)`, WebkitMaskImage: "radial-gradient(circle, #000 20%, transparent 70%)", maskImage: "radial-gradient(circle, #000 20%, transparent 70%)", animation: `sbFw 1.8s ${i * 0.45}s ease-out infinite`, pointerEvents: "none", opacity: 0 }} />)}</>;

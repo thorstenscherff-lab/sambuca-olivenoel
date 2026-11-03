@@ -240,3 +240,41 @@ Referenzen: `/workspace/sambuca-game/v07/photos/s_p15.jpg`
 ```text
 Portrait 9:16 video game scene background: ANCIENT RUINS on the hill near Sambuca (Monte Adranone / Torre area): a weathered stone portico of four Doric columns on a stepped base, exactly like the reference photo, with dramatic clouds, dry grass, a lone olive tree, and the far valley with Lago Arancio below. STYLE: strong GTA loading-screen comic art, thick bold black ink outlines, hard cel shading, saturated deep blue sky and warm amber stone, dramatic shadows, Godfather-era Sicilian mood. Not pixel art, not retro, no text, no people.
 ```
+
+
+## v0.8 – Fest-Bilder & Orte nach Referenzfotos aus Google Drive (03.11.2026)
+
+Thorsten hat am 03.11.2026 zwischen 01:00 und 01:24 (Europe/Berlin) sechs Fotos in Google Drive gelegt.
+**Die Fotos sind nur Referenz.** Sie liegen nicht im Repo; sie lagen zum Bauen lokal unter `/workspace/sambuca-game/v08/festref/`.
+Alle Bilder sind mit `GenerateImage` (9:16, Stil-Referenz `08_festa.jpg` bzw. Vorgängerbild) **im Spielstil neu gezeichnet**: painterly, kein Pixel-Look. Die Personen sind generisch und fiktiv, ohne erkennbare Gesichter. Die exakten Aufrufe stehen in `docs/prompts/generate_image_calls.jsonl` (letzte 4 Zeilen).
+
+| Drive-ID | Motiv (Foto) | verwendet für | Datei | SC-Key | im Spiel |
+|---|---|---|---|---|---|
+| `1L5jkFHQWpMo6w3gENqqMFbDnUkDuuv2X` | lange Festtafel in der Gasse, nachts | Festa dei Vassalli (Aug.) | `23_fest_vassalli.jpg` | `vassalli` | Fest-Szene + Splash Monat 7, Event-Karten `vassalli`, `calici` |
+| `1p2zfh9ub93txjTbSG4fwgYvz_OYnjal_` | Kochstand unter Zelt vor Kirchenfassade mit Uhr | Festa dei Vassalli | `23_fest_vassalli.jpg` | `vassalli` | wie oben |
+| `11cYIGtjnKBDtnp4IW3dmlSU2Sw_N0VdY` | Prozession mit Priester & Messdienern in der Gasse | San Giorgio (Settimana Santa & San Giorgio, Apr.) | `24_fest_giorgio.jpg` | `giorgio` | Fest-Szene + Splash Monat 3, Event-Karte `giorgio` |
+| `1elpWrZZtKB0XgLlTSLsqSLTgX0f9kzAk` | Freiluftmesse am Steinbogen, Altar mit Blumen | San Giorgio (Feldsegnung) | `24_fest_giorgio.jpg` | `giorgio` | wie oben |
+| `1cTc0E_Z9rKnye6JrCDPxp4JPP9hWF8sj` | Torre di Pandolfina (Turm mit Efeu) | Ort Torre di Pandolfina (kein Fest) | `18_torre_pandolfina.jpg` (v2, ersetzt v0.8-Erstversion) | `torre` | Szene „TORRE DI PANDOLFINA" |
+| `1QLMKkHuWd_0W1umXptqCih06W6hloiZ2` | Lido-Zelt mit Stühlen, Blick aufs Meer | Ort Lido (kein Fest) | `21_lido.jpg` (v2) | `lido` | Szene Lido |
+
+Die Settimana-Santa-Szene `20_settimana_santa.jpg` bleibt bestehen. Sie ist jetzt das Banner der Event-Karte `santa`.
+Code: `FEST_SC`, `EV_IMG` und `festImg()` in `source/game/src/c.tsx`, Banner in `evCard` (`f.tsx`).
+Die übrigen Feste (Udienza, Vendemmia/Fiera, Raccolta, Natale) nutzen weiter `08_festa.jpg`.
+
+### Prompts
+
+**`source/scenes/23_fest_vassalli.jpg`** (Referenzen: source/scenes/08_festa.jpg, drive:1L5jkFHQWpMo6w3gENqqMFbDnUkDuuv2X, drive:1p2zfh9ub93txjTbSG4fwgYvz_OYnjal_)
+
+> Portrait 9:16 scene in the exact painterly style of the first reference image (rich painterly GTA loading-screen illustration, bold ink outlines, saturated warm palette, not pixel art, no text). Scene: Festa dei Vassalli on a summer night in a Sicilian hill-town street: long tables with white tablecloths full of colourful plates of pasta col macco, bread and watermelon, a white market tent with a big pot cooking stand in front of a lit stone church facade with a clock, strings of warm festival lights, a crowd of generic stylised villagers seen from behind and side (no recognizable faces). Composition and atmosphere taken from the second and third reference photos, but fully re-drawn as illustration.
+
+**`source/scenes/24_fest_giorgio.jpg`** (Referenzen: source/scenes/08_festa.jpg, drive:11cYIGtjnKBDtnp4IW3dmlSU2Sw_N0VdY, drive:1elpWrZZtKB0XgLlTSLsqSLTgX0f9kzAk)
+
+> Portrait 9:16 scene in the exact painterly style of the first reference image (rich painterly GTA loading-screen illustration, bold ink outlines, saturated warm palette, not pixel art, no text). Scene: San Giorgio field blessing in a Sicilian hill town: a narrow sunny cobbled street with pastel houses, a small procession with a priest in a white and gold vestment and altar boys in white-and-red robes, a saint statue carried in the back; in the foreground an open-air altar with white flowers, a red candle and an open book in front of an old stone arch. Generic stylised people, no recognizable faces. Composition taken from the second and third reference photos, fully re-drawn as illustration.
+
+**`source/scenes/18_torre_pandolfina.jpg`** (Referenzen: source/scenes/18_torre_pandolfina.jpg (v0.8 first version), drive:1cTc0E_Z9rKnye6JrCDPxp4JPP9hWF8sj)
+
+> Portrait 9:16 scene in the exact painterly style of the first reference image (rich painterly GTA loading-screen illustration, bold ink outlines, saturated warm palette, not pixel art, no text). Scene: the medieval square stone watchtower Torre di Pandolfina with crenellations, ivy and bougainvillea on an attached low stone building with an arched door, golden dry grass in front, deep blue sky, olive trees on a hillside. Shape and details of the tower taken from the second reference photo, fully re-drawn as illustration. No people.
+
+**`source/scenes/21_lido.jpg`** (Referenzen: source/scenes/21_lido.jpg (v0.8 first version), drive:1QLMKkHuWd_0W1umXptqCih06W6hloiZ2)
+
+> Portrait 9:16 scene in the exact painterly style of the first reference image (rich painterly GTA loading-screen illustration, bold ink outlines, saturated warm palette, not pixel art, no text). Scene: Lido beach restaurant: a white tent pavilion with arched plastic windows, warm hanging lamps, cream plastic chairs and small tables on a terracotta floor, an open front looking out to the turquoise Mediterranean sea and a palm tree, golden evening light. A blank wooden boomerang-shaped sign without lettering. No people. Layout taken from the second reference photo, fully re-drawn as illustration.

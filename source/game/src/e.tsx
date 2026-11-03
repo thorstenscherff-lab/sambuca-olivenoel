@@ -4,10 +4,13 @@ function MiniTalk(p: { id: string; mode: "meet" | "chat" | "call"; onDone: (s: n
   const [r, setR] = useState(-1); const [t, setT] = useState(0); const [pts, setPts] = useState<number[]>([]); const [fb, setFb] = useState<string>("");
   const plan = useRef<{ hint: string; opts: string[]; good: string }[]>([]);
   if (!plan.current.length) {
+    // v0.8 (FB-10/OI-022): Lieblingsthemen abwechseln, Hinweise und neutrale Themen ohne Zurücklegen ziehen → keine Wiederholung in einem Gespräch
+    const sh = <T,>(a: T[]): T[] => a.map((v) => [Math.random(), v] as [number, T]).sort((x, y) => x[0] - y[0]).map((x) => x[1]);
+    const l0 = Math.random() < 0.5 ? 0 : 1; const neuAll = sh(TOPK.filter((k) => !c.likes.includes(k) && k !== c.hates)); const usedH = new Set<string>();
     for (let i = 0; i < 3; i++) {
-      const good = c.likes[Math.floor(Math.random() * 2)]; const neu = TOPK.filter((k) => !c.likes.includes(k) && k !== c.hates);
-      const o = [good, c.hates, neu[Math.floor(Math.random() * neu.length)]].sort(() => Math.random() - 0.5);
-      const hs = TOP[good][2]; plan.current.push({ hint: hs[Math.floor(Math.random() * hs.length)], opts: o, good });
+      const good = c.likes[(l0 + i) % 2]; const neu = neuAll[i % neuAll.length];
+      const o = sh([good, c.hates, neu]);
+      const hs = sh(TOP[good][2].filter((h) => !usedH.has(h))); const hint = hs[0] ?? TOP[good][2][0]; usedH.add(hint); plan.current.push({ hint, opts: o, good });
     }
   }
   useEffect(() => { if (r < 0 || r > 2 || fb) return; const iv = setInterval(() => setT((v) => v + 1), 100); return () => clearInterval(iv); }, [r, fb]);
@@ -42,6 +45,7 @@ function MiniTalk(p: { id: string; mode: "meet" | "chat" | "call"; onDone: (s: n
 const MGK: Record<string, { n: string; txt: string; it: string[]; bg: string; goal: number }> = {
   sturm: { n: "STURM!", txt: "Tippe Leitern, Kisten, Netze und Werkzeug an, bevor der Wind sie wegreißt.", it: ["🪜", "📦", "🧺", "🛞", "🪣", "🕸️"], bg: "linear-gradient(160deg,#3b4a63,#1b2333 60%,#0d111a)", goal: 14 },
   flut: { n: "FLUT!", txt: "Stopfe die Lecks im Damm mit Sandsäcken – tippe jedes 💦, bevor es durchbricht.", it: ["💦"], bg: "linear-gradient(180deg,#5c4a2e,#3a5a7a 60%,#1f3a5a)", goal: 14 },
+  brand: { n: "FEUER!", txt: "Schlag die Flammen aus – tippe jedes 🔥, bevor es auf die Bäume überspringt.", it: ["🔥"], bg: "linear-gradient(180deg,#3a1a0a,#7a2a0a 55%,#c2571a)", goal: 15 },
   fliege: { n: "FLIEGENJAGD!", txt: "Klatsch die Olivenfliegen weg, bevor sie stechen.", it: ["🪰"], bg: "radial-gradient(circle at 30% 20%,#5a8a3a,#2d4a1e 60%,#1b2a12)", goal: 16 },
 };
 function MiniRescue(p: { kind: string; onDone: (s: number) => void }): ReactNode {
@@ -76,7 +80,9 @@ const OFFH: Record<number, Hot[]> = {
   4: [{ id: "pc", x: 40, y: 74, l: "Schreibtisch · Aufträge", e: "💼", big: true }, { id: "tel", x: 62, y: 64, l: "Telefon", e: "☎️", big: true }, { id: "regal", x: 15, y: 36, l: "Lager & Haine", e: "🗄️" }, { id: "kal", x: 10, y: 60, l: "Kalender", e: "📅" }, { id: "fenster", x: 82, y: 28, l: "Zur Stadt", e: "🪟" }, { id: "tuer", x: 42, y: 44, l: "Raus aufs Land", e: "🚪" }],
 };
 const OFFN = ["", "Casa in der Via Delfino · bescheidener Anfang", "Via Delfino · es läuft", "Via Delfino · man kennt deinen Namen", "Via Delfino · der Padrino des Öls"];
-function offStage(g: G): number { const m = g.money - g.debt; return m >= 200000 || g.rep >= 70 ? 4 : m >= 60000 || g.rep >= 45 ? 3 : m >= 15000 || g.rep >= 20 ? 2 : 1; }
+// v0.8 (FB-28/OI-034): Büro-Stufe = gekaufte Stufe (g.fl.office), nicht mehr automatisch nach Vermögen/Ansehen
+const OFFICE_COST: Record<number, number> = { 2: 50000, 3: 100000, 4: 500000 };
+function offStage(g: G): number { return Math.min(4, Math.max(1, g.fl.office || 1)); }
 const SCN: Record<string, { img: string; n: string; sub: string; hots: Hot[]; slots: [number, number][]; venue: string; pos?: string }> = {
   buero: { img: "buero1", n: "DEIN BÜRO", sub: "Casa in der Via Delfino", venue: "buero", slots: [[30, 84]], hots: OFFH[1] },
   rathaus: { img: "rathaus", n: "MUNICIPIO", sub: "Rathaus von Sambuca", venue: "muni", slots: [[84, 80], [66, 84]], hots: [
@@ -90,19 +96,29 @@ const SCN: Record<string, { img: string; n: string; sub: string; hots: Hot[]; sl
   frantoio: { img: "frantoio", n: "FRANTOIO", sub: "Die Ölmühle", venue: "frantoio", slots: [[18, 84], [84, 84]], hots: [{ id: "pin:frantoio", x: 55, y: 66, l: "Mühle", e: "🫒", big: true }] },
   hain: { img: "hain", n: "DEIN HAIN", sub: "Olivenbäume unter der Stadt", venue: "hain", slots: [[80, 84]], hots: [{ id: "regal", x: 40, y: 62, l: "Haine verwalten", e: "🌳", big: true }] },
   lago: { img: "lago", n: "LAGO ARANCIO", sub: "Wasser · Villen", venue: "lago", slots: [[28, 86], [70, 88]], hots: [{ id: "pin:lago", x: 50, y: 70, l: "Am Steg", e: "⛵", big: true }] },
-  ruine: { img: "ruine", n: "TORRE & ADRANONE", sub: "Zio Turis Hang", venue: "torre", slots: [[22, 84], [80, 84]], hots: [{ id: "pin:torre", x: 50, y: 60, l: "Ruinen", e: "🏛️", big: true }] },
-  chiesa: { img: "chiesa", n: "CHIESA MADRE", sub: "Madonna dell'Udienza", venue: "chiesa", slots: [[62, 72], [88, 78], [46, 86]], hots: [
-    { id: "kerze", x: 22, y: 71, l: "Kerze (5 €)", e: "🕯️" }, { id: "spende", x: 24, y: 86, l: "Opferstock (150 €)", e: "💶" }, { id: "beichte", x: 82, y: 50, l: "Beichtstuhl", e: "🙏" }, { id: "altar", x: 38, y: 30, l: "Madonna", e: "✨" }] },
+  // v0.8 (FB-13/OI-025): eigenes Bild der Torre di Pandolfina statt Adranone-Ruine
+  ruine: { img: "torre", n: "TORRE DI PANDOLFINA", sub: "Wachturm · Zio Turis Hang", venue: "torre", slots: [[22, 84], [80, 84]], hots: [{ id: "pin:torre", x: 50, y: 60, l: "Am Turm", e: "🗼", big: true }] },
+  // v0.8 (FB-07/OI-019): Chiesa Madre = Hauptkirche; die Madonna dell'Udienza steht im Santuario (eigene Szene)
+  chiesa: { img: "chiesa", n: "CHIESA MADRE", sub: "Hauptkirche · Padre Vito", venue: "chiesa", slots: [[62, 72], [88, 78], [46, 86]], hots: [
+    { id: "beichte", x: 82, y: 50, l: "Beichtstuhl", e: "🙏", big: true }, { id: "spende", x: 24, y: 86, l: "Opferstock (150 €)", e: "💶" }] },
+  santuario: { img: "santuario", n: "SANTUARIO", sub: "Madonna dell'Udienza", venue: "santuario", slots: [[66, 76], [86, 70], [52, 90]], hots: [
+    { id: "altar", x: 40, y: 36, l: "Madonna dell'Udienza", e: "✨", big: true }, { id: "kerze", x: 20, y: 72, l: "Kerze (5 €)", e: "🕯️" }, { id: "spende", x: 28, y: 88, l: "Opferstock (150 €)", e: "💶" }] },
+  // v0.8 (FB-15/OI-027): Hotel Don Giovanni
+  hotel: { img: "hotel", n: "HOTEL DON GIOVANNI", sub: "Pool · Restaurant · Tourist:innen", venue: "hotel", slots: [[20, 80], [80, 82], [50, 90]], hots: [
+    { id: "pooldeal", x: 50, y: 50, l: "Küchenchef: 20 l zu 160 %", e: "🏊", big: true }, { id: "aperitivo", x: 78, y: 62, l: "Aperitivo (12 €)", e: "🍹" }] },
+  // v0.8 (FB-18/OI-028): Lido Boomerang
+  lido: { img: "lido", n: "LIDO BOOMERANG", sub: "Strandbar am Meer", venue: "lido", slots: [[22, 82], [78, 84]], hots: [
+    { id: "strand", x: 40, y: 64, l: "Strandtag (20 €)", e: "🏖️", big: true }, { id: "lidodeal", x: 72, y: 46, l: "Restaurant: 15 l zu 150 %", e: "🍤" }] },
   fest: { img: "fest", n: "FESTA", sub: "", venue: "fest", pos: "center", slots: [[16, 46], [40, 40], [64, 46], [86, 40], [28, 64], [74, 66]], hots: [{ id: "prog", x: 50, y: 82, l: "Festprogramm", e: "🎪", big: true }] },
 };
 function Scene(p: { id: string; g: G; H: number; W: number; onHot: (h: string) => void; onPerson: (id: string) => void; badge?: Record<string, number>; title?: string }): ReactNode {
   const s0 = SCN[p.id]; const st = offStage(p.g); const s = p.id === "buero" ? { ...s0, img: "buero" + st, hots: OFFH[st], sub: OFFN[st] } : s0; const ppl = present(p.g, s.venue);
-  const h = p.H, w = Math.min(p.W, Math.round(h * 9 / 16)); const src = s.img === "fest" ? IMG_F : IMG_SC[s.img];
+  const h = p.H, w = Math.min(p.W, Math.round(h * 9 / 16)); const src = s.img === "fest" ? festImg(p.g.m) : IMG_SC[s.img]; // v0.8 FB-25: Settimana Santa eigenes Bild
   return <div style={{ position: "relative", width: p.W, height: h, background: "#000", overflow: "hidden" }}>
     <div style={{ position: "absolute", left: (p.W - w) / 2, top: 0, width: w, height: h, backgroundImage: `url(${src})`, backgroundSize: s.img === "fest" ? "cover" : "100% 100%", backgroundPosition: s.pos || "center", animation: "sbZoom .6s ease-out" }}>
       {s.img === "fest" && <><Luminarie /><Fireworks n={3} /></>}
       <div style={{ position: "absolute", left: 0, right: 0, top: 0, padding: "10px 12px 26px", background: "linear-gradient(rgba(0,0,0,.7),transparent)", pointerEvents: "none" }}>
-        <div className="gta" style={{ fontSize: 26, color: C.fg }}>{p.title || s.n}</div><div style={{ fontSize: 12, fontWeight: 700, textShadow: "1px 1px 0 #000" }}>{s.sub}</div></div>
+        <div className="gta" style={{ fontSize: 26, color: C.fg }}>{p.title || s.n}</div><div style={{ fontSize: 12, fontWeight: 700, textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>{s.sub}</div></div>
       {s.hots.map((x) => <button key={x.id} data-hot={x.id} onClick={() => p.onHot(x.id)} style={{ position: "absolute", left: x.x + "%", top: x.y + "%", transform: "translate(-50%,-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "#fff" }}>
         <span style={{ width: x.big ? 52 : 42, height: x.big ? 52 : 42, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: x.big ? 26 : 20, background: "rgba(23,11,38,.55)", border: `3px solid ${x.big ? C.pink : C.fg}`, animation: x.big ? "sbPulse 1.6s infinite" : undefined, position: "relative" }}>{x.e}
           {p.badge && p.badge[x.id] ? <b style={{ position: "absolute", right: -6, top: -6, minWidth: 20, height: 20, borderRadius: 10, background: C.bad, color: "#fff", fontSize: 12, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #000" }}>{p.badge[x.id]}</b> : null}</span>

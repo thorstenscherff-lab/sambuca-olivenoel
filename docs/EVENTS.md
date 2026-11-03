@@ -39,42 +39,43 @@ Sandsäcke (`fl.sand`) senken den Schaden **nicht** → OI-001.
 | `EV-blogger` | 📸 Foodbloggerin aus Mailand | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:11-14` |
 | `EV-kontrolle` | 🏛️ Kontrolle der Forstbehörde | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:15-18` |
 | `EV-touristen` | 🚌 Reisebus aus Palermo | normal | Apr, Jun, Jul, Aug, Okt | 16 % | – | – | Zufall | `source/game/evs.tsx:19-22` |
-| `EV-duerre` | ☀️ Dürre-Warnung | Katastrophe | Jun, Jul, Aug | 34 % | – | – | Zufall | `source/game/evs.tsx:23-25` |
-| `EV-fliege` | 🪰 Olivenfliege im Anflug | Katastrophe | Jul, Aug, Sep | 30 % | – | – | Zufall | `source/game/evs.tsx:26-29` |
+| `EV-duerre` | ☀️ Dürre-Warnung | Katastrophe | Jun, Jul, Aug | 30 % | – | – | Zufall | `source/game/evs.tsx:23-25` |
+| `EV-fliege` | 🪰 Olivenfliege im Anflug | Katastrophe | Jul, Aug, Sep | 26 % | – | – | Zufall | `source/game/evs.tsx:26-29` |
 | `EV-wild` | 🐗 Wildschweine aus dem Bosco | Katastrophe | Sep, Okt, Nov | 30 % | – | – | Zufall | `source/game/evs.tsx:30-33` |
 | `EV-cousin` | 🧑‍🦱 Cousin Peppe braucht Geld | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:34-37` |
 | `EV-mailand` | 🚚 Großhändler aus Mailand | normal | Feb, Mär, Apr, Jun, Jul, Aug, Dez | 24 % | – | – | Zufall | `source/game/evs.tsx:38-40` |
 | `EV-palermo` | 🎄 Weihnachtsmarkt in Palermo | normal | Dez | 2 % | – | – | Zufall | `source/game/evs.tsx:41-43` |
 | `EV-novello` | 🫒 Olio-Novello-Hype | normal | Nov | 8 % | – | – | Zufall | `source/game/evs.tsx:44-47` |
 | `EV-bluete` | 🌸 Traumwetter zur Blüte | normal | Mär, Apr, Mai | 6 % | – | – | Zufall | `source/game/evs.tsx:48-50` |
-| `EV-scirocco` | 🌬️ Scirocco aus Afrika | Katastrophe | Jun, Jul, Aug | 34 % | – | – | Zufall | `source/game/evs.tsx:51-53` |
-| `EV-diebe` | 🔦 Olivendiebe unterwegs | normal | Okt, Nov | 10 % | – | – | Zufall | `source/game/evs.tsx:54-57` |
-| `EV-traktor` | 🚜 Der alte Fiat-Traktor streikt | normal | Jan, Feb, Mär, Apr | 16 % | – | – | Zufall | `source/game/evs.tsx:58-61` |
-| `EV-zeitung` | 📰 Giornale di Sicilia will ein Interview | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:62-65` |
-| `EV-rezept` | 🍪 Nonnas Geheimrezept | normal | Jan, Feb, Mär, Okt | 17 % | – | – | Zufall | `source/game/evs.tsx:66-68` |
-| `EV-wette` | ⚽ Salvos Wette: Palermo gegen Catania | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:69-72` |
-| `EV-studis` | 🎒 Freiwillige aus Erasmus | normal | Feb, Mär, Apr, Mai | 11 % | – | – | Zufall | `source/game/evs.tsx:73-75` |
-| `EV-strom` | ⚡ Stromausfall im Frantoio | normal | Okt, Nov | 10 % | – | – | Zufall | `source/game/evs.tsx:76-78` |
-| `EV-regen` | 🌧️ Dauerregen zur Ernte | Katastrophe | Okt, Nov | 22 % | – | – | Zufall | `source/game/evs.tsx:79-81` |
-| `EV-japan` | 🗾 E-Mail aus Tokio | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:82-84` |
-| `EV-hochzeit` | 💍 Hochzeit in der Matrice | normal | Jun, Jul, Sep | 13 % | – | – | Zufall | `source/game/evs.tsx:85-87` |
-| `EV-kurs` | ✂️ Schnittkurs vom Meister | normal | Jan, Feb, Dez | 13 % | – | – | Zufall | `source/game/evs.tsx:88-90` |
-| `EV-rai` | 📺 RAI-Sendung „Linea Verde“ | normal | Apr, Jun, Jul, Sep, Okt | 17 % | – | – | Zufall | `source/game/evs.tsx:91-93` |
-| `EV-xylella` | 🦠 Xylella-Gerücht | Katastrophe | Mai, Jun, Jul | 29 % | – | – | Zufall | `source/game/evs.tsx:94-96` |
-| `EV-hund` | 🐕 Ein streunender Hund | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:97-99` |
-| `EV-imu` | 🧾 Bescheid vom Finanzamt | normal | Jun, Jul, Dez | 13 % | – | – | Zufall | `source/game/evs.tsx:100-102` |
-| `EV-dop` | 🏅 Prüfer für DOP Val di Mazara | normal | Feb, Mär, Apr, Jul, Aug | 18 % | – | – | Zufall | `source/game/evs.tsx:103-105` |
-| `EV-bank` | 🏦 Die Sicilbanca ruft an | normal | Mär, Apr, Jul, Aug | 13 % | – | – | Zufall | `source/game/evs.tsx:106-110` |
-| `EV-turi1` | 🗣️ Turi redet schlecht über dein Öl | normal | Feb, Mär, Apr, Jun, Jul | 20 % | – | CH-turi | Zufall | `source/game/evs.tsx:111-114` |
-| `EV-turi2` | 🔧 Sabotage am Bewässerungsschlauch | normal | – | – | – | CH-turi | Folge von EV-turi1 (+2 Mon.) | `source/game/evs.tsx:115-118` |
-| `EV-turi3` | 🤝 Turi will gemeinsam mahlen | normal | – | – | – | CH-turi | Folge von EV-turi2 (+3 Mon.) | `source/game/evs.tsx:119-121` |
-| `EV-klaus1` | 🏡 Klaus will ein Agriturismo | normal | Jan, Feb, Mär, Apr | 16 % | `g.met.includes("klaus")` | CH-klaus | Zufall | `source/game/evs.tsx:122-125` |
-| `EV-klaus2` | 📐 Die Baugenehmigung hakt | normal | – | – | – | CH-sindaco | Folge von EV-klaus1 (+2 Mon.) | `source/game/evs.tsx:126-129` |
-| `EV-klaus3` | 🎉 Eröffnung: Agriturismo Pandolfina | normal | – | – | – | CH-klaus | Folge von EV-klaus2 (+2 Mon.) | `source/game/evs.tsx:130-132` |
-| `EV-export2` | 📦 Bestellung aus München | normal | – | – | – | CH-klaus | Folge von EV-ud4 (+3 Mon.), EV-calici (+2 Mon.) | `source/game/evs.tsx:133-136` |
-| `EV-sindaco1` | 🗳️ Der Sindaco braucht Unterstützer | normal | Jan, Feb, Mär | 15 % | `g.met.includes("sindaco")` | CH-sindaco | Zufall | `source/game/evs.tsx:137-139` |
-| `EV-sindaco2` | 💶 EU-Topf bewilligt! | normal | – | – | – | CH-sindaco | Folge von EV-sindaco1 (+3 Mon.) | `source/game/evs.tsx:140-142` |
-| `EV-padre1` | ⛪ Das Dach der Matrice leckt | normal | Jan, Feb, Mär | 15 % | – | CH-padre | Zufall | `source/game/evs.tsx:143-147` |
+| `EV-scirocco` | 🌬️ Scirocco aus Afrika | Katastrophe | Jun, Jul, Aug | 30 % | – | – | Zufall | `source/game/evs.tsx:51-54` |
+| `EV-brand` | 🔥 Incendio! Flächenbrand am Hang | Katastrophe | Jul, Aug | 17 % | – | – | Zufall | `source/game/evs.tsx:55-59` |
+| `EV-diebe` | 🔦 Olivendiebe unterwegs | normal | Okt, Nov | 10 % | – | – | Zufall | `source/game/evs.tsx:60-64` |
+| `EV-traktor` | 🚜 Der alte Fiat-Traktor streikt | normal | Jan, Feb, Mär, Apr | 16 % | – | – | Zufall | `source/game/evs.tsx:65-68` |
+| `EV-zeitung` | 📰 Giornale di Sicilia will ein Interview | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:69-72` |
+| `EV-rezept` | 🍪 Nonnas Geheimrezept | normal | Jan, Feb, Mär, Okt | 17 % | – | – | Zufall | `source/game/evs.tsx:73-75` |
+| `EV-wette` | ⚽ Salvos Wette: Palermo gegen Catania | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:76-79` |
+| `EV-studis` | 🎒 Freiwillige aus Erasmus | normal | Feb, Mär, Apr, Mai | 11 % | – | – | Zufall | `source/game/evs.tsx:80-82` |
+| `EV-strom` | ⚡ Stromausfall im Frantoio | normal | Okt, Nov | 10 % | – | – | Zufall | `source/game/evs.tsx:83-85` |
+| `EV-regen` | 🌧️ Dauerregen zur Ernte | Katastrophe | Okt, Nov | 22 % | – | – | Zufall | `source/game/evs.tsx:86-88` |
+| `EV-japan` | 🗾 E-Mail aus Tokio | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:89-91` |
+| `EV-hochzeit` | 💍 Hochzeit in der Matrice | normal | Jun, Jul, Sep | 13 % | – | – | Zufall | `source/game/evs.tsx:92-94` |
+| `EV-kurs` | ✂️ Schnittkurs vom Meister | normal | Jan, Feb, Dez | 13 % | – | – | Zufall | `source/game/evs.tsx:95-97` |
+| `EV-rai` | 📺 RAI-Sendung „Linea Verde“ | normal | Apr, Jun, Jul, Sep, Okt | 17 % | – | – | Zufall | `source/game/evs.tsx:98-100` |
+| `EV-xylella` | 🦠 Xylella-Gerücht | Katastrophe | Mai, Jun, Jul | 26 % | – | – | Zufall | `source/game/evs.tsx:101-103` |
+| `EV-hund` | 🐕 Ein streunender Hund | normal | ganzjährig | 38 % | – | – | Zufall | `source/game/evs.tsx:104-106` |
+| `EV-imu` | 🧾 Bescheid vom Finanzamt | normal | Jun, Jul, Dez | 13 % | – | – | Zufall | `source/game/evs.tsx:107-109` |
+| `EV-dop` | 🏅 Prüfer für DOP Val di Mazara | normal | Feb, Mär, Apr, Jul, Aug | 18 % | – | – | Zufall | `source/game/evs.tsx:110-112` |
+| `EV-bank` | 🏦 Die Sicilbanca ruft an | normal | Mär, Apr, Jul, Aug | 13 % | – | – | Zufall | `source/game/evs.tsx:113-117` |
+| `EV-turi1` | 🗣️ Turi redet schlecht über dein Öl | normal | Feb, Mär, Apr, Jun, Jul | 20 % | – | CH-turi | Zufall | `source/game/evs.tsx:118-121` |
+| `EV-turi2` | 🔧 Sabotage am Bewässerungsschlauch | normal | – | – | – | CH-turi | Folge von EV-turi1 (+2 Mon.) | `source/game/evs.tsx:122-125` |
+| `EV-turi3` | 🤝 Turi will gemeinsam mahlen | normal | – | – | – | CH-turi | Folge von EV-turi2 (+3 Mon.) | `source/game/evs.tsx:126-128` |
+| `EV-klaus1` | 🏡 Klaus will ein Agriturismo | normal | Jan, Feb, Mär, Apr | 16 % | `g.met.includes("klaus")` | CH-klaus | Zufall | `source/game/evs.tsx:129-132` |
+| `EV-klaus2` | 📐 Die Baugenehmigung hakt | normal | – | – | – | CH-sindaco | Folge von EV-klaus1 (+2 Mon.) | `source/game/evs.tsx:133-136` |
+| `EV-klaus3` | 🎉 Eröffnung: Agriturismo Pandolfina | normal | – | – | – | CH-klaus | Folge von EV-klaus2 (+2 Mon.) | `source/game/evs.tsx:137-139` |
+| `EV-export2` | 📦 Bestellung aus München | normal | – | – | – | CH-klaus | Folge von EV-ud4 (+3 Mon.), EV-calici (+2 Mon.) | `source/game/evs.tsx:140-143` |
+| `EV-sindaco1` | 🗳️ Der Sindaco braucht Unterstützer | normal | Jan, Feb, Mär | 15 % | `g.met.includes("sindaco")` | CH-sindaco | Zufall | `source/game/evs.tsx:144-146` |
+| `EV-sindaco2` | 💶 EU-Topf bewilligt! | normal | – | – | – | CH-sindaco | Folge von EV-sindaco1 (+3 Mon.) | `source/game/evs.tsx:147-149` |
+| `EV-padre1` | ⛪ Das Dach der Matrice leckt | normal | Jan, Feb, Mär | 15 % | – | CH-padre | Zufall | `source/game/evs.tsx:150-154` |
 | `EV-sturm` | 🌪️ Sturmwarnung über dem Belice | Katastrophe | Okt, Nov, Dez, Jan, Feb, Mär | 83 % | – | – | Zufall | `source/game/src/c.tsx:14-17` |
 | `EV-flut` | 🌊 Starkregen: Der Belice tritt über die Ufer | Katastrophe | Nov, Dez, Jan, Feb | 51 % | – | – | Zufall | `source/game/src/c.tsx:18-21` |
 | `EV-dolores1` | 🥂 Eine Amerikanerin kauft die Villa am Lago | normal | Apr, Mai, Jun, Jul | 12 % | `!g.met.includes("dolores")` | – | Zufall | `source/game/src/c.tsx:22-24` |
@@ -87,20 +88,20 @@ Sandsäcke (`fl.sand`) senken den Schaden **nicht** → OI-001.
 <!-- BEGIN GENERATED:events-fest -->
 | ID | Fest-Ereignis | Wann | Figur | Code |
 |---|---|---|---|---|
-| `EV-vend1` | 🍇 Die Weinlese ruft – deine Crew wackelt | fix jeden Juli (rollEvents) | CH-giusi | `source/game/evs.tsx:148-151` |
-| `EV-vend2` | 🍷 Vendemmia-Chaos | Fest FEST-09 (Sep) | CH-giusi | `source/game/evs.tsx:152-156` |
-| `EV-vend3` | ⏰ Kommt die Crew rechtzeitig zurück? | Fest FEST-10 (Okt) | – | `source/game/evs.tsx:157-160` |
-| `EV-santa` | ✝️ Settimana Santa: Prozession des Cristo Morto | Fest FEST-04 (Apr) | CH-padre | `source/game/evs.tsx:164-167` |
-| `EV-giorgio` | 🐎 San Giorgio: Feldsegnung am 23. April | Fest FEST-04 (Apr) | CH-padre | `source/game/evs.tsx:168-172` |
-| `EV-ud1` | 🕯️ Udienza Tag 1: Pilgerweg vom Cellaro | Fest FEST-05 (Mai) | CH-padre | `source/game/evs.tsx:173-176` |
-| `EV-ud2` | 🏇 Udienza Tag 4: Palio & Minna Fest | Fest FEST-05 (Mai) | CH-nonna | `source/game/evs.tsx:177-180` |
-| `EV-ud3` | 💡 Udienza Tag 6: Sponsor der Luminarie | Fest FEST-05 (Mai) | CH-sindaco | `source/game/evs.tsx:181-184` |
-| `EV-ud4` | 🥂 Udienza Tag 8: Empfang im Palazzo dell'Arpa | Fest FEST-05 (Mai) | CH-klaus | `source/game/evs.tsx:185-188` |
-| `EV-ud5` | 🎆 Udienza Finale: La Nisciuta | Fest FEST-05 (Mai) | CH-padre | `source/game/evs.tsx:189-193` |
-| `EV-vassalli` | 🍝 Festa dei Vassalli (5. August) | Fest FEST-08 (Aug) | CH-nonna | `source/game/evs.tsx:194-197` |
-| `EV-calici` | 🌠 Calici di Stelle am Belvedere (10. August) | Fest FEST-08 (Aug) | CH-giusi | `source/game/evs.tsx:198-202` |
-| `EV-fiera` | 🐂 Fiera del Bestiame (21.–22. Sept.) | Fest FEST-09 (Sep) | CH-turi | `source/game/evs.tsx:203-207` |
-| `EV-zabut` | 🌟 Natale a Sambuca: Krippe in den Vicoli | Fest FEST-12 (Dez) | CH-chiara | `source/game/evs.tsx:208-211` |
+| `EV-vend1` | 🍇 Die Weinlese ruft – deine Crew wackelt | fix jeden Juli (rollEvents) | CH-giusi | `source/game/evs.tsx:155-158` |
+| `EV-vend2` | 🍷 Vendemmia-Chaos | Fest FEST-09 (Sep) | CH-giusi | `source/game/evs.tsx:159-163` |
+| `EV-vend3` | ⏰ Kommt die Crew rechtzeitig zurück? | Fest FEST-10 (Okt) | – | `source/game/evs.tsx:164-167` |
+| `EV-santa` | ✝️ Settimana Santa: Prozession des Cristo Morto | Fest FEST-04 (Apr) | CH-padre | `source/game/evs.tsx:171-174` |
+| `EV-giorgio` | 🐎 San Giorgio: Feldsegnung am 23. April | Fest FEST-04 (Apr) | CH-padre | `source/game/evs.tsx:175-179` |
+| `EV-ud1` | 🕯️ Udienza Tag 1: Pilgerweg vom Cellaro | Fest FEST-05 (Mai) | CH-padre | `source/game/evs.tsx:180-183` |
+| `EV-ud2` | 🏇 Udienza Tag 4: Palio & Minna Fest | Fest FEST-05 (Mai) | CH-nonna | `source/game/evs.tsx:184-187` |
+| `EV-ud3` | 💡 Udienza Tag 6: Sponsor der Luminarie | Fest FEST-05 (Mai) | CH-sindaco | `source/game/evs.tsx:188-191` |
+| `EV-ud4` | 🥂 Udienza Tag 8: Empfang im Palazzo dell'Arpa | Fest FEST-05 (Mai) | CH-klaus | `source/game/evs.tsx:192-195` |
+| `EV-ud5` | 🎆 Udienza Finale: La Nisciuta | Fest FEST-05 (Mai) | CH-padre | `source/game/evs.tsx:196-200` |
+| `EV-vassalli` | 🍝 Festa dei Vassalli (5. August) | Fest FEST-08 (Aug) | CH-nonna | `source/game/evs.tsx:201-204` |
+| `EV-calici` | 🌠 Calici di Stelle am Belvedere (10. August) | Fest FEST-08 (Aug) | CH-giusi | `source/game/evs.tsx:205-209` |
+| `EV-fiera` | 🐂 Fiera del Bestiame (21.–22. Sept.) | Fest FEST-09 (Sep) | CH-turi | `source/game/evs.tsx:210-214` |
+| `EV-zabut` | 🌟 Natale a Sambuca: Krippe in den Vicoli | Fest FEST-12 (Dez) | CH-chiara | `source/game/evs.tsx:215-218` |
 <!-- END GENERATED:events-fest -->
 
 ## Alle Wahlmöglichkeiten
@@ -160,12 +161,12 @@ Sandsäcke (`fl.sand`) senken den Schaden **nicht** → OI-001.
 
 #### EV-duerre · ☀️ Dürre-Warnung
 
-> Seit sechs Wochen kein Regen. Ohne Wasser verlieren die Bäume ihre Früchte.
+> Seit sechs Wochen kein Regen. Ohne Wasser verlieren die Bäume ihre Früchte. (Tipp: Das 💧 Wasserrecht am Lago schützt dauerhaft.)
 
 | # | Wahl | Folge (Spieltext) | nur wenn | Minispiel |
 |---|---|---|---|---|
 | 1 | Tankwagen bestellen | 1 €/Baum, alle geschützt | – | – |
-| 2 | Auf Regen hoffen | 70 %: ungeschützte Haine −20 % | – | – |
+| 2 | Auf Regen hoffen | 70 %: ungeschützte Haine −20 % · mit 💧 Wasserrecht kein Schaden | – | – |
 
 #### EV-fliege · 🪰 Olivenfliege im Anflug
 
@@ -241,7 +242,18 @@ Sandsäcke (`fl.sand`) senken den Schaden **nicht** → OI-001.
 | # | Wahl | Folge (Spieltext) | nur wenn | Minispiel |
 |---|---|---|---|---|
 | 1 | Nachts extra wässern | 0,80 €/Baum | – | – |
-| 2 | Durchhalten | Haine ohne Bewässerung −10 % | – | – |
+| 2 | Durchhalten | Haine ohne Bewässerung −10 % · mit 💧 Wasserrecht kein Schaden | – | – |
+
+#### EV-brand · 🔥 Incendio! Flächenbrand am Hang
+
+> Trockenes Gras, Scirocco, ein weggeworfener Zigarettenstummel: Über der Contrada steigt Rauch auf. Das Feuer läuft auf deine Haine zu.
+
+| # | Wahl | Folge (Spieltext) | nur wenn | Minispiel |
+|---|---|---|---|---|
+| 1 | Die Brandschneise hält | nur mit 🚜 Brandschneise (Consorzio, dieses Jahr gemäht): kein Schaden | – | – |
+| 2 | Protezione Civile rufen | Sindaco ♥ ≥ 40: Löschflugzeug, nur −5 % Zustand | – | – |
+| 3 | 🎮 Selbst löschen | Minispiel: bis −30 % Zustand, −10 % Bäume, Ertrag −10 % | – | MG-rescue-brand |
+| 4 | Abwarten und beten | −30 % Zustand, −10 % Bäume, Ertrag −15 % | – | – |
 
 #### EV-diebe · 🔦 Olivendiebe unterwegs
 
@@ -251,7 +263,8 @@ Sandsäcke (`fl.sand`) senken den Schaden **nicht** → OI-001.
 |---|---|---|---|---|
 | 1 | Nachtwache (200 €) | sicher | – | – |
 | 2 | Salvo hört sich um | Salvo ♥ ≥ 40, ★ +3 | – | – |
-| 3 | Wird schon gutgehen | 40 %: Ertrag −15 % | – | – |
+| 3 | Die Wachhunde aufpassen lassen | nur mit 🐕 Wachhund (O-Dogs Garden): sicher, gratis | – | – |
+| 4 | Wird schon gutgehen | 40 %: Ertrag −15 % (mit 🐕 nur 10 %) | – | – |
 
 #### EV-traktor · 🚜 Der alte Fiat-Traktor streikt
 
@@ -700,3 +713,10 @@ Folge-Ereignisse: EV-export2
 | 2 | Keine Zeit | nichts passiert | – | – |
 
 <!-- END GENERATED:events-choices -->
+
+## v0.8
+- `rollEvents` mischt Ereignisse aus Nachbarmonaten zu 50 % mit. Ereignisse aus `g.prev` (letztes Jahr bzw. letztes Spiel, `localStorage sambuca5_seen`) werden nachrangig gezogen.
+- `diebe` hat eine Hund-Option, das Risiko liegt dann bei 10 %. `duerre` und `scirocco` nennen das Wasserrecht.
+- `carmela1` setzt `fl.carmelaHere`, damit Carmela sofort anzutreffen ist (±1 Monat).
+- Event-Karten haben keinen Rahmen mehr, nur einen Schatten. `santa`, `giorgio`, `vassalli` und `calici` zeigen ein Fest-Bildbanner (`EV_IMG`).
+- **EV-brand** (v0.8, OI-035): Flächenbrand im Juli/August, Katastrophe. Optionen: Schneise hält / Protezione Civile / Minispiel `brand` / abwarten. Folgen: Zustand, Bäume (`burn`), Ertrag.

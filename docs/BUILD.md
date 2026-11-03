@@ -108,3 +108,8 @@ Danach folgt die QA laut QA.md.
 
 ## Historische Build-Verzeichnisse (nur Build-Box)
 v0.1–v0.4 waren eine Canvas-App (`/workspace/sambuca-game/v01…v04/game.canvas.tsx`, jeweils mit eigenem `build.sh`). Seit v0.5 liegt das Spiel in diesem GitHub-Pages-Repo. Arbeitsverzeichnis für v0.7/v0.7.1: `/workspace/sambuca-game/v07/build` mit Test-Harness `/workspace/sbtest`. Der Inhalt von `source/` ist eine 1:1-Kopie davon.
+
+## v0.8
+- `fonts/nunito-latin-600-900.woff2` wird in `index.html` per `@font-face` geladen und vorgeladen.
+- Neue SC-Keys in `tools/build_imgs.py`: start, torre, hotel, santa, lido, santuario, vassalli, giorgio. Danach `python3 source/tools/build_imgs.py && bash source/build.sh`.
+- Reproduzierbarkeit: Zwei Builds hintereinander ergeben dasselbe sha256 für `app.js`.

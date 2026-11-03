@@ -83,17 +83,19 @@ Die Rivalen wachsen monatlich um ±5 % (seed) und legen im Nov/Dez Sprünge hin.
 <!-- BEGIN GENERATED:shop -->
 | ID | Artikel | Wirkung | Preis | Ort | Code |
 |---|---|---|---|---|---|
-| `SHOP-spade1` | 🪓 Billig-Spaten | 3 Einsätze, Pflege ohne Spaten +25 % | 19 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:131` |
-| `SHOP-netz1` | 🕸️ Billig-Windnetze | Sturmschutz für 1 Sturm | 180 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:132` |
-| `SHOP-sand` | 🧱 Sandsäcke | Flutschaden-Puffer (1×) | 60 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:133` |
-| `SHOP-gear1` | 🔩 Billig-Rüttler | Ernte +15 %, aber 35 % Bruch pro Ernte | 850 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:134` |
-| `SHOP-spade2` | ⛏️ Profi-Spaten | 12 Einsätze | 89 € | MIN-consorzio | `source/game/src/c.tsx:135` |
-| `SHOP-netz2` | 🛡️ Windschutznetze | hält 3 Stürme | 450 € | MIN-consorzio | `source/game/src/c.tsx:136` |
-| `SHOP-drain` | 🚧 Drainagegräben | Flutschaden dauerhaft −70 % | 900 € | MIN-consorzio | `source/game/src/c.tsx:137` |
-| `SHOP-gear2` | 🔧 Rüttler (neu) | Ernte +15 %, Lohn halbiert | 1800 € | MIN-consorzio | `source/game/src/c.tsx:138` |
-| `SHOP-bio` | 🌿 Bio-Zertifikat beantragen | Preis +10 %, Qualität +10 | 800 € | PIN-muni | `source/game/src/c.tsx:139` |
-| `SHOP-dop` | 🏅 DOP Val di Mazara | Preis +8 % dauerhaft | 1200 € | PIN-muni | `source/game/src/c.tsx:140` |
-| `SHOP-water` | 💧 Wasserrecht am Lago | Schutz vor Dürre, Bewässerung frei | 1500 € | PIN-lago | `source/game/src/c.tsx:141` |
+| `SHOP-spade1` | 🪓 Billig-Spaten | 3 Einsätze, Pflege ohne Spaten +25 % | 19 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:148` |
+| `SHOP-netz1` | 🕸️ Billig-Windnetze | Sturmschutz für 1 Sturm | 180 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:149` |
+| `SHOP-sand` | 🧱 Sandsäcke | Flutschaden-Puffer (1×) | 60 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:150` |
+| `SHOP-gear1` | 🔩 Billig-Rüttler | Ernte +15 %, aber 35 % Bruch pro Ernte | 850 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:151` |
+| `SHOP-spade2` | ⛏️ Profi-Spaten | 12 Einsätze | 89 € | MIN-consorzio | `source/game/src/c.tsx:152` |
+| `SHOP-netz2` | 🛡️ Windschutznetze | hält 3 Stürme | 450 € | MIN-consorzio | `source/game/src/c.tsx:153` |
+| `SHOP-drain` | 🚧 Drainagegräben | Flutschaden dauerhaft −70 % | 900 € | MIN-consorzio | `source/game/src/c.tsx:154` |
+| `SHOP-gear2` | 🔧 Rüttler (neu) | Ernte +15 %, Lohn halbiert | 1800 € | MIN-consorzio | `source/game/src/c.tsx:155` |
+| `SHOP-bio` | 🌿 Bio-Zertifikat beantragen | Preis +10 %, Qualität +10 | 800 € | PIN-muni | `source/game/src/c.tsx:156` |
+| `SHOP-dop` | 🏅 DOP Val di Mazara | Preis +8 % dauerhaft | 1200 € | PIN-muni | `source/game/src/c.tsx:157` |
+| `SHOP-schneise` | 🚜 Brandschneise mähen | Schutz vor Flächenbrand für 12 Monate: Gras und Gestrüpp um alle Haine wird gemäht (100 € + 0,40 €/Baum) | 100 + trees(g) * 0.4) € | MIN-consorzio | `source/game/src/c.tsx:158` |
+| `SHOP-dog` | 🐕 Wachhund adoptieren | Schutz vor Olivendieben: im Ereignis „Olivendiebe“ gibt es die sichere Option „Wachhunde“, Risiko sonst nur 10 % statt 40 % | 350 € | MIN-dogs | `source/game/src/c.tsx:159` |
+| `SHOP-water` | 💧 Wasserrecht am Lago | Wirkung: alle Haine gelten dauerhaft als bewässert (💧, keine Bewässerungs-Kosten), Dürre & Hitzewelle ohne Schaden, erfüllt das Juni-Ziel | 1500 € | PIN-lago | `source/game/src/c.tsx:160` |
 <!-- END GENERATED:shop -->
 
 ## Alle Wirtschafts-Symbole im Code
@@ -110,19 +112,27 @@ Die Rivalen wachsen monatlich um ±5 % (seed) und legen im Nov/Dez Sprünge hin.
 | `ECO-unit` | `source/game/src/a.tsx:70` |
 | `ECO-wage` | `source/game/src/a.tsx:71` |
 | `ECO-sellAt` | `source/game/src/a.tsx:72` |
-| `ECO-millFee` | `source/game/src/d.tsx:48` |
-| `ECO-pickCost` | `source/game/src/d.tsx:49` |
-| `ECO-careCost` | `source/game/src/d.tsx:51` |
-| `ECO-nextPrice` | `source/game/src/c.tsx:59` |
-| `ECO-endMonth` | `source/game/src/d.tsx:154` |
-| `ECO-score` | `source/game/src/d.tsx:188` |
-| `ECO-titel` | `source/game/src/d.tsx:193` |
-| `ECO-rivalPts` | `source/game/src/d.tsx:43` |
-| `ECO-mkOffers` | `source/game/src/d.tsx:20` |
-| `ECO-disc` | `source/game/src/c.tsx:129` |
+| `ECO-millFee` | `source/game/src/d.tsx:56` |
+| `ECO-pickCost` | `source/game/src/d.tsx:57` |
+| `ECO-careCost` | `source/game/src/d.tsx:59` |
+| `ECO-nextPrice` | `source/game/src/c.tsx:66` |
+| `ECO-endMonth` | `source/game/src/d.tsx:174` |
+| `ECO-score` | `source/game/src/d.tsx:208` |
+| `ECO-titel` | `source/game/src/d.tsx:213` |
+| `ECO-rivalPts` | `source/game/src/d.tsx:51` |
+| `ECO-mkOffers` | `source/game/src/d.tsx:23` |
+| `ECO-disc` | `source/game/src/c.tsx:146` |
 | `ECO-DMG` | `source/game/src/c.tsx:2` |
 | `ECO-storm` | `source/game/src/c.tsx:3` |
-| `ECO-offStage` | `source/game/src/e.tsx:79` |
-| `ECO-hsPut` | `source/game/src/d.tsx:205` |
-| `ECO-MEETNEED` | `source/game/src/d.tsx:63` |
+| `ECO-offStage` | `source/game/src/e.tsx:85` |
+| `ECO-hsPut` | `source/game/src/d.tsx:225` |
+| `ECO-MEETNEED` | `source/game/src/d.tsx:73` |
 <!-- END GENERATED:eco -->
+
+## v0.8
+- **Büro:** Upgrades werden gekauft (`OFFICE_COST`): Stufe 2 kostet 50.000 €, Stufe 3 100.000 €, Stufe 4 500.000 €, je ★ +3. Die Stufe steht in `fl.office`.
+- **Haine:** 5 kaufbare Startangebote und 2 im Besitz von NPCs (`turih` Turi 9.500 €, `giusih` Giusi 14.500 €; kaufbar ab Monat 12 und ★ ≥ 40). Dazu kommen 3 neue Angebote pro Jahr. Angebote im Besitz von NPCs laufen nicht ab.
+- **Wette:** `BET` hat 45 % Gewinnchance, Gewinn 110 €.
+- **Wachhund:** 350 € (`fl.dog`). Das Diebstahlrisiko sinkt auf 10 %.
+- **Wasserrecht:** Die Wirkung ist im Text erklärt (Schutz bei Dürre und Scirocco).
+- **SHOP-schneise** (Consorzio): 100 € + 0,40 €/Baum, setzt `fl.schneise = abs(g)` und schützt 12 Monate vor `brand`.

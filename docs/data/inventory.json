@@ -13,7 +13,8 @@
    "diff": 0,
    "at": [
     "chiesa",
-    "panif"
+    "panif",
+    "santuario"
    ],
    "mo": null,
    "likes": [
@@ -25,7 +26,8 @@
    "meet_need": 0,
    "venues": [
     "Chiesa Madre",
-    "Panificio"
+    "Panificio",
+    "Santuario"
    ],
    "fests": [
     "3: SETTIMANA SANTA & SAN GIORGIO",
@@ -40,7 +42,7 @@
      "n": "Familien-Crew",
      "d": "Die Familie erntet mit – Crew gratis",
      "per": "once",
-     "loc": "source/game/src/c.tsx:65"
+     "loc": "source/game/src/c.tsx:72"
     }
    ],
    "deals": {
@@ -56,25 +58,25 @@
     {
      "id": "rezept",
      "t": "Nonnas Geheimrezept",
-     "loc": "source/game/evs.tsx:66-68",
+     "loc": "source/game/evs.tsx:73-75",
      "who": false
     },
     {
      "id": "santa",
      "t": "Settimana Santa: Prozession des Cristo Morto",
-     "loc": "source/game/evs.tsx:164-167",
+     "loc": "source/game/evs.tsx:171-174",
      "who": false
     },
     {
      "id": "ud2",
      "t": "Udienza Tag 4: Palio & Minna Fest",
-     "loc": "source/game/evs.tsx:177-180",
+     "loc": "source/game/evs.tsx:184-187",
      "who": true
     },
     {
      "id": "vassalli",
      "t": "Festa dei Vassalli (5. August)",
-     "loc": "source/game/evs.tsx:194-197",
+     "loc": "source/game/evs.tsx:201-204",
      "who": true
     }
    ],
@@ -83,32 +85,32 @@
      "place": "Panificio",
      "t": "Frische Cuccidati für die Nonna?",
      "l": "Kaufen (6 €)",
-     "loc": "source/game/src/c.tsx:93"
+     "loc": "source/game/src/c.tsx:110"
     },
     {
      "place": "Apicoltore Nino",
      "t": "Honig gegen Öl?",
      "l": "5 l tauschen",
-     "loc": "source/game/src/c.tsx:114"
+     "loc": "source/game/src/c.tsx:131"
     }
    ],
    "refs": [
     "source/game/evs.tsx:21",
-    "source/game/evs.tsx:67",
-    "source/game/evs.tsx:68",
-    "source/game/evs.tsx:167",
-    "source/game/evs.tsx:177",
-    "source/game/evs.tsx:179",
-    "source/game/evs.tsx:194",
-    "source/game/evs.tsx:195",
+    "source/game/evs.tsx:74",
+    "source/game/evs.tsx:75",
+    "source/game/evs.tsx:174",
+    "source/game/evs.tsx:184",
+    "source/game/evs.tsx:186",
+    "source/game/evs.tsx:201",
+    "source/game/evs.tsx:202",
     "source/game/src/a.tsx:27",
-    "source/game/src/c.tsx:35",
-    "source/game/src/c.tsx:40",
-    "source/game/src/c.tsx:65",
-    "source/game/src/c.tsx:93",
-    "source/game/src/c.tsx:114",
-    "source/game/src/d.tsx:33",
-    "source/game/src/d.tsx:40"
+    "source/game/src/c.tsx:38",
+    "source/game/src/c.tsx:43",
+    "source/game/src/c.tsx:72",
+    "source/game/src/c.tsx:110",
+    "source/game/src/c.tsx:131",
+    "source/game/src/d.tsx:36",
+    "source/game/src/d.tsx:48"
    ]
   },
   {
@@ -126,7 +128,8 @@
     "buero",
     "panif",
     "chiesa",
-    "fest"
+    "fest",
+    "santuario"
    ],
    "mo": null,
    "likes": [
@@ -140,7 +143,8 @@
     "Büro (zuhause)",
     "Panificio",
     "Chiesa Madre",
-    "Feste"
+    "Feste",
+    "Santuario"
    ],
    "fests": [
     "3: SETTIMANA SANTA & SAN GIORGIO",
@@ -157,7 +161,7 @@
      "n": "Wetter-Tratsch",
      "d": "verrät Katastrophen im nächsten Monat",
      "per": "m",
-     "loc": "source/game/src/c.tsx:66"
+     "loc": "source/game/src/c.tsx:73"
     },
     {
      "id": "agrum",
@@ -167,7 +171,7 @@
      "n": "Zitronen-Öl (Agrumato)",
      "d": "20 l Öl → 30 Fläschchen à 18 €",
      "per": "m",
-     "loc": "source/game/src/c.tsx:67"
+     "loc": "source/game/src/c.tsx:74"
     }
    ],
    "deals": {},
@@ -183,13 +187,13 @@
    "refs": [
     "source/game/src/a.tsx:28",
     "source/game/src/c.tsx:28",
-    "source/game/src/c.tsx:35",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:37",
+    "source/game/src/c.tsx:38",
+    "source/game/src/c.tsx:39",
     "source/game/src/c.tsx:40",
-    "source/game/src/c.tsx:66",
-    "source/game/src/c.tsx:67",
-    "source/game/src/d.tsx:58"
+    "source/game/src/c.tsx:43",
+    "source/game/src/c.tsx:73",
+    "source/game/src/c.tsx:74",
+    "source/game/src/d.tsx:68"
    ]
   },
   {
@@ -204,7 +208,8 @@
    "i": 5,
    "diff": 1,
    "at": [
-    "bar"
+    "bar",
+    "lido"
    ],
    "mo": null,
    "likes": [
@@ -215,7 +220,8 @@
    "def": "source/game/src/a.tsx:29",
    "meet_need": 0.3,
    "venues": [
-    "Bar del Corso"
+    "Bar del Corso",
+    "→ Lido Boomerang"
    ],
    "fests": [],
    "perks": [
@@ -227,7 +233,7 @@
      "n": "Insider-Tipp Ölpreis",
      "d": "Trend für nächsten Monat",
      "per": "m",
-     "loc": "source/game/src/c.tsx:68"
+     "loc": "source/game/src/c.tsx:75"
     },
     {
      "id": "barsell",
@@ -237,7 +243,7 @@
      "n": "Öl über die Bar verkaufen",
      "d": "bis 40 l zu 135 %",
      "per": "m",
-     "loc": "source/game/src/c.tsx:69"
+     "loc": "source/game/src/c.tsx:76"
     }
    ],
    "deals": {},
@@ -251,39 +257,39 @@
     {
      "id": "diebe",
      "t": "Olivendiebe unterwegs",
-     "loc": "source/game/evs.tsx:54-57",
+     "loc": "source/game/evs.tsx:60-64",
      "who": false
     },
     {
      "id": "rezept",
      "t": "Nonnas Geheimrezept",
-     "loc": "source/game/evs.tsx:66-68",
+     "loc": "source/game/evs.tsx:73-75",
      "who": false
     },
     {
      "id": "wette",
      "t": "Salvos Wette: Palermo gegen Catania",
-     "loc": "source/game/evs.tsx:69-72",
+     "loc": "source/game/evs.tsx:76-79",
      "who": false
     },
     {
      "id": "turi1",
      "t": "Turi redet schlecht über dein Öl",
-     "loc": "source/game/evs.tsx:111-114",
+     "loc": "source/game/evs.tsx:118-121",
      "who": false
     }
    ],
    "encounters": [],
    "refs": [
     "source/game/evs.tsx:46",
-    "source/game/evs.tsx:56",
-    "source/game/evs.tsx:67",
-    "source/game/evs.tsx:70",
-    "source/game/evs.tsx:71",
-    "source/game/evs.tsx:113",
+    "source/game/evs.tsx:62",
+    "source/game/evs.tsx:74",
+    "source/game/evs.tsx:77",
+    "source/game/evs.tsx:78",
+    "source/game/evs.tsx:120",
     "source/game/src/a.tsx:29",
-    "source/game/src/c.tsx:68",
-    "source/game/src/c.tsx:69"
+    "source/game/src/c.tsx:75",
+    "source/game/src/c.tsx:76"
    ]
   },
   {
@@ -299,7 +305,8 @@
    "diff": 2,
    "at": [
     "ferr",
-    "bar"
+    "bar",
+    "banca"
    ],
    "mo": null,
    "likes": [
@@ -311,7 +318,8 @@
    "meet_need": 0.45,
    "venues": [
     "Ferramenta Cinese",
-    "Bar del Corso"
+    "Bar del Corso",
+    "Sicilbanca"
    ],
    "fests": [
     "8: VENDEMMIA & FIERA"
@@ -325,7 +333,7 @@
      "n": "Direktimport aus Ningbo",
      "d": "neuer Rüttler für 700 € (hält)",
      "per": "once",
-     "loc": "source/game/src/c.tsx:70"
+     "loc": "source/game/src/c.tsx:77"
     }
    ],
    "deals": {
@@ -344,23 +352,23 @@
      "place": "Ferramenta Cinese",
      "t": "Ein Bauer reklamiert lautstark seinen kaputten Spaten.",
      "l": "Mitlachen",
-     "loc": "source/game/src/c.tsx:87"
+     "loc": "source/game/src/c.tsx:104"
     },
     {
      "place": "Ferramenta Cinese",
      "t": "Wang zeigt dir ein Video vom Großhandel in Palermo.",
      "l": "Zuschauen",
-     "loc": "source/game/src/c.tsx:89"
+     "loc": "source/game/src/c.tsx:106"
     }
    ],
    "refs": [
     "source/game/src/a.tsx:30",
     "source/game/src/c.tsx:26",
-    "source/game/src/c.tsx:38",
-    "source/game/src/c.tsx:70",
-    "source/game/src/c.tsx:87",
-    "source/game/src/c.tsx:89",
-    "source/game/src/c.tsx:129"
+    "source/game/src/c.tsx:41",
+    "source/game/src/c.tsx:77",
+    "source/game/src/c.tsx:104",
+    "source/game/src/c.tsx:106",
+    "source/game/src/c.tsx:146"
    ]
   },
   {
@@ -377,7 +385,8 @@
    "at": [
     "frantoio",
     "chiesa",
-    "fest"
+    "fest",
+    "santuario"
    ],
    "mo": null,
    "likes": [
@@ -390,7 +399,8 @@
    "venues": [
     "Frantoio",
     "Chiesa Madre",
-    "Feste"
+    "Feste",
+    "Santuario"
    ],
    "fests": [
     "3: SETTIMANA SANTA & SAN GIORGIO",
@@ -406,7 +416,7 @@
      "n": "Mühlen-Deal",
      "d": "Mahlgebühr dauerhaft −50 %",
      "per": "once",
-     "loc": "source/game/src/c.tsx:64"
+     "loc": "source/game/src/c.tsx:71"
     }
    ],
    "deals": {
@@ -416,31 +426,31 @@
     {
      "id": "strom",
      "t": "Stromausfall im Frantoio",
-     "loc": "source/game/evs.tsx:76-78",
+     "loc": "source/game/evs.tsx:83-85",
      "who": false
     },
     {
      "id": "turi3",
      "t": "Turi will gemeinsam mahlen",
-     "loc": "source/game/evs.tsx:119-121",
+     "loc": "source/game/evs.tsx:126-128",
      "who": false
     },
     {
      "id": "fiera",
      "t": "Fiera del Bestiame (21.–22. Sept.)",
-     "loc": "source/game/evs.tsx:203-207",
+     "loc": "source/game/evs.tsx:210-214",
      "who": false
     }
    ],
    "encounters": [],
    "refs": [
-    "source/game/evs.tsx:77",
-    "source/game/evs.tsx:206",
+    "source/game/evs.tsx:84",
+    "source/game/evs.tsx:213",
     "source/game/src/a.tsx:31",
-    "source/game/src/c.tsx:35",
-    "source/game/src/c.tsx:37",
-    "source/game/src/c.tsx:39",
-    "source/game/src/c.tsx:64"
+    "source/game/src/c.tsx:38",
+    "source/game/src/c.tsx:40",
+    "source/game/src/c.tsx:42",
+    "source/game/src/c.tsx:71"
    ]
   },
   {
@@ -457,7 +467,9 @@
    "at": [
     "schaefer",
     "bar",
-    "fest"
+    "fest",
+    "belv",
+    "hain"
    ],
    "mo": null,
    "likes": [
@@ -470,7 +482,9 @@
    "venues": [
     "Ciccios Weide",
     "Bar del Corso",
-    "Feste"
+    "Feste",
+    "Belvedere",
+    "Dein Hain"
    ],
    "fests": [
     "3: SETTIMANA SANTA & SAN GIORGIO",
@@ -486,7 +500,7 @@
      "n": "Ciccios Crew anheuern",
      "d": "Erntehelfer, Lohn −25 %, Ertrag +10 %",
      "per": "y",
-     "loc": "source/game/src/c.tsx:71"
+     "loc": "source/game/src/c.tsx:78"
     }
    ],
    "deals": {},
@@ -496,31 +510,31 @@
      "place": "Macelleria",
      "t": "Ciccio liefert gerade Lämmer ab.",
      "l": "Hallo sagen",
-     "loc": "source/game/src/c.tsx:108"
+     "loc": "source/game/src/c.tsx:125"
     },
     {
      "place": "Ciccios Weide",
      "t": "Die Schafe könnten unter deinen Bäumen weiden.",
      "l": "Erlauben",
-     "loc": "source/game/src/c.tsx:120"
+     "loc": "source/game/src/c.tsx:137"
     },
     {
      "place": "Ciccios Weide",
      "t": "Frische Ricotta, noch warm.",
      "l": "Probieren (3 €)",
-     "loc": "source/game/src/c.tsx:121"
+     "loc": "source/game/src/c.tsx:138"
     }
    ],
    "refs": [
     "source/game/src/a.tsx:32",
     "source/game/src/a.tsx:71",
-    "source/game/src/c.tsx:35",
     "source/game/src/c.tsx:38",
-    "source/game/src/c.tsx:39",
-    "source/game/src/c.tsx:71",
-    "source/game/src/c.tsx:120",
-    "source/game/src/c.tsx:121",
-    "source/game/src/d.tsx:165"
+    "source/game/src/c.tsx:41",
+    "source/game/src/c.tsx:42",
+    "source/game/src/c.tsx:78",
+    "source/game/src/c.tsx:137",
+    "source/game/src/c.tsx:138",
+    "source/game/src/d.tsx:185"
    ]
   },
   {
@@ -536,7 +550,8 @@
    "diff": 2,
    "at": [
     "chiesa",
-    "fest"
+    "fest",
+    "santuario"
    ],
    "mo": null,
    "likes": [
@@ -548,7 +563,8 @@
    "meet_need": 0.45,
    "venues": [
     "Chiesa Madre",
-    "Feste"
+    "Feste",
+    "Santuario"
    ],
    "fests": [
     "3: SETTIMANA SANTA & SAN GIORGIO",
@@ -564,7 +580,7 @@
      "n": "Feldsegen bestellen",
      "d": "1×/Jahr: Haine +8 %, ★ +3",
      "per": "y",
-     "loc": "source/game/src/c.tsx:63"
+     "loc": "source/game/src/c.tsx:70"
     }
    ],
    "deals": {},
@@ -578,82 +594,82 @@
     {
      "id": "hochzeit",
      "t": "Hochzeit in der Matrice",
-     "loc": "source/game/evs.tsx:85-87",
+     "loc": "source/game/evs.tsx:92-94",
      "who": false
     },
     {
      "id": "turi2",
      "t": "Sabotage am Bewässerungsschlauch",
-     "loc": "source/game/evs.tsx:115-118",
+     "loc": "source/game/evs.tsx:122-125",
      "who": false
     },
     {
      "id": "padre1",
      "t": "Das Dach der Matrice leckt",
-     "loc": "source/game/evs.tsx:143-147",
+     "loc": "source/game/evs.tsx:150-154",
      "who": true
     },
     {
      "id": "santa",
      "t": "Settimana Santa: Prozession des Cristo Morto",
-     "loc": "source/game/evs.tsx:164-167",
+     "loc": "source/game/evs.tsx:171-174",
      "who": true
     },
     {
      "id": "giorgio",
      "t": "San Giorgio: Feldsegnung am 23. April",
-     "loc": "source/game/evs.tsx:168-172",
+     "loc": "source/game/evs.tsx:175-179",
      "who": true
     },
     {
      "id": "ud1",
      "t": "Udienza Tag 1: Pilgerweg vom Cellaro",
-     "loc": "source/game/evs.tsx:173-176",
+     "loc": "source/game/evs.tsx:180-183",
      "who": true
     },
     {
      "id": "ud3",
      "t": "Udienza Tag 6: Sponsor der Luminarie",
-     "loc": "source/game/evs.tsx:181-184",
+     "loc": "source/game/evs.tsx:188-191",
      "who": false
     },
     {
      "id": "ud5",
      "t": "Udienza Finale: La Nisciuta",
-     "loc": "source/game/evs.tsx:189-193",
+     "loc": "source/game/evs.tsx:196-200",
      "who": true
     },
     {
      "id": "zabut",
      "t": "Natale a Sambuca: Krippe in den Vicoli",
-     "loc": "source/game/evs.tsx:208-211",
+     "loc": "source/game/evs.tsx:215-218",
      "who": false
     }
    ],
    "encounters": [],
    "refs": [
     "source/game/evs.tsx:9",
-    "source/game/evs.tsx:87",
-    "source/game/evs.tsx:117",
-    "source/game/evs.tsx:143",
-    "source/game/evs.tsx:144",
-    "source/game/evs.tsx:145",
-    "source/game/evs.tsx:164",
-    "source/game/evs.tsx:165",
-    "source/game/evs.tsx:168",
-    "source/game/evs.tsx:169",
-    "source/game/evs.tsx:173",
-    "source/game/evs.tsx:174",
-    "source/game/evs.tsx:182",
+    "source/game/evs.tsx:94",
+    "source/game/evs.tsx:124",
+    "source/game/evs.tsx:150",
+    "source/game/evs.tsx:151",
+    "source/game/evs.tsx:152",
+    "source/game/evs.tsx:171",
+    "source/game/evs.tsx:172",
+    "source/game/evs.tsx:175",
+    "source/game/evs.tsx:176",
+    "source/game/evs.tsx:180",
+    "source/game/evs.tsx:181",
     "source/game/evs.tsx:189",
-    "source/game/evs.tsx:190",
-    "source/game/evs.tsx:211",
+    "source/game/evs.tsx:196",
+    "source/game/evs.tsx:197",
+    "source/game/evs.tsx:218",
     "source/game/src/a.tsx:33",
-    "source/game/src/c.tsx:35",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:40",
-    "source/game/src/c.tsx:63",
-    "source/game/src/d.tsx:134"
+    "source/game/src/c.tsx:38",
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:43",
+    "source/game/src/c.tsx:70",
+    "source/game/src/d.tsx:149"
    ]
   },
   {
@@ -670,7 +686,8 @@
    "at": [
     "bar",
     "fest",
-    "torre"
+    "torre",
+    "hain"
    ],
    "mo": null,
    "likes": [
@@ -683,7 +700,8 @@
    "venues": [
     "Bar del Corso",
     "Feste",
-    "Torre di Pandolfina"
+    "Torre di Pandolfina",
+    "Dein Hain"
    ],
    "fests": [
     "4: MADONNA DELL'UDIENZA",
@@ -699,7 +717,7 @@
      "n": "Waffenstillstand",
      "d": "keine Sabotage mehr, ★ +4",
      "per": "once",
-     "loc": "source/game/src/c.tsx:78"
+     "loc": "source/game/src/c.tsx:85"
     }
    ],
    "deals": {
@@ -716,49 +734,49 @@
     {
      "id": "traktor",
      "t": "Der alte Fiat-Traktor streikt",
-     "loc": "source/game/evs.tsx:58-61",
+     "loc": "source/game/evs.tsx:65-68",
      "who": false
     },
     {
      "id": "turi1",
      "t": "Turi redet schlecht über dein Öl",
-     "loc": "source/game/evs.tsx:111-114",
+     "loc": "source/game/evs.tsx:118-121",
      "who": true
     },
     {
      "id": "turi2",
      "t": "Sabotage am Bewässerungsschlauch",
-     "loc": "source/game/evs.tsx:115-118",
+     "loc": "source/game/evs.tsx:122-125",
      "who": true
     },
     {
      "id": "turi3",
      "t": "Turi will gemeinsam mahlen",
-     "loc": "source/game/evs.tsx:119-121",
+     "loc": "source/game/evs.tsx:126-128",
      "who": true
     },
     {
      "id": "giorgio",
      "t": "San Giorgio: Feldsegnung am 23. April",
-     "loc": "source/game/evs.tsx:168-172",
+     "loc": "source/game/evs.tsx:175-179",
      "who": false
     },
     {
      "id": "ud5",
      "t": "Udienza Finale: La Nisciuta",
-     "loc": "source/game/evs.tsx:189-193",
+     "loc": "source/game/evs.tsx:196-200",
      "who": false
     },
     {
      "id": "vassalli",
      "t": "Festa dei Vassalli (5. August)",
-     "loc": "source/game/evs.tsx:194-197",
+     "loc": "source/game/evs.tsx:201-204",
      "who": false
     },
     {
      "id": "fiera",
      "t": "Fiera del Bestiame (21.–22. Sept.)",
-     "loc": "source/game/evs.tsx:203-207",
+     "loc": "source/game/evs.tsx:210-214",
      "who": true
     }
    ],
@@ -767,31 +785,32 @@
      "place": "Panificio",
      "t": "Schlange vor der Theke – alle reden über Zio Turi.",
      "l": "Zuhören",
-     "loc": "source/game/src/c.tsx:92"
+     "loc": "source/game/src/c.tsx:109"
     }
    ],
    "refs": [
     "source/game/evs.tsx:5",
-    "source/game/evs.tsx:60",
-    "source/game/evs.tsx:111",
-    "source/game/evs.tsx:112",
-    "source/game/evs.tsx:113",
-    "source/game/evs.tsx:115",
-    "source/game/evs.tsx:116",
-    "source/game/evs.tsx:117",
+    "source/game/evs.tsx:67",
+    "source/game/evs.tsx:118",
     "source/game/evs.tsx:119",
     "source/game/evs.tsx:120",
-    "source/game/evs.tsx:170",
-    "source/game/evs.tsx:190",
-    "source/game/evs.tsx:196",
+    "source/game/evs.tsx:122",
+    "source/game/evs.tsx:123",
+    "source/game/evs.tsx:124",
+    "source/game/evs.tsx:126",
+    "source/game/evs.tsx:127",
+    "source/game/evs.tsx:177",
+    "source/game/evs.tsx:197",
     "source/game/evs.tsx:203",
-    "source/game/evs.tsx:206",
+    "source/game/evs.tsx:210",
+    "source/game/evs.tsx:213",
     "source/game/src/a.tsx:34",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:37",
-    "source/game/src/c.tsx:38",
-    "source/game/src/c.tsx:78",
-    "source/game/src/d.tsx:33"
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:40",
+    "source/game/src/c.tsx:41",
+    "source/game/src/c.tsx:85",
+    "source/game/src/d.tsx:36",
+    "source/game/src/d.tsx:46"
    ]
   },
   {
@@ -807,7 +826,9 @@
    "diff": 3,
    "at": [
     "feudo",
-    "fest"
+    "fest",
+    "banca",
+    "hotel"
    ],
    "mo": null,
    "likes": [
@@ -819,7 +840,9 @@
    "meet_need": 0.6,
    "venues": [
     "Feudo Arancio",
-    "Feste"
+    "Feste",
+    "Sicilbanca",
+    "Hotel Don Giovanni"
    ],
    "fests": [
     "4: MADONNA DELL'UDIENZA",
@@ -835,7 +858,7 @@
      "n": "Wein-Nebenlinie",
      "d": "600 Flaschen, Verkauf ab Nov.",
      "per": "y",
-     "loc": "source/game/src/c.tsx:72"
+     "loc": "source/game/src/c.tsx:79"
     },
     {
      "id": "winesell",
@@ -845,7 +868,7 @@
      "n": "Rosso Pandolfina verkaufen",
      "d": "600 Flaschen à ~4 €",
      "per": "m",
-     "loc": "source/game/src/c.tsx:73"
+     "loc": "source/game/src/c.tsx:80"
     },
     {
      "id": "coopw",
@@ -855,7 +878,7 @@
      "n": "Wein-Kooperation",
      "d": "Crew & Gerät teilen: Löhne −30 %",
      "per": "once",
-     "loc": "source/game/src/c.tsx:74"
+     "loc": "source/game/src/c.tsx:81"
     }
    ],
    "deals": {},
@@ -863,54 +886,56 @@
     {
      "id": "vend1",
      "t": "Die Weinlese ruft – deine Crew wackelt",
-     "loc": "source/game/evs.tsx:148-151",
+     "loc": "source/game/evs.tsx:155-158",
      "who": true
     },
     {
      "id": "vend2",
      "t": "Vendemmia-Chaos",
-     "loc": "source/game/evs.tsx:152-156",
+     "loc": "source/game/evs.tsx:159-163",
      "who": true
     },
     {
      "id": "ud4",
      "t": "Udienza Tag 8: Empfang im Palazzo dell'Arpa",
-     "loc": "source/game/evs.tsx:185-188",
+     "loc": "source/game/evs.tsx:192-195",
      "who": false
     },
     {
      "id": "calici",
      "t": "Calici di Stelle am Belvedere (10. August)",
-     "loc": "source/game/evs.tsx:198-202",
+     "loc": "source/game/evs.tsx:205-209",
      "who": true
     },
     {
      "id": "zabut",
      "t": "Natale a Sambuca: Krippe in den Vicoli",
-     "loc": "source/game/evs.tsx:208-211",
+     "loc": "source/game/evs.tsx:215-218",
      "who": false
     }
    ],
    "encounters": [],
    "refs": [
-    "source/game/evs.tsx:148",
-    "source/game/evs.tsx:150",
-    "source/game/evs.tsx:152",
-    "source/game/evs.tsx:153",
-    "source/game/evs.tsx:154",
     "source/game/evs.tsx:155",
-    "source/game/evs.tsx:187",
-    "source/game/evs.tsx:198",
-    "source/game/evs.tsx:199",
-    "source/game/evs.tsx:210",
+    "source/game/evs.tsx:157",
+    "source/game/evs.tsx:159",
+    "source/game/evs.tsx:160",
+    "source/game/evs.tsx:161",
+    "source/game/evs.tsx:162",
+    "source/game/evs.tsx:194",
+    "source/game/evs.tsx:205",
+    "source/game/evs.tsx:206",
+    "source/game/evs.tsx:217",
     "source/game/src/a.tsx:35",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:37",
-    "source/game/src/c.tsx:38",
-    "source/game/src/c.tsx:72",
-    "source/game/src/c.tsx:73",
-    "source/game/src/c.tsx:74",
-    "source/game/src/f.tsx:203"
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:40",
+    "source/game/src/c.tsx:41",
+    "source/game/src/c.tsx:79",
+    "source/game/src/c.tsx:80",
+    "source/game/src/c.tsx:81",
+    "source/game/src/d.tsx:47",
+    "source/game/src/d.tsx:153",
+    "source/game/src/f.tsx:236"
    ]
   },
   {
@@ -927,7 +952,9 @@
    "at": [
     "muni",
     "bar",
-    "fest"
+    "fest",
+    "palazzo",
+    "lido"
    ],
    "mo": null,
    "likes": [
@@ -940,7 +967,9 @@
    "venues": [
     "Municipio",
     "Bar del Corso",
-    "Feste"
+    "Feste",
+    "Teatro & Palazzo",
+    "→ Lido Boomerang"
    ],
    "fests": [
     "4: MADONNA DELL'UDIENZA",
@@ -955,7 +984,7 @@
      "n": "Verkostung für Tourist:innen",
      "d": "Apr–Okt: bis 25 l zu 145 %, ★ +2",
      "per": "m",
-     "loc": "source/game/src/c.tsx:75"
+     "loc": "source/game/src/c.tsx:82"
     },
     {
      "id": "tour",
@@ -965,7 +994,7 @@
      "n": "Tourismus-Deal",
      "d": "Monatseinnahmen von der Pro Loco",
      "per": "once",
-     "loc": "source/game/src/c.tsx:76"
+     "loc": "source/game/src/c.tsx:83"
     }
    ],
    "deals": {
@@ -987,31 +1016,31 @@
     {
      "id": "rai",
      "t": "RAI-Sendung „Linea Verde“",
-     "loc": "source/game/evs.tsx:91-93",
+     "loc": "source/game/evs.tsx:98-100",
      "who": false
     },
     {
      "id": "sindaco2",
      "t": "EU-Topf bewilligt!",
-     "loc": "source/game/evs.tsx:140-142",
+     "loc": "source/game/evs.tsx:147-149",
      "who": false
     },
     {
      "id": "ud1",
      "t": "Udienza Tag 1: Pilgerweg vom Cellaro",
-     "loc": "source/game/evs.tsx:173-176",
+     "loc": "source/game/evs.tsx:180-183",
      "who": false
     },
     {
      "id": "ud4",
      "t": "Udienza Tag 8: Empfang im Palazzo dell'Arpa",
-     "loc": "source/game/evs.tsx:185-188",
+     "loc": "source/game/evs.tsx:192-195",
      "who": false
     },
     {
      "id": "zabut",
      "t": "Natale a Sambuca: Krippe in den Vicoli",
-     "loc": "source/game/evs.tsx:208-211",
+     "loc": "source/game/evs.tsx:215-218",
      "who": true
     }
    ],
@@ -1019,17 +1048,17 @@
    "refs": [
     "source/game/evs.tsx:13",
     "source/game/evs.tsx:20",
-    "source/game/evs.tsx:93",
-    "source/game/evs.tsx:142",
-    "source/game/evs.tsx:175",
-    "source/game/evs.tsx:188",
-    "source/game/evs.tsx:208",
-    "source/game/evs.tsx:209",
+    "source/game/evs.tsx:100",
+    "source/game/evs.tsx:149",
+    "source/game/evs.tsx:182",
+    "source/game/evs.tsx:195",
+    "source/game/evs.tsx:215",
+    "source/game/evs.tsx:216",
     "source/game/src/a.tsx:36",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:40",
-    "source/game/src/c.tsx:75",
-    "source/game/src/c.tsx:76"
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:43",
+    "source/game/src/c.tsx:82",
+    "source/game/src/c.tsx:83"
    ]
   },
   {
@@ -1046,7 +1075,9 @@
    "at": [
     "bar",
     "lago",
-    "fest"
+    "fest",
+    "hotel",
+    "belv"
    ],
    "mo": [
     0,
@@ -1070,7 +1101,9 @@
    "venues": [
     "Bar del Corso",
     "Lago Arancio",
-    "Feste"
+    "Feste",
+    "Hotel Don Giovanni",
+    "Belvedere"
    ],
    "fests": [
     "4: MADONNA DELL'UDIENZA",
@@ -1085,7 +1118,7 @@
      "n": "Export nach München",
      "d": "alle Verkäufe +8 %",
      "per": "once",
-     "loc": "source/game/src/c.tsx:77"
+     "loc": "source/game/src/c.tsx:84"
     }
    ],
    "deals": {},
@@ -1093,56 +1126,57 @@
     {
      "id": "klaus1",
      "t": "Klaus will ein Agriturismo",
-     "loc": "source/game/evs.tsx:122-125",
+     "loc": "source/game/evs.tsx:129-132",
      "who": true
     },
     {
      "id": "klaus2",
      "t": "Die Baugenehmigung hakt",
-     "loc": "source/game/evs.tsx:126-129",
+     "loc": "source/game/evs.tsx:133-136",
      "who": false
     },
     {
      "id": "klaus3",
      "t": "Eröffnung: Agriturismo Pandolfina",
-     "loc": "source/game/evs.tsx:130-132",
+     "loc": "source/game/evs.tsx:137-139",
      "who": true
     },
     {
      "id": "export2",
      "t": "Bestellung aus München",
-     "loc": "source/game/evs.tsx:133-136",
+     "loc": "source/game/evs.tsx:140-143",
      "who": true
     },
     {
      "id": "ud4",
      "t": "Udienza Tag 8: Empfang im Palazzo dell'Arpa",
-     "loc": "source/game/evs.tsx:185-188",
+     "loc": "source/game/evs.tsx:192-195",
      "who": true
     },
     {
      "id": "calici",
      "t": "Calici di Stelle am Belvedere (10. August)",
-     "loc": "source/game/evs.tsx:198-202",
+     "loc": "source/game/evs.tsx:205-209",
      "who": false
     }
    ],
    "encounters": [],
    "refs": [
-    "source/game/evs.tsx:122",
-    "source/game/evs.tsx:123",
-    "source/game/evs.tsx:124",
     "source/game/evs.tsx:129",
     "source/game/evs.tsx:130",
     "source/game/evs.tsx:131",
-    "source/game/evs.tsx:133",
-    "source/game/evs.tsx:185",
-    "source/game/evs.tsx:186",
-    "source/game/evs.tsx:200",
+    "source/game/evs.tsx:136",
+    "source/game/evs.tsx:137",
+    "source/game/evs.tsx:138",
+    "source/game/evs.tsx:140",
+    "source/game/evs.tsx:192",
+    "source/game/evs.tsx:193",
+    "source/game/evs.tsx:207",
     "source/game/src/a.tsx:37",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:37",
-    "source/game/src/c.tsx:77"
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:40",
+    "source/game/src/c.tsx:84",
+    "source/game/src/d.tsx:153"
    ]
   },
   {
@@ -1159,7 +1193,10 @@
    "at": [
     "fest",
     "bar",
-    "lago"
+    "lago",
+    "palazzo",
+    "hotel",
+    "lido"
    ],
    "mo": [
     4,
@@ -1178,7 +1215,10 @@
    "venues": [
     "Feste",
     "Bar del Corso",
-    "Lago Arancio"
+    "Lago Arancio",
+    "Teatro & Palazzo",
+    "Hotel Don Giovanni",
+    "→ Lido Boomerang"
    ],
    "fests": [
     "4: MADONNA DELL'UDIENZA",
@@ -1193,7 +1233,7 @@
      "n": "US-Presse: Reportage in New York",
      "d": "1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich",
      "per": "once",
-     "loc": "source/game/src/c.tsx:79"
+     "loc": "source/game/src/c.tsx:86"
     },
     {
      "id": "texas",
@@ -1203,7 +1243,7 @@
      "n": "Container nach Texas",
      "d": "1×/Jahr: bis 120 l zu 220 %",
      "per": "y",
-     "loc": "source/game/src/c.tsx:80"
+     "loc": "source/game/src/c.tsx:87"
     }
    ],
    "deals": {},
@@ -1219,11 +1259,12 @@
    "refs": [
     "source/game/src/a.tsx:38",
     "source/game/src/c.tsx:22",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:37",
-    "source/game/src/c.tsx:79",
-    "source/game/src/c.tsx:80",
-    "source/game/src/d.tsx:56"
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:40",
+    "source/game/src/c.tsx:86",
+    "source/game/src/c.tsx:87",
+    "source/game/src/d.tsx:66",
+    "source/game/src/d.tsx:153"
    ]
   },
   {
@@ -1266,7 +1307,7 @@
      "n": "Fördertopf anzapfen",
      "d": "1×/Jahr: 1.500–3.500 € PSR-Mittel",
      "per": "y",
-     "loc": "source/game/src/c.tsx:61"
+     "loc": "source/game/src/c.tsx:68"
     },
     {
      "id": "dopx",
@@ -1276,7 +1317,7 @@
      "n": "DOP auf dem kurzen Dienstweg",
      "d": "DOP für 600 € statt 1.200 €",
      "per": "once",
-     "loc": "source/game/src/c.tsx:62"
+     "loc": "source/game/src/c.tsx:69"
     }
    ],
    "deals": {},
@@ -1288,57 +1329,63 @@
      "who": false
     },
     {
+     "id": "brand",
+     "t": "Incendio! Flächenbrand am Hang",
+     "loc": "source/game/evs.tsx:55-59",
+     "who": false
+    },
+    {
      "id": "zeitung",
      "t": "Giornale di Sicilia will ein Interview",
-     "loc": "source/game/evs.tsx:62-65",
+     "loc": "source/game/evs.tsx:69-72",
      "who": false
     },
     {
      "id": "hochzeit",
      "t": "Hochzeit in der Matrice",
-     "loc": "source/game/evs.tsx:85-87",
+     "loc": "source/game/evs.tsx:92-94",
      "who": false
     },
     {
      "id": "klaus2",
      "t": "Die Baugenehmigung hakt",
-     "loc": "source/game/evs.tsx:126-129",
+     "loc": "source/game/evs.tsx:133-136",
      "who": true
     },
     {
      "id": "sindaco1",
      "t": "Der Sindaco braucht Unterstützer",
-     "loc": "source/game/evs.tsx:137-139",
+     "loc": "source/game/evs.tsx:144-146",
      "who": true
     },
     {
      "id": "sindaco2",
      "t": "EU-Topf bewilligt!",
-     "loc": "source/game/evs.tsx:140-142",
+     "loc": "source/game/evs.tsx:147-149",
      "who": true
     },
     {
      "id": "santa",
      "t": "Settimana Santa: Prozession des Cristo Morto",
-     "loc": "source/game/evs.tsx:164-167",
+     "loc": "source/game/evs.tsx:171-174",
      "who": false
     },
     {
      "id": "ud1",
      "t": "Udienza Tag 1: Pilgerweg vom Cellaro",
-     "loc": "source/game/evs.tsx:173-176",
+     "loc": "source/game/evs.tsx:180-183",
      "who": false
     },
     {
      "id": "ud3",
      "t": "Udienza Tag 6: Sponsor der Luminarie",
-     "loc": "source/game/evs.tsx:181-184",
+     "loc": "source/game/evs.tsx:188-191",
      "who": true
     },
     {
      "id": "ud4",
      "t": "Udienza Tag 8: Empfang im Palazzo dell'Arpa",
-     "loc": "source/game/evs.tsx:185-188",
+     "loc": "source/game/evs.tsx:192-195",
      "who": false
     }
    ],
@@ -1347,37 +1394,38 @@
      "place": "Barbiere Gaspare",
      "t": "Gaspare rasiert sonst den Sekretär des Sindaco.",
      "l": "Gutes Wort einlegen (50 €)",
-     "loc": "source/game/src/c.tsx:99"
+     "loc": "source/game/src/c.tsx:116"
     }
    ],
    "refs": [
     "source/game/evs.tsx:17",
-    "source/game/evs.tsx:64",
-    "source/game/evs.tsx:87",
-    "source/game/evs.tsx:126",
-    "source/game/evs.tsx:127",
-    "source/game/evs.tsx:137",
-    "source/game/evs.tsx:138",
-    "source/game/evs.tsx:140",
-    "source/game/evs.tsx:166",
-    "source/game/evs.tsx:176",
-    "source/game/evs.tsx:181",
-    "source/game/evs.tsx:182",
+    "source/game/evs.tsx:57",
+    "source/game/evs.tsx:71",
+    "source/game/evs.tsx:94",
+    "source/game/evs.tsx:133",
+    "source/game/evs.tsx:134",
+    "source/game/evs.tsx:144",
+    "source/game/evs.tsx:145",
+    "source/game/evs.tsx:147",
+    "source/game/evs.tsx:173",
     "source/game/evs.tsx:183",
+    "source/game/evs.tsx:188",
+    "source/game/evs.tsx:189",
+    "source/game/evs.tsx:190",
     "source/game/src/a.tsx:39",
-    "source/game/src/c.tsx:36",
-    "source/game/src/c.tsx:40",
-    "source/game/src/c.tsx:61",
-    "source/game/src/c.tsx:62",
-    "source/game/src/d.tsx:56",
-    "source/game/src/d.tsx:59",
-    "source/game/src/e.tsx:83",
-    "source/game/src/f.tsx:36",
-    "source/game/src/f.tsx:92",
-    "source/game/src/f.tsx:224",
-    "source/game/src/f.tsx:225",
-    "source/game/src/f.tsx:226",
-    "source/game/src/f.tsx:228"
+    "source/game/src/c.tsx:39",
+    "source/game/src/c.tsx:43",
+    "source/game/src/c.tsx:68",
+    "source/game/src/c.tsx:69",
+    "source/game/src/d.tsx:66",
+    "source/game/src/d.tsx:69",
+    "source/game/src/e.tsx:89",
+    "source/game/src/f.tsx:57",
+    "source/game/src/f.tsx:115",
+    "source/game/src/f.tsx:261",
+    "source/game/src/f.tsx:262",
+    "source/game/src/f.tsx:263",
+    "source/game/src/f.tsx:265"
    ]
   }
  ],
@@ -1665,7 +1713,7 @@
    "fest": false,
    "who": null,
    "need": null,
-   "text": "Seit sechs Wochen kein Regen. Ohne Wasser verlieren die Bäume ihre Früchte.",
+   "text": "Seit sechs Wochen kein Regen. Ohne Wasser verlieren die Bäume ihre Früchte. (Tipp: Das 💧 Wasserrecht am Lago schützt dauerhaft.)",
    "ch": [
     {
      "l": "Tankwagen bestellen",
@@ -1675,7 +1723,7 @@
     },
     {
      "l": "Auf Regen hoffen",
-     "d": "70 %: ungeschützte Haine −20 %",
+     "d": "70 %: ungeschützte Haine −20 % · mit 💧 Wasserrecht kein Schaden",
      "ok": null,
      "mg": null
     }
@@ -1687,10 +1735,10 @@
    ],
    "p_month": {
     "Jun": 0.155,
-    "Jul": 0.155,
-    "Aug": 0.073
+    "Jul": 0.124,
+    "Aug": 0.055
    },
-   "p_year": 0.338
+   "p_year": 0.3
   },
   {
    "id": "fliege",
@@ -1732,11 +1780,11 @@
     "Zufall"
    ],
    "p_month": {
-    "Jul": 0.155,
-    "Aug": 0.073,
+    "Jul": 0.124,
+    "Aug": 0.055,
     "Sep": 0.11
    },
-   "p_year": 0.303
+   "p_year": 0.263
   },
   {
    "id": "wild",
@@ -2037,22 +2085,72 @@
     },
     {
      "l": "Durchhalten",
-     "d": "Haine ohne Bewässerung −10 %",
+     "d": "Haine ohne Bewässerung −10 % · mit 💧 Wasserrecht kein Schaden",
      "ok": null,
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:51-53",
+   "loc": "source/game/evs.tsx:51-54",
    "follow": [],
    "trigger": [
     "Zufall"
    ],
    "p_month": {
     "Jun": 0.155,
-    "Jul": 0.155,
-    "Aug": 0.073
+    "Jul": 0.124,
+    "Aug": 0.055
    },
-   "p_year": 0.338
+   "p_year": 0.3
+  },
+  {
+   "id": "brand",
+   "t": "Incendio! Flächenbrand am Hang",
+   "icon": "🔥",
+   "months": [
+    6,
+    7
+   ],
+   "dis": true,
+   "fest": false,
+   "who": null,
+   "need": null,
+   "text": "Trockenes Gras, Scirocco, ein weggeworfener Zigarettenstummel: Über der Contrada steigt Rauch auf. Das Feuer läuft auf deine Haine zu.",
+   "ch": [
+    {
+     "l": "Die Brandschneise hält",
+     "d": "nur mit 🚜 Brandschneise (Consorzio, dieses Jahr gemäht): kein Schaden",
+     "ok": null,
+     "mg": null
+    },
+    {
+     "l": "Protezione Civile rufen",
+     "d": "Sindaco ♥ ≥ 40: Löschflugzeug, nur −5 % Zustand",
+     "ok": null,
+     "mg": null
+    },
+    {
+     "l": "🎮 Selbst löschen",
+     "d": "Minispiel: bis −30 % Zustand, −10 % Bäume, Ertrag −10 %",
+     "ok": null,
+     "mg": "brand"
+    },
+    {
+     "l": "Abwarten und beten",
+     "d": "−30 % Zustand, −10 % Bäume, Ertrag −15 %",
+     "ok": null,
+     "mg": null
+    }
+   ],
+   "loc": "source/game/evs.tsx:55-59",
+   "follow": [],
+   "trigger": [
+    "Zufall"
+   ],
+   "p_month": {
+    "Jul": 0.124,
+    "Aug": 0.055
+   },
+   "p_year": 0.172
   },
   {
    "id": "diebe",
@@ -2081,13 +2179,19 @@
      "mg": null
     },
     {
+     "l": "Die Wachhunde aufpassen lassen",
+     "d": "nur mit 🐕 Wachhund (O-Dogs Garden): sicher, gratis",
+     "ok": null,
+     "mg": null
+    },
+    {
      "l": "Wird schon gutgehen",
-     "d": "40 %: Ertrag −15 %",
+     "d": "40 %: Ertrag −15 % (mit 🐕 nur 10 %)",
      "ok": null,
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:54-57",
+   "loc": "source/game/evs.tsx:60-64",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2133,7 +2237,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:58-61",
+   "loc": "source/game/evs.tsx:65-68",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2189,7 +2293,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:62-65",
+   "loc": "source/game/evs.tsx:69-72",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2239,7 +2343,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:66-68",
+   "loc": "source/game/evs.tsx:73-75",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2295,7 +2399,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:69-72",
+   "loc": "source/game/evs.tsx:76-79",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2345,7 +2449,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:73-75",
+   "loc": "source/game/evs.tsx:80-82",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2385,7 +2489,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:76-78",
+   "loc": "source/game/evs.tsx:83-85",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2423,7 +2527,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:79-81",
+   "loc": "source/game/evs.tsx:86-88",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2471,7 +2575,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:82-84",
+   "loc": "source/game/evs.tsx:89-91",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2520,7 +2624,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:85-87",
+   "loc": "source/game/evs.tsx:92-94",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2560,7 +2664,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:88-90",
+   "loc": "source/game/evs.tsx:95-97",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2602,7 +2706,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:91-93",
+   "loc": "source/game/evs.tsx:98-100",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2644,7 +2748,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:94-96",
+   "loc": "source/game/evs.tsx:101-103",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2652,9 +2756,9 @@
    "p_month": {
     "Mai": 0.0,
     "Jun": 0.155,
-    "Jul": 0.155
+    "Jul": 0.124
    },
-   "p_year": 0.286
+   "p_year": 0.26
   },
   {
    "id": "hund",
@@ -2693,7 +2797,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:97-99",
+   "loc": "source/game/evs.tsx:104-106",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2742,7 +2846,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:100-102",
+   "loc": "source/game/evs.tsx:107-109",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2784,7 +2888,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:103-105",
+   "loc": "source/game/evs.tsx:110-112",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2833,7 +2937,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:106-110",
+   "loc": "source/game/evs.tsx:113-117",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -2882,7 +2986,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:111-114",
+   "loc": "source/game/evs.tsx:118-121",
    "follow": [
     "turi2"
    ],
@@ -2928,7 +3032,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:115-118",
+   "loc": "source/game/evs.tsx:122-125",
    "follow": [
     "turi3"
    ],
@@ -2962,7 +3066,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:119-121",
+   "loc": "source/game/evs.tsx:126-128",
    "follow": [],
    "trigger": [
     "Folge von EV-turi2 (+3 Mon.)"
@@ -3005,7 +3109,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:122-125",
+   "loc": "source/game/evs.tsx:129-132",
    "follow": [
     "klaus2"
    ],
@@ -3050,7 +3154,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:126-129",
+   "loc": "source/game/evs.tsx:133-136",
    "follow": [
     "klaus3"
    ],
@@ -3084,7 +3188,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:130-132",
+   "loc": "source/game/evs.tsx:137-139",
    "follow": [],
    "trigger": [
     "Folge von EV-klaus2 (+2 Mon.)"
@@ -3122,7 +3226,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:133-136",
+   "loc": "source/game/evs.tsx:140-143",
    "follow": [],
    "trigger": [
     "Folge von EV-ud4 (+3 Mon.), EV-calici (+2 Mon.)"
@@ -3158,7 +3262,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:137-139",
+   "loc": "source/game/evs.tsx:144-146",
    "follow": [
     "sindaco2"
    ],
@@ -3196,7 +3300,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:140-142",
+   "loc": "source/game/evs.tsx:147-149",
    "follow": [],
    "trigger": [
     "Folge von EV-sindaco1 (+3 Mon.)"
@@ -3238,7 +3342,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:143-147",
+   "loc": "source/game/evs.tsx:150-154",
    "follow": [],
    "trigger": [
     "Zufall"
@@ -3280,7 +3384,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:148-151",
+   "loc": "source/game/evs.tsx:155-158",
    "follow": [],
    "trigger": [
     "fix jeden Juli (rollEvents)"
@@ -3324,7 +3428,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:152-156",
+   "loc": "source/game/evs.tsx:159-163",
    "follow": [],
    "trigger": [
     "Fest FEST-09 (Sep)"
@@ -3362,7 +3466,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:157-160",
+   "loc": "source/game/evs.tsx:164-167",
    "follow": [],
    "trigger": [
     "Fest FEST-10 (Okt)"
@@ -3400,7 +3504,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:164-167",
+   "loc": "source/game/evs.tsx:171-174",
    "follow": [],
    "trigger": [
     "Fest FEST-04 (Apr)"
@@ -3438,7 +3542,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:168-172",
+   "loc": "source/game/evs.tsx:175-179",
    "follow": [],
    "trigger": [
     "Fest FEST-04 (Apr)"
@@ -3476,7 +3580,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:173-176",
+   "loc": "source/game/evs.tsx:180-183",
    "follow": [],
    "trigger": [
     "Fest FEST-05 (Mai)"
@@ -3514,7 +3618,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:177-180",
+   "loc": "source/game/evs.tsx:184-187",
    "follow": [],
    "trigger": [
     "Fest FEST-05 (Mai)"
@@ -3552,7 +3656,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:181-184",
+   "loc": "source/game/evs.tsx:188-191",
    "follow": [],
    "trigger": [
     "Fest FEST-05 (Mai)"
@@ -3590,7 +3694,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:185-188",
+   "loc": "source/game/evs.tsx:192-195",
    "follow": [
     "export2"
    ],
@@ -3630,7 +3734,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:189-193",
+   "loc": "source/game/evs.tsx:196-200",
    "follow": [],
    "trigger": [
     "Fest FEST-05 (Mai)"
@@ -3668,7 +3772,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:194-197",
+   "loc": "source/game/evs.tsx:201-204",
    "follow": [],
    "trigger": [
     "Fest FEST-08 (Aug)"
@@ -3706,7 +3810,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:198-202",
+   "loc": "source/game/evs.tsx:205-209",
    "follow": [
     "export2"
    ],
@@ -3746,7 +3850,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:203-207",
+   "loc": "source/game/evs.tsx:210-214",
    "follow": [],
    "trigger": [
     "Fest FEST-09 (Sep)"
@@ -3784,7 +3888,7 @@
      "mg": null
     }
    ],
-   "loc": "source/game/evs.tsx:208-211",
+   "loc": "source/game/evs.tsx:215-218",
    "follow": [],
    "trigger": [
     "Fest FEST-12 (Dez)"
@@ -4068,7 +4172,7 @@
     "rosalia",
     "ciccio"
    ],
-   "loc": "source/game/src/c.tsx:35"
+   "loc": "source/game/src/c.tsx:38"
   },
   "4": {
    "n": "MADONNA DELL'UDIENZA",
@@ -4091,7 +4195,7 @@
     "turi",
     "carmela"
    ],
-   "loc": "source/game/src/c.tsx:36"
+   "loc": "source/game/src/c.tsx:39"
   },
   "7": {
    "n": "VASSALLI & CALICI DI STELLE",
@@ -4109,7 +4213,7 @@
     "carmela",
     "rosalia"
    ],
-   "loc": "source/game/src/c.tsx:37"
+   "loc": "source/game/src/c.tsx:40"
   },
   "8": {
    "n": "VENDEMMIA & FIERA",
@@ -4125,7 +4229,7 @@
     "giusi",
     "wang"
    ],
-   "loc": "source/game/src/c.tsx:38"
+   "loc": "source/game/src/c.tsx:41"
   },
   "9": {
    "n": "RACCOLTA",
@@ -4138,7 +4242,7 @@
     "ciccio",
     "rosalia"
    ],
-   "loc": "source/game/src/c.tsx:39"
+   "loc": "source/game/src/c.tsx:42"
   },
   "11": {
    "n": "NATALE A SAMBUCA",
@@ -4154,7 +4258,7 @@
     "sindaco",
     "nonna"
    ],
-   "loc": "source/game/src/c.tsx:40"
+   "loc": "source/game/src/c.tsx:43"
   }
  },
  "perks": [
@@ -4166,7 +4270,7 @@
    "n": "Fördertopf anzapfen",
    "d": "1×/Jahr: 1.500–3.500 € PSR-Mittel",
    "per": "y",
-   "loc": "source/game/src/c.tsx:61"
+   "loc": "source/game/src/c.tsx:68"
   },
   {
    "id": "dopx",
@@ -4176,7 +4280,7 @@
    "n": "DOP auf dem kurzen Dienstweg",
    "d": "DOP für 600 € statt 1.200 €",
    "per": "once",
-   "loc": "source/game/src/c.tsx:62"
+   "loc": "source/game/src/c.tsx:69"
   },
   {
    "id": "segen",
@@ -4186,7 +4290,7 @@
    "n": "Feldsegen bestellen",
    "d": "1×/Jahr: Haine +8 %, ★ +3",
    "per": "y",
-   "loc": "source/game/src/c.tsx:63"
+   "loc": "source/game/src/c.tsx:70"
   },
   {
    "id": "mill",
@@ -4196,7 +4300,7 @@
    "n": "Mühlen-Deal",
    "d": "Mahlgebühr dauerhaft −50 %",
    "per": "once",
-   "loc": "source/game/src/c.tsx:64"
+   "loc": "source/game/src/c.tsx:71"
   },
   {
    "id": "fam",
@@ -4206,7 +4310,7 @@
    "n": "Familien-Crew",
    "d": "Die Familie erntet mit – Crew gratis",
    "per": "once",
-   "loc": "source/game/src/c.tsx:65"
+   "loc": "source/game/src/c.tsx:72"
   },
   {
    "id": "tratsch",
@@ -4216,7 +4320,7 @@
    "n": "Wetter-Tratsch",
    "d": "verrät Katastrophen im nächsten Monat",
    "per": "m",
-   "loc": "source/game/src/c.tsx:66"
+   "loc": "source/game/src/c.tsx:73"
   },
   {
    "id": "agrum",
@@ -4226,7 +4330,7 @@
    "n": "Zitronen-Öl (Agrumato)",
    "d": "20 l Öl → 30 Fläschchen à 18 €",
    "per": "m",
-   "loc": "source/game/src/c.tsx:67"
+   "loc": "source/game/src/c.tsx:74"
   },
   {
    "id": "tipp",
@@ -4236,7 +4340,7 @@
    "n": "Insider-Tipp Ölpreis",
    "d": "Trend für nächsten Monat",
    "per": "m",
-   "loc": "source/game/src/c.tsx:68"
+   "loc": "source/game/src/c.tsx:75"
   },
   {
    "id": "barsell",
@@ -4246,7 +4350,7 @@
    "n": "Öl über die Bar verkaufen",
    "d": "bis 40 l zu 135 %",
    "per": "m",
-   "loc": "source/game/src/c.tsx:69"
+   "loc": "source/game/src/c.tsx:76"
   },
   {
    "id": "ningbo",
@@ -4256,7 +4360,7 @@
    "n": "Direktimport aus Ningbo",
    "d": "neuer Rüttler für 700 € (hält)",
    "per": "once",
-   "loc": "source/game/src/c.tsx:70"
+   "loc": "source/game/src/c.tsx:77"
   },
   {
    "id": "crew",
@@ -4266,7 +4370,7 @@
    "n": "Ciccios Crew anheuern",
    "d": "Erntehelfer, Lohn −25 %, Ertrag +10 %",
    "per": "y",
-   "loc": "source/game/src/c.tsx:71"
+   "loc": "source/game/src/c.tsx:78"
   },
   {
    "id": "wein",
@@ -4276,7 +4380,7 @@
    "n": "Wein-Nebenlinie",
    "d": "600 Flaschen, Verkauf ab Nov.",
    "per": "y",
-   "loc": "source/game/src/c.tsx:72"
+   "loc": "source/game/src/c.tsx:79"
   },
   {
    "id": "winesell",
@@ -4286,7 +4390,7 @@
    "n": "Rosso Pandolfina verkaufen",
    "d": "600 Flaschen à ~4 €",
    "per": "m",
-   "loc": "source/game/src/c.tsx:73"
+   "loc": "source/game/src/c.tsx:80"
   },
   {
    "id": "coopw",
@@ -4296,7 +4400,7 @@
    "n": "Wein-Kooperation",
    "d": "Crew & Gerät teilen: Löhne −30 %",
    "per": "once",
-   "loc": "source/game/src/c.tsx:74"
+   "loc": "source/game/src/c.tsx:81"
   },
   {
    "id": "tast",
@@ -4306,7 +4410,7 @@
    "n": "Verkostung für Tourist:innen",
    "d": "Apr–Okt: bis 25 l zu 145 %, ★ +2",
    "per": "m",
-   "loc": "source/game/src/c.tsx:75"
+   "loc": "source/game/src/c.tsx:82"
   },
   {
    "id": "tour",
@@ -4316,7 +4420,7 @@
    "n": "Tourismus-Deal",
    "d": "Monatseinnahmen von der Pro Loco",
    "per": "once",
-   "loc": "source/game/src/c.tsx:76"
+   "loc": "source/game/src/c.tsx:83"
   },
   {
    "id": "exp",
@@ -4326,7 +4430,7 @@
    "n": "Export nach München",
    "d": "alle Verkäufe +8 %",
    "per": "once",
-   "loc": "source/game/src/c.tsx:77"
+   "loc": "source/game/src/c.tsx:84"
   },
   {
    "id": "truce",
@@ -4336,7 +4440,7 @@
    "n": "Waffenstillstand",
    "d": "keine Sabotage mehr, ★ +4",
    "per": "once",
-   "loc": "source/game/src/c.tsx:78"
+   "loc": "source/game/src/c.tsx:85"
   },
   {
    "id": "press",
@@ -4346,7 +4450,7 @@
    "n": "US-Presse: Reportage in New York",
    "d": "1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich",
    "per": "once",
-   "loc": "source/game/src/c.tsx:79"
+   "loc": "source/game/src/c.tsx:86"
   },
   {
    "id": "texas",
@@ -4356,7 +4460,7 @@
    "n": "Container nach Texas",
    "d": "1×/Jahr: bis 120 l zu 220 %",
    "per": "y",
-   "loc": "source/game/src/c.tsx:80"
+   "loc": "source/game/src/c.tsx:87"
   }
  ],
  "deals": {
@@ -4374,6 +4478,59 @@
  },
  "minors": [
   {
+   "id": "casal",
+   "n": "Y&L Haushaltswaren",
+   "e": "🧴",
+   "map": "Stadt",
+   "enc": [
+    {
+     "t": "Die Inhaberin sucht Öl in kleinen Flaschen für ihr Regal.",
+     "l": "5 l liefern",
+     "d": "5 l zu 140 %",
+     "ok": true,
+     "loc": "source/game/src/c.tsx:96"
+    },
+    {
+     "t": "Restposten: Etiketten und Glasflaschen, 40 € für alles.",
+     "l": "Kaufen (40 €)",
+     "d": "★ +2 – schönere Flaschen",
+     "ok": false,
+     "loc": "source/game/src/c.tsx:97"
+    },
+    {
+     "t": "Ein Kunde fragt, ob dein Öl auch hier zu haben ist.",
+     "l": "Probe dalassen (1 l)",
+     "d": "★ +1",
+     "ok": true,
+     "loc": "source/game/src/c.tsx:98"
+    }
+   ],
+   "loc": "source/game/src/c.tsx:95"
+  },
+  {
+   "id": "dogs",
+   "n": "O-Dogs Garden",
+   "e": "🐕",
+   "map": "Umland",
+   "enc": [
+    {
+     "t": "Ein Rudel Hunde begrüßt dich am Zaun. Die Betreiberin sucht Paten.",
+     "l": "Gassi gehen",
+     "d": "★ +1",
+     "ok": false,
+     "loc": "source/game/src/c.tsx:101"
+    },
+    {
+     "t": "Futterspende? Die Säcke sind leer.",
+     "l": "Spenden (30 €)",
+     "d": "★ +2",
+     "ok": false,
+     "loc": "source/game/src/c.tsx:102"
+    }
+   ],
+   "loc": "source/game/src/c.tsx:100"
+  },
+  {
    "id": "ferr",
    "n": "Ferramenta Cinese",
    "e": "🔧",
@@ -4384,24 +4541,24 @@
      "l": "Mitlachen",
      "d": "Wang ♥+3",
      "ok": false,
-     "loc": "source/game/src/c.tsx:87"
+     "loc": "source/game/src/c.tsx:104"
     },
     {
      "t": "Restposten: Fliegenfallen, Kiste zu 40 €.",
      "l": "Kiste kaufen (40 €)",
      "d": "nächste Fallen −50 %",
      "ok": false,
-     "loc": "source/game/src/c.tsx:88"
+     "loc": "source/game/src/c.tsx:105"
     },
     {
      "t": "Wang zeigt dir ein Video vom Großhandel in Palermo.",
      "l": "Zuschauen",
      "d": "Wang ♥+4",
      "ok": false,
-     "loc": "source/game/src/c.tsx:89"
+     "loc": "source/game/src/c.tsx:106"
     }
    ],
-   "loc": "source/game/src/c.tsx:86"
+   "loc": "source/game/src/c.tsx:103"
   },
   {
    "id": "panif",
@@ -4414,24 +4571,24 @@
      "l": "10 l verkaufen (130 %)",
      "d": "",
      "ok": true,
-     "loc": "source/game/src/c.tsx:91"
+     "loc": "source/game/src/c.tsx:108"
     },
     {
      "t": "Schlange vor der Theke – alle reden über Zio Turi.",
      "l": "Zuhören",
      "d": "★ +1",
      "ok": false,
-     "loc": "source/game/src/c.tsx:92"
+     "loc": "source/game/src/c.tsx:109"
     },
     {
      "t": "Frische Cuccidati für die Nonna?",
      "l": "Kaufen (6 €)",
      "d": "Nonna ♥+4",
      "ok": false,
-     "loc": "source/game/src/c.tsx:93"
+     "loc": "source/game/src/c.tsx:110"
     }
    ],
-   "loc": "source/game/src/c.tsx:90"
+   "loc": "source/game/src/c.tsx:107"
   },
   {
    "id": "tabac",
@@ -4444,17 +4601,17 @@
      "l": "Rubbeln (5 €)",
      "d": "10 %: 250 €",
      "ok": false,
-     "loc": "source/game/src/c.tsx:95"
+     "loc": "source/game/src/c.tsx:112"
     },
     {
      "t": "Der Tabaccaio sucht ein Geschenk für seine Schwiegermutter.",
      "l": "5 l Öl verkaufen (150 %)",
      "d": "",
      "ok": true,
-     "loc": "source/game/src/c.tsx:96"
+     "loc": "source/game/src/c.tsx:113"
     }
    ],
-   "loc": "source/game/src/c.tsx:94"
+   "loc": "source/game/src/c.tsx:111"
   },
   {
    "id": "barb",
@@ -4467,17 +4624,17 @@
      "l": "Schneiden lassen (12 €)",
      "d": "★ +2",
      "ok": false,
-     "loc": "source/game/src/c.tsx:98"
+     "loc": "source/game/src/c.tsx:115"
     },
     {
      "t": "Gaspare rasiert sonst den Sekretär des Sindaco.",
      "l": "Gutes Wort einlegen (50 €)",
      "d": "Sindaco ♥+6 (auch unbekannt)",
      "ok": false,
-     "loc": "source/game/src/c.tsx:99"
+     "loc": "source/game/src/c.tsx:116"
     }
    ],
-   "loc": "source/game/src/c.tsx:97"
+   "loc": "source/game/src/c.tsx:114"
   },
   {
    "id": "farm",
@@ -4490,17 +4647,17 @@
      "l": "Wärmesalbe (15 €)",
      "d": "+2 ⏳ nächsten Monat",
      "ok": false,
-     "loc": "source/game/src/c.tsx:101"
+     "loc": "source/game/src/c.tsx:118"
     },
     {
      "t": "Die Apothekerin fragt nach Öl für Naturkosmetik.",
      "l": "15 l verkaufen (140 %)",
      "d": "",
      "ok": true,
-     "loc": "source/game/src/c.tsx:102"
+     "loc": "source/game/src/c.tsx:119"
     }
    ],
-   "loc": "source/game/src/c.tsx:100"
+   "loc": "source/game/src/c.tsx:117"
   },
   {
    "id": "edic",
@@ -4513,17 +4670,17 @@
      "l": "Zeitung (2 €)",
      "d": "Preis-Trend",
      "ok": false,
-     "loc": "source/game/src/c.tsx:104"
+     "loc": "source/game/src/c.tsx:121"
     },
     {
      "t": "Kleinanzeigen im Lokalblatt.",
      "l": "Inserat schalten (150 €)",
      "d": "★ +3",
      "ok": false,
-     "loc": "source/game/src/c.tsx:105"
+     "loc": "source/game/src/c.tsx:122"
     }
    ],
-   "loc": "source/game/src/c.tsx:103"
+   "loc": "source/game/src/c.tsx:120"
   },
   {
    "id": "mac",
@@ -4536,17 +4693,17 @@
      "l": "15 l verkaufen (125 %)",
      "d": "",
      "ok": true,
-     "loc": "source/game/src/c.tsx:107"
+     "loc": "source/game/src/c.tsx:124"
     },
     {
      "t": "Ciccio liefert gerade Lämmer ab.",
      "l": "Hallo sagen",
      "d": "Ciccio ♥+4 (auch unbekannt)",
      "ok": false,
-     "loc": "source/game/src/c.tsx:108"
+     "loc": "source/game/src/c.tsx:125"
     }
    ],
-   "loc": "source/game/src/c.tsx:106"
+   "loc": "source/game/src/c.tsx:123"
   },
   {
    "id": "masseria",
@@ -4559,17 +4716,17 @@
      "l": "Durchsuchen",
      "d": "Glückssache",
      "ok": false,
-     "loc": "source/game/src/c.tsx:110"
+     "loc": "source/game/src/c.tsx:127"
     },
     {
      "t": "Jugendliche aus Sambuca feiern hier.",
      "l": "Mitfeiern",
      "d": "★ +1",
      "ok": false,
-     "loc": "source/game/src/c.tsx:111"
+     "loc": "source/game/src/c.tsx:128"
     }
    ],
-   "loc": "source/game/src/c.tsx:109"
+   "loc": "source/game/src/c.tsx:126"
   },
   {
    "id": "imker",
@@ -4582,17 +4739,17 @@
      "l": "Einverstanden",
      "d": "Ertrag +4 % (dieses Jahr)",
      "ok": true,
-     "loc": "source/game/src/c.tsx:113"
+     "loc": "source/game/src/c.tsx:130"
     },
     {
      "t": "Honig gegen Öl?",
      "l": "5 l tauschen",
      "d": "Nonna ♥+5",
      "ok": true,
-     "loc": "source/game/src/c.tsx:114"
+     "loc": "source/game/src/c.tsx:131"
     }
    ],
-   "loc": "source/game/src/c.tsx:112"
+   "loc": "source/game/src/c.tsx:129"
   },
   {
    "id": "pozzo",
@@ -4605,10 +4762,10 @@
      "l": "Kanister schleppen",
      "d": "Sommer: Haine +3 %",
      "ok": false,
-     "loc": "source/game/src/c.tsx:116"
+     "loc": "source/game/src/c.tsx:133"
     }
    ],
-   "loc": "source/game/src/c.tsx:115"
+   "loc": "source/game/src/c.tsx:132"
   },
   {
    "id": "kapelle",
@@ -4621,10 +4778,10 @@
      "l": "Kerze anzünden",
      "d": "nächste Katastrophe −40 %",
      "ok": false,
-     "loc": "source/game/src/c.tsx:118"
+     "loc": "source/game/src/c.tsx:135"
     }
    ],
-   "loc": "source/game/src/c.tsx:117"
+   "loc": "source/game/src/c.tsx:134"
   },
   {
    "id": "schaefer",
@@ -4637,17 +4794,17 @@
      "l": "Erlauben",
      "d": "Haine +3 %",
      "ok": false,
-     "loc": "source/game/src/c.tsx:120"
+     "loc": "source/game/src/c.tsx:137"
     },
     {
      "t": "Frische Ricotta, noch warm.",
      "l": "Probieren (3 €)",
      "d": "Ciccio ♥+3",
      "ok": false,
-     "loc": "source/game/src/c.tsx:121"
+     "loc": "source/game/src/c.tsx:138"
     }
    ],
-   "loc": "source/game/src/c.tsx:119"
+   "loc": "source/game/src/c.tsx:136"
   },
   {
    "id": "consorzio",
@@ -4660,10 +4817,10 @@
      "l": "Beraten lassen (60 €)",
      "d": "Haine +4 %",
      "ok": false,
-     "loc": "source/game/src/c.tsx:123"
+     "loc": "source/game/src/c.tsx:140"
     }
    ],
-   "loc": "source/game/src/c.tsx:122"
+   "loc": "source/game/src/c.tsx:139"
   },
   {
    "id": "bosco",
@@ -4676,17 +4833,17 @@
      "l": "Pilze sammeln",
      "d": "~40 €",
      "ok": false,
-     "loc": "source/game/src/c.tsx:125"
+     "loc": "source/game/src/c.tsx:142"
     },
     {
      "t": "Die Jäger von Adragna.",
      "l": "Wurst teilen",
      "d": "★ +2",
      "ok": false,
-     "loc": "source/game/src/c.tsx:126"
+     "loc": "source/game/src/c.tsx:143"
     }
    ],
-   "loc": "source/game/src/c.tsx:124"
+   "loc": "source/game/src/c.tsx:141"
   }
  ],
  "shop": [
@@ -4696,7 +4853,7 @@
    "n": "🪓 Billig-Spaten",
    "d": "3 Einsätze, Pflege ohne Spaten +25 %",
    "cost": "19 × Wang-Rabatt",
-   "loc": "source/game/src/c.tsx:131"
+   "loc": "source/game/src/c.tsx:148"
   },
   {
    "id": "netz1",
@@ -4704,7 +4861,7 @@
    "n": "🕸️ Billig-Windnetze",
    "d": "Sturmschutz für 1 Sturm",
    "cost": "180 × Wang-Rabatt",
-   "loc": "source/game/src/c.tsx:132"
+   "loc": "source/game/src/c.tsx:149"
   },
   {
    "id": "sand",
@@ -4712,7 +4869,7 @@
    "n": "🧱 Sandsäcke",
    "d": "Flutschaden-Puffer (1×)",
    "cost": "60 × Wang-Rabatt",
-   "loc": "source/game/src/c.tsx:133"
+   "loc": "source/game/src/c.tsx:150"
   },
   {
    "id": "gear1",
@@ -4720,7 +4877,7 @@
    "n": "🔩 Billig-Rüttler",
    "d": "Ernte +15 %, aber 35 % Bruch pro Ernte",
    "cost": "850 × Wang-Rabatt",
-   "loc": "source/game/src/c.tsx:134"
+   "loc": "source/game/src/c.tsx:151"
   },
   {
    "id": "spade2",
@@ -4728,7 +4885,7 @@
    "n": "⛏️ Profi-Spaten",
    "d": "12 Einsätze",
    "cost": "89",
-   "loc": "source/game/src/c.tsx:135"
+   "loc": "source/game/src/c.tsx:152"
   },
   {
    "id": "netz2",
@@ -4736,7 +4893,7 @@
    "n": "🛡️ Windschutznetze",
    "d": "hält 3 Stürme",
    "cost": "450",
-   "loc": "source/game/src/c.tsx:136"
+   "loc": "source/game/src/c.tsx:153"
   },
   {
    "id": "drain",
@@ -4744,7 +4901,7 @@
    "n": "🚧 Drainagegräben",
    "d": "Flutschaden dauerhaft −70 %",
    "cost": "900",
-   "loc": "source/game/src/c.tsx:137"
+   "loc": "source/game/src/c.tsx:154"
   },
   {
    "id": "gear2",
@@ -4752,7 +4909,7 @@
    "n": "🔧 Rüttler (neu)",
    "d": "Ernte +15 %, Lohn halbiert",
    "cost": "1800",
-   "loc": "source/game/src/c.tsx:138"
+   "loc": "source/game/src/c.tsx:155"
   },
   {
    "id": "bio",
@@ -4760,7 +4917,7 @@
    "n": "🌿 Bio-Zertifikat beantragen",
    "d": "Preis +10 %, Qualität +10",
    "cost": "800",
-   "loc": "source/game/src/c.tsx:139"
+   "loc": "source/game/src/c.tsx:156"
   },
   {
    "id": "dop",
@@ -4768,15 +4925,31 @@
    "n": "🏅 DOP Val di Mazara",
    "d": "Preis +8 % dauerhaft",
    "cost": "1200",
-   "loc": "source/game/src/c.tsx:140"
+   "loc": "source/game/src/c.tsx:157"
+  },
+  {
+   "id": "schneise",
+   "at": "consorzio",
+   "n": "🚜 Brandschneise mähen",
+   "d": "Schutz vor Flächenbrand für 12 Monate: Gras und Gestrüpp um alle Haine wird gemäht (100 € + 0,40 €/Baum)",
+   "cost": "100 + trees(g) * 0.4)",
+   "loc": "source/game/src/c.tsx:158"
+  },
+  {
+   "id": "dog",
+   "at": "dogs",
+   "n": "🐕 Wachhund adoptieren",
+   "d": "Schutz vor Olivendieben: im Ereignis „Olivendiebe“ gibt es die sichere Option „Wachhunde“, Risiko sonst nur 10 % statt 40 %",
+   "cost": "350",
+   "loc": "source/game/src/c.tsx:159"
   },
   {
    "id": "water",
    "at": "lago",
    "n": "💧 Wasserrecht am Lago",
-   "d": "Schutz vor Dürre, Bewässerung frei",
+   "d": "Wirkung: alle Haine gelten dauerhaft als bewässert (💧, keine Bewässerungs-Kosten), Dürre & Hitzewelle ohne Schaden, erfüllt das Juni-Ziel",
    "cost": "1500",
-   "loc": "source/game/src/c.tsx:141"
+   "loc": "source/game/src/c.tsx:160"
   }
  ],
  "scenes": [
@@ -4791,46 +4964,46 @@
      "id": "pc",
      "l": "Computer · Aufträge",
      "e": "",
-     "loc": "source/game/src/e.tsx:73",
+     "loc": "source/game/src/e.tsx:77",
      "handled": true
     },
     {
      "id": "tel",
      "l": "Telefon",
      "e": "",
-     "loc": "source/game/src/e.tsx:73",
+     "loc": "source/game/src/e.tsx:77",
      "handled": true
     },
     {
      "id": "regal",
      "l": "Lager & Haine",
      "e": "",
-     "loc": "source/game/src/e.tsx:73",
+     "loc": "source/game/src/e.tsx:77",
      "handled": true
     },
     {
      "id": "kal",
      "l": "Kalender",
      "e": "",
-     "loc": "source/game/src/e.tsx:73",
+     "loc": "source/game/src/e.tsx:77",
      "handled": true
     },
     {
      "id": "fenster",
      "l": "Zur Stadt",
      "e": "",
-     "loc": "source/game/src/e.tsx:73",
+     "loc": "source/game/src/e.tsx:77",
      "handled": true
     },
     {
      "id": "tuer",
      "l": "Raus aufs Land",
      "e": "",
-     "loc": "source/game/src/e.tsx:73",
+     "loc": "source/game/src/e.tsx:77",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:81"
+   "loc": "source/game/src/e.tsx:87"
   },
   {
    "id": "rathaus",
@@ -4843,25 +5016,25 @@
      "id": "schalter",
      "l": "Schalter · Anträge",
      "e": "🛎️",
-     "loc": "source/game/src/e.tsx:83",
+     "loc": "source/game/src/e.tsx:89",
      "handled": true
     },
     {
      "id": "sindaco",
      "l": "Büro des Sindaco",
      "e": "🚪",
-     "loc": "source/game/src/e.tsx:83",
+     "loc": "source/game/src/e.tsx:89",
      "handled": true
     },
     {
      "id": "aushang",
      "l": "Aushang",
      "e": "📌",
-     "loc": "source/game/src/e.tsx:83",
+     "loc": "source/game/src/e.tsx:89",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:82"
+   "loc": "source/game/src/e.tsx:88"
   },
   {
    "id": "bar",
@@ -4874,25 +5047,25 @@
      "id": "caffe",
      "l": "Caffè & Gerüchte (2 €)",
      "e": "☕",
-     "loc": "source/game/src/e.tsx:85",
+     "loc": "source/game/src/e.tsx:91",
      "handled": true
     },
     {
      "id": "wette",
      "l": "Calcio-Wette (50 €)",
      "e": "📺",
-     "loc": "source/game/src/e.tsx:85",
+     "loc": "source/game/src/e.tsx:91",
      "handled": true
     },
     {
      "id": "zeitung",
      "l": "Ölpreis",
      "e": "📰",
-     "loc": "source/game/src/e.tsx:85",
+     "loc": "source/game/src/e.tsx:91",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:84"
+   "loc": "source/game/src/e.tsx:90"
   },
   {
    "id": "banca",
@@ -4905,11 +5078,11 @@
      "id": "pin:banca",
      "l": "Kreditschalter",
      "e": "🏦",
-     "loc": "source/game/src/e.tsx:86",
+     "loc": "source/game/src/e.tsx:92",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:86"
+   "loc": "source/game/src/e.tsx:92"
   },
   {
    "id": "teatro",
@@ -4922,11 +5095,11 @@
      "id": "pin:palazzo",
      "l": "Don Calogero sprechen",
      "e": "🎭",
-     "loc": "source/game/src/e.tsx:87",
+     "loc": "source/game/src/e.tsx:93",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:87"
+   "loc": "source/game/src/e.tsx:93"
   },
   {
    "id": "belv",
@@ -4939,11 +5112,11 @@
      "id": "pin:belv",
      "l": "Ausblick",
      "e": "🔭",
-     "loc": "source/game/src/e.tsx:88",
+     "loc": "source/game/src/e.tsx:94",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:88"
+   "loc": "source/game/src/e.tsx:94"
   },
   {
    "id": "feudo",
@@ -4956,11 +5129,11 @@
      "id": "pin:feudo",
      "l": "Zum Gutshaus",
      "e": "🍷",
-     "loc": "source/game/src/e.tsx:89",
+     "loc": "source/game/src/e.tsx:95",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:89"
+   "loc": "source/game/src/e.tsx:95"
   },
   {
    "id": "frantoio",
@@ -4973,11 +5146,11 @@
      "id": "pin:frantoio",
      "l": "Mühle",
      "e": "🫒",
-     "loc": "source/game/src/e.tsx:90",
+     "loc": "source/game/src/e.tsx:96",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:90"
+   "loc": "source/game/src/e.tsx:96"
   },
   {
    "id": "hain",
@@ -4990,11 +5163,11 @@
      "id": "regal",
      "l": "Haine verwalten",
      "e": "🌳",
-     "loc": "source/game/src/e.tsx:91",
+     "loc": "source/game/src/e.tsx:97",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:91"
+   "loc": "source/game/src/e.tsx:97"
   },
   {
    "id": "lago",
@@ -5007,66 +5180,131 @@
      "id": "pin:lago",
      "l": "Am Steg",
      "e": "⛵",
-     "loc": "source/game/src/e.tsx:92",
+     "loc": "source/game/src/e.tsx:98",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:92"
+   "loc": "source/game/src/e.tsx:98"
   },
   {
    "id": "ruine",
-   "img": "ruine",
-   "n": "TORRE & ADRANONE",
-   "sub": "Zio Turis Hang",
+   "img": "torre",
+   "n": "TORRE DI PANDOLFINA",
+   "sub": "Wachturm · Zio Turis Hang",
    "venue": "torre",
    "hots": [
     {
      "id": "pin:torre",
-     "l": "Ruinen",
-     "e": "🏛️",
-     "loc": "source/game/src/e.tsx:93",
+     "l": "Am Turm",
+     "e": "🗼",
+     "loc": "source/game/src/e.tsx:100",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:93"
+   "loc": "source/game/src/e.tsx:100"
   },
   {
    "id": "chiesa",
    "img": "chiesa",
    "n": "CHIESA MADRE",
-   "sub": "Madonna dell'Udienza",
+   "sub": "Hauptkirche · Padre Vito",
    "venue": "chiesa",
    "hots": [
     {
-     "id": "kerze",
-     "l": "Kerze (5 €)",
-     "e": "🕯️",
-     "loc": "source/game/src/e.tsx:95",
+     "id": "beichte",
+     "l": "Beichtstuhl",
+     "e": "🙏",
+     "loc": "source/game/src/e.tsx:103",
      "handled": true
     },
     {
      "id": "spende",
      "l": "Opferstock (150 €)",
      "e": "💶",
-     "loc": "source/game/src/e.tsx:95",
-     "handled": true
-    },
-    {
-     "id": "beichte",
-     "l": "Beichtstuhl",
-     "e": "🙏",
-     "loc": "source/game/src/e.tsx:95",
-     "handled": true
-    },
-    {
-     "id": "altar",
-     "l": "Madonna",
-     "e": "✨",
-     "loc": "source/game/src/e.tsx:95",
+     "loc": "source/game/src/e.tsx:103",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:94"
+   "loc": "source/game/src/e.tsx:102"
+  },
+  {
+   "id": "santuario",
+   "img": "santuario",
+   "n": "SANTUARIO",
+   "sub": "Madonna dell'Udienza",
+   "venue": "santuario",
+   "hots": [
+    {
+     "id": "altar",
+     "l": "Madonna dell'Udienza",
+     "e": "✨",
+     "loc": "source/game/src/e.tsx:105",
+     "handled": true
+    },
+    {
+     "id": "kerze",
+     "l": "Kerze (5 €)",
+     "e": "🕯️",
+     "loc": "source/game/src/e.tsx:105",
+     "handled": true
+    },
+    {
+     "id": "spende",
+     "l": "Opferstock (150 €)",
+     "e": "💶",
+     "loc": "source/game/src/e.tsx:105",
+     "handled": true
+    }
+   ],
+   "loc": "source/game/src/e.tsx:104"
+  },
+  {
+   "id": "hotel",
+   "img": "hotel",
+   "n": "HOTEL DON GIOVANNI",
+   "sub": "Pool · Restaurant · Tourist:innen",
+   "venue": "hotel",
+   "hots": [
+    {
+     "id": "pooldeal",
+     "l": "Küchenchef: 20 l zu 160 %",
+     "e": "🏊",
+     "loc": "source/game/src/e.tsx:108",
+     "handled": true
+    },
+    {
+     "id": "aperitivo",
+     "l": "Aperitivo (12 €)",
+     "e": "🍹",
+     "loc": "source/game/src/e.tsx:108",
+     "handled": true
+    }
+   ],
+   "loc": "source/game/src/e.tsx:107"
+  },
+  {
+   "id": "lido",
+   "img": "lido",
+   "n": "LIDO BOOMERANG",
+   "sub": "Strandbar am Meer",
+   "venue": "lido",
+   "hots": [
+    {
+     "id": "strand",
+     "l": "Strandtag (20 €)",
+     "e": "🏖️",
+     "loc": "source/game/src/e.tsx:111",
+     "handled": true
+    },
+    {
+     "id": "lidodeal",
+     "l": "Restaurant: 15 l zu 150 %",
+     "e": "🍤",
+     "loc": "source/game/src/e.tsx:111",
+     "handled": true
+    }
+   ],
+   "loc": "source/game/src/e.tsx:110"
   },
   {
    "id": "fest",
@@ -5079,11 +5317,11 @@
      "id": "prog",
      "l": "Festprogramm",
      "e": "🎪",
-     "loc": "source/game/src/e.tsx:96",
+     "loc": "source/game/src/e.tsx:112",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:96"
+   "loc": "source/game/src/e.tsx:112"
   }
  ],
  "pins": [
@@ -5158,6 +5396,16 @@
    "loc": "source/game/src/f.tsx:9"
   },
   {
+   "id": "santuario",
+   "label": "Santuario",
+   "role": "Madonna dell'Udienza",
+   "x": 65.56,
+   "y": 59.44,
+   "scene": "santuario",
+   "map": "Umland",
+   "loc": "source/game/src/f.tsx:11"
+  },
+  {
    "id": "torre",
    "label": "Torre di Pandolfina",
    "role": "Turis Hang",
@@ -5165,7 +5413,7 @@
    "y": 20.89,
    "scene": "ruine",
    "map": "Umland",
-   "loc": "source/game/src/f.tsx:12"
+   "loc": "source/game/src/f.tsx:14"
   },
   {
    "id": "frantoio",
@@ -5175,7 +5423,7 @@
    "y": 53.41,
    "scene": "frantoio",
    "map": "Umland",
-   "loc": "source/game/src/f.tsx:13"
+   "loc": "source/game/src/f.tsx:15"
   },
   {
    "id": "hain",
@@ -5185,7 +5433,7 @@
    "y": 21.74,
    "scene": "hain",
    "map": "Umland",
-   "loc": "source/game/src/f.tsx:14"
+   "loc": "source/game/src/f.tsx:16"
   },
   {
    "id": "feudo",
@@ -5195,7 +5443,7 @@
    "y": 60.9,
    "scene": "feudo",
    "map": "Umland",
-   "loc": "source/game/src/f.tsx:15"
+   "loc": "source/game/src/f.tsx:17"
   },
   {
    "id": "lago",
@@ -5205,7 +5453,7 @@
    "y": 84.54,
    "scene": "lago",
    "map": "Umland",
-   "loc": "source/game/src/f.tsx:16"
+   "loc": "source/game/src/f.tsx:18"
   },
   {
    "id": "sambuca",
@@ -5215,7 +5463,27 @@
    "y": 68.2,
    "scene": null,
    "map": "Umland",
-   "loc": "source/game/src/f.tsx:17"
+   "loc": "source/game/src/f.tsx:19"
+  },
+  {
+   "id": "hotel",
+   "label": "Hotel Don Giovanni",
+   "role": "Pool · Küche",
+   "x": 64.87,
+   "y": 39.88,
+   "scene": "hotel",
+   "map": "Umland",
+   "loc": "source/game/src/f.tsx:21"
+  },
+  {
+   "id": "lido",
+   "label": "→ Lido Boomerang",
+   "role": "Meer · über SP41",
+   "x": 7.5,
+   "y": 73.87,
+   "scene": "lido",
+   "map": "Umland",
+   "loc": "source/game/src/f.tsx:23"
   }
  ],
  "spots": [
@@ -5276,6 +5544,38 @@
    "55",
    "3700",
    "95"
+  ],
+  [
+   "batia",
+   "Contrada Batia",
+   "110",
+   "60",
+   "3500",
+   "80"
+  ],
+  [
+   "adragna",
+   "Terrassen bei Adragna",
+   "90",
+   "75",
+   "3300",
+   "65"
+  ],
+  [
+   "turih",
+   "Zio Turis Oberhang",
+   "160",
+   "80",
+   "9500",
+   "0"
+  ],
+  [
+   "giusih",
+   "Uliveto Ferrante (Feudo)",
+   "240",
+   "85",
+   "14500",
+   "0"
   ]
  ],
  "spot_actions": [
@@ -5308,6 +5608,31 @@
    "id": "aushang",
    "cost": 0,
    "ap": 0
+  },
+  {
+   "id": "pooldeal",
+   "cost": 0,
+   "ap": 1
+  },
+  {
+   "id": "aperitivo",
+   "cost": 12,
+   "ap": 0
+  },
+  {
+   "id": "strand",
+   "cost": 20,
+   "ap": 1
+  },
+  {
+   "id": "lidodeal",
+   "cost": 0,
+   "ap": 1
+  },
+  {
+   "id": "tierheim",
+   "cost": 30,
+   "ap": 0
   }
  ],
  "goals": [
@@ -5316,84 +5641,84 @@
    "chk": "g.groves.some((x) => x.prune)",
    "rew": 200,
    "rep": 2,
-   "loc": "source/game/src/c.tsx:43"
+   "loc": "source/game/src/c.tsx:50"
   },
   {
    "t": "Plaudere mit 2 Leuten",
    "chk": "g.talked.length >= 2",
    "rew": 250,
    "rep": 2,
-   "loc": "source/game/src/c.tsx:44"
+   "loc": "source/game/src/c.tsx:51"
   },
   {
    "t": "Dünge alle deine Haine",
    "chk": "g.groves.every((x) => x.fert)",
    "rew": 300,
    "rep": 3,
-   "loc": "source/game/src/c.tsx:45"
+   "loc": "source/game/src/c.tsx:52"
   },
   {
    "t": "Lerne jemanden Neues kennen",
    "chk": "g.fl[\"metM\"] === abs(g)",
    "rew": 300,
    "rep": 3,
-   "loc": "source/game/src/c.tsx:46"
+   "loc": "source/game/src/c.tsx:53"
   },
   {
    "t": "Udienza: Ansehen 30 erreichen",
    "chk": "g.rep >= 30",
    "rew": 400,
    "rep": 0,
-   "loc": "source/game/src/c.tsx:47"
+   "loc": "source/game/src/c.tsx:54"
   },
   {
-   "t": "Bewässerung oder Wasserrecht",
+   "t": "Bewässerung (Hain) oder 💧 Wasserrecht (Lago, schützt vor Dürre)",
    "chk": "g.water || g.groves.some((x) => x.irr)",
    "rew": 300,
    "rep": 2,
-   "loc": "source/game/src/c.tsx:48"
+   "loc": "source/game/src/c.tsx:55"
   },
   {
    "t": "Fliegenfallen in allen Hainen",
    "chk": "g.groves.every((x) => x.traps)",
    "rew": 350,
    "rep": 2,
-   "loc": "source/game/src/c.tsx:49"
+   "loc": "source/game/src/c.tsx:56"
   },
   {
    "t": "Ernte-Crew sichern",
    "chk": "g.crew > 0",
    "rew": 300,
    "rep": 2,
-   "loc": "source/game/src/c.tsx:50"
+   "loc": "source/game/src/c.tsx:57"
   },
   {
    "t": "Alle Haine mindestens 60 % Zustand",
    "chk": "g.groves.every((x) => x.cond >= 60)",
    "rew": 400,
    "rep": 3,
-   "loc": "source/game/src/c.tsx:51"
+   "loc": "source/game/src/c.tsx:58"
   },
   {
    "t": "Ernte 2.000 kg Oliven (Jahr)",
    "chk": "g.stats.harvest >= 2000",
    "rew": 400,
    "rep": 3,
-   "loc": "source/game/src/c.tsx:52"
+   "loc": "source/game/src/c.tsx:59"
   },
   {
    "t": "Öl mit Qualität ≥ 70 im Lager",
    "chk": "g.oil > 0 && g.q >= 70",
    "rew": 450,
    "rep": 4,
-   "loc": "source/game/src/c.tsx:53"
+   "loc": "source/game/src/c.tsx:60"
   },
   {
    "t": "Mindestens 2 Partner-Deals",
    "chk": "g.deals.length >= 2",
    "rew": 600,
    "rep": 4,
-   "loc": "source/game/src/c.tsx:54"
+   "loc": "source/game/src/c.tsx:61"
   }
  ],
  "minigames": [
@@ -5405,17 +5730,17 @@
   {
    "id": "harvest",
    "fn": "MiniHarvest",
-   "loc": "source/game/ui_old.tsx:25"
+   "loc": "source/game/ui_old.tsx:27"
   },
   {
    "id": "press",
    "fn": "MiniPress",
-   "loc": "source/game/ui_old.tsx:56"
+   "loc": "source/game/ui_old.tsx:58"
   },
   {
    "id": "haggle",
    "fn": "MiniHaggle",
-   "loc": "source/game/ui_old.tsx:78"
+   "loc": "source/game/ui_old.tsx:80"
   },
   {
    "id": "rescue-sturm",
@@ -5423,7 +5748,7 @@
    "title": "STURM!",
    "txt": "Tippe Leitern, Kisten, Netze und Werkzeug an, bevor der Wind sie wegreißt.",
    "goal": 14,
-   "loc": "source/game/src/e.tsx:43"
+   "loc": "source/game/src/e.tsx:46"
   },
   {
    "id": "rescue-flut",
@@ -5431,7 +5756,15 @@
    "title": "FLUT!",
    "txt": "Stopfe die Lecks im Damm mit Sandsäcken – tippe jedes 💦, bevor es durchbricht.",
    "goal": 14,
-   "loc": "source/game/src/e.tsx:44"
+   "loc": "source/game/src/e.tsx:47"
+  },
+  {
+   "id": "rescue-brand",
+   "fn": "MiniRescue kind=\"brand\"",
+   "title": "FEUER!",
+   "txt": "Schlag die Flammen aus – tippe jedes 🔥, bevor es auf die Bäume überspringt.",
+   "goal": 15,
+   "loc": "source/game/src/e.tsx:48"
   },
   {
    "id": "rescue-fliege",
@@ -5439,7 +5772,7 @@
    "title": "FLIEGENJAGD!",
    "txt": "Klatsch die Olivenfliegen weg, bevor sie stechen.",
    "goal": 16,
-   "loc": "source/game/src/e.tsx:45"
+   "loc": "source/game/src/e.tsx:49"
   }
  ],
  "sheets": [
@@ -5455,6 +5788,7 @@
   "report",
   "shop",
   "sindaco",
+  "spot",
   "talk",
   "tel",
   "year"
@@ -5624,6 +5958,10 @@
    {
     "name": "best",
     "type": "number"
+   },
+   {
+    "name": "yhist",
+    "type": "number[]"
    }
   ],
   "Stats": [
@@ -5703,10 +6041,12 @@
    "lyR",
    "metM",
    "netz",
+   "office",
    "po_",
    "pray",
    "py_",
    "sand",
+   "schneise",
    "share",
    "trapdisc",
    "try_"
@@ -5720,7 +6060,8 @@
   "storage": [
    "sambuca5_hs",
    "sambuca5_name",
-   "sambuca5_save"
+   "sambuca5_save",
+   "sambuca5_seen"
   ]
  },
  "eco": [
@@ -5762,43 +6103,43 @@
   },
   {
    "id": "millFee",
-   "loc": "source/game/src/d.tsx:48"
+   "loc": "source/game/src/d.tsx:56"
   },
   {
    "id": "pickCost",
-   "loc": "source/game/src/d.tsx:49"
+   "loc": "source/game/src/d.tsx:57"
   },
   {
    "id": "careCost",
-   "loc": "source/game/src/d.tsx:51"
+   "loc": "source/game/src/d.tsx:59"
   },
   {
    "id": "nextPrice",
-   "loc": "source/game/src/c.tsx:59"
+   "loc": "source/game/src/c.tsx:66"
   },
   {
    "id": "endMonth",
-   "loc": "source/game/src/d.tsx:154"
+   "loc": "source/game/src/d.tsx:174"
   },
   {
    "id": "score",
-   "loc": "source/game/src/d.tsx:188"
+   "loc": "source/game/src/d.tsx:208"
   },
   {
    "id": "titel",
-   "loc": "source/game/src/d.tsx:193"
+   "loc": "source/game/src/d.tsx:213"
   },
   {
    "id": "rivalPts",
-   "loc": "source/game/src/d.tsx:43"
+   "loc": "source/game/src/d.tsx:51"
   },
   {
    "id": "mkOffers",
-   "loc": "source/game/src/d.tsx:20"
+   "loc": "source/game/src/d.tsx:23"
   },
   {
    "id": "disc",
-   "loc": "source/game/src/c.tsx:129"
+   "loc": "source/game/src/c.tsx:146"
   },
   {
    "id": "DMG",
@@ -5810,15 +6151,15 @@
   },
   {
    "id": "offStage",
-   "loc": "source/game/src/e.tsx:79"
+   "loc": "source/game/src/e.tsx:85"
   },
   {
    "id": "hsPut",
-   "loc": "source/game/src/d.tsx:205"
+   "loc": "source/game/src/d.tsx:225"
   },
   {
    "id": "MEETNEED",
-   "loc": "source/game/src/d.tsx:63"
+   "loc": "source/game/src/d.tsx:73"
   }
  ]
 }

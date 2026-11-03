@@ -37,7 +37,7 @@ Querverweise: Figuren-IDs `CH-<id>`, Ereignisse → [EVENTS.md](EVENTS.md), Orte
 | Kleine Orte | 16 |
 | Begegnungen | 32 |
 | Laden-Artikel | 13 |
-| Minispiele | 8 |
+| Minispiele | 9 |
 | Sheets (UI) | 16 |
 | Spielstand-Felder G | 42 |
 <!-- END GENERATED:counts -->

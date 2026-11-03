@@ -5730,17 +5730,22 @@
   {
    "id": "harvest",
    "fn": "MiniHarvest",
-   "loc": "source/game/ui_old.tsx:27"
+   "loc": "source/game/ui_old.tsx:28"
+  },
+  {
+   "id": "harvest-shaker",
+   "fn": "MiniShaker",
+   "loc": "source/game/src/f.tsx:358"
   },
   {
    "id": "press",
    "fn": "MiniPress",
-   "loc": "source/game/ui_old.tsx:58"
+   "loc": "source/game/ui_old.tsx:59"
   },
   {
    "id": "haggle",
    "fn": "MiniHaggle",
-   "loc": "source/game/ui_old.tsx:80"
+   "loc": "source/game/ui_old.tsx:81"
   },
   {
    "id": "rescue-sturm",

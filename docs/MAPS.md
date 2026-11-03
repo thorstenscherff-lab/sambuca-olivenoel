@@ -99,3 +99,203 @@ Diese Screenshots stammen aus dem Spiel. Sie sind nicht im Repo, weil sie nur di
 ## v0.8
 - Nebenorte haben echte Poster-Positionen (`px`): panif, ferr, tabac, barb, farm, edic, mac, casal, dogs. Der Imker liegt bei [84.5, 62] (ungefähr) und nicht mehr auf dem Tierheim.
 - Neue Pins: Santuario, Hotel und Lido (Wegweiser am Rand, weil der Lido außerhalb der Karte liegt). Angebote im Besitz von NPCs zeigen 🔒. Neben „Dein Hain“ gibt es keinen zweiten Hain-Pin mehr.
+
+## Icon-Prüftabelle v0.8.1 (FB-29/FB-30 · OI-036/OI-037)
+
+Gemessen live (https://thorstenscherff-lab.github.io/sambuca-olivenoel/, 390×844, Skript `/workspace/sbtest/icons.js`, Rohdaten `/workspace/sambuca-game/v08/qa/icons/layout.json`). Koordinate = `data-ax/ay` in % der Kartenfläche; Anker = echter Punkt in px innerhalb der skalierten Karte; Icon = Mittelpunkt des Icons in px; Abweichung = Abstand Icon↔Anker in px (> 8 px ⇒ gestrichelte Führungslinie). Überlappungen (Icon- und Label-Rechtecke): **0 auf allen 8 Stufen**. Screenshots je Pin: `qa/icons/pins/<s|u>_<id>.png`, je Zoom: `qa/icons/<s|u>_zoom<z>.png`.
+
+### Stadt · Zoom 1 (Karte 914×718 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:casal | 56.4 / 31.4 | 516 / 225 | 516 / 225 | 0.0 | – | 0 | – |
+| minor:ferr | 38.8 / 49.1 | 355 / 352 | 355 / 352 | 0.0 | – | 0 | – |
+| minor:panif | 75.3 / 21.3 | 688 / 153 | 688 / 153 | 0.0 | – | 0 | – |
+| minor:tabac | 61.8 / 62.8 | 565 / 451 | 581 / 467 | 23.3 | ja | 0 | – |
+| minor:barb | 52.9 / 71.4 | 484 / 513 | 484 / 513 | 0.0 | – | 0 | – |
+| minor:farm | 66.2 / 55.3 | 605 / 397 | 605 / 383 | 13.7 | ja | 0 | – |
+| minor:edic | 38.9 / 56.3 | 356 / 405 | 356 / 405 | 0.0 | – | 0 | – |
+| minor:mac | 42.5 / 88.2 | 389 / 633 | 389 / 633 | 0.0 | – | 0 | – |
+| casa | 69.6 / 38.9 | 637 / 280 | 636 / 280 | 0.0 | – | 0 | pins/s_casa.png |
+| banca | 58.9 / 63.8 | 538 / 458 | 532 / 439 | 19.4 | ja | 2 👤 | pins/s_banca.png |
+| muni | 71.5 / 49.8 | 654 / 358 | 654 / 358 | 0.0 | – | 1 👤 | pins/s_muni.png |
+| palazzo | 47.9 / 81.5 | 438 / 585 | 438 / 585 | 0.0 | – | 1 👤 | pins/s_palazzo.png |
+| caffe | 59.5 / 65.6 | 544 / 471 | 539 / 489 | 19.0 | ja | 3 👤 | pins/s_caffe.png |
+| chiesa | 83.0 / 36.4 | 759 / 261 | 759 / 261 | 0.0 | – | 3 👤 | pins/s_chiesa.png |
+| belv | 89.5 / 33.6 | 818 / 241 | 818 / 241 | 0.0 | – | 0 | pins/s_belv.png |
+| santuario | 65.6 / 59.4 | 599 / 427 | 599 / 425 | 1.6 | – | 3 👤 | pins/s_santuario.png |
+
+### Stadt · Zoom 1.6 (Karte 1462×1149 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:casal | 56.4 / 31.4 | 825 / 361 | 825 / 361 | 0.0 | – | 0 | – |
+| minor:ferr | 38.8 / 49.1 | 567 / 564 | 567 / 564 | 0.0 | – | 0 | – |
+| minor:panif | 75.3 / 21.3 | 1100 / 245 | 1100 / 245 | 0.0 | – | 0 | – |
+| minor:tabac | 61.8 / 62.8 | 903 / 722 | 909 / 714 | 9.7 | ja | 0 | – |
+| minor:barb | 52.9 / 71.4 | 774 / 821 | 774 / 820 | 0.0 | – | 0 | – |
+| minor:farm | 66.2 / 55.3 | 968 / 635 | 968 / 635 | 0.0 | – | 0 | – |
+| minor:edic | 38.9 / 56.3 | 569 / 647 | 569 / 647 | 0.0 | – | 0 | – |
+| minor:mac | 42.5 / 88.2 | 621 / 1014 | 621 / 1014 | 0.0 | – | 0 | – |
+| casa | 69.6 / 38.9 | 1018 / 447 | 1018 / 447 | 0.0 | – | 0 | pins/s_casa.png |
+| banca | 58.9 / 63.8 | 860 / 733 | 850 / 708 | 26.4 | ja | 2 👤 | pins/s_banca.png |
+| muni | 71.5 / 49.8 | 1045 / 573 | 1045 / 573 | 0.0 | – | 1 👤 | pins/s_muni.png |
+| palazzo | 47.9 / 81.5 | 700 / 937 | 700 / 937 | 0.0 | – | 1 👤 | pins/s_palazzo.png |
+| caffe | 59.5 / 65.6 | 870 / 753 | 870 / 782 | 28.9 | ja | 3 👤 | pins/s_caffe.png |
+| chiesa | 83.0 / 36.4 | 1214 / 418 | 1214 / 418 | 0.0 | – | 3 👤 | pins/s_chiesa.png |
+| belv | 89.5 / 33.6 | 1309 / 386 | 1309 / 386 | 0.0 | – | 0 | pins/s_belv.png |
+| santuario | 65.6 / 59.4 | 958 / 683 | 965 / 683 | 6.5 | – | 3 👤 | pins/s_santuario.png |
+
+### Stadt · Zoom 2.56 (Karte 2340×1838 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:casal | 56.4 / 31.4 | 1320 / 577 | 1320 / 577 | 0.0 | – | 0 | – |
+| minor:ferr | 38.8 / 49.1 | 908 / 902 | 908 / 902 | 0.0 | – | 0 | – |
+| minor:panif | 75.3 / 21.3 | 1761 / 392 | 1761 / 392 | 0.0 | – | 0 | – |
+| minor:tabac | 61.8 / 62.8 | 1446 / 1154 | 1446 / 1154 | 0.0 | – | 0 | – |
+| minor:barb | 52.9 / 71.4 | 1239 / 1313 | 1239 / 1313 | 0.0 | – | 0 | – |
+| minor:farm | 66.2 / 55.3 | 1549 / 1016 | 1549 / 1016 | 0.0 | – | 0 | – |
+| minor:edic | 38.9 / 56.3 | 911 / 1036 | 911 / 1036 | 0.0 | – | 0 | – |
+| minor:mac | 42.5 / 88.2 | 995 / 1622 | 995 / 1622 | 0.0 | – | 0 | – |
+| casa | 69.6 / 38.9 | 1630 / 716 | 1630 / 716 | 0.0 | – | 0 | pins/s_casa.png |
+| banca | 58.9 / 63.8 | 1377 / 1172 | 1377 / 1152 | 20.5 | ja | 2 👤 | pins/s_banca.png |
+| muni | 71.5 / 49.8 | 1673 / 916 | 1673 / 916 | 0.0 | – | 1 👤 | pins/s_muni.png |
+| palazzo | 47.9 / 81.5 | 1120 / 1498 | 1120 / 1498 | 0.0 | – | 1 👤 | pins/s_palazzo.png |
+| caffe | 59.5 / 65.6 | 1392 / 1205 | 1392 / 1226 | 20.4 | ja | 3 👤 | pins/s_caffe.png |
+| chiesa | 83.0 / 36.4 | 1943 / 669 | 1943 / 669 | 0.0 | – | 3 👤 | pins/s_chiesa.png |
+| belv | 89.5 / 33.6 | 2095 / 617 | 2095 / 617 | 0.0 | – | 0 | pins/s_belv.png |
+| santuario | 65.6 / 59.4 | 1534 / 1093 | 1534 / 1092 | 0.0 | – | 3 👤 | pins/s_santuario.png |
+
+### Stadt · Zoom 4 (Karte 3656×2872 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:casal | 56.4 / 31.4 | 2063 / 901 | 2063 / 901 | 0.0 | – | 0 | – |
+| minor:ferr | 38.8 / 49.1 | 1418 / 1409 | 1418 / 1409 | 0.0 | – | 0 | – |
+| minor:panif | 75.3 / 21.3 | 2752 / 613 | 2752 / 613 | 0.0 | – | 0 | – |
+| minor:tabac | 61.8 / 62.8 | 2259 / 1804 | 2259 / 1804 | 0.0 | – | 0 | – |
+| minor:barb | 52.9 / 71.4 | 1935 / 2051 | 1935 / 2051 | 0.0 | – | 0 | – |
+| minor:farm | 66.2 / 55.3 | 2420 / 1587 | 2420 / 1587 | 0.0 | – | 0 | – |
+| minor:edic | 38.9 / 56.3 | 1423 / 1618 | 1423 / 1618 | 0.0 | – | 0 | – |
+| minor:mac | 42.5 / 88.2 | 1554 / 2534 | 1554 / 2534 | 0.0 | – | 0 | – |
+| casa | 69.6 / 38.9 | 2546 / 1118 | 2546 / 1118 | 0.0 | – | 0 | pins/s_casa.png |
+| banca | 58.9 / 63.8 | 2152 / 1831 | 2152 / 1820 | 11.2 | ja | 2 👤 | pins/s_banca.png |
+| muni | 71.5 / 49.8 | 2614 / 1431 | 2614 / 1431 | 0.0 | – | 1 👤 | pins/s_muni.png |
+| palazzo | 47.9 / 81.5 | 1750 / 2341 | 1750 / 2341 | 0.0 | – | 1 👤 | pins/s_palazzo.png |
+| caffe | 59.5 / 65.6 | 2175 / 1883 | 2175 / 1894 | 11.1 | ja | 3 👤 | pins/s_caffe.png |
+| chiesa | 83.0 / 36.4 | 3035 / 1045 | 3035 / 1045 | 0.0 | – | 3 👤 | pins/s_chiesa.png |
+| belv | 89.5 / 33.6 | 3274 / 964 | 3274 / 964 | 0.0 | – | 0 | pins/s_belv.png |
+| santuario | 65.6 / 59.4 | 2397 / 1707 | 2397 / 1707 | 0.0 | – | 3 👤 | pins/s_santuario.png |
+
+### Umland · Zoom 1 (Karte 1101×718 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:dogs | 76.0 / 76.7 | 837 / 551 | 835 / 551 | 1.7 | – | 0 | – |
+| minor:masseria | 65.3 / 69.6 | 719 / 500 | 719 / 500 | 0.0 | – | 0 | – |
+| minor:imker | 84.5 / 62.0 | 930 / 445 | 930 / 445 | 0.0 | – | 0 | – |
+| minor:pozzo | 46.3 / 27.5 | 510 / 197 | 510 / 197 | 0.0 | – | 0 | – |
+| minor:kapelle | 60.5 / 34.6 | 666 / 248 | 666 / 248 | 0.0 | – | 0 | – |
+| minor:schaefer | 11.9 / 32.3 | 131 / 232 | 131 / 232 | 0.0 | – | 0 | – |
+| minor:consorzio | 78.3 / 60.4 | 862 / 434 | 862 / 434 | 0.0 | – | 0 | – |
+| minor:bosco | 19.8 / 19.5 | 218 / 140 | 218 / 140 | 0.0 | – | 0 | – |
+| torre | 69.5 / 20.9 | 765 / 150 | 766 / 150 | 1.0 | – | 0 | pins/u_torre.png |
+| frantoio | 82.3 / 53.4 | 906 / 383 | 906 / 383 | 0.0 | – | 1 👤 | pins/u_frantoio.png |
+| hain | 76.0 / 21.7 | 837 / 156 | 837 / 156 | 0.0 | – | 1 👤 | pins/u_hain.png |
+| feudo | 18.1 / 60.9 | 199 / 437 | 196 / 437 | 2.5 | – | 1 👤 | pins/u_feudo.png |
+| lago | 54.7 / 84.5 | 603 / 607 | 603 / 607 | 0.0 | – | 0 | pins/u_lago.png |
+| sambuca | 88.3 / 68.2 | 972 / 490 | 972 / 490 | 0.0 | – | 0 | pins/u_sambuca.png |
+| hotel | 64.9 / 39.9 | 714 / 286 | 714 / 286 | 0.0 | – | 2 👤 | pins/u_hotel.png |
+| lido | 7.5 / 73.9 | 83 / 530 | 83 / 530 | 0.0 | – | 2 👤 | pins/u_lido.png |
+| o:lago | 32.7 / 75.1 | 360 / 539 | 360 / 539 | 0.0 | – | 0 | pins/u_o_lago.png |
+| o:adranone | 79.3 / 80.2 | 873 / 576 | 874 / 576 | 1.3 | – | 0 | pins/u_o_adranone.png |
+| o:misili | 35.7 / 39.2 | 393 / 281 | 393 / 281 | 0.0 | – | 0 | pins/u_o_misili.png |
+| o:batia | 27.8 / 23.8 | 306 / 171 | 306 / 171 | 0.0 | – | 0 | pins/u_o_batia.png |
+| o:adragna | 54.5 / 53.7 | 600 / 386 | 600 / 386 | 0.0 | – | 0 | pins/u_o_adragna.png |
+| o:turih | 65.4 / 20.4 | 720 / 146 | 719 / 146 | 1.4 | – | 0 | pins/u_o_turih.png |
+| o:giusih | 21.8 / 63.1 | 240 / 453 | 243 / 453 | 3.3 | – | 0 | pins/u_o_giusih.png |
+
+### Umland · Zoom 1.6 (Karte 1761×1149 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:dogs | 76.0 / 76.7 | 1339 / 881 | 1339 / 881 | 0.0 | – | 0 | – |
+| minor:masseria | 65.3 / 69.6 | 1150 / 800 | 1150 / 800 | 0.0 | – | 0 | – |
+| minor:imker | 84.5 / 62.0 | 1488 / 712 | 1488 / 712 | 0.0 | – | 0 | – |
+| minor:pozzo | 46.3 / 27.5 | 815 / 315 | 815 / 315 | 0.0 | – | 0 | – |
+| minor:kapelle | 60.5 / 34.6 | 1065 / 397 | 1065 / 397 | 0.0 | – | 0 | – |
+| minor:schaefer | 11.9 / 32.3 | 209 / 371 | 209 / 371 | 0.0 | – | 0 | – |
+| minor:consorzio | 78.3 / 60.4 | 1379 / 694 | 1379 / 694 | 0.0 | – | 0 | – |
+| minor:bosco | 19.8 / 19.5 | 349 / 224 | 349 / 224 | 0.0 | – | 0 | – |
+| torre | 69.5 / 20.9 | 1224 / 240 | 1224 / 266 | 26.1 | ja | 0 | pins/u_torre.png |
+| frantoio | 82.3 / 53.4 | 1449 / 614 | 1449 / 614 | 0.0 | – | 1 👤 | pins/u_frantoio.png |
+| hain | 76.0 / 21.7 | 1339 / 250 | 1339 / 250 | 0.0 | – | 1 👤 | pins/u_hain.png |
+| feudo | 18.1 / 60.9 | 318 / 700 | 318 / 681 | 18.6 | ja | 1 👤 | pins/u_feudo.png |
+| lago | 54.7 / 84.5 | 964 / 971 | 964 / 971 | 0.0 | – | 0 | pins/u_lago.png |
+| sambuca | 88.3 / 68.2 | 1555 / 784 | 1555 / 784 | 0.0 | – | 0 | pins/u_sambuca.png |
+| hotel | 64.9 / 39.9 | 1142 / 458 | 1142 / 458 | 0.0 | – | 2 👤 | pins/u_hotel.png |
+| lido | 7.5 / 73.9 | 132 / 849 | 132 / 849 | 0.0 | – | 2 👤 | pins/u_lido.png |
+| o:lago | 32.7 / 75.1 | 576 / 863 | 576 / 863 | 0.5 | – | 0 | pins/u_o_lago.png |
+| o:adranone | 79.3 / 80.2 | 1397 / 922 | 1397 / 922 | 0.5 | – | 0 | pins/u_o_adranone.png |
+| o:misili | 35.7 / 39.2 | 628 / 450 | 628 / 451 | 0.5 | – | 0 | pins/u_o_misili.png |
+| o:batia | 27.8 / 23.8 | 489 / 273 | 489 / 274 | 0.5 | – | 0 | pins/u_o_batia.png |
+| o:adragna | 54.5 / 53.7 | 960 / 617 | 960 / 618 | 0.5 | – | 0 | pins/u_o_adragna.png |
+| o:turih | 65.4 / 20.4 | 1152 / 234 | 1152 / 200 | 34.3 | ja | 0 | pins/u_o_turih.png |
+| o:giusih | 21.8 / 63.1 | 384 / 725 | 384 / 751 | 25.4 | ja | 0 | pins/u_o_giusih.png |
+
+### Umland · Zoom 2.56 (Karte 2818×1838 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:dogs | 76.0 / 76.7 | 2143 / 1410 | 2143 / 1410 | 0.0 | – | 0 | – |
+| minor:masseria | 65.3 / 69.6 | 1841 / 1280 | 1841 / 1280 | 0.0 | – | 0 | – |
+| minor:imker | 84.5 / 62.0 | 2381 / 1140 | 2381 / 1140 | 0.0 | – | 0 | – |
+| minor:pozzo | 46.3 / 27.5 | 1305 / 505 | 1305 / 505 | 0.0 | – | 0 | – |
+| minor:kapelle | 60.5 / 34.6 | 1704 / 635 | 1704 / 635 | 0.0 | – | 0 | – |
+| minor:schaefer | 11.9 / 32.3 | 335 / 594 | 335 / 594 | 0.0 | – | 0 | – |
+| minor:consorzio | 78.3 / 60.4 | 2207 / 1110 | 2207 / 1110 | 0.0 | – | 0 | – |
+| minor:bosco | 19.8 / 19.5 | 559 / 358 | 559 / 358 | 0.0 | – | 0 | – |
+| torre | 69.5 / 20.9 | 1958 / 384 | 1973 / 384 | 14.7 | ja | 0 | pins/u_torre.png |
+| frantoio | 82.3 / 53.4 | 2319 / 982 | 2319 / 982 | 0.0 | – | 1 👤 | pins/u_frantoio.png |
+| hain | 76.0 / 21.7 | 2142 / 400 | 2142 / 400 | 0.0 | – | 1 👤 | pins/u_hain.png |
+| feudo | 18.1 / 60.9 | 509 / 1119 | 499 / 1119 | 10.1 | ja | 1 👤 | pins/u_feudo.png |
+| lago | 54.7 / 84.5 | 1543 / 1554 | 1543 / 1554 | 0.0 | – | 0 | pins/u_lago.png |
+| sambuca | 88.3 / 68.2 | 2488 / 1254 | 2488 / 1254 | 0.0 | – | 0 | pins/u_sambuca.png |
+| hotel | 64.9 / 39.9 | 1828 / 733 | 1828 / 733 | 0.0 | – | 2 👤 | pins/u_hotel.png |
+| lido | 7.5 / 73.9 | 211 / 1358 | 211 / 1358 | 0.0 | – | 2 👤 | pins/u_lido.png |
+| o:lago | 32.7 / 75.1 | 922 / 1380 | 922 / 1381 | 0.5 | – | 0 | pins/u_o_lago.png |
+| o:adranone | 79.3 / 80.2 | 2235 / 1475 | 2235 / 1475 | 0.5 | – | 0 | pins/u_o_adranone.png |
+| o:misili | 35.7 / 39.2 | 1006 / 720 | 1006 / 720 | 0.5 | – | 0 | pins/u_o_misili.png |
+| o:batia | 27.8 / 23.8 | 782 / 437 | 782 / 437 | 0.5 | – | 0 | pins/u_o_batia.png |
+| o:adragna | 54.5 / 53.7 | 1536 / 987 | 1536 / 988 | 0.5 | – | 0 | pins/u_o_adragna.png |
+| o:turih | 65.4 / 20.4 | 1844 / 374 | 1824 / 375 | 19.7 | ja | 0 | pins/u_o_turih.png |
+| o:giusih | 21.8 / 63.1 | 615 / 1160 | 628 / 1161 | 13.5 | ja | 0 | pins/u_o_giusih.png |
+
+### Umland · Zoom 4 (Karte 4404×2872 px, Überlappungen: 0)
+
+| Pin | Koordinate % | Anker px | Icon px | Abweichung px | Führungslinie | Personen | Screenshot |
+|---|---|---|---|---|---|---|---|
+| minor:dogs | 76.0 / 76.7 | 3348 / 2203 | 3348 / 2203 | 0.0 | – | 0 | – |
+| minor:masseria | 65.3 / 69.6 | 2877 / 1999 | 2877 / 1999 | 0.0 | – | 0 | – |
+| minor:imker | 84.5 / 62.0 | 3721 / 1781 | 3721 / 1781 | 0.0 | – | 0 | – |
+| minor:pozzo | 46.3 / 27.5 | 2039 / 788 | 2039 / 788 | 0.0 | – | 0 | – |
+| minor:kapelle | 60.5 / 34.6 | 2663 / 992 | 2663 / 992 | 0.0 | – | 0 | – |
+| minor:schaefer | 11.9 / 32.3 | 524 / 928 | 524 / 928 | 0.0 | – | 0 | – |
+| minor:consorzio | 78.3 / 60.4 | 3449 / 1734 | 3449 / 1734 | 0.0 | – | 0 | – |
+| minor:bosco | 19.8 / 19.5 | 873 / 560 | 873 / 560 | 0.0 | – | 0 | – |
+| torre | 69.5 / 20.9 | 3060 / 600 | 3060 / 600 | 0.0 | – | 0 | pins/u_torre.png |
+| frantoio | 82.3 / 53.4 | 3624 / 1534 | 3624 / 1534 | 0.0 | – | 1 👤 | pins/u_frantoio.png |
+| hain | 76.0 / 21.7 | 3348 / 624 | 3348 / 624 | 0.0 | – | 1 👤 | pins/u_hain.png |
+| feudo | 18.1 / 60.9 | 796 / 1749 | 796 / 1749 | 0.0 | – | 1 👤 | pins/u_feudo.png |
+| lago | 54.7 / 84.5 | 2411 / 2428 | 2411 / 2428 | 0.0 | – | 0 | pins/u_lago.png |
+| sambuca | 88.3 / 68.2 | 3889 / 1959 | 3889 / 1959 | 0.0 | – | 0 | pins/u_sambuca.png |
+| hotel | 64.9 / 39.9 | 2857 / 1145 | 2857 / 1145 | 0.0 | – | 2 👤 | pins/u_hotel.png |
+| lido | 7.5 / 73.9 | 330 / 2122 | 330 / 2122 | 0.0 | – | 2 👤 | pins/u_lido.png |
+| o:lago | 32.7 / 75.1 | 1441 / 2157 | 1441 / 2157 | 0.5 | – | 0 | pins/u_o_lago.png |
+| o:adranone | 79.3 / 80.2 | 3493 / 2304 | 3493 / 2305 | 0.5 | – | 0 | pins/u_o_adranone.png |
+| o:misili | 35.7 / 39.2 | 1572 / 1125 | 1572 / 1125 | 0.5 | – | 0 | pins/u_o_misili.png |
+| o:batia | 27.8 / 23.8 | 1222 / 683 | 1222 / 683 | 0.5 | – | 0 | pins/u_o_batia.png |
+| o:adragna | 54.5 / 53.7 | 2401 / 1543 | 2401 / 1543 | 0.5 | – | 0 | pins/u_o_adragna.png |
+| o:turih | 65.4 / 20.4 | 2881 / 585 | 2881 / 585 | 0.5 | – | 0 | pins/u_o_turih.png |
+| o:giusih | 21.8 / 63.1 | 960 / 1813 | 960 / 1813 | 0.5 | – | 0 | pins/u_o_giusih.png |

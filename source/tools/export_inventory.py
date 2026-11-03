@@ -126,7 +126,7 @@ for i, l in enumerate(src[C]):
     m = re.match(r'\s*\{ t: "([^"]+)", chk: \(g\) => (.+?), rew: (\d+), rep: (\d+) \}', l)
     if m: goals.append(dict(t=m.group(1), chk=m.group(2), rew=int(m.group(3)), rep=int(m.group(4)), loc=f"{C}:{i+1}"))
 mgk = re.findall(r'(\w+): \{ n: "([^"]+)", txt: "([^"]+)", it: \[[^\]]*\], bg: "[^"]+", goal: (\d+)', "\n".join(src[E]))
-minigames = [dict(id="talk", fn="MiniTalk", loc=where(r"^function MiniTalk", "e.tsx")), dict(id="harvest", fn="MiniHarvest", loc=where(r"^function MiniHarvest")),
+minigames = [dict(id="talk", fn="MiniTalk", loc=where(r"^function MiniTalk", "e.tsx")), dict(id="harvest", fn="MiniHarvest", loc=where(r"^function MiniHarvest")), dict(id="harvest-shaker", fn="MiniShaker", loc=where(r"^function MiniShaker", "f.tsx")),
              dict(id="press", fn="MiniPress", loc=where(r"^function MiniPress")), dict(id="haggle", fn="MiniHaggle", loc=where(r"^function MiniHaggle"))]
 for k, n, txt, goal in mgk: minigames.append(dict(id="rescue-" + k, fn=f'MiniRescue kind="{k}"', title=n, txt=txt, goal=int(goal), loc=where(r'^\s*%s: \{ n: "' % k, "e.tsx")))
 mini_fns = sorted(set(re.findall(r"^function (Mini\w+)", "\n".join("\n".join(v) for v in src.values()), re.M)))

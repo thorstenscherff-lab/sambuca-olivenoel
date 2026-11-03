@@ -18,6 +18,7 @@ const CSS = `
 @keyframes sbFloat{0%{transform:translate(-50%,-50%) scale(.6);opacity:1}100%{transform:translate(-50%,-160%) scale(1.3);opacity:0}}
 @keyframes sbBob{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-56%) scale(1.06)}}
 @keyframes sbSpin{to{transform:rotate(360deg)}}
+@keyframes sbShake{0%{translate:-3px 0}50%{translate:3px 0}100%{translate:-3px 0}}
 @keyframes sbConf{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(240px) rotate(540deg);opacity:0}}
 .sb3 ::-webkit-scrollbar{height:6px;width:6px}.sb3 ::-webkit-scrollbar-thumb{background:#5b3a80;border-radius:3px}
 `;

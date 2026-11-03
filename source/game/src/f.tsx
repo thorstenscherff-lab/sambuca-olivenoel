@@ -261,7 +261,7 @@ export default function SambucaGame(): ReactNode {
     case "talk": shT = sheet.mode === "call" ? "☎️ Telefonat" : "💬 Plaudern";
       sh = <MiniTalk key={sheet.id + sheet.mode} id={sheet.id} mode={sheet.mode} onCancel={() => setSheet(null)} onDone={(s) => { const id = sheet.id; run({ k: sheet.mode === "meet" ? "meet" : sheet.mode, id, f: s }); setSheet({ k: "person", id }); }} />; break;
     case "mg": shT = sheet.t === "h" ? "🧺 Ernte" : sheet.t === "p" ? "⚙️ Frantoio" : sheet.t === "s" ? "🤝 Feilschen" : "🚨 Rettung!";
-      if (sheet.t === "h") { const gr = g.groves.find((x) => x.id === sheet.id); sh = <MiniHarvest name={gr ? gr.name : ""} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} />; }
+      if (sheet.t === "h") { const gr = g.groves.find((x) => x.id === sheet.id); sh = g.gear ? <MiniShaker name={gr ? gr.name : ""} cheap={!!g.fl.cheap} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} /> : <MiniHarvest name={gr ? gr.name : ""} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} />; }
       else if (sheet.t === "p") sh = <MiniPress kg={g.olives} onDone={(f, q) => { run({ k: "mill", f, q }); setSheet(null); }} />;
       else if (sheet.t === "s") sh = <MiniHaggle oil={g.oil} unit={unit(g)} limit={1.12 + g.rep / 500 + R(g, "giusi") / 600} who="Einkäufer vom Feudo Arancio" onDone={(f, n) => { run({ k: "sell", f, n }); setSheet(null); }} />;
       else sh = <MiniRescue kind={sheet.kind || "sturm"} onDone={(s) => { run({ k: "choice", id: sheet.id, n: sheet.n, f: s }); setSheet({ k: "missions" }); }} />;
@@ -351,5 +351,59 @@ function HSList(p: { hs: HS[]; me: string }): ReactNode {
   return <div style={{ background: "rgba(31,15,51,.92)", borderRadius: 14, padding: 10, border: "2px solid #000" }}>
     <div className="gta" style={{ fontSize: 20, color: C.gold }}>🏆 HIGHSCORE (dieses Gerät)</div>
     {p.hs.length ? p.hs.slice(0, 10).map((h, i) => <div key={h.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 14, padding: "4px 0", color: h.id === p.me ? C.ok : "#fff", fontWeight: h.id === p.me ? 800 : 500 }}><span>{i + 1}. {h.name} · J{h.year}</span><b>{eur(h.wealth)}</b></div>) : <div style={{ fontSize: 13, opacity: 0.7 }}>Noch keine Einträge – am Ende jedes Jahres wird dein Vermögen eingetragen.</div>}
+  </div>;
+}
+//
+// FB-31/OI-038 (v0.8.1): Rüttler-Ernte – eigenes Minispiel, wenn g.gear (siehe docs/MINIGAMES.md MG-harvest-shaker)
+function MiniShaker(p: { name: string; cheap: boolean; onDone: (f: number) => void; onSkip: () => void }): ReactNode {
+  const TREES = 3;
+  const [tree, setTree] = useState(0); const [step, setStep] = useState<"net" | "trunk" | "shake" | "fall" | "done">("net");
+  const [lean] = useState<number[]>(() => Array.from({ length: TREES }, () => Math.floor(Math.random() * 3)));
+  const [net, setNet] = useState(1); const [sNet, setSNet] = useState(0); const [hpos, setHpos] = useState(0); const [sPos, setSPos] = useState(0);
+  const [pw, setPw] = useState(0); const [hold, setHold] = useState(false); const [res, setRes] = useState<number[]>([]); const [brk, setBrk] = useState(0); const [msg, setMsg] = useState("");
+  const pwr = useRef(0);
+  const fin = (sInt: number, broke: boolean): void => {
+    setHold(false); buzz(broke ? 60 : 20); const s = sNet * sPos * sInt; setRes((r) => [...r, s]); if (broke) setBrk((b) => b + 1);
+    setMsg(broke ? "💥 Astbruch! Zu viel Kraft." : sInt >= 1 ? "✅ Perfekt gerüttelt" : "〰️ Zu schwach – Oliven bleiben hängen");
+    setStep("fall"); setTimeout(() => { if (tree + 1 >= TREES) setStep("done"); else { setTree((t) => t + 1); setStep("net"); setNet(1); setMsg(""); } }, 1100);
+  };
+  useEffect(() => {
+    if (!hold) return; const iv = setInterval(() => { pwr.current = Math.min(100, pwr.current + (p.cheap ? 7 : 5)); setPw(pwr.current); if (pwr.current >= 100) { clearInterval(iv); fin(0.4, true); } }, 50);
+    return () => clearInterval(iv);
+  }, [hold]);
+  const release = (): void => { if (!hold) return; const v = pwr.current; if (v >= 100) return; if (v > 80) fin(0.4, true); else if (v >= 55) fin(1, false); else fin(Math.max(0.2, v / 55 * 0.8), false); };
+  const avg = res.length ? res.reduce((a, b) => a + b, 0) / res.length : 0;
+  const f = Math.max(0.7, Math.round((0.8 + avg * 0.6 - brk * 0.05) * 100) / 100);
+  const L = lean[Math.min(tree, TREES - 1)]; const tilt = [-14, 0, 14][L];
+  const shaking = hold || step === "fall";
+  return <div data-mg="shaker">
+    <p style={{ margin: "0 0 8px" }}>🔧 <b>Rüttler-Ernte</b> · Baum {Math.min(tree + 1, TREES)}/{TREES}. {step === "net" ? "Die Krone hängt zu einer Seite – leg das Netz darunter." : step === "trunk" ? "Setz die Rüttler-Zange am Stamm an – am Rindenring, nicht an den Ästen." : step === "shake" ? "Halten = Intensität. Im grünen Bereich loslassen – zu viel bricht Äste." : "Ertrag ×0,80 bis ×1,40."}</p>
+    <div style={{ position: "relative", height: 300, borderRadius: 16, overflow: "hidden", border: "2px solid #000", background: "linear-gradient(#8fc6e8 0%,#cfe6c0 55%,#8a6a3e 56%,#6b4f2c 100%)" }}>
+      {/* Krone */}
+      <div data-lean={L} style={{ position: "absolute", left: "50%", top: 18, width: 210, height: 130, marginLeft: -105, borderRadius: "50% 50% 45% 45%", background: "radial-gradient(circle at 40% 35%,#8db35a,#4f7a2c 60%,#2f4d1a)", transformOrigin: "50% 100%", transform: `rotate(${tilt}deg)`, animation: shaking ? "sbShake .12s linear infinite" : undefined, boxShadow: "0 6px 12px rgba(0,0,0,.35)" }}>
+        {Array.from({ length: 14 }, (_, i) => <span key={i} style={{ position: "absolute", left: `${12 + (i * 37) % 76}%`, top: `${15 + (i * 53) % 65}%`, width: 9, height: 12, borderRadius: "50%", background: "#3b1f5c", opacity: step === "done" || res.length > tree ? 0.15 : 1 }} />)}
+      </div>
+      {/* Stamm */}
+      <button data-trunk="1" aria-label="Stamm" disabled={step !== "trunk"} onClick={(e) => { const r = (e.currentTarget as HTMLElement).getBoundingClientRect(); const h = 100 - ((e.clientY - r.top) / r.height) * 100; setHpos(h); setSPos(h >= 30 && h <= 55 ? 1 : h < 30 ? 0.7 : 0.55); if (h > 55) setMsg("⚠️ Zu hoch – an den Ästen"); else if (h < 30) setMsg("Etwas tief – Wurzelanlauf"); else setMsg("👍 Gut angesetzt"); buzz(10); setStep("shake"); }}
+        style={{ position: "absolute", left: "50%", top: 135, width: 44, height: 100, marginLeft: -22, padding: 0, border: "none", borderRadius: 10, background: "repeating-linear-gradient(90deg,#5a3a1e 0 6px,#6e4a28 6px 12px)", cursor: step === "trunk" ? "pointer" : "default", boxShadow: step === "trunk" ? "0 0 0 3px #fff8" : undefined }}>
+        <span style={{ position: "absolute", left: -4, right: -4, bottom: "30%", height: "25%", borderTop: "2px dashed #f3d9a4", borderBottom: "2px dashed #f3d9a4", opacity: step === "trunk" ? 1 : 0.4 }} />
+        {step !== "net" && step !== "trunk" && <span style={{ position: "absolute", left: -16, right: -16, bottom: `${hpos}%`, height: 14, marginBottom: -7, borderRadius: 4, background: "#f2b705", border: "2px solid #000", fontSize: 10, lineHeight: "10px" }}>🔧</span>}
+      </button>
+      {/* Netz */}
+      <div style={{ position: "absolute", left: `${[8, 36, 64][net]}%`, top: 238, width: "28%", height: 40, borderRadius: 8, background: "repeating-linear-gradient(45deg,#2fbf71 0 3px,transparent 3px 9px),repeating-linear-gradient(-45deg,#2fbf71 0 3px,transparent 3px 9px)", border: "2px solid #1f6b45", transition: "left .25s" }} />
+      {step === "fall" && Array.from({ length: 8 }, (_, i) => <span key={"o" + i} style={{ position: "absolute", left: `${[22, 50, 78][L] + (i % 4 - 1.5) * 5}%`, top: 120, width: 9, height: 12, borderRadius: "50%", background: "#3b1f5c", animation: `sbConf ${0.6 + i * 0.05}s ease-in forwards` }} />)}
+      {msg && <div style={{ position: "absolute", left: 8, right: 8, top: 6, textAlign: "center", fontWeight: 800, color: "#fff", textShadow: "0 2px 4px #000" }}>{msg}</div>}
+      {step === "done" && <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, background: "rgba(20,8,34,.6)" }}>
+        <div style={{ fontFamily: FONT, fontSize: 30, color: C.fg }}>{avg > 0.8 ? "BRAVISSIMO!" : avg > 0.5 ? "BENE!" : "NA JA…"}</div>
+        <div>{TREES} Bäume · {brk ? `${brk}× Astbruch · ` : ""}Ertrag ×{f.toFixed(2)}</div>
+        <div style={{ width: 220 }}><button onClick={() => p.onDone(f)} style={bigBtn(C.pink)}>Ernte einfahren ▶</button></div>
+      </div>}
+    </div>
+    {step === "net" && <div style={{ display: "flex", gap: 6, marginTop: 8 }}>{["⬅️ links", "⬇️ Mitte", "➡️ rechts"].map((t, i) => <button key={i} data-net={i} onClick={() => { setNet(i); const d = Math.abs(i - L); setSNet(d === 0 ? 1 : d === 1 ? 0.6 : 0.25); setMsg(d === 0 ? "🕸️ Netz liegt richtig" : "🕸️ Netz liegt daneben"); setStep("trunk"); }} style={{ ...bigBtn("#2fbf71"), flex: 1, fontSize: 14 }}>{t}</button>)}</div>}
+    {step === "shake" && <div style={{ marginTop: 8 }}>
+      <div style={{ position: "relative", height: 22, borderRadius: 11, background: "linear-gradient(90deg,#3a2a4a 0 55%,#2fbf71 55% 80%,#c0392b 80%)", border: "2px solid #000", overflow: "hidden" }}><div style={{ position: "absolute", top: 0, bottom: 0, left: `calc(${pw}% - 3px)`, width: 6, background: "#fff" }} /></div>
+      <button data-shake="1" onPointerDown={() => { pwr.current = 0; setPw(0); setHold(true); }} onPointerUp={release} onPointerCancel={release} onContextMenu={(e) => e.preventDefault()} style={{ ...bigBtn(hold ? C.fg : "#f2b705"), minHeight: 64, fontSize: 20, marginTop: 8, touchAction: "none" }}>{hold ? "RÜTTELN… loslassen im Grün!" : "🔧 Gedrückt halten"}</button>
+    </div>}
+    {step === "net" && tree === 0 && <button onClick={p.onSkip} style={{ ...bigBtn("transparent", "#fff"), boxShadow: "none", border: "2px solid #6b4a90", marginTop: 8 }}>Ohne Minispiel ernten (×0,85)</button>}
   </div>;
 }

@@ -6,9 +6,10 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 | ID | Komponente | Code |
 |---|---|---|
 | `MG-talk` | MiniTalk | `source/game/src/e.tsx:2` |
-| `MG-harvest` | MiniHarvest | `source/game/ui_old.tsx:27` |
-| `MG-press` | MiniPress | `source/game/ui_old.tsx:58` |
-| `MG-haggle` | MiniHaggle | `source/game/ui_old.tsx:80` |
+| `MG-harvest` | MiniHarvest | `source/game/ui_old.tsx:28` |
+| `MG-harvest-shaker` | MiniShaker | `source/game/src/f.tsx:358` |
+| `MG-press` | MiniPress | `source/game/ui_old.tsx:59` |
+| `MG-haggle` | MiniHaggle | `source/game/ui_old.tsx:81` |
 | `MG-rescue-sturm` | MiniRescue kind="sturm" | `source/game/src/e.tsx:46` |
 | `MG-rescue-flut` | MiniRescue kind="flut" | `source/game/src/e.tsx:47` |
 | `MG-rescue-brand` | MiniRescue kind="brand" | `source/game/src/e.tsx:48` |
@@ -37,6 +38,26 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 - **Ergebnis:** f = 0.7 + min(n, 30)/30 · 0.6, also 0.7–1.3. Überspringen ergibt f = 0.85.
 - **Wirkung:** Erntemenge × f (Formel siehe ECONOMY.md).
 - **Code:** `source/game/ui_old.tsx:25` (MiniHarvest).
+
+## MG-harvest-shaker – Rüttler-Ernte (v0.8.1, FB-31/OI-038)
+- **Feedback:** Thorsten 03.11. 02:07: Mit gekauftem Rüttler soll nicht nur der Ertrag steigen, auch das Ernte-Minispiel muss anders sein – dem Gerät entsprechend (Rüttler am Stamm ansetzen, Timing/Intensität treffen ohne Äste zu beschädigen, Netze positionieren).
+- **Auslöser:** Ernte eines Hains, wenn `g.gear` (Billig-Rüttler `gear1` oder Rüttler neu `gear2`/`ningbo`). Ohne Rüttler bleibt MG-harvest (Handpflücken).
+- **Optik:** Erdboden statt Laub, ein Baum mit Stamm und Krone, grünes Netz am Boden, Rüttler-Zange am Stamm, Intensitäts-Anzeige; die Krone wackelt beim Rütteln, Oliven fallen ins Netz oder daneben.
+- **Ablauf:** 3 Bäume, je Baum drei Schritte:
+  1. **Netz legen:** die Krone neigt sich zufällig (links/mitte/rechts, sichtbar). Netz unter die Fallseite legen (3 Knöpfe). Treffer = 1,0, Nachbarfeld = 0,6, gegenüber = 0,25.
+  2. **Ansetzen:** Stamm antippen. Ideal-Band 30–55 % Stammhöhe (Rindenring) = 1,0; darunter (Wurzelanlauf) 0,7; darüber (Äste) 0,55 und Astbruch-Risiko.
+  3. **Rütteln:** Knopf gedrückt halten, die Intensität steigt (~0,6 s bis zum Grün); im grünen Bereich (55–80 %) loslassen = 1,0; zu schwach < 55 % = Anteil; überdreht > 80 % = **Astbruch** (0,4 und Hinweis). Bei 100 % bricht der Ast automatisch.
+- **Ergebnis:** s je Baum = Netz × Ansetzen × Intensität; f = 0,8 + Ø s · 0,6, also 0,80–1,40 (Handpflücken 0,70–1,30). Jeder Astbruch zieht 0,05 ab (min. 0,7). Überspringen: ×0,85. Der Geräte-Bonus +15 % (ECONOMY) gilt zusätzlich unverändert.
+- **Code:** `MiniShaker` in `source/game/src/f.tsx`; Auswahl im Ernte-Sheet `sheet.t === "h"`. Test-Hooks: `data-net="0|1|2"`, `data-trunk`, `data-shake`, `data-lean`.
+- **QA:** `/workspace/sambuca-game/v08/qa/icons/FB-31_*.png` (Handpflücken vs. Rüttler).
+
+### Vorschläge (nicht umgesetzt) – weitere Geräte, die ein Minispiel verändern könnten
+- **Windschutznetze (`netz1`/`netz2`):** in MiniRescue „sturm“ schon wirksam als Schaden ×0,4; Vorschlag: im Sturm-Rettungsspiel liegen Netze schon gespannt → weniger fliegende Teile, dafür „Netz nachspannen“-Ziele.
+- **Erntenetze / Erntekamm (gibt es noch nicht im Shop):** Vorschlag neues Gerät „Erntekamm + Bodennetze“ (Ferramenta, ~120 €): Handpflücken-Spiel wird zum Wisch-Spiel (über Zweige wischen statt einzeln tippen), Oliven landen gesammelt im Netz.
+- **Crew (`crew`):** Vorschlag: im Ernte-Spiel pflücken 1–2 Helfer automatisch mit (Zusatz-Oliven), Spiel dafür kürzer.
+- **Spaten (`spade`):** betrifft Pflege, kein Minispiel – keine Änderung.
+- **Presse/Frantoio-Vertrag:** Vorschlag: eigene Presse ändert MG-press (Temperatur „kaltgepresst ≤ 27 °C“ als zweite Anzeige).
+- **Drainage/Sandsäcke:** Vorschlag: im Flut-Rettungsspiel liegen Sandsäcke schon, Ziel kleiner.
 
 ## MG-press – Pressen
 - **Auslöser:** Oliven pressen in der Ölmühle (PIN-frantoio / LOC-frantoio).

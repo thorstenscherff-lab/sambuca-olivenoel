@@ -154,7 +154,7 @@ export default function SambucaGame(): ReactNode {
         {(() => { const lab = z >= 1.6; const IC = lab ? 50 : 46;
           const pinW = (l: string): number => lab ? Math.max(IC, Math.min(150, l.length * 6.6 + 14)) : IC; const pinH = lab ? IC + 20 : IC;
           const bs: LB[] = [];
-          MINOR.filter((m) => m.map === which).forEach((m) => { const [mx, my] = m.px || cvXY(which, m.x, m.y); bs.push({ k: "m:" + m.id, x: mx / 100 * mw, y: my / 100 * mh, w: 30, h: 30, m: 1 }); });
+          MINOR.filter((m) => m.map === which).forEach((m) => { const [mx, my] = m.px || cvXY(which, m.x, m.y); bs.push({ k: "m:" + m.id, x: mx / 100 * mw, y: my / 100 * mh, w: 30, h: 30, m: 0 }); }); // v0.9.0 (FB-41/OI-051): Laden-Icons sind fest verankert (m: 0) – nur Ort-Pins/Extras weichen aus, damit Icons auf jeder Zoomstufe exakt auf dem gezeichneten Laden sitzen
           pins.forEach((p) => bs.push({ k: "p:" + p.id, x: p.x / 100 * mw, y: p.y / 100 * mh + (lab ? 10 : 0), w: pinW(p.label), h: pinH, m: 0.6 }));
           extra.forEach((p) => bs.push({ k: "e:" + p.id, x: p.x / 100 * mw, y: p.y / 100 * mh + (lab ? 9 : 0), w: lab ? Math.max(40, Math.min(150, p.l.length * 6.2 + 12)) : 40, h: lab ? 58 : 40, m: 0.8 }));
           const L = layoutBoxes(bs, mw, mh);
@@ -245,14 +245,14 @@ export default function SambucaGame(): ReactNode {
         {btn("📜 Tagebuch", () => open({ k: "log" }), true, C.fg)}</>; break; }
     case "kal": shT = `📅 ${YEAR0 + g.y - 1}`;
       sh = <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6 }}>{MONATE.map((n, i) => <div key={n} style={{ ...card, padding: 8, marginBottom: 0, border: i === g.m ? `2px solid ${C.pink}` : "2px solid transparent", opacity: i < g.m ? 0.55 : 1 }}><b style={{ fontSize: 13 }}>{n}</b><div style={{ fontSize: 11 }}>{FEST[i] ? "🎆 " + FEST[i].n.split(" ")[0] : SAISON[i]}</div><div style={{ fontSize: 11 }}>{g.goalDone[i] === true ? "🎯✔" : g.goalDone[i] === false ? "🎯✗" : ""}</div></div>)}</div>; break;
-    case "person": { const c = CHM[sheet.id]; const met = g.met.includes(c.id); const tried = g.fl["try_" + c.id] === abs(g); const needOk = !c.need || c.need[1](g);
+    case "person": { const c = CHM[sheet.id]; const met = g.met.includes(c.id); const tried = g.fl["try_" + c.id] === abs(g); const miss = met ? [] : gateMiss(g, c); const needOk = miss.length === 0; const monthDone = g.fl.metM === abs(g);
       shT = met ? c.n : "❓ Unbekannt";
       sh = <><div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 8 }}><Portrait id={c.id} size={80} tilt={-3} ring={c.c} /><div><b style={{ fontSize: 18 }}>{met ? c.n : c.r.split("·")[0]}</b>{sub(met ? c.r : `Man nennt sie/ihn „${c.n}“`)}
         {met ? <div style={{ color: C.pinkT, fontWeight: 800 }}>♥ {R(g, c.id)}</div> : <div style={{ color: C.gold, fontSize: 13 }}>Schwierigkeit {"★".repeat(c.diff)}{"☆".repeat(5 - c.diff)}</div>}
         <div style={{ fontStyle: "italic", fontSize: 14, marginTop: 4 }}>{met ? (R(g, c.id) >= 60 ? c.hi : R(g, c.id) >= 35 ? c.mid : c.lo) : c.lo}</div></div></div>
-        {!met ? <>{!needOk && <div style={{ ...card, color: C.bad }}>Nicht interessiert an dir. Nötig: {c.need ? c.need[0] : ""}</div>}
+        {!met ? <>{!needOk && <div style={{ ...card, color: C.bad }}>Nicht interessiert an dir. Nötig: {miss.join(" · ")}</div>}{needOk && monthDone && <div style={{ ...card, color: C.gold }}>Du hast diesen Monat schon jemanden kennengelernt – nächsten Monat.</div>}{g.fl["intro_" + c.id] !== undefined && sub("🤝 Vitamin B: Du wurdest vorgestellt – das Kennenlernen fällt leichter.")}
           {sub(`Tipp: Sie/er mag ${c.likes.map((k) => TOP[k][0]).join(" ")} … vielleicht. Hör genau hin.`)}
-          {btn(tried ? "Heute abgeblitzt – nächsten Monat" : "🤝 Kennenlernen (Plaudern) · 1 ⏳", () => open({ k: "talk", id: c.id, mode: "meet" }), needOk && !tried && g.ap > 0)}</>
+          {btn(tried ? "Heute abgeblitzt – nächsten Monat" : "🤝 Kennenlernen (Plaudern) · 1 ⏳", () => open({ k: "talk", id: c.id, mode: "meet" }), needOk && !monthDone && !tried && g.ap > 0)}</>
           : <>{btn(g.talked.includes(c.id) ? "✔ Diesen Monat schon geplaudert" : "💬 Plaudern · 1 ⏳", () => open({ k: "talk", id: c.id, mode: "chat" }), !g.talked.includes(c.id) && g.ap > 0)}
             {btn("🎁 5 l Öl schenken (♥ +6)", () => run({ k: "gift", id: c.id }), g.oil >= 5 && !g.acts.includes("gift_" + c.id), C.fg)}
             <b style={{ display: "block", marginTop: 10 }}>Was {c.n.split(" ")[0]} für dich tun kann</b>

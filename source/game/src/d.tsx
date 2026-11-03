@@ -63,10 +63,11 @@ function burn(g: G, f: number): number { let n = 0; for (const x of g.groves) { 
 function present(g: G, venue: string): string[] {
   const a = abs(g); const fest = FEST[g.m];
   return CHARS.filter((c, i) => {
+    if (!gateOk(g, c)) return false; // v0.9.0 FB-38/39: noch nicht freigeschaltete Personen tauchen nicht auf
     if (venue === "fest") return !!fest && fest.guests.includes(c.id) && (hr(g.seed, a, 400 + i) < 0.8 || c.id === "sindaco" || c.id === "dolores");
     if (!c.at.includes(venue)) return false; if (c.mo && !c.mo.includes(g.m)) return false;
     if (c.id === "carmela" && venue === "buero") return (g.fl.carmelaHere !== undefined && a - g.fl.carmelaHere <= 1 && a >= g.fl.carmelaHere - 1) || (g.met.includes("carmela") && hr(g.seed, a, 401) < 0.4);
-    if (c.id === "sindaco" && venue === "muni") return g.rep >= 50 || g.met.includes("sindaco");
+    if (c.id === "sindaco" && venue === "muni") return g.rep >= 50 || g.met.includes("sindaco") || g.fl.intro_sindaco !== undefined;
     return hr(g.seed, a, 500 + i * 13 + venue.length) < (venue === "bar" ? 0.55 : 0.6);
   }).map((c) => c.id).slice(0, venue === "fest" ? 6 : 3);
 }
@@ -118,10 +119,13 @@ function act(g0: G, a: A): G {
   } else if (a.k === "meet") {
     // a.f = Plauder-Score 0..1
     const c = a.id ? CHM[a.id] : undefined; if (!c || g.met.includes(c.id) || g.fl["try_" + c.id] === abs(g)) return g;
-    if (c.need && !c.need[1](g)) return g; if (!useAP()) return g;
-    const s = a.f ?? 0;
-    if (s >= MEETNEED[c.diff]) { g.met.push(c.id); g.rel[c.id] = clamp(Math.max(g.rel[c.id] ?? 30, 25) + Math.round(s * 15), 0, 100); g.fl.metM = abs(g); g.stats.met++; g.talked.push(c.id); L(`🤝 Du hast ${c.n} kennengelernt! (${c.r})`); }
-    else { g.fl["try_" + c.id] = abs(g); L(`😬 ${c.n} ist nicht überzeugt (${Math.round(s * 100)} %, nötig ${Math.round(MEETNEED[c.diff] * 100)} %). Nächsten Monat nochmal.`); }
+    if (!gateOk(g, c)) return g;
+    // v0.9.0 FB-38: höchstens eine neue Bekanntschaft pro Monat
+    if (g.fl.metM === abs(g)) { L("🕰️ Eine neue Bekanntschaft pro Monat reicht – die Leute hier brauchen Zeit."); return g; }
+    if (!useAP()) return g;
+    const s = a.f ?? 0; const need = MEETNEED[Math.max(0, c.diff - (g.fl["intro_" + c.id] !== undefined ? 1 : 0))];
+    if (s >= need) { g.met.push(c.id); g.rel[c.id] = clamp(Math.max(g.rel[c.id] ?? 30, 25) + Math.round(s * 15), 0, 100); g.fl.metM = abs(g); g.stats.met++; g.talked.push(c.id); L(`🤝 Du hast ${c.n} kennengelernt! (${c.r})`); }
+    else { g.fl["try_" + c.id] = abs(g); L(`😬 ${c.n} ist nicht überzeugt (${Math.round(s * 100)} %, nötig ${Math.round(need * 100)} %). Nächsten Monat nochmal.`); }
   } else if (a.k === "chat" || a.k === "call") {
     const c = a.id ? CHM[a.id] : undefined; if (!c || !g.met.includes(c.id) || g.talked.includes(c.id) || !useAP()) return g;
     g.talked.push(c.id); const s = a.f ?? 0.5; let n = Math.round((s >= 0.5 ? 2 + s * 9 : -2 + s * 6) * (a.k === "call" ? 0.6 : 1));

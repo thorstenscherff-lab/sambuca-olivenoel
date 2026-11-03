@@ -85,7 +85,20 @@ const PERKS: Perk[] = [
   { id: "truce", who: "turi", min: 55, e: "🕊️", n: "Waffenstillstand", d: "keine Sabotage mehr, ★ +4", per: "once", ok: (g) => !g.deals.includes("truce"), f: (g) => { deal(g, "truce"); repAdd(g, 4); return "DEAL: Turi gibt dir die Hand. Fest."; } },
   { id: "press", who: "dolores", min: 50, e: "📰", n: "US-Presse: Reportage in New York", d: "1.000 €: Preis +10 %, US-Tourist:innen zahlen monatlich", per: "once", cost: () => 1000, ok: (g) => !g.deals.includes("us"), f: (g) => { deal(g, "us"); repAdd(g, 8); return "„The Secret Olive Oil of Sicily“ – die Reportage geht viral. ★ +8."; } },
   { id: "texas", who: "dolores", min: 70, e: "🇺🇸", n: "Container nach Texas", d: "1×/Jahr: bis 120 l zu 220 %", per: "y", ok: (g) => g.oil > 0, f: (g) => sellAt(g, 120, 2.2, "Dolores’ Freunde in Houston") },
+  // v0.9.0 (FB-40/OI-050): Vorteile der Ladenbesitzer:innen
+  { id: "linsell", who: "lin", min: 40, e: "🧴", n: "Öl ins Ladenregal", d: "bis 10 l zu 150 %", per: "m", ok: (g) => g.oil > 0, f: (g) => sellAt(g, 10, 1.5, "Y&L Haushaltswaren") },
+  { id: "focac", who: "nunzia", min: 45, e: "🥖", n: "Öl für die Focaccia", d: "bis 15 l zu 135 %", per: "m", ok: (g) => g.oil > 0, f: (g) => sellAt(g, 15, 1.35, "Nunzias Panificio") },
+  { id: "rasur", who: "gaspare", min: 50, e: "💈", n: "Ein gutes Wort beim Sindaco", d: "1×/Jahr: Sindaco ♥ +8 (wenn bekannt), sonst ★ +2", per: "y", f: (g) => { if (g.met.includes("sindaco")) return "Beim Rasieren fällt dein Name."+rel(g, "sindaco", 8); repAdd(g, 2); return "Gaspare erzählt im ganzen Dorf von dir. ★ +2"; } },
+  { id: "tabsell", who: "pippo", min: 40, e: "🎟️", n: "Öl an die Lkw-Fahrer", d: "bis 8 l zu 150 %", per: "m", ok: (g) => g.oil > 0, f: (g) => sellAt(g, 8, 1.5, "Pippos Tabacchi") },
+  { id: "crema", who: "lobue", min: 45, e: "⚕️", n: "Olivenöl-Kosmetik", d: "1×/Jahr: bis 30 l zu 170 %", per: "y", ok: (g) => g.oil > 0 && g.q >= 50, f: (g) => sellAt(g, 30, 1.7, "die Farmacia (Kosmetiklinie)") },
+  { id: "artikel", who: "enzo", min: 40, e: "📰", n: "Artikel im Lokalblatt", d: "einmalig: ★ +5", per: "once", f: (g) => { repAdd(g, 5); return "„Der Neue rettet die alten Haine“ – ★ +5."; } },
+  { id: "pecor", who: "peppe", min: 50, e: "🥩", n: "Öl für den Pecorino", d: "bis 20 l zu 130 %", per: "m", ok: (g) => g.oil > 0, f: (g) => sellAt(g, 20, 1.3, "die Macelleria") },
+  { id: "voelker", who: "nino", min: 45, e: "🐝", n: "Bienenvölker in den Hain", d: "1×/Jahr: Ertrag +5 %", per: "y", f: (g) => { g.yieldMod += 0.05; return "Ninos beste Völker summen zwischen deinen Bäumen. Ertrag +5 %."; } },
+  { id: "hund", who: "marta", min: 45, e: "🐕", n: "Wachhund geschenkt", d: "einmalig: Wachhund gratis (Schutz vor Olivendieben)", per: "once", ok: (g) => !g.fl.dog, f: (g) => { g.fl.dog = 1; return "Bruno zieht bei dir ein – Marta winkt ab: „Geschenk.“"; } },
+  { id: "antrag", who: "ragio", min: 50, e: "🧾", n: "Förderantrag Consorzio", d: "1×/Jahr: 800–1.500 € Agrarförderung", per: "y", f: (g) => { const v = Math.round((800 + hr(g.seed, abs(g), 31) * 700) / 50) * 50; g.money += v; return `Gestempelt, unterschrieben, bewilligt: +${eur(v)}.`; } },
 ];
+// v0.9.0 (FB-39/OI-049): Vitamin B – für jede Figur mit vb ein einmaliger Vermittler-Vorteil „Stell mich … vor“
+CHARS.forEach((c) => { if (!c.vb) return; const [w, mn] = c.vb; PERKS.push({ id: "vb_" + c.id, who: w, min: mn, e: "🤝", n: `Vitamin B: Stell mich ${c.n} vor`, d: `einmalig: ${c.n} (${c.r.split("·")[0].trim()}) wird erreichbar, Kennenlernen leichter`, per: "once", ok: (g) => !g.met.includes(c.id) && g.fl["intro_" + c.id] === undefined, f: (g) => { g.fl["intro_" + c.id] = abs(g); return `${CHM[w].n} legt ein gutes Wort ein. ${c.n} erwartet dich – schau bei ${c.r.split("·")[0].trim()} vorbei.`; } }); });
 // ---------- Kleine Orte mit Zufallsbegegnungen ----------
 type Enc = { t: string; l: string; d: string; ok?: (g: G) => boolean; f: (g: G, r: number) => string };
 // v0.8 (FB-05/OI-017): px = echte Kartenposition in Karten-% (aus OSM/Poster), hat Vorrang vor x/y (Canvas-Altwerte)

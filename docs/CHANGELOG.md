@@ -3,7 +3,7 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
-## v0.8.1 – 03.11.2026 (Commit COMMIT_HASH)
+## v0.8.1 – 03.11.2026 (Commits 9886f11, 5584f95)
 **Feedback:** Thorsten, 03.11. 01:57: „Ich finde die Icons für die Haupt-Orte besser als die Sprechblasen. Lass uns das auf allen Zoomstufen machen. Vielleicht kann ein kleines Personen-Icon dran, wenn jemand da ist.“ (FB-29/OI-036). Nachtrag: „Die Icons von Bar del Corso und Bank liegen übereinander“ – alle Pins prüfen, nahe Orte mit Führungslinie auflösen (FB-30/OI-037). Supabase für den Live-Highscore von Thorsten freigegeben (FB-19/OI-007).
 
 **Änderungen:**

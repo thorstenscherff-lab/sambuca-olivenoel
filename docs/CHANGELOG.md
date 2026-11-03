@@ -3,6 +3,19 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
+## v0.9.0 – 03.11.2026 (Branch wip/v0.9.0: f9382c4, 288c903, 1d2f54e, d452907, a8939ba, 135875f, c5aa5ec + Doku)
+**Feedback:** Thorsten, Beta-Review 03.11.: Sprachwahl Deutsch/Englisch/Italienisch einmal am Anfang; Leute kennenlernen soll schwerer sein; manche nur über Vitamin B; Ladenbesitzer sollen Figuren werden. Nachgereicht: Laden-Icons müssen bei jedem Zoom genau auf den gezeichneten Läden liegen (prüfen und dokumentieren); „Karte“-Link entfernen, ohne etwas kaputtzumachen. Erfasst in Notion als FB-37…FB-42, danach gebaut.
+
+**Änderungen:**
+- **Sprachwahl DE/EN/IT (FB-37/OI-047, löst OI-005):** Sprachwahl-Screen vor dem Intro, `G.lang` + `sambuca5_lang`, Laufzeit-Übersetzung per DOM-Observer, Wörterbuch mit 1 387 Einträgen (maschinell + ca. 180 Handkorrekturen). Details: I18N.md.
+- **Kennenlernen schwerer (FB-38/OI-048):** Gating je Figur (frühester Monat, Ansehen ★), höchstens eine neue Bekanntschaft pro Monat (`fl.metM`). Im 1. Monat erreichbar: Nonna, Carmela, Salvo, Nunzia.
+- **Vitamin B (FB-39/OI-049):** 7 Figuren nur per Vorstellung (Padre, Klaus, Dolores, Sindaco, Lo Bue, Nino, Ragioniere); Vermittler-Perks `vb_*`, Vorstellung senkt die Gesprächs-Schwelle um eine Stufe.
+- **Ladenbesitzer als Figuren (FB-40/OI-050):** 10 neue Figuren (Lin, Nunzia, Gaspare, Pippo, Lo Bue, Enzo, Peppe, Nino, Marta, Ragioniere) mit Porträts, Begegnungen und eigenen Perks → **23 Figuren**, Porträt-Sprite 23 Zellen.
+- **Laden-Icons zoomfest (FB-41/OI-051):** Nebenorte vom Pin-Layout ausgenommen, 5 Stadt-Koordinaten neu kalibriert; gemessen 0 px Abweichung auf allen Zoomstufen (MAPS.md, „Pin-Verifikation v0.9.0“).
+- **„🗺️ Karte“ entfernt (FB-42/OI-052):** Szenen verlässt man über die Tabs Stadt/Umland (UI.md).
+
+**QA:** `source/qa/logic9.mjs` (Gating, Vitamin B, 23 Figuren) und `source/qa/qa9.js` (Sprachen, Reload, Karte-Button, Tabs, Pin-Deltas, Konsolenfehler) – alles grün, keine Konsolenfehler.
+
 ## v0.8.2 – 03.11.2026 (Commits 549ca92 Code, d8ff2be Doku)
 **Feedback:** Thorsten, 03.11. 02:16: „Ja und deine Vorschläge umsetzen. Dann ist Schluss für heute und du kannst alles was noch nicht dokumentiert ist dokumentieren“. Gemeint sind die Geräte-Vorschläge aus MINIGAMES.md (v0.8.1). Sie wurden zuerst in Notion (FB-32…FB-36) und in OPEN_ISSUES/MINIGAMES dokumentiert und danach gebaut.
 

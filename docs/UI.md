@@ -58,8 +58,8 @@ Optimiert für Telefon im Hochformat (Thorstens Vorgabe). Ein Desktop zeigt dies
 | UI-tel | Telefon: Anrufe bei bekannten Figuren (HOT-buero-tel) |
 | UI-year | Jahresbericht, Rivalen, Bestenliste |
 
-## Sprache
-Nur Deutsch, alle Texte stehen fest im Code → OI-005.
+## Sprache (v0.9.0)
+Beim ersten Start erscheint vor dem Intro die **Sprachwahl** (🇩🇪 Deutsch · 🇬🇧 English · 🇮🇹 Italiano, Buttons `data-lang`). Die Wahl gilt für den ganzen Spielstand (`G.lang`, `sambuca5_lang`); danach erscheint keine Auswahl mehr. Übersetzt wird zur Laufzeit per DOM-Observer – Details in I18N.md.
 
 ## v0.8
 - Schrift: Nunito 600–900 (`fonts/nunito-latin-600-900.woff2`, OFL). `.gta` hat Gewicht 900 und weichen Schatten, keine Outline.
@@ -67,3 +67,11 @@ Nur Deutsch, alle Texte stehen fest im Code → OI-005.
 - Karte: bei Zoom < 1.6 glitzernde Icon-Pins (`sbGlint`), ab 1.6 beschriftete Pins.
 - Spot-Sheet (`k:"spot"`) zeigt Beschreibung, Ergebnis und „wieder ab <Monat>“.
 - Intro: Startbild `start`, Untertitel „v0.8“, Mogul-Ziel.
+
+
+## v0.9.0
+- **„🗺️ Karte“-Button in Szenen entfernt** (FB-42/OI-052). Szenen verlässt man über die Tabs **Stadt / Umland** (bzw. Town/Countryside, Paese/Campagna) in der unteren Leiste; ein Tab-Tipp schließt die Szene und zeigt die jeweilige Karte. Es gab keine Tastaturkürzel für „Karte“, daher entfällt nichts weiter. QA: kein Element mit Text „Karte“ in Szenen, Szenenwechsel per Tab funktioniert (`source/qa/qa9.js`).
+- **Sprachwahl-Screen** vor dem Intro (siehe „Sprache“).
+- **Personen-Sheet:** nicht erreichbare Figuren zeigen „Nicht interessiert an dir. Nötig: …“ (Monat, ★, Vitamin B); wer diesen Monat schon jemanden kennengelernt hat, sieht „Du hast diesen Monat schon jemanden kennengelernt …“ und das Kennenlernen bleibt gesperrt (Log: „🕰️ Eine neue Bekanntschaft pro Monat reicht – die Leute hier brauchen Zeit.“).
+- **Ladenbesitzer** erscheinen an ihren Nebenorten (Begegnungs-Sheet mit Porträt) und haben eigene Perks.
+- **Laden-Icons** liegen auf allen Zoomstufen pixelgenau auf den gezeichneten Läden (MAPS.md, „Pin-Verifikation v0.9.0“).

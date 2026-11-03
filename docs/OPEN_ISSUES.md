@@ -8,7 +8,7 @@
 | OI-002 | mittel | in Doku behoben | Doku | RULES nannte für den Sindaco ★ 50 als Kennenlern-Schwelle. Laut Code gilt ★ 35 zum Kennenlernen und ★ 50 für die Audienz (`UI-sindaco`). | CH-sindaco (A) |
 | OI-003 | niedrig | offen | UX | Hotspot HOT-bar-zeitung („Ölpreis“) öffnet das Lager-Sheet UI-regal statt einer eigenen Preisansicht. | LOCATIONS.md (A) |
 | OI-004 | mittel | offen | Inhalt | Die Szenen LOC-banca, LOC-teatro (palazzo), LOC-belv und LOC-hain haben keine Stammgäste, dort trifft man niemanden. | LOCATIONS.md (A) |
-| OI-005 | hoch | Wunsch | Feature | **Sprachwahl DE / EN / IT.** Alle Texte stehen fest im Code (Deutsch). Nötig: Texte in Sprachdateien auslagern (Ereignisse, Figuren, UI) und einen Umschalter im Büro. Umfang: ca. 60 Ereignisse, 157 Wahlen, 27 Begegnungen, 13 Figuren. | UI.md (F) |
+| OI-005 | hoch | erledigt (v0.9.0, via OI-047) | Feature | **Sprachwahl DE / EN / IT.** Alle Texte stehen fest im Code (Deutsch). Nötig: Texte in Sprachdateien auslagern (Ereignisse, Figuren, UI) und einen Umschalter im Büro. Umfang: ca. 60 Ereignisse, 157 Wahlen, 27 Begegnungen, 13 Figuren. | UI.md (F) |
 | OI-006 | mittel | Wunsch | Feature | **App:** heute eine Web-Seite (GitHub Pages) mit Manifest und Icon (zum Home-Bildschirm hinzufügbar). Es fehlt ein Service Worker für Offline-Betrieb. Danach optional ein Store-Wrapper (Capacitor). | (F v0.2) |
 | OI-007 | hoch | umgesetzt v0.8.1 (globale Liste) | Feature | **Asynchroner Wettbewerb:** Die Bestenliste ist nur lokal (`sambuca5_hs`). Der Seed-/Share-Code aus v0.3 ist entfallen. Vorschlag: gemeinsamer Monats-Seed für alle, Ergebnis per Code oder Link teilen, optional ein kleiner Server für eine globale Liste. **v0.8.1 (FB-19):** Live-Highscore Top 20 über Supabase REST (`public.highscores`, RLS anon select+insert), lokaler Fallback bleibt; siehe BACKEND.md. Gemeinsamer Seed weiterhin offen (OI-011). | SAVEGAME.md (F v0.2) · BACKEND.md |
 | OI-008 | hoch | teilweise | Feature | **Telefon-Fokus:** Das Layout ist für Hochformat gebaut. Offen sind Tests auf echten Geräten (iOS Safari, Android Chrome), die Mindestgröße der Tipp-Ziele auf den Karten und Querformat-Sperre bzw. -Hinweis. | UI.md, QA.md (F) |
@@ -50,12 +50,14 @@
 | OI-044 | mittel | offen | Prozess | FB-29/FB-30 (v0.8.1) wurden erst nach der Umsetzung in Notion eingetragen; Regel: erst Notion + Doku, dann Bau. Am 03.11. ~02:30 ging zudem ungepushte Arbeit durch ein Box-Zurücksetzen verloren; Regel jetzt: nach jedem Zwischenschritt Commit + Push auf WIP-Branch. | README.md (Prozess) |
 | OI-045 | niedrig | offen | Doku | Supabase-Region und -Organisation sind nicht dokumentiert (nur im Dashboard sichtbar, ohne Zugang nicht ermittelbar). | BACKEND.md |
 | OI-046 | niedrig | offen | Balancing | v0.8.2-Werte (Kamm-Deckel 40, Crew +1/s, Kaltpress +8, Rettungsziele 10/8) sind nur per QA-Skript geprüft, nicht im echten Spiel balanciert. | MINIGAMES.md |
-| OI-047 | hoch | in Arbeit | Review (Beta, FB-37) | Sprachwahl Deutsch/Englisch/Italienisch einmal beim Spielstart, im Spielstand gespeichert; UI, Figuren, Orte, Ereignisse übersetzt (löst OI-005) | UI · SAVEGAME · I18N.md |
-| OI-048 | hoch | in Arbeit | Review (Beta, FB-38) | Kontakte zu leicht – im 1. Monat alle kennenlernbar. Gating je Figur (frühester Monat, Ruf ★, Ort, Voraussetzung), max. 1 neuer Kontakt pro Monat | CHARACTERS · d.tsx present/meet |
-| OI-049 | hoch | in Arbeit | Review (Beta, FB-39) | Vitamin B: bestimmte Figuren nur über Vorstellung durch bekannten Kontakt mit genug ♥ | CHARACTERS (Vitamin-B-Kette) |
-| OI-050 | mittel | in Arbeit | Review (Beta, FB-40) | Mehr Figuren: Ladenbesitzer kennenlernbar (eigene Porträts, Vorteile) | CHARACTERS · ASSETS |
-| OI-051 | hoch | in Arbeit | Review (Beta, FB-41) | Klickbare Laden-Icons driften beim Zoomen gegenüber der gezeichneten Karte | MAP_PINS · UI |
-| OI-052 | mittel | in Arbeit | Review (Beta, FB-42) | Doppelter Navigationspunkt „🗺️ Karte“ in Szenen entfernen (Tabs Stadt/Umland reichen) | UI |
+| OI-047 | hoch | erledigt (v0.9.0) | Review (Beta, FB-37) | Sprachwahl Deutsch/Englisch/Italienisch einmal beim Spielstart, im Spielstand gespeichert; UI, Figuren, Orte, Ereignisse übersetzt (löst OI-005) | UI · SAVEGAME · I18N.md |
+| OI-048 | hoch | erledigt (v0.9.0) | Review (Beta, FB-38) | Kontakte zu leicht – im 1. Monat alle kennenlernbar. Gating je Figur (frühester Monat, Ruf ★, Ort, Voraussetzung), max. 1 neuer Kontakt pro Monat | CHARACTERS · d.tsx present/meet |
+| OI-049 | hoch | erledigt (v0.9.0) | Review (Beta, FB-39) | Vitamin B: bestimmte Figuren nur über Vorstellung durch bekannten Kontakt mit genug ♥ | CHARACTERS (Vitamin-B-Kette) |
+| OI-050 | mittel | erledigt (v0.9.0) | Review (Beta, FB-40) | Mehr Figuren: Ladenbesitzer kennenlernbar (eigene Porträts, Vorteile) | CHARACTERS · ASSETS |
+| OI-051 | hoch | erledigt (v0.9.0) | Review (Beta, FB-41) | Klickbare Laden-Icons driften beim Zoomen gegenüber der gezeichneten Karte | MAPS (Pin-Verifikation v0.9.0) · UI |
+| OI-052 | mittel | erledigt (v0.9.0) | Review (Beta, FB-42) | Doppelter Navigationspunkt „🗺️ Karte“ in Szenen entfernen (Tabs Stadt/Umland reichen) | UI |
+| OI-053 | mittel | offen | v0.9.0 (I18N) | Englisch/Italienisch der langen Ereignis- und Dialogtexte ist maschinell (Argos, IT über EN) und stellenweise holprig; UI, Intro, Tabs, Monate, Gating-Texte sind handkorrigiert. Muttersprachliches Lektorat von `source/tools/i18n_manual.json` nötig | I18N.md |
+| OI-054 | niedrig | offen | v0.9.0 (I18N) | Eigennamen (Figuren-/Ortsnamen, 11 Strings je Sprache) bleiben bewusst unübersetzt und erscheinen in `__i18n.miss`; Sprache lässt sich nach dem Start nur über „Neues Spiel“/Website-Daten löschen ändern | I18N.md |
 
 ## Nächste Schritte (Stand 03.11.2026, nach v0.8.2)
 1. Thorsten spielt v0.8.2 auf dem Handy und reviewt per Plaud (Ernte mit Kamm/Crew, eigene Presse, Sturm/Flut mit Geräten).

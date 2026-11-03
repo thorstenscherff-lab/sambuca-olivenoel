@@ -7,7 +7,7 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 |---|---|---|
 | `MG-talk` | MiniTalk | `source/game/src/e.tsx:2` |
 | `MG-harvest` | MiniHarvest | `source/game/ui_old.tsx:28` |
-| `MG-harvest-shaker` | MiniShaker | `source/game/src/f.tsx:358` |
+| `MG-harvest-shaker` | MiniShaker | `source/game/src/f.tsx:366` |
 | `MG-press` | MiniPress | `source/game/ui_old.tsx:64` |
 | `MG-haggle` | MiniHaggle | `source/game/ui_old.tsx:91` |
 | `MG-rescue-sturm` | MiniRescue kind="sturm" | `source/game/src/e.tsx:46` |

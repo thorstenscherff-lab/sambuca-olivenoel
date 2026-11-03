@@ -91,7 +91,7 @@ Das Skript macht Folgendes:
    `grok/canvas` wird dabei auf einen kleinen Shim gemappt, der React-Hooks re-exportiert.
 
 ### 4. Version hochzählen
-Die Versionsnummer steht an vier Stellen: `index.html` (`<title>`), `manifest.webmanifest`, `source/game/src/a.tsx` (Text) und `source/game/src/f.tsx` (Label „v0.7.1“). Prüfen mit:
+Die Versionsnummer steht an vier Stellen (Stand v0.9.0): `index.html` (`<title>`), `manifest.webmanifest`, in `source/game/src/f.tsx` das Label „DAS ÖL DER MADONNA · v0.9.0“ und die Konstante `GAME_V`. Prüfen mit:
 ```bash
 grep -rn "v0\.7\.1" index.html manifest.webmanifest source/game/src | head
 ```
@@ -113,3 +113,10 @@ v0.1–v0.4 waren eine Canvas-App (`/workspace/sambuca-game/v01…v04/game.canva
 - `fonts/nunito-latin-600-900.woff2` wird in `index.html` per `@font-face` geladen und vorgeladen.
 - Neue SC-Keys in `tools/build_imgs.py`: start, torre, hotel, santa, lido, santuario, vassalli, giorgio. Danach `python3 source/tools/build_imgs.py && bash source/build.sh`.
 - Reproduzierbarkeit: Zwei Builds hintereinander ergeben dasselbe sha256 für `app.js`.
+
+
+## v0.9.0
+- `build.sh` verkettet jetzt: imports, **i18n_dict**, **i18n**, imgs, a, c, evs, d, ui_old, e, f → tsc → esbuild → `app.js`.
+- Übersetzungen neu erzeugen: siehe I18N.md (Extractor mit `TS5=/tmp/ts5/node_modules/typescript`, Argos, `i18n_build.py`).
+- Doku-Generatoren: `python3 source/tools/export_characters.py` (jetzt mit Gating-Zeile je Figur) und `python3 source/tools/export_inventory.py --check` (muss Exit 0 liefern).
+- QA-Skripte: `source/qa/logic9.mjs` (Logik, bündelt game.tsx nach `/tmp/logic9.mjs`), `source/qa/qa9.js` (Browser, Server `python3 -m http.server 8099` im Repo-Root oder Live-URL), `source/qa/pincrops9.js` (Pin-Crops Zoom 4).

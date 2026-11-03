@@ -278,3 +278,8 @@ Die übrigen Feste (Udienza, Vendemmia/Fiera, Raccolta, Natale) nutzen weiter `0
 **`source/scenes/21_lido.jpg`** (Referenzen: source/scenes/21_lido.jpg (v0.8 first version), drive:1QLMKkHuWd_0W1umXptqCih06W6hloiZ2)
 
 > Portrait 9:16 scene in the exact painterly style of the first reference image (rich painterly GTA loading-screen illustration, bold ink outlines, saturated warm palette, not pixel art, no text). Scene: Lido beach restaurant: a white tent pavilion with arched plastic windows, warm hanging lamps, cream plastic chairs and small tables on a terracotta floor, an open front looking out to the turquoise Mediterranean sea and a palm tree, golden evening light. A blank wooden boomerang-shaped sign without lettering. No people. Layout taken from the second reference photo, fully re-drawn as illustration.
+
+
+## v0.9.0
+- **Porträt-Sprite** `source/portraits/port_sprite.webp`: 23 Zellen à 96×128 px (2208×128), neu gebaut mit `python3 source/tools/make_portrait_sprite.py`; eingebettet als `IMG_P` in `imgs.tsx` (`python3 source/tools/build_imgs.py`).
+- **10 neue Porträts** (Indizes 13–22, Ladenbesitzer): Master `source/portraits/13-lin.jpg` … `22-ragioniere.jpg`, 864×1152. Prompts im Wortlaut: CHARACTERS.md („Porträts“) und `docs/prompts/generate_image_calls.jsonl` (`"version": "v0.9.0"`).

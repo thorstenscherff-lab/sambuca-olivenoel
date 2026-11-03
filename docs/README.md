@@ -4,6 +4,7 @@
 |---|---|
 | [BUILD.md](BUILD.md) | Quelle → Build → Deploy, exakte Befehle und Tool-Versionen |
 | [ASSETS.md](ASSETS.md) | alle Szenenbilder, Referenzfotos (Drive-IDs), Prompts, Datum |
+| [I18N.md](I18N.md) | Sprachen DE/EN/IT: Verfahren, Werkzeuge, Abdeckung, Schwächen |
 | [MAPS.md](MAPS.md) | Kartenquelle, Auflösung, Verarbeitung, Projektion, alle Pins mit Sicherheit |
 | [RULES.md](RULES.md) | Spielregeln und Schwellenwerte |
 | [QA.md](QA.md) | Prüfablauf |

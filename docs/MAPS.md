@@ -299,3 +299,28 @@ Gemessen live (https://thorstenscherff-lab.github.io/sambuca-olivenoel/, 390×84
 | o:adragna | 54.5 / 53.7 | 2401 / 1543 | 2401 / 1543 | 0.5 | – | 0 | pins/u_o_adragna.png |
 | o:turih | 65.4 / 20.4 | 2881 / 585 | 2881 / 585 | 0.5 | – | 0 | pins/u_o_turih.png |
 | o:giusih | 21.8 / 63.1 | 960 / 1813 | 960 / 1813 | 0.5 | – | 0 | pins/u_o_giusih.png |
+
+
+## Pin-Verifikation v0.9.0 (FB-41/OI-051)
+**Ursachen der Drift:** (1) Das Pin-Layout verschob auch die Laden-Icons (Nebenorte) beim Entzerren – seit v0.9.0 haben Nebenorte `m: 0` und werden nie verschoben. (2) Fünf Stadt-Koordinaten (`MINOR[].px` in `src/c.tsx`) lagen bis zu 62 px (bei Zoom 4) neben dem gezeichneten Laden; bei kleinem Zoom unsichtbar, beim Hineinzoomen wirkte das wie Drift. Neu kalibriert am Poster (Zoom 4, Crops):
+
+| Laden | alt (x %, y %) | neu (x %, y %) |
+|---|---|---|
+| barb (Barbiere) | 52.94, 71.41 | 52.39, 70.89 |
+| casal (Y&L Haushaltswaren) | 56.43, 31.38 | 56.84, 30.44 |
+| farm (Farmacia) | 66.19, 55.27 | 65.92, 54.92 |
+| ferr (Ferramenta) | 38.79, 49.06 | 37.29, 48.71 |
+| tabac (Tabaccheria) | 61.79, 62.8 | 61.52, 61.83 |
+
+panif, mac, edic (Stadt) und alle Umland-Nebenorte (dogs u. a.) waren korrekt bzw. haben kein gezeichnetes Icon.
+
+**Messung** (`source/qa/qa9.js`, Playwright, 390×844): Für jede Zoomstufe wird die Bildschirmposition jedes Laden-Icons mit der aus `px` × Kartengröße berechneten Soll-Position verglichen.
+
+| Karte | Zoom | Kartenbreite px | max. Abweichung Laden-Icons |
+|---|---|---|---|
+| Stadt | 1 / 1.6 / 2.6 / 4 | 914 / 1462 / 2340 / 3656 | 0 px |
+| Umland | 1 / 1.6 / 2.6 / 4 | 1101 / 1761 / 2818 / 4404 | 0 px |
+
+Haupt-Pins (Orte) dürfen bewusst bis ca. 37 px vom Anker abweichen: Das Layout entzerrt sie und zeichnet eine Führungslinie zum Anker; das Label verschiebt den Mittelpunkt um ca. 10 px.
+
+**Belege:** `docs/qa/v0.9.0/pins_stadt_z4_vorher_a.png`, `…_vorher_b.png`, `pins_stadt_z4_nach_kalibrierung.png`, `pins_umland_z4_a.png`, `…_b.png`, `10_pins_stadt_z0_casal.png`, `10_pins_stadt_z3_casal.png`. Neu messen: `node source/qa/qa9.js` (Server im Repo-Root), Crops: `node source/qa/pincrops9.js`.

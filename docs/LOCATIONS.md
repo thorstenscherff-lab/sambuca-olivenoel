@@ -15,7 +15,7 @@ Auf den Karten führen **Pins** (`PIN-*`) entweder zu einer illustrierten **Szen
 |---|---|---|---|---|---|---|
 | `LOC-buero` | DEIN BÜRO | Casa in der Via Delfino | buero | HOT-buero-pc (Computer · Aufträge), HOT-buero-tel (Telefon), HOT-buero-regal (Lager & Haine), HOT-buero-kal (Kalender), HOT-buero-fenster (Zur Stadt), HOT-buero-tuer (Raus aufs Land) | CH-carmela | `source/game/src/e.tsx:92` |
 | `LOC-rathaus` | MUNICIPIO | Rathaus von Sambuca | muni | HOT-rathaus-schalter (Schalter · Anträge), HOT-rathaus-sindaco (Büro des Sindaco), HOT-rathaus-aushang (Aushang) | CH-chiara, CH-sindaco | `source/game/src/e.tsx:93` |
-| `LOC-bar` | BAR DEL CORSO | Corso Umberto I · Pasticceria | bar | HOT-bar-caffe (Caffè & Gerüchte (2 €)), HOT-bar-wette (Calcio-Wette (50 €)), HOT-bar-zeitung (Ölpreis) | CH-salvo, CH-wang, CH-ciccio, CH-turi, CH-chiara, CH-klaus, CH-dolores | `source/game/src/e.tsx:95` |
+| `LOC-bar` | BAR DEL CORSO | Corso Umberto I · Pasticceria | bar | HOT-bar-caffe (Caffè & Gerüchte (2 €)), HOT-bar-wette (Calcio-Wette (50 €)), HOT-bar-zeitung (Ölpreis) | CH-salvo, CH-wang, CH-ciccio, CH-turi, CH-chiara, CH-klaus, CH-dolores, CH-gaspare, CH-pippo, CH-enzo | `source/game/src/e.tsx:95` |
 | `LOC-banca` | BANCA | Corso Umberto I · Kredit zu 1 % | banca | HOT-banca-pin-banca (Kreditschalter) | CH-wang, CH-giusi | `source/game/src/e.tsx:97` |
 | `LOC-teatro` | PALAZZO & TEATRO | Don Calogero · Haine von Erben | palazzo | HOT-teatro-pin-palazzo (Don Calogero sprechen) | CH-chiara, CH-dolores | `source/game/src/e.tsx:98` |
 | `LOC-belv` | BELVEDERE | Blick über das Belice-Tal | belv | HOT-belv-pin-belv (Ausblick) | CH-ciccio, CH-klaus | `source/game/src/e.tsx:99` |
@@ -28,7 +28,7 @@ Auf den Karten führen **Pins** (`PIN-*`) entweder zu einer illustrierten **Szen
 | `LOC-santuario` | SANTUARIO | Madonna dell'Udienza | santuario | HOT-santuario-altar (Madonna dell'Udienza), HOT-santuario-kerze (Kerze (5 €)), HOT-santuario-spende (Opferstock (150 €)) | CH-nonna, CH-carmela, CH-rosalia, CH-padre | `source/game/src/e.tsx:109` |
 | `LOC-hotel` | HOTEL DON GIOVANNI | Pool · Restaurant · Tourist:innen | hotel | HOT-hotel-pooldeal (Küchenchef: 20 l zu 160 %), HOT-hotel-aperitivo (Aperitivo (12 €)) | CH-giusi, CH-klaus, CH-dolores | `source/game/src/e.tsx:112` |
 | `LOC-lido` | LIDO BOOMERANG | Strandbar am Meer | lido | HOT-lido-strand (Strandtag (20 €)), HOT-lido-lidodeal (Restaurant: 15 l zu 150 %) | CH-salvo, CH-chiara, CH-dolores | `source/game/src/e.tsx:115` |
-| `LOC-fest` | FESTA | – | fest | HOT-fest-prog (Festprogramm) | CH-carmela, CH-rosalia, CH-ciccio, CH-padre, CH-turi, CH-giusi, CH-chiara, CH-klaus, CH-dolores, CH-sindaco | `source/game/src/e.tsx:117` |
+| `LOC-fest` | FESTA | – | fest | HOT-fest-prog (Festprogramm) | CH-carmela, CH-rosalia, CH-ciccio, CH-padre, CH-turi, CH-giusi, CH-chiara, CH-klaus, CH-dolores, CH-sindaco, CH-peppe | `source/game/src/e.tsx:117` |
 <!-- END GENERATED:scenes -->
 
 Spot-Aktionen (Hotspots mit Kosten):
@@ -82,113 +82,113 @@ Die Angebote liegen in `g.offers`. Rivalen schnappen sie sich zum Termin `until`
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Die Inhaberin sucht Öl in kleinen Flaschen für ihr Regal. | 5 l liefern | 5 l zu 140 % | ja | `source/game/src/c.tsx:96` |
-| Restposten: Etiketten und Glasflaschen, 40 € für alles. | Kaufen (40 €) | ★ +2 – schönere Flaschen | – | `source/game/src/c.tsx:97` |
-| Ein Kunde fragt, ob dein Öl auch hier zu haben ist. | Probe dalassen (1 l) | ★ +1 | ja | `source/game/src/c.tsx:98` |
+| Die Inhaberin sucht Öl in kleinen Flaschen für ihr Regal. | 5 l liefern | 5 l zu 140 % | ja | `source/game/src/c.tsx:110` |
+| Restposten: Etiketten und Glasflaschen, 40 € für alles. | Kaufen (40 €) | ★ +2 – schönere Flaschen | – | `source/game/src/c.tsx:111` |
+| Ein Kunde fragt, ob dein Öl auch hier zu haben ist. | Probe dalassen (1 l) | ★ +1 | ja | `source/game/src/c.tsx:112` |
 
 #### MIN-dogs · 🐕 O-Dogs Garden (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Ein Rudel Hunde begrüßt dich am Zaun. Die Betreiberin sucht Paten. | Gassi gehen | ★ +1 | – | `source/game/src/c.tsx:101` |
-| Futterspende? Die Säcke sind leer. | Spenden (30 €) | ★ +2 | – | `source/game/src/c.tsx:102` |
+| Ein Rudel Hunde begrüßt dich am Zaun. Die Betreiberin sucht Paten. | Gassi gehen | ★ +1 | – | `source/game/src/c.tsx:115` |
+| Futterspende? Die Säcke sind leer. | Spenden (30 €) | ★ +2 | – | `source/game/src/c.tsx:116` |
 
 #### MIN-ferr · 🔧 Ferramenta Cinese (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Ein Bauer reklamiert lautstark seinen kaputten Spaten. | Mitlachen | Wang ♥+3 | – | `source/game/src/c.tsx:104` |
-| Restposten: Fliegenfallen, Kiste zu 40 €. | Kiste kaufen (40 €) | nächste Fallen −50 % | – | `source/game/src/c.tsx:105` |
-| Wang zeigt dir ein Video vom Großhandel in Palermo. | Zuschauen | Wang ♥+4 | – | `source/game/src/c.tsx:106` |
+| Ein Bauer reklamiert lautstark seinen kaputten Spaten. | Mitlachen | Wang ♥+3 | – | `source/game/src/c.tsx:118` |
+| Restposten: Fliegenfallen, Kiste zu 40 €. | Kiste kaufen (40 €) | nächste Fallen −50 % | – | `source/game/src/c.tsx:119` |
+| Wang zeigt dir ein Video vom Großhandel in Palermo. | Zuschauen | Wang ♥+4 | – | `source/game/src/c.tsx:120` |
 
 #### MIN-panif · 🥖 Panificio (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Die Bäckerin braucht Öl für ihre Focaccia. | 10 l verkaufen (130 %) | – | ja | `source/game/src/c.tsx:108` |
-| Schlange vor der Theke – alle reden über Zio Turi. | Zuhören | ★ +1 | – | `source/game/src/c.tsx:109` |
-| Frische Cuccidati für die Nonna? | Kaufen (6 €) | Nonna ♥+4 | – | `source/game/src/c.tsx:110` |
+| Die Bäckerin braucht Öl für ihre Focaccia. | 10 l verkaufen (130 %) | – | ja | `source/game/src/c.tsx:122` |
+| Schlange vor der Theke – alle reden über Zio Turi. | Zuhören | ★ +1 | – | `source/game/src/c.tsx:123` |
+| Frische Cuccidati für die Nonna? | Kaufen (6 €) | Nonna ♥+4 | – | `source/game/src/c.tsx:124` |
 
 #### MIN-tabac · 🎟️ Tabacchi & Lotto (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Gratta e Vinci, das Los zu 5 €. | Rubbeln (5 €) | 10 %: 250 € | – | `source/game/src/c.tsx:112` |
-| Der Tabaccaio sucht ein Geschenk für seine Schwiegermutter. | 5 l Öl verkaufen (150 %) | – | ja | `source/game/src/c.tsx:113` |
+| Gratta e Vinci, das Los zu 5 €. | Rubbeln (5 €) | 10 %: 250 € | – | `source/game/src/c.tsx:126` |
+| Der Tabaccaio sucht ein Geschenk für seine Schwiegermutter. | 5 l Öl verkaufen (150 %) | – | ja | `source/game/src/c.tsx:127` |
 
 #### MIN-barb · 💈 Barbiere Gaspare (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Haarschnitt 12 € – und der komplette Dorfklatsch. | Schneiden lassen (12 €) | ★ +2 | – | `source/game/src/c.tsx:115` |
-| Gaspare rasiert sonst den Sekretär des Sindaco. | Gutes Wort einlegen (50 €) | Sindaco ♥+6 (auch unbekannt) | – | `source/game/src/c.tsx:116` |
+| Haarschnitt 12 € – und der komplette Dorfklatsch. | Schneiden lassen (12 €) | ★ +2 | – | `source/game/src/c.tsx:129` |
+| Gaspare rasiert sonst den Sekretär des Sindaco. | Gutes Wort einlegen (50 €) | Sindaco ♥+6 (auch unbekannt) | – | `source/game/src/c.tsx:130` |
 
 #### MIN-farm · ⚕️ Farmacia (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Dein Rücken nach der Arbeit im Hain … | Wärmesalbe (15 €) | +2 ⏳ nächsten Monat | – | `source/game/src/c.tsx:118` |
-| Die Apothekerin fragt nach Öl für Naturkosmetik. | 15 l verkaufen (140 %) | – | ja | `source/game/src/c.tsx:119` |
+| Dein Rücken nach der Arbeit im Hain … | Wärmesalbe (15 €) | +2 ⏳ nächsten Monat | – | `source/game/src/c.tsx:132` |
+| Die Apothekerin fragt nach Öl für Naturkosmetik. | 15 l verkaufen (140 %) | – | ja | `source/game/src/c.tsx:133` |
 
 #### MIN-edic · 📰 Edicola (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Giornale di Sicilia: Ölpreis-Prognose. | Zeitung (2 €) | Preis-Trend | – | `source/game/src/c.tsx:121` |
-| Kleinanzeigen im Lokalblatt. | Inserat schalten (150 €) | ★ +3 | – | `source/game/src/c.tsx:122` |
+| Giornale di Sicilia: Ölpreis-Prognose. | Zeitung (2 €) | Preis-Trend | – | `source/game/src/c.tsx:135` |
+| Kleinanzeigen im Lokalblatt. | Inserat schalten (150 €) | ★ +3 | – | `source/game/src/c.tsx:136` |
 
 #### MIN-mac · 🥩 Macelleria (Stadt)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Der Metzger braucht Öl für seine Salsiccia. | 15 l verkaufen (125 %) | – | ja | `source/game/src/c.tsx:124` |
-| Ciccio liefert gerade Lämmer ab. | Hallo sagen | Ciccio ♥+4 (auch unbekannt) | – | `source/game/src/c.tsx:125` |
+| Der Metzger braucht Öl für seine Salsiccia. | 15 l verkaufen (125 %) | – | ja | `source/game/src/c.tsx:138` |
+| Ciccio liefert gerade Lämmer ab. | Hallo sagen | Ciccio ♥+4 (auch unbekannt) | – | `source/game/src/c.tsx:139` |
 
 #### MIN-masseria · 🏚️ Masseria abbandonata (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Im Schuppen stehen alte Ölkrüge. | Durchsuchen | Glückssache | – | `source/game/src/c.tsx:127` |
-| Jugendliche aus Sambuca feiern hier. | Mitfeiern | ★ +1 | – | `source/game/src/c.tsx:128` |
+| Im Schuppen stehen alte Ölkrüge. | Durchsuchen | Glückssache | – | `source/game/src/c.tsx:141` |
+| Jugendliche aus Sambuca feiern hier. | Mitfeiern | ★ +1 | – | `source/game/src/c.tsx:142` |
 
 #### MIN-imker · 🐝 Apicoltore Nino (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Nino will Bienenstöcke in deinen Hain stellen. | Einverstanden | Ertrag +4 % (dieses Jahr) | ja | `source/game/src/c.tsx:130` |
-| Honig gegen Öl? | 5 l tauschen | Nonna ♥+5 | ja | `source/game/src/c.tsx:131` |
+| Nino will Bienenstöcke in deinen Hain stellen. | Einverstanden | Ertrag +4 % (dieses Jahr) | ja | `source/game/src/c.tsx:144` |
+| Honig gegen Öl? | 5 l tauschen | Nonna ♥+5 | ja | `source/game/src/c.tsx:145` |
 
 #### MIN-pozzo · ⛲ Brunnen (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Kühles Quellwasser. | Kanister schleppen | Sommer: Haine +3 % | – | `source/game/src/c.tsx:133` |
+| Kühles Quellwasser. | Kanister schleppen | Sommer: Haine +3 % | – | `source/game/src/c.tsx:147` |
 
 #### MIN-kapelle · 🕯️ Cappella di Adragna (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Ein Votivbild der Madonna, Kerzenstummel. | Kerze anzünden | nächste Katastrophe −40 % | – | `source/game/src/c.tsx:135` |
+| Ein Votivbild der Madonna, Kerzenstummel. | Kerze anzünden | nächste Katastrophe −40 % | – | `source/game/src/c.tsx:149` |
 
 #### MIN-schaefer · 🐑 Ciccios Weide (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Die Schafe könnten unter deinen Bäumen weiden. | Erlauben | Haine +3 % | – | `source/game/src/c.tsx:137` |
-| Frische Ricotta, noch warm. | Probieren (3 €) | Ciccio ♥+3 | – | `source/game/src/c.tsx:138` |
+| Die Schafe könnten unter deinen Bäumen weiden. | Erlauben | Haine +3 % | – | `source/game/src/c.tsx:151` |
+| Frische Ricotta, noch warm. | Probieren (3 €) | Ciccio ♥+3 | – | `source/game/src/c.tsx:152` |
 
 #### MIN-consorzio · 🧰 Consorzio Agrario (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Agronom-Beratung am Tresen. | Beraten lassen (60 €) | Haine +4 % | – | `source/game/src/c.tsx:140` |
+| Agronom-Beratung am Tresen. | Beraten lassen (60 €) | Haine +4 % | – | `source/game/src/c.tsx:154` |
 
 #### MIN-bosco · 🌲 Bosco della Resinata (Umland)
 
 | Begegnung | Aktion | Folge | Bedingung | Code |
 |---|---|---|---|---|
-| Pilzsaison im Wald. | Pilze sammeln | ~40 € | – | `source/game/src/c.tsx:142` |
-| Die Jäger von Adragna. | Wurst teilen | ★ +2 | – | `source/game/src/c.tsx:143` |
+| Pilzsaison im Wald. | Pilze sammeln | ~40 € | – | `source/game/src/c.tsx:156` |
+| Die Jäger von Adragna. | Wurst teilen | ★ +2 | – | `source/game/src/c.tsx:157` |
 <!-- END GENERATED:minors -->
 
 ## v0.8 – neue und geänderte Orte

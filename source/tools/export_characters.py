@@ -23,8 +23,18 @@ for i, l in enumerate(src[A]):
         m = re.search(r"mo: \[([^\]]*)\]", l); c["mo"] = [int(x) for x in m.group(1).split(",")] if m else None
         c["likes"] = re.findall(r'"(\w+)"', re.search(r"likes: \[([^\]]*)\]", l).group(1))
         m = re.search(r'need: \["([^"]+)"', l); c["need"] = m.group(1) if m else None
+        m = re.search(r"\bfrom: (\d+)", l); c["from"] = int(m.group(1)) if m else None
+        m = re.search(r"\brep: (\d+)", l); c["rep"] = int(m.group(1)) if m else None
+        m = re.search(r'\bvb: \["(\w+)", (\d+)\]', l); c["vb"] = [m.group(1), int(m.group(2))] if m else None
         c["def"] = f"{A}:{i+1}"; chars.append(c)
 MEET = [0, 0.3, 0.45, 0.6, 0.7, 0.8]
+MON = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+def gate(c):
+    p = []
+    if c.get("from") is not None: p.append(f"ab {MON[c['from'] % 12]} Jahr {c['from'] // 12 + 1}")
+    if c.get("rep"): p.append(f"Ansehen ★ ≥ {c['rep']}")
+    if c.get("vb"): p.append(f"Vitamin B: Vorstellung durch `{c['vb'][0]}` ab ♥ {c['vb'][1]} (Perk `vb_{c['id']}`; danach Gesprächs-Schwelle eine Stufe leichter)")
+    return " · ".join(p) + " · max. 1 neue Bekanntschaft/Monat" if p else "sofort (bzw. von Anfang an bekannt) · max. 1 neue Bekanntschaft/Monat"
 venues = {}
 for f, ls in src.items():
     for l in ls:
@@ -83,6 +93,7 @@ def md(chars):
               "- **Deals:** " + (", ".join(f'`{k}` {v}' for k, v in c["deals"].items()) or "–"),
               "- **Ereignisse/Begegnungen:** " + ("; ".join(f'{e["t"]} (`{e["id"]}`{", Hauptfigur" if e["who"] else ""}, `{e["loc"]}`)' for e in c["events"]) or "–"),
               "- **Begegnungen an kleinen Orten:** " + ("; ".join(f'{e["place"]}: „{e["t"]}“ → {e["l"]} (`{e["loc"]}`)' for e in c["encounters"]) or "–"),
+              f'- **Kontakt (v0.9.0 Gating):** ' + gate(c),
               f'- **Definition:** `{c["def"]}` · Porträt-Index `i: {c["i"]}`', ""]
     return "\n".join(o)
 if __name__ == "__main__":

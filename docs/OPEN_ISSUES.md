@@ -55,6 +55,7 @@
 | OI-049 | hoch | in Arbeit | Review (Beta, FB-39) | Vitamin B: bestimmte Figuren nur über Vorstellung durch bekannten Kontakt mit genug ♥ | CHARACTERS (Vitamin-B-Kette) |
 | OI-050 | mittel | in Arbeit | Review (Beta, FB-40) | Mehr Figuren: Ladenbesitzer kennenlernbar (eigene Porträts, Vorteile) | CHARACTERS · ASSETS |
 | OI-051 | hoch | in Arbeit | Review (Beta, FB-41) | Klickbare Laden-Icons driften beim Zoomen gegenüber der gezeichneten Karte | MAP_PINS · UI |
+| OI-052 | mittel | in Arbeit | Review (Beta, FB-42) | Doppelter Navigationspunkt „🗺️ Karte“ in Szenen entfernen (Tabs Stadt/Umland reichen) | UI |
 
 ## Nächste Schritte (Stand 03.11.2026, nach v0.8.2)
 1. Thorsten spielt v0.8.2 auf dem Handy und reviewt per Plaud (Ernte mit Kamm/Crew, eigene Presse, Sturm/Flut mit Geräten).

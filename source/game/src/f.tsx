@@ -183,7 +183,7 @@ export default function SambucaGame(): ReactNode {
     <div style={{ position: "absolute", left: 10, right: 10, bottom: 8, background: "rgba(23,11,38,.88)", border: `2px solid ${g.goalDone[g.m] ? C.ok : C.gold}`, borderRadius: 12, padding: "6px 10px", fontSize: 13, fontWeight: 700 }}>🎯 {GOALS[g.m].t} <span style={{ color: C.gold }}>+{eur(GOALS[g.m].rew * (1 + 0.25 * (g.y - 1)))}</span>{pend ? <span style={{ color: C.bad }}> · {pend} Auftrag{pend > 1 ? "e" : ""} offen 💻</span> : null}</div></div>;
   else if ((scr === "stadt" || scr === "umland") && scene) body = <div style={{ position: "relative" }}>
     <Scene id={scene} g={g} H={H} W={W} onHot={onHot} onPerson={person} title={scene === "fest" && fest ? fest.n : undefined} badge={scene === "fest" ? { prog: pend } : undefined} />
-    <button onClick={() => setScene(null)} style={{ position: "absolute", right: 10, top: 10, ...bigBtn(C.fg), width: "auto", minHeight: 40, padding: "6px 12px", fontSize: 14 }}>🗺️ Karte</button></div>;
+    {/* v0.9.0 (FB-42/OI-052): Button „🗺️ Karte“ entfernt – die Tabs Stadt/Umland schließen die Szene (setScene(null)) */}</div>;
   else if (scr === "stadt") body = mapView("s");
   else if (scr === "umland") body = mapView("u");
   else {

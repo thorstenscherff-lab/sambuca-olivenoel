@@ -13,11 +13,11 @@ const rep={};
 await tap('[data-tab="stadt"]');await S(500);await shot('stadtkarte');
 const mapinfo=await pg.evaluate(()=>{const el=[...document.querySelectorAll('div')].find(d=>(d.style.backgroundImage||'').includes('data:image/webp'));return el?[el.offsetWidth,el.offsetHeight]:null});rep.map=mapinfo;
 await tap('[data-pin="caffe"]');await S(200);await tap('[data-pin="caffe"]');await S(500);
-for(const pin of ['caffe','banca','muni','palazzo','chiesa','belv']){await tap('[data-tab="stadt"]');await S(300);await txt('Karte');await S(300);if(!await tap(`[data-pin="${pin}"]`))continue;await S(600);rep[pin]=await info();await shot('szene_'+pin);
+for(const pin of ['caffe','banca','muni','palazzo','chiesa','belv']){await tap('[data-tab="stadt"]');await S(300);if(!await tap(`[data-pin="${pin}"]`))continue;await S(600);rep[pin]=await info();await shot('szene_'+pin);
   const h=await pg.evaluate(()=>{const e=document.querySelector('[data-hot]');return e&&e.dataset.hot});if(h&&pin!=='caffe'){await tap(`[data-hot="${h}"]`);await S(400);await shot('hot_'+pin);await close()}}
-await tap('[data-tab="stadt"]');await S(300);await txt('Karte');await S(300);
+await tap('[data-tab="stadt"]');await S(300);
 await pg.evaluate(()=>{const el=[...document.querySelectorAll('div')].find(d=>d.scrollWidth>d.clientWidth+5);if(el){const b=document.querySelector('[data-pin="caffe"]').getBoundingClientRect();el.scrollLeft+=b.left-150}});await S(300);await shot('stadtkarte_bar_del_corso');
-for(const pin of ['torre','frantoio','hain','feudo','lago']){await tap('[data-tab="umland"]');await S(300);await txt('Karte');await S(300);if(pin==='torre')await shot('umlandkarte');if(!await tap(`[data-pin="${pin}"]`))continue;await S(600);rep[pin]=await info();await shot('szene_'+pin);
+for(const pin of ['torre','frantoio','hain','feudo','lago']){await tap('[data-tab="umland"]');await S(300);if(pin==='torre')await shot('umlandkarte');if(!await tap(`[data-pin="${pin}"]`))continue;await S(600);rep[pin]=await info();await shot('szene_'+pin);
   const h=await pg.evaluate(()=>{const e=document.querySelector('[data-hot]');return e&&e.dataset.hot});if(h){await tap(`[data-hot="${h}"]`);await S(400);await shot('hot_'+pin);await close()}}
 for(const [st,mo,rp] of [[2,20000,10],[3,70000,10],[4,250000,10]]){await pg.evaluate(([mo,rp])=>{const s=JSON.parse(localStorage.getItem('sambuca5_save'));s.money=mo;s.rep=rp;localStorage.setItem('sambuca5_save',JSON.stringify(s))},[mo,rp]);await pg.reload({waitUntil:'networkidle0'});await S(500);await txt('Weiter');await txt('Fortsetzen');await S(400);await tap('[data-tab="buero"]');await S(500);rep['buero'+st]=await info();await shot('buero_stufe'+st);
   for(const h of ['pc','regal','kal']){if(await tap(`[data-hot="${h}"]`)){await S(300);await close()}}}

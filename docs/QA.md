@@ -16,6 +16,8 @@ Vorbereitung: `cd source/harness && npm ci` (puppeteer-core ist dort Dependency)
 4. **Spieldurchlauf** – `node ../qa/play7.js` (URL fest auf die Live-Seite): 15 Monate automatisch spielen (Pflege, Ernte, Mühle, Verkauf, Monatsende, Jahreswechsel). Prüfen: kein Absturz, Jahreswertung erscheint, Büro-Stufe wechselt, Highscore wird gespeichert. Ausgabe nach `/workspace/sambuca-game/v07/qa/jahr2/` (Pfad im Skript anpassen).
 5. Konsolen- und Seitenfehler (`pageerror`) müssen leer sein.
 
+6. **Übersetzung (seit v0.9.1)** – `node ../qa/i18nstatic.js <url> /tmp/x.json` (Extractor-Ausgabe, siehe I18N.md) und `SEED=11 node ../qa/i18ncheck.js <url> 500 /tmp/i18n.json` (EN+IT, Neustart + reicher Spielstand, Zufallsrundgang inkl. Monatsende; Highscore wird nie gesendet, Supabase-POST blockiert). Beide müssen „EN 0 IT 0“ melden; Eigennamen-Ausnahmen in `i18n_allow.json`.
+
 ## 3. Abnahme
 Thorsten testet auf dem eigenen Telefon. Sein Feedback wird in CHANGELOG.md wörtlich bzw. sinngemäß festgehalten.
 
@@ -30,3 +32,7 @@ Thorsten testet auf dem eigenen Telefon. Sein Feedback wird in CHANGELOG.md wör
 - `qa9.js`: Titel v0.9.0; Sprachwahl mit 3 Buttons; Intro EN/IT/DE übersetzt; `save.lang` korrekt; nach Reload bleiben Sprache und Spiel, keine erneute Auswahl; Misses EN/IT je 11–12 (nur Eigennamen), DE 0; kein „Karte“-Button/-Text in Szenen; Szene per Tab verlassen; Laden-Icons 0 px Abweichung auf beiden Karten bei allen 4 Zoomstufen; keine Konsolenfehler.
 - Screenshots: `docs/qa/v0.9.0/`.
 - **Live-QA** (03.11.2026, gegen GitHub Pages, `app.js` sha256 `3a95e196…` = lokaler Build): `qa9.js` identisch grün, keine Konsolenfehler.
+
+## Ergebnisse v0.9.1 (03.11.2026, FB-43)
+- Ausgangslage `i18ncheck.js` (Seed 1): EN 50, IT 42 deutsche Texte (u. a. „Küchenchef: 20 l zu 160 %“, Hain-Angebote, Perks, Kredit, Monatsberichte); `i18nstatic.js`: 9.
+- Nach den Korrekturen: `i18nstatic.js` 837 Strings, EN 0 / IT 0; `i18ncheck.js` Seeds 11, 2024, 31337, 77 je EN 0 / IT 0, keine Seitenfehler; DE unverändert; `qa9.js` grün.

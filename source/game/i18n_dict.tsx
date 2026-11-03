@@ -445,8 +445,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Bacheca"
 ],
 "Aussteiger aus München": [
-"Exitors from Munich",
-"Exitors da Munich"
+"Dropout from Munich",
+"Emigrato da Monaco di Baviera"
 ],
 "BENE!": [
 "GOOD!",
@@ -599,6 +599,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Böen bis 100 km/h. Leitern, Kisten, Netze und der Rüttler liegen noch draußen im Hain!": [
 "gusts up to 100 km/h. Ladders, boxes, nets and the shaker are still outside in the grove!",
 "gust fino a 100 km/h. Le scale, le scatole, le reti e lo shaker sono ancora fuori nel grove!"
+],
+"Bürgermeister": [
+"Mayor",
+"Sindaco"
 ],
 "Bürgermeister · Fördertöpfe": [
 "Mayor · Funding pots",
@@ -919,6 +923,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Deine Leute schleppen jetzt Traubenkisten.": [
 "Your people are now hauling grape crates.",
 "La tua gente ora sta trasportando casse d'uva."
+],
+"Deine Nonna": [
+"Your Nonna",
+"La tua nonna"
 ],
 "Deine Nonna · Minni di Virgini": [
 "Your Nonna · Minni di Virgini",
@@ -2816,6 +2824,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "After Mass, Turi and you reach out. Halfway.",
 "Dopo la Messa, Turi e si raggiunge. A metà strada."
 ],
+"Nachbarin": [
+"Neighbour",
+"Vicina di casa"
+],
 "Nachbarin · weiß alles zuerst": [
 "Neighbor · knows everything first",
 "Quartiere · sa tutto prima"
@@ -3156,6 +3168,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Peppino is now guarding the grove.",
 "Peppino sta ora sorvegliando il grove."
 ],
+"Pfarrer": [
+"Priest",
+"Parroco"
+],
 "Pfarrer · Chiesa Madre": [
 "Priest · Chiesa Madre",
 "Sacerdote · Chiesa Madre"
@@ -3296,6 +3312,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Out to the countryside",
 "Fuori in campagna"
 ],
+"Reiche Amerikanerin": [
+"Rich American",
+"Ricca americana"
+],
 "Reiche Amerikanerin · Villa am Lago": [
 "Rich American · Villa on the Lago",
 "Ricco americano · Villa sul Lago"
@@ -3345,8 +3365,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Rischio"
 ],
 "Rivale vom Nachbarhang": [
-"Rival from the neighboring slope",
-"Rival dal pendio vicino"
+"Rival from the next hillside",
+"Rivale del versante accanto"
 ],
 "Rosalia machen lassen (Qualität 55)": [
 "Let Rosalia do it (quality 55)",
@@ -3556,6 +3576,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Difficulty",
 "Difficoltà"
 ],
+"Schäfer": [
+"Shepherd",
+"Pastore"
+],
 "Schäfer · Vorarbeiter der Erntehelfer": [
 "Shepherds · Foremen of harvesters",
 "Pastori · Foremen di mietitori"
@@ -3741,8 +3765,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Bella conversazione!"
 ],
 "Tabacchi & Lotto": [
-"Tabacchi and Lotto",
-"Tabacchi e Lotto"
+"Tabacchi & Lotto",
+"Tabacchi & Lotto"
 ],
 "Tabacchi & Lotto · weiß, wer verliert": [
 "Tabacchi & Lotto · knows who loses",
@@ -4128,6 +4152,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Keeping windscreen nets",
 "Mantenere reti parabrezza"
 ],
+"Winzerin": [
+"Winemaker",
+"Viticoltrice"
+],
 "Winzerin · Cantina am Lago": [
 "Winemaker · Cantina on the Lago",
 "Winemaker · Cantina sul Lago"
@@ -4161,8 +4189,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Xylella voce"
 ],
 "Y&L Haushaltswaren": [
-"Y&L household goods",
-"Y&L beni di famiglia"
+"Y&L Household Goods",
+"Y&L Casalinghi"
 ],
 "Y&L Haushaltswaren · Casalinghi": [
 "Y&L Houseware · Casalinghi",

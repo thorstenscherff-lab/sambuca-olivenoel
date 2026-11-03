@@ -3,6 +3,14 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
+## v0.9.1 – 03.11.2026 (Branch wip/v0.9.1)
+**Feedback:** Thorsten, 03.11.: „Es scheint nicht überall komplett übersetzt zu sein“ (Screenshot IT, Hotel Don Giovanni: „Küchenchef: 20 l zu 160 %“). Erfasst in Notion als FB-43.
+
+**Änderungen:**
+- **Übersetzung vollständig (FB-43/OI-053):** Übersetzer kann jetzt Texte mit wechselnden Zahlen, von React zerlegte Textknoten und zusammengesetzte Texte (`·`, `–`, `:`, Sätze) übersetzen; Extractor behält Texte mit Zahlen und erzeugt JSX-Muster; ≈75 neue Handübersetzungen; Wörterbuch 1 459 Einträge. Details: I18N.md.
+- **Automatische Prüfung:** `source/qa/i18ncheck.js` (Rundgang EN/IT) und `source/qa/i18nstatic.js` (alle Literale); Funde von EN 50 / IT 42 auf 0. Eigennamen-Ausnahmen: `source/qa/i18n_allow.json`.
+- **Version:** v0.9.1.
+
 ## v0.9.0 – 03.11.2026 (Branch wip/v0.9.0: f9382c4, 288c903, 1d2f54e, d452907, a8939ba, 135875f, c5aa5ec + Doku)
 **Feedback:** Thorsten, Beta-Review 03.11.: Sprachwahl Deutsch/Englisch/Italienisch einmal am Anfang; Leute kennenlernen soll schwerer sein; manche nur über Vitamin B; Ladenbesitzer sollen Figuren werden. Nachgereicht: Laden-Icons müssen bei jedem Zoom genau auf den gezeichneten Läden liegen (prüfen und dokumentieren); „Karte“-Link entfernen, ohne etwas kaputtzumachen. Erfasst in Notion als FB-37…FB-42, danach gebaut.
 

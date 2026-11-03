@@ -1,1106 +1,1150 @@
 {
-"Sep": [
-"Sep",
-"Set"
-],
-"Jun": [
-"Jun",
-"Giu"
-],
-"Ernte": [
-"Harvest",
-"Raccolta"
-],
-"Sicilbanca": [
-"Sicilbanca",
-"Sicilbanca"
-],
-"BODENNETZ": [
-"GROUND NET",
-"RETE A TERRA"
-],
-"BRAVISSIMO!": [
-"BRAVISSIMO!",
-"BRAVISSIMO!"
-],
-"BENE!": [
-"GOOD!",
-"BENE!"
-],
-"NA JA…": [
-"MEH…",
-"MAH…"
-],
-"Oliven · Ertrag ×": [
-"Olives · yield ×",
-"Olive · resa ×"
-],
-"Ernte einfahren ▶": [
-"Bring in the harvest ▶",
-"Porta a casa il raccolto ▶"
-],
-"Ohne Minispiel ernten (×0,85)": [
-"Harvest without mini-game (×0.85)",
-"Raccogli senza minigioco (×0,85)"
-],
-"Drei Pressgänge: tippe": [
-"Three press runs: tap",
-"Tre passaggi di spremitura: tocca"
-],
-"PERFETTO": [
-"PERFETTO",
-"PERFETTO"
-],
-"GUT": [
-"GOOD",
-"BENE"
-],
-"DANEBEN": [
-"MISSED",
-"MANCATO"
-],
-"❄️ KALTGEPRESST (+8 Qualität)": [
-"❄️ COLD-PRESSED (+8 quality)",
-"❄️ SPREMUTO A FREDDO (+8 qualità)"
-],
-"Öl abfüllen ▶": [
-"Bottle the oil ▶",
-"Imbottiglia l'olio ▶"
-],
-"STOPP!": [
-"STOP!",
-"STOP!"
-],
-"Weiter": [
-"Next",
-"Avanti"
-],
-"Weiter ▶": [
-"Next ▶",
-"Avanti ▶"
-],
-"Presse starten": [
-"Start pressing",
-"Avvia la pressa"
-],
-"Rosalia machen lassen (Qualität 55)": [
-"Let Rosalia do it (quality 55)",
-"Lascia fare a Rosalia (qualità 55)"
-],
-"„Va bene… du bist ein harter Hund.“": [
-"“Va bene… you drive a hard bargain.”",
-"“Va bene… sei un osso duro.”"
-],
-"Handschlag ▶": [
-"Shake hands ▶",
-"Stretta di mano ▶"
-],
-"JETZT FORDERN!": [
-"ASK NOW!",
-"CHIEDI ORA!"
-],
-"Feilschen starten": [
-"Start haggling",
-"Inizia a contrattare"
-],
-"Plaudern": [
-"Chat",
-"Chiacchierare"
-],
-"Runde": [
-"Round",
-"Turno"
-],
-"Ziel": [
-"Goal",
-"Obiettivo"
-],
-"Schalter · Anträge": [
-"Counter · Applications",
-"Sportello · Domande"
-],
-"Büro des Sindaco": [
-"The Sindaco's office",
-"Ufficio del Sindaco"
-],
-"Aushang": [
-"Notice board",
-"Bacheca"
-],
-"Ölpreis": [
-"Oil price",
-"Prezzo dell'olio"
-],
-"Beichtstuhl": [
-"Confessional",
-"Confessionale"
-],
-"Kredit": [
-"Loan",
-"Prestito"
-],
-"Kredit:": [
-"Loan:",
-"Prestito:"
-],
-"· Kredit": [
-"· Loan",
-"· Prestito"
-],
-"Leute & Gerüchte": [
-"People & gossip",
-"Gente e pettegolezzi"
-],
-"Belvedere": [
-"Belvedere",
-"Belvedere"
-],
-"Turis Hang": [
-"Turi's slope",
-"Il pendio di Turi"
-],
-"Ölmühle": [
-"Oil mill",
-"Frantoio"
-],
-"Die Ölmühle": [
-"The oil mill",
-"Il frantoio"
-],
-"Dein Hain": [
-"Your grove",
-"Il tuo uliveto"
-],
-"Olivenbäume": [
-"Olive trees",
-"Ulivi"
-],
-"Großkunde": [
-"Key account",
-"Grande cliente"
-],
-"SAMBUCA": [
-"SAMBUCA",
-"SAMBUCA"
-],
-"Tal": [
-"Valley",
-"Valle"
-],
-"DAS TAL": [
-"THE VALLEY",
-"LA VALLE"
-],
-"Stadt": [
-"Town",
-"Paese"
-],
-"Umland": [
-"Countryside",
-"Campagna"
-],
-"Büro": [
-"Office",
-"Ufficio"
-],
-"Stadtplan Sambuca": [
-"Sambuca town map",
-"Mappa di Sambuca"
-],
-"Umland Sambuca": [
-"Sambuca countryside",
-"Campagna di Sambuca"
-],
-"Hineinzoomen": [
-"Zoom in",
-"Ingrandisci"
-],
-"Herauszoomen": [
-"Zoom out",
-"Riduci"
-],
-"Auftrag": [
-"Order",
-"Ordine"
-],
-"offen 💻": [
-"open 💻",
-"aperto 💻"
-],
-"Du": [
-"You",
-"Tu"
-],
-"💶 Kasse": [
-"💶 Cash",
-"💶 Cassa"
-],
-"🌳 Haine": [
-"🌳 Groves",
-"🌳 Uliveti"
-],
-"· 🫙 Lager & Deals": [
-"· 🫙 Stock & deals",
-"· 🫙 Magazzino e affari"
-],
-"Wirklich? Nochmal tippen zum Beenden": [
-"Really? Tap again to quit",
-"Davvero? Tocca di nuovo per terminare"
-],
-"🏁 Karriere beenden": [
-"🏁 End career",
-"🏁 Termina la carriera"
-],
-"Gerade nichts zu tun in den Hainen (": [
-"Nothing to do in the groves right now (",
-"Al momento niente da fare negli uliveti ("
-],
-"Noch": [
-"Left:",
-"Ancora"
-],
-"🗄️ Lager, Haine & Markt": [
-"🗄️ Stock, groves & market",
-"🗄️ Magazzino, uliveti e mercato"
-],
-"💶 Marktpreis": [
-"💶 Market price",
-"💶 Prezzo di mercato"
-],
-"🪓 kein Spaten (Pflege +25 %)": [
-"🪓 no spade (care +25 %)",
-"🪓 niente vanga (cura +25 %)"
-],
-"🕸️ keine Netze": [
-"🕸️ no nets",
-"🕸️ niente reti"
-],
-"🧱 Sandsäcke": [
-"🧱 Sandbags",
-"🧱 Sacchi di sabbia"
-],
-"🧱 keine Sandsäcke": [
-"🧱 no sandbags",
-"🧱 niente sacchi di sabbia"
-],
-"🐕 kein Wachhund": [
-"🐕 no guard dog",
-"🐕 niente cane da guardia"
-],
-"🐕 Wachhund": [
-"🐕 Guard dog",
-"🐕 Cane da guardia"
-],
-"🚜 keine Brandschneise": [
-"🚜 no firebreak",
-"🚜 niente tagliafuoco"
-],
-"Ölpreis der letzten Monate": [
-"Oil price, recent months",
-"Prezzo dell'olio negli ultimi mesi"
-],
-"Arbeit diesen Monat": [
-"Work this month",
-"Lavoro questo mese"
-],
-"Stufe": [
-"Level",
-"Livello"
-],
-"🏠 Büro: Stufe": [
-"🏠 Office: level",
-"🏠 Ufficio: livello"
-],
-"Nicht interessiert an dir. Nötig:": [
-"Not interested in you. Needed:",
-"Non è interessato a te. Serve:"
-],
-"Heute abgeblitzt – nächsten Monat": [
-"Brushed off today – try next month",
-"Respinto oggi – riprova il mese prossimo"
-],
-"🤝 Kennenlernen (Plaudern) · 1 ⏳": [
-"🤝 Get to know (chat) · 1 ⏳",
-"🤝 Fai conoscenza (chiacchiera) · 1 ⏳"
-],
-"💬 Plaudern · 1 ⏳": [
-"💬 Chat · 1 ⏳",
-"💬 Chiacchiera · 1 ⏳"
-],
-"💬 Plaudern": [
-"💬 Chat",
-"💬 Chiacchiera"
-],
-"✔ Diesen Monat schon geplaudert": [
-"✔ Already chatted this month",
-"✔ Già chiacchierato questo mese"
-],
-"Was": [
-"What",
-"Cosa"
-],
-"für dich tun kann": [
-"can do for you",
-"può fare per te"
-],
-"1×/Jahr": [
-"1×/year",
-"1×/anno"
-],
-"1×/Monat": [
-"1×/month",
-"1×/mese"
-],
-"Machen · 1 ⏳": [
-"Do it · 1 ⏳",
-"Fallo · 1 ⏳"
-],
-"gerade nicht möglich": [
-"not possible right now",
-"al momento non possibile"
-],
-"🤝 Feilschen": [
-"🤝 Haggling",
-"🤝 Contrattazione"
-],
-"🚨 Rettung!": [
-"🚨 Rescue!",
-"🚨 Salvataggio!"
-],
-"Kauf": [
-"Buy",
-"Acquisto"
-],
-"oder Pacht": [
-"or lease",
-"o affitto"
-],
-"🔒 Besitz von": [
-"🔒 Owned by",
-"🔒 Proprietà di"
-],
-"will ihn bis Ende": [
-"wants it until the end of",
-"lo vuole fino alla fine di"
-],
-"+5.000 € Kredit": [
-"+5,000 € loan",
-"+5.000 € prestito"
-],
-"5.000 € tilgen": [
-"Repay 5,000 €",
-"Rimborsa 5.000 €"
-],
-"Kaufen": [
-"Buy",
-"Compra"
-],
-"✔ besitzt du": [
-"✔ you own it",
-"✔ ce l'hai"
-],
-"Laden": [
-"Shop",
-"Negozio"
-],
-"(Stammkunden-Rabatt −20 %)": [
-"(regular-customer discount −20 %)",
-"(sconto cliente abituale −20 %)"
-],
-"kein ⏳": [
-"no ⏳",
-"nessun ⏳"
-],
-"🛎️ Schalter · Anträge": [
-"🛎️ Counter · Applications",
-"🛎️ Sportello · Domande"
-],
-"Beantragen": [
-"Apply",
-"Richiedi"
-],
-"🚪 Büro des Sindaco": [
-"🚪 The Sindaco's office",
-"🚪 Ufficio del Sindaco"
-],
-"Zum Sindaco ›": [
-"To the Sindaco ›",
-"Dal Sindaco ›"
-],
-"Aber da kommt er gerade heraus …": [
-"But here he comes right now …",
-"Ma eccolo che esce proprio ora …"
-],
-"❓ Ansprechen": [
-"❓ Talk to",
-"❓ Rivolgiti"
-],
-"l gepresst · 💶": [
-"l pressed · 💶",
-"l spremuti · 💶"
-],
-"Umsatz · 🎯": [
-"revenue · 🎯",
-"fatturato · 🎯"
-],
-"PLEITE!": [
-"BANKRUPT!",
-"FALLITO!"
-],
-"Monat beenden": [
-"End month",
-"Termina il mese"
-],
-"Schließen": [
-"Close",
-"Chiudi"
-],
-"Zum Fest ▶": [
-"To the festival ▶",
-"Alla festa ▶"
-],
-"Eintragen": [
-"Submit",
-"Inserisci"
-],
-"✔ Eingetragen (": [
-"✔ Submitted (",
-"✔ Inserito ("
-],
-"Noch keine Einträge – sei der Erste!": [
-"No entries yet – be the first!",
-"Ancora nessuna voce – sii il primo!"
-],
-"💥 Astbruch! Zu viel Kraft.": [
-"💥 Branch broke! Too much force.",
-"💥 Ramo spezzato! Troppa forza."
-],
-"Rüttler-Ernte": [
-"Shaker harvest",
-"Raccolta con scuotitore"
-],
-"Stamm": [
-"Trunk",
-"Tronco"
-],
-"➡️ rechts": [
-"➡️ right",
-"➡️ destra"
-],
-"🕸️ Netz liegt richtig": [
-"🕸️ Net is in place",
-"🕸️ Rete al posto giusto"
-],
-"🕸️ Netz liegt daneben": [
-"🕸️ Net is off",
-"🕸️ Rete fuori posto"
-],
-"RÜTTELN… loslassen im Grün!": [
-"SHAKING… release in the green!",
-"SCUOTI… rilascia nel verde!"
-],
-"🔧 Gedrückt halten": [
-"🔧 Hold down",
-"🔧 Tieni premuto"
-],
-"👍 Gut angesetzt": [
-"👍 Well placed",
-"👍 Ben posizionato"
-],
-"Etwas tief – Wurzelanlauf": [
-"A bit low – root flare",
-"Un po' basso – colletto"
-],
-"Tippe so viele Oliven wie möglich.": [
-"Tap as many olives as you can.",
-"Tocca più olive che puoi."
-],
-"Goldene": [
-"Golden",
-"Dorata"
-],
-"Dein Name für den Highscore": [
-"Your name for the high score",
-"Il tuo nome per la classifica"
-],
-"z. B. Thorsten": [
-"e.g. Thorsten",
-"es. Thorsten"
-],
-"▶ Neues Spiel": [
-"▶ New game",
-"▶ Nuova partita"
-],
-"Calcio": [
-"Calcio",
-"Calcio"
-],
-"Opferstock (150 €)": [
-"Offering box (150 €)",
-"Cassetta delle offerte (150 €)"
-],
-"💶 Opferstock": [
-"💶 Offering box",
-"💶 Cassetta delle offerte"
-],
-"Handschlag": [
-"Handshake",
-"Stretta di mano"
-],
-"Don Calogero · Haine": [
-"Don Calogero · Groves",
-"Don Calogero · Uliveti"
-],
-"Rathaus": [
-"Town hall",
-"Municipio"
-],
-"📌 Aushang am Rathaus": [
-"📌 Town hall notice board",
-"📌 Bacheca del municipio"
-],
-"Sprache · Language · Lingua": [
-"Sprache · Language · Lingua",
-"Sprache · Language · Lingua"
-],
-"DAS ÖL DER MADONNA · v0.9.0": [
-"THE MADONNA'S OIL · v0.9.0",
-"L'OLIO DELLA MADONNA · v0.9.0"
-],
-"Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.": [
-"You inherit an overgrown olive grove near Sambuca di Sicilia. Get to know the village, survive storms, flies and festivals – year after year.",
-"Erediti un uliveto inselvatichito vicino a Sambuca di Sicilia. Conosci il paese, sopravvivi a tempeste, mosche e feste – anno dopo anno."
-],
-"🏆 Werde der größte Olivenöl-Mogul Sambucas!": [
-"🏆 Become Sambuca's greatest olive-oil mogul!",
-"🏆 Diventa il più grande magnate dell'olio di Sambuca!"
-],
-"Du hast diesen Monat schon jemanden kennengelernt – nächsten Monat.": [
-"You already met someone new this month – next month.",
-"Hai già conosciuto qualcuno questo mese – il mese prossimo."
-],
-"🤝 Vitamin B: Du wurdest vorgestellt – das Kennenlernen fällt leichter.": [
-"🤝 Connections: you were introduced – getting acquainted is easier.",
-"🤝 Raccomandazione: sei stato presentato – conoscersi è più facile."
-],
-"Vitamin B: Vorstellung durch {0} (♥ {1})": [
-"Connections: introduction by {0} (♥ {1})",
-"Raccomandazione: presentazione da {0} (♥ {1})"
-],
-"Ansehen ★ {0}": [
-"Reputation ★ {0}",
-"Reputazione ★ {0}"
-],
-"Jahr": [
-"Year",
-"Anno"
-],
-"Qualität": [
-"Quality",
-"Qualità"
-],
-"Öl": [
-"Oil",
-"Olio"
-],
-"Oliven": [
-"Olives",
-"Olive"
-],
-"🕰️ Eine neue Bekanntschaft pro Monat reicht – die Leute hier brauchen Zeit.": [
-"🕰️ One new acquaintance per month is enough – people here need time.",
-"🕰️ Una nuova conoscenza al mese basta – qui la gente ha bisogno di tempo."
-],
-"Vitamin B: Stell mich {0} vor": [
-"Connections: introduce me to {0}",
-"Raccomandazione: presentami a {0}"
-],
-"ab {0} Jahr {1}": [
-"from {0}, year {1}",
-"da {0}, anno {1}"
-],
-"JANUAR": [
-"JANUARY",
-"GENNAIO"
-],
-"Januar": [
-"January",
-"Gennaio"
-],
-"FEBRUAR": [
-"FEBRUARY",
-"FEBBRAIO"
-],
-"Februar": [
-"February",
-"Febbraio"
-],
-"MÄRZ": [
-"MARCH",
-"MARZO"
-],
-"März": [
-"March",
-"Marzo"
-],
-"APRIL": [
-"APRIL",
-"APRILE"
-],
-"April": [
-"April",
-"Aprile"
-],
-"MAI": [
-"MAY",
-"MAGGIO"
-],
-"Mai": [
-"May",
-"Maggio"
-],
-"JUNI": [
-"JUNE",
-"GIUGNO"
-],
-"Juni": [
-"June",
-"Giugno"
-],
-"JULI": [
-"JULY",
-"LUGLIO"
-],
-"Juli": [
-"July",
-"Luglio"
-],
-"AUGUST": [
-"AUGUST",
-"AGOSTO"
-],
-"August": [
-"August",
-"Agosto"
-],
-"SEPTEMBER": [
-"SEPTEMBER",
-"SETTEMBRE"
-],
-"September": [
-"September",
-"Settembre"
-],
-"OKTOBER": [
-"OCTOBER",
-"OTTOBRE"
-],
-"Oktober": [
-"October",
-"Ottobre"
-],
-"NOVEMBER": [
-"NOVEMBER",
-"NOVEMBRE"
-],
-"November": [
-"November",
-"Novembre"
-],
-"DEZEMBER": [
-"DECEMBER",
-"DICEMBRE"
-],
-"Dezember": [
-"December",
-"Dicembre"
-],
-"Lager & Haine": [
-"Stock & groves",
-"Magazzino e uliveti"
-],
-"{0} · {1} Person da": [
-"{0} · {1} person here",
-"{0} · {1} persona qui"
-],
-"{0} · {1} Personen da": [
-"{0} · {1} people here",
-"{0} · {1} persone qui"
-],
-"{0} · 🔒 {1}": [
-"{0} · 🔒 {1}",
-"{0} · 🔒 {1}"
-],
-"Zio Turis Oberhang": [
-"Zio Turi's upper slope",
-"Il pendio alto di Zio Turi"
-],
-"Masseria abbandonata": [
-"Masseria abbandonata",
-"Masseria abbandonata"
-],
-"DEIN BÜRO": [
-"YOUR OFFICE",
-"IL TUO UFFICIO"
-],
-"Raus aufs Land": [
-"Out to the countryside",
-"Fuori in campagna"
-],
-"Schneide mindestens einen Hain": [
-"Prune at least one grove",
-"Pota almeno un uliveto"
-],
-"HAUPTGEWINN! +250 €.": [
-"JACKPOT! +250 €.",
-"PRIMO PREMIO! +250 €."
-],
-"NEUER KONTAKT!": [
-"NEW CONTACT!",
-"NUOVO CONTATTO!"
-],
-"ABGEBLITZT": [
-"BRUSHED OFF",
-"RESPINTO"
-],
-"NETT!": [
-"NICE!",
-"CARINO!"
-],
-"HOLPRIG…": [
-"BUMPY…",
-"IMPACCIATO…"
-],
-"STURM!": [
-"STORM!",
-"TEMPESTA!"
-],
-"FLUT!": [
-"FLOOD!",
-"ALLUVIONE!"
-],
-"FEUER!": [
-"FIRE!",
-"FUOCO!"
-],
-"FLIEGENJAGD!": [
-"FLY HUNT!",
-"CACCIA ALLA MOSCA!"
-],
-"🧱 SANDSÄCKE": [
-"🧱 SANDBAGS",
-"🧱 SACCHI DI SABBIA"
-],
-"GERETTET!": [
-"SAVED!",
-"SALVATO!"
-],
-"HALBWEGS…": [
-"SO-SO…",
-"COSÌ COSÌ…"
-],
-"MUNICIPIO": [
-"MUNICIPIO",
-"MUNICIPIO"
-],
-"FEUDO ARANCIO": [
-"FEUDO ARANCIO",
-"FEUDO ARANCIO"
-],
-"DEIN HAIN": [
-"YOUR GROVE",
-"IL TUO ULIVETO"
-],
-"LIDO BOOMERANG": [
-"LIDO BOOMERANG",
-"LIDO BOOMERANG"
-],
-"Kaufen (6 €)": [
-"Buy (6 €)",
-"Compra (6 €)"
-],
-"Du erbst einen verwilderten Hain bei Pandolfina, 6.000 € und 150 l von Nonnos Öl. Im Dorf kennst du nur deine Nonna.": [
-"You inherit an overgrown grove near Pandolfina, 6,000 € and 150 l of your Nonno's oil. In the village you only know your Nonna.",
-"Erediti un uliveto inselvatichito vicino a Pandolfina, 6.000 € e 150 l dell'olio del Nonno. In paese conosci solo la tua Nonna."
-],
-"Casa in der Via Delfino · bescheidener Anfang": [
-"Casa in Via Delfino · humble beginnings",
-"Casa in Via Delfino · inizi modesti"
-],
-"1×/Jahr: 1.500–3.500 € PSR-Mittel": [
-"1×/year: 1,500–3,500 € PSR funds",
-"1×/anno: 1.500–3.500 € fondi PSR"
-],
-"1×/Jahr: 800–1.500 € Agrarförderung": [
-"1×/year: 800–1,500 € farm subsidy",
-"1×/anno: 800–1.500 € contributi agricoli"
-],
-"Küchenchef: 20 l zu 160 %": [
-"Head chef: 20 l at 160 %",
-"Chef: 20 l al 160 %"
-],
-"Restaurant: 15 l zu 150 %": [
-"Restaurant: 15 l at 150 %",
-"Ristorante: 15 l al 150 %"
-],
-"„Ich spür’s in den Knien: {0}. Bereite dich vor!“ {1}": [
-"“I can feel it in my knees: {0}. Get ready!” {1}",
-"“Lo sento nelle ginocchia: {0}. Preparati!” {1}"
-],
-"🎁 5 l Öl für {0}.{1}": [
-"🎁 5 l of oil for {0}.{1}",
-"🎁 5 l di olio per {0}.{1}"
-],
-"{0} Oliven · Ertrag ×{1}": [
-"{0} olives · yield ×{1}",
-"{0} olive · resa ×{1}"
-],
-"Qualität {0} · Ausbeute ×{1}": [
-"Quality {0} · output ×{1}",
-"Qualità {0} · resa ×{1}"
-],
-"Gesprächs-Chemie: {0} %": [
-"Conversation chemistry: {0} %",
-"Sintonia: {0} %"
-],
-"{0} 8 Sekunden. {1} Treffer = kein Schaden.{2}{3}{4}": [
-"{0} 8 seconds. {1} hits = no damage.{2}{3}{4}",
-"{0} 8 secondi. {1} colpi = nessun danno.{2}{3}{4}"
-],
-"{0} Treffer · Schutz {1} %": [
-"{0} hits · protection {1} %",
-"{0} colpi · protezione {1} %"
-],
-"Jahr {0} · {1}": [
-"Year {0} · {1}",
-"Anno {0} · {1}"
-],
-"🌳 Haine {0} · 🫙 Lager & Deals {1}": [
-"🌳 Groves {0} · 🫙 Stock & deals {1}",
-"🌳 Uliveti {0} · 🫙 Magazzino e accordi {1}"
-],
-"📊 Vermögen je Jahr: {0}": [
-"📊 Wealth per year: {0}",
-"📊 Patrimonio per anno: {0}"
-],
-"Gerade nichts zu tun in den Hainen ({0}).": [
-"Nothing to do in the groves right now ({0}).",
-"Al momento niente da fare negli uliveti ({0})."
-],
-"💻 Aufträge · {0}": [
-"💻 Jobs · {0}",
-"💻 Incarichi · {0}"
-],
-"🏠 Büro: Stufe {0}/4": [
-"🏠 Office: level {0}/4",
-"🏠 Ufficio: livello {0}/4"
-],
-"Nicht interessiert an dir. Nötig: {0}": [
-"Not interested in you. Needed: {0}",
-"Non è interessato a te. Serve: {0}"
-],
-"Was {0} für dich tun kann": [
-"What {0} can do for you",
-"Cosa può fare {0} per te"
-],
-"🔒 ab ♥ {0}": [
-"🔒 from ♥ {0}",
-"🔒 da ♥ {0}"
-],
-"{0} Bäume · Zustand {1} %{2}": [
-"{0} trees · condition {1} %{2}",
-"{0} alberi · stato {1} %{2}"
-],
-"🔒 Besitz von {0} – verkauft erst ab Jahr {1} und ab ♥ 40": [
-"🔒 Owned by {0} – sells only from year {1} and ♥ 40",
-"🔒 Proprietà di {0} – vende solo dall’anno {1} e da ♥ 40"
-],
-"⚔️ {0} will ihn bis Ende {1}!": [
-"⚔️ {0} wants it by the end of {1}!",
-"⚔️ {0} lo vuole entro fine {1}!"
-],
-"Kredit: {0} · Zins 1 %/Monat": [
-"Loan: {0} · interest 1 %/month",
-"Prestito: {0} · interesse 1 %/mese"
-],
-"{0} Bäume · Zustand {1} % · {2}": [
-"{0} trees · condition {1} % · {2}",
-"{0} alberi · stato {1} % · {2}"
-],
-"⚔️ {0} bis {1}": [
-"⚔️ {0} until {1}",
-"⚔️ {0} fino a {1}"
-],
-"Die Sekretärin schaut nicht mal hoch: „Der Sindaco empfängt nur Leute, die er kennt.“ {0}{1}": [
-"The secretary doesn’t even look up: “The Sindaco only sees people he knows.” {0}{1}",
-"La segretaria non alza nemmeno lo sguardo: “Il Sindaco riceve solo chi conosce.” {0}{1}"
-],
-"{0}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.": [
-"{0}. On the town map: 🎆 Piazza – lots of people there today.",
-"{0}. Sulla mappa del paese: 🎆 Piazza – oggi c’è tanta gente."
-],
-"{0} Bäume · {1}Ertrag ×{2}": [
-"{0} trees · {1}yield ×{2}",
-"{0} alberi · {1}resa ×{2}"
-],
-"🔒 Besitz von {0}, ab Jahr {1} & ♥ 40": [
-"🔒 Owned by {0}, from year {1} & ♥ 40",
-"🔒 Proprietà di {0}, dall’anno {1} e ♥ 40"
-],
-"Umziehen: {0} · {1}": [
-"Move: {0} · {1}",
-"Trasloco: {0} · {1}"
-],
-"Kauf {0} oder Pacht {1} €/Monat": [
-"Buy {0} or lease {1} €/month",
-"Acquisto {0} o affitto {1} €/mese"
-],
-"Noch {0} Leute im Dorf, die du nicht kennst. Triff sie in der Bar, Kirche, im Rathaus, auf Festen und an kleinen Orten der Karte.": [
-"{0} more people in the village you don’t know yet. Meet them at the bar, church, town hall, festivals and the small places on the map.",
-"Ancora {0} persone in paese che non conosci. Incontrale al bar, in chiesa, in municipio, alle feste e nei piccoli luoghi della mappa."
-],
-"Jan": [
-"Jan",
-"Gen"
-],
-"Feb": [
-"Feb",
-"Feb"
-],
-"Mär": [
-"Mar",
-"Mar"
-],
-"Apr": [
-"Apr",
-"Apr"
-],
-"Jul": [
-"Jul",
-"Lug"
-],
-"Aug": [
-"Aug",
-"Ago"
-],
-"Okt": [
-"Oct",
-"Ott"
-],
-"Nov": [
-"Nov",
-"Nov"
-],
-"Dez": [
-"Dec",
-"Dic"
-],
-"es läuft": [
-"business is going well",
-"gli affari vanno"
-],
-"man kennt deinen Namen": [
-"people know your name",
-"conoscono il tuo nome"
-],
-"der Padrino des Öls": [
-"the Padrino of oil",
-"il Padrino dell’olio"
-],
-"bescheidener Anfang": [
-"humble beginnings",
-"inizio modesto"
-],
-"Casa in der Via Delfino": [
-"Casa in Via Delfino",
-"Casa in Via Delfino"
-],
-"bis 40 l zu 135 %": [
-"up to 40 l at 135 %",
-"fino a 40 l al 135 %"
-],
-"50 l zu 200 %": [
-"50 l at 200 %",
-"50 l al 200 %"
-],
-"einmalig": [
-"one-off",
-"una tantum"
-],
-"Billig-Rüttler": [
-"Cheap shaker",
-"Scuotitore economico"
-],
-"Kaufen (40 €)": [
-"Buy (40 €)",
-"Compra (40 €)"
-],
-"Starkregen: Der Belice tritt über die Ufer": [
-"Heavy rain: the Belice bursts its banks",
-"Nubifragio: il Belice esonda"
-],
-"DEAL: Wein-Kooperation! Crew & Rüttler teilen, Löhne −30 %.": [
-"DEAL: wine cooperation! Share crew & shakers, wages −30 %.",
-"DEAL: cooperativa del vino! Squadra e scuotitori in comune, salari −30 %."
-],
-"Setz die Rüttler-Zange am Stamm an – am Rindenring, nicht an den Ästen.": [
-"Put the shaker clamp on the trunk – on the bark ring, not on the branches.",
-"Applica la pinza dello scuotitore al tronco – sull’anello di corteccia, non sui rami."
-],
-"Klaus erzählt zwei Stunden von Bad Tölz.": [
-"Klaus talks about Bad Tölz for two hours.",
-"Klaus racconta di Bad Tölz per due ore."
-],
-"Januar 2027": [
-"January 2027",
-"Gennaio 2027"
-],
-"Februar 2027": [
-"February 2027",
-"Febbraio 2027"
-],
-"März 2027": [
-"March 2027",
-"Marzo 2027"
-],
-"April 2027": [
-"April 2027",
-"Aprile 2027"
-],
-"Mai 2027": [
-"May 2027",
-"Maggio 2027"
-],
-"Juni 2027": [
-"June 2027",
-"Giugno 2027"
-],
-"Juli 2027": [
-"July 2027",
-"Luglio 2027"
-],
-"August 2027": [
-"August 2027",
-"Agosto 2027"
-],
-"September 2027": [
-"September 2027",
-"Settembre 2027"
-],
-"Oktober 2027": [
-"October 2027",
-"Ottobre 2027"
-],
-"November 2027": [
-"November 2027",
-"Novembre 2027"
-],
-"Dezember 2027": [
-"December 2027",
-"Dicembre 2027"
-],
-"Einkäufer vom Feudo Arancio": [
-"Buyer from Feudo Arancio",
-"Compratore del Feudo Arancio"
-]
+ "Sep": [
+  "Sep",
+  "Set"
+ ],
+ "Jun": [
+  "Jun",
+  "Giu"
+ ],
+ "Ernte": [
+  "Harvest",
+  "Raccolta"
+ ],
+ "Sicilbanca": [
+  "Sicilbanca",
+  "Sicilbanca"
+ ],
+ "BODENNETZ": [
+  "GROUND NET",
+  "RETE A TERRA"
+ ],
+ "BRAVISSIMO!": [
+  "BRAVISSIMO!",
+  "BRAVISSIMO!"
+ ],
+ "BENE!": [
+  "GOOD!",
+  "BENE!"
+ ],
+ "NA JA…": [
+  "MEH…",
+  "MAH…"
+ ],
+ "Oliven · Ertrag ×": [
+  "Olives · yield ×",
+  "Olive · resa ×"
+ ],
+ "Ernte einfahren ▶": [
+  "Bring in the harvest ▶",
+  "Porta a casa il raccolto ▶"
+ ],
+ "Ohne Minispiel ernten (×0,85)": [
+  "Harvest without mini-game (×0.85)",
+  "Raccogli senza minigioco (×0,85)"
+ ],
+ "Drei Pressgänge: tippe": [
+  "Three press runs: tap",
+  "Tre passaggi di spremitura: tocca"
+ ],
+ "PERFETTO": [
+  "PERFETTO",
+  "PERFETTO"
+ ],
+ "GUT": [
+  "GOOD",
+  "BENE"
+ ],
+ "DANEBEN": [
+  "MISSED",
+  "MANCATO"
+ ],
+ "❄️ KALTGEPRESST (+8 Qualität)": [
+  "❄️ COLD-PRESSED (+8 quality)",
+  "❄️ SPREMUTO A FREDDO (+8 qualità)"
+ ],
+ "Öl abfüllen ▶": [
+  "Bottle the oil ▶",
+  "Imbottiglia l'olio ▶"
+ ],
+ "STOPP!": [
+  "STOP!",
+  "STOP!"
+ ],
+ "Weiter": [
+  "Next",
+  "Avanti"
+ ],
+ "Weiter ▶": [
+  "Next ▶",
+  "Avanti ▶"
+ ],
+ "Presse starten": [
+  "Start pressing",
+  "Avvia la pressa"
+ ],
+ "Rosalia machen lassen (Qualität 55)": [
+  "Let Rosalia do it (quality 55)",
+  "Lascia fare a Rosalia (qualità 55)"
+ ],
+ "„Va bene… du bist ein harter Hund.“": [
+  "“Va bene… you drive a hard bargain.”",
+  "“Va bene… sei un osso duro.”"
+ ],
+ "Handschlag ▶": [
+  "Shake hands ▶",
+  "Stretta di mano ▶"
+ ],
+ "JETZT FORDERN!": [
+  "ASK NOW!",
+  "CHIEDI ORA!"
+ ],
+ "Feilschen starten": [
+  "Start haggling",
+  "Inizia a contrattare"
+ ],
+ "Plaudern": [
+  "Chat",
+  "Chiacchierare"
+ ],
+ "Runde": [
+  "Round",
+  "Turno"
+ ],
+ "Ziel": [
+  "Goal",
+  "Obiettivo"
+ ],
+ "Schalter · Anträge": [
+  "Counter · Applications",
+  "Sportello · Domande"
+ ],
+ "Büro des Sindaco": [
+  "The Sindaco's office",
+  "Ufficio del Sindaco"
+ ],
+ "Aushang": [
+  "Notice board",
+  "Bacheca"
+ ],
+ "Ölpreis": [
+  "Oil price",
+  "Prezzo dell'olio"
+ ],
+ "Beichtstuhl": [
+  "Confessional",
+  "Confessionale"
+ ],
+ "Kredit": [
+  "Loan",
+  "Prestito"
+ ],
+ "Kredit:": [
+  "Loan:",
+  "Prestito:"
+ ],
+ "· Kredit": [
+  "· Loan",
+  "· Prestito"
+ ],
+ "Leute & Gerüchte": [
+  "People & gossip",
+  "Gente e pettegolezzi"
+ ],
+ "Belvedere": [
+  "Belvedere",
+  "Belvedere"
+ ],
+ "Turis Hang": [
+  "Turi's slope",
+  "Il pendio di Turi"
+ ],
+ "Ölmühle": [
+  "Oil mill",
+  "Frantoio"
+ ],
+ "Die Ölmühle": [
+  "The oil mill",
+  "Il frantoio"
+ ],
+ "Dein Hain": [
+  "Your grove",
+  "Il tuo uliveto"
+ ],
+ "Olivenbäume": [
+  "Olive trees",
+  "Ulivi"
+ ],
+ "Großkunde": [
+  "Key account",
+  "Grande cliente"
+ ],
+ "SAMBUCA": [
+  "SAMBUCA",
+  "SAMBUCA"
+ ],
+ "Tal": [
+  "Valley",
+  "Valle"
+ ],
+ "DAS TAL": [
+  "THE VALLEY",
+  "LA VALLE"
+ ],
+ "Stadt": [
+  "Town",
+  "Paese"
+ ],
+ "Umland": [
+  "Countryside",
+  "Campagna"
+ ],
+ "Büro": [
+  "Office",
+  "Ufficio"
+ ],
+ "Stadtplan Sambuca": [
+  "Sambuca town map",
+  "Mappa di Sambuca"
+ ],
+ "Umland Sambuca": [
+  "Sambuca countryside",
+  "Campagna di Sambuca"
+ ],
+ "Hineinzoomen": [
+  "Zoom in",
+  "Ingrandisci"
+ ],
+ "Herauszoomen": [
+  "Zoom out",
+  "Riduci"
+ ],
+ "Auftrag": [
+  "Order",
+  "Ordine"
+ ],
+ "offen 💻": [
+  "open 💻",
+  "aperto 💻"
+ ],
+ "Du": [
+  "You",
+  "Tu"
+ ],
+ "💶 Kasse": [
+  "💶 Cash",
+  "💶 Cassa"
+ ],
+ "🌳 Haine": [
+  "🌳 Groves",
+  "🌳 Uliveti"
+ ],
+ "· 🫙 Lager & Deals": [
+  "· 🫙 Stock & deals",
+  "· 🫙 Magazzino e affari"
+ ],
+ "Wirklich? Nochmal tippen zum Beenden": [
+  "Really? Tap again to quit",
+  "Davvero? Tocca di nuovo per terminare"
+ ],
+ "🏁 Karriere beenden": [
+  "🏁 End career",
+  "🏁 Termina la carriera"
+ ],
+ "Gerade nichts zu tun in den Hainen (": [
+  "Nothing to do in the groves right now (",
+  "Al momento niente da fare negli uliveti ("
+ ],
+ "Noch": [
+  "Left:",
+  "Ancora"
+ ],
+ "🗄️ Lager, Haine & Markt": [
+  "🗄️ Stock, groves & market",
+  "🗄️ Magazzino, uliveti e mercato"
+ ],
+ "💶 Marktpreis": [
+  "💶 Market price",
+  "💶 Prezzo di mercato"
+ ],
+ "🪓 kein Spaten (Pflege +25 %)": [
+  "🪓 no spade (care +25 %)",
+  "🪓 niente vanga (cura +25 %)"
+ ],
+ "🕸️ keine Netze": [
+  "🕸️ no nets",
+  "🕸️ niente reti"
+ ],
+ "🧱 Sandsäcke": [
+  "🧱 Sandbags",
+  "🧱 Sacchi di sabbia"
+ ],
+ "🧱 keine Sandsäcke": [
+  "🧱 no sandbags",
+  "🧱 niente sacchi di sabbia"
+ ],
+ "🐕 kein Wachhund": [
+  "🐕 no guard dog",
+  "🐕 niente cane da guardia"
+ ],
+ "🐕 Wachhund": [
+  "🐕 Guard dog",
+  "🐕 Cane da guardia"
+ ],
+ "🚜 keine Brandschneise": [
+  "🚜 no firebreak",
+  "🚜 niente tagliafuoco"
+ ],
+ "Ölpreis der letzten Monate": [
+  "Oil price, recent months",
+  "Prezzo dell'olio negli ultimi mesi"
+ ],
+ "Arbeit diesen Monat": [
+  "Work this month",
+  "Lavoro questo mese"
+ ],
+ "Stufe": [
+  "Level",
+  "Livello"
+ ],
+ "🏠 Büro: Stufe": [
+  "🏠 Office: level",
+  "🏠 Ufficio: livello"
+ ],
+ "Nicht interessiert an dir. Nötig:": [
+  "Not interested in you. Needed:",
+  "Non è interessato a te. Serve:"
+ ],
+ "Heute abgeblitzt – nächsten Monat": [
+  "Brushed off today – try next month",
+  "Respinto oggi – riprova il mese prossimo"
+ ],
+ "🤝 Kennenlernen (Plaudern) · 1 ⏳": [
+  "🤝 Get to know (chat) · 1 ⏳",
+  "🤝 Fai conoscenza (chiacchiera) · 1 ⏳"
+ ],
+ "💬 Plaudern · 1 ⏳": [
+  "💬 Chat · 1 ⏳",
+  "💬 Chiacchiera · 1 ⏳"
+ ],
+ "💬 Plaudern": [
+  "💬 Chat",
+  "💬 Chiacchiera"
+ ],
+ "✔ Diesen Monat schon geplaudert": [
+  "✔ Already chatted this month",
+  "✔ Già chiacchierato questo mese"
+ ],
+ "Was": [
+  "What",
+  "Cosa"
+ ],
+ "für dich tun kann": [
+  "can do for you",
+  "può fare per te"
+ ],
+ "1×/Jahr": [
+  "1×/year",
+  "1×/anno"
+ ],
+ "1×/Monat": [
+  "1×/month",
+  "1×/mese"
+ ],
+ "Machen · 1 ⏳": [
+  "Do it · 1 ⏳",
+  "Fallo · 1 ⏳"
+ ],
+ "gerade nicht möglich": [
+  "not possible right now",
+  "al momento non possibile"
+ ],
+ "🤝 Feilschen": [
+  "🤝 Haggling",
+  "🤝 Contrattazione"
+ ],
+ "🚨 Rettung!": [
+  "🚨 Rescue!",
+  "🚨 Salvataggio!"
+ ],
+ "Kauf": [
+  "Buy",
+  "Acquisto"
+ ],
+ "oder Pacht": [
+  "or lease",
+  "o affitto"
+ ],
+ "🔒 Besitz von": [
+  "🔒 Owned by",
+  "🔒 Proprietà di"
+ ],
+ "will ihn bis Ende": [
+  "wants it until the end of",
+  "lo vuole fino alla fine di"
+ ],
+ "+5.000 € Kredit": [
+  "+5,000 € loan",
+  "+5.000 € prestito"
+ ],
+ "5.000 € tilgen": [
+  "Repay 5,000 €",
+  "Rimborsa 5.000 €"
+ ],
+ "Kaufen": [
+  "Buy",
+  "Compra"
+ ],
+ "✔ besitzt du": [
+  "✔ you own it",
+  "✔ ce l'hai"
+ ],
+ "Laden": [
+  "Shop",
+  "Negozio"
+ ],
+ "(Stammkunden-Rabatt −20 %)": [
+  "(regular-customer discount −20 %)",
+  "(sconto cliente abituale −20 %)"
+ ],
+ "kein ⏳": [
+  "no ⏳",
+  "nessun ⏳"
+ ],
+ "🛎️ Schalter · Anträge": [
+  "🛎️ Counter · Applications",
+  "🛎️ Sportello · Domande"
+ ],
+ "Beantragen": [
+  "Apply",
+  "Richiedi"
+ ],
+ "🚪 Büro des Sindaco": [
+  "🚪 The Sindaco's office",
+  "🚪 Ufficio del Sindaco"
+ ],
+ "Zum Sindaco ›": [
+  "To the Sindaco ›",
+  "Dal Sindaco ›"
+ ],
+ "Aber da kommt er gerade heraus …": [
+  "But here he comes right now …",
+  "Ma eccolo che esce proprio ora …"
+ ],
+ "❓ Ansprechen": [
+  "❓ Talk to",
+  "❓ Rivolgiti"
+ ],
+ "l gepresst · 💶": [
+  "l pressed · 💶",
+  "l spremuti · 💶"
+ ],
+ "Umsatz · 🎯": [
+  "revenue · 🎯",
+  "fatturato · 🎯"
+ ],
+ "PLEITE!": [
+  "BANKRUPT!",
+  "FALLITO!"
+ ],
+ "Monat beenden": [
+  "End month",
+  "Termina il mese"
+ ],
+ "Schließen": [
+  "Close",
+  "Chiudi"
+ ],
+ "Zum Fest ▶": [
+  "To the festival ▶",
+  "Alla festa ▶"
+ ],
+ "Eintragen": [
+  "Submit",
+  "Inserisci"
+ ],
+ "✔ Eingetragen (": [
+  "✔ Submitted (",
+  "✔ Inserito ("
+ ],
+ "Noch keine Einträge – sei der Erste!": [
+  "No entries yet – be the first!",
+  "Ancora nessuna voce – sii il primo!"
+ ],
+ "💥 Astbruch! Zu viel Kraft.": [
+  "💥 Branch broke! Too much force.",
+  "💥 Ramo spezzato! Troppa forza."
+ ],
+ "Rüttler-Ernte": [
+  "Shaker harvest",
+  "Raccolta con scuotitore"
+ ],
+ "Stamm": [
+  "Trunk",
+  "Tronco"
+ ],
+ "➡️ rechts": [
+  "➡️ right",
+  "➡️ destra"
+ ],
+ "🕸️ Netz liegt richtig": [
+  "🕸️ Net is in place",
+  "🕸️ Rete al posto giusto"
+ ],
+ "🕸️ Netz liegt daneben": [
+  "🕸️ Net is off",
+  "🕸️ Rete fuori posto"
+ ],
+ "RÜTTELN… loslassen im Grün!": [
+  "SHAKING… release in the green!",
+  "SCUOTI… rilascia nel verde!"
+ ],
+ "🔧 Gedrückt halten": [
+  "🔧 Hold down",
+  "🔧 Tieni premuto"
+ ],
+ "👍 Gut angesetzt": [
+  "👍 Well placed",
+  "👍 Ben posizionato"
+ ],
+ "Etwas tief – Wurzelanlauf": [
+  "A bit low – root flare",
+  "Un po' basso – colletto"
+ ],
+ "Tippe so viele Oliven wie möglich.": [
+  "Tap as many olives as you can.",
+  "Tocca più olive che puoi."
+ ],
+ "Goldene": [
+  "Golden",
+  "Dorata"
+ ],
+ "Dein Name für den Highscore": [
+  "Your name for the high score",
+  "Il tuo nome per la classifica"
+ ],
+ "z. B. Thorsten": [
+  "e.g. Thorsten",
+  "es. Thorsten"
+ ],
+ "▶ Neues Spiel": [
+  "▶ New game",
+  "▶ Nuova partita"
+ ],
+ "Calcio": [
+  "Calcio",
+  "Calcio"
+ ],
+ "Opferstock (150 €)": [
+  "Offering box (150 €)",
+  "Cassetta delle offerte (150 €)"
+ ],
+ "💶 Opferstock": [
+  "💶 Offering box",
+  "💶 Cassetta delle offerte"
+ ],
+ "Handschlag": [
+  "Handshake",
+  "Stretta di mano"
+ ],
+ "Don Calogero · Haine": [
+  "Don Calogero · Groves",
+  "Don Calogero · Uliveti"
+ ],
+ "Rathaus": [
+  "Town hall",
+  "Municipio"
+ ],
+ "📌 Aushang am Rathaus": [
+  "📌 Town hall notice board",
+  "📌 Bacheca del municipio"
+ ],
+ "Sprache · Language · Lingua": [
+  "Sprache · Language · Lingua",
+  "Sprache · Language · Lingua"
+ ],
+ "DAS ÖL DER MADONNA · v0.9.0": [
+  "THE MADONNA'S OIL · v0.9.0",
+  "L'OLIO DELLA MADONNA · v0.9.0"
+ ],
+ "Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.": [
+  "You inherit an overgrown olive grove near Sambuca di Sicilia. Get to know the village, survive storms, flies and festivals – year after year.",
+  "Erediti un uliveto inselvatichito vicino a Sambuca di Sicilia. Conosci il paese, sopravvivi a tempeste, mosche e feste – anno dopo anno."
+ ],
+ "🏆 Werde der größte Olivenöl-Mogul Sambucas!": [
+  "🏆 Become Sambuca's greatest olive-oil mogul!",
+  "🏆 Diventa il più grande magnate dell'olio di Sambuca!"
+ ],
+ "Du hast diesen Monat schon jemanden kennengelernt – nächsten Monat.": [
+  "You already met someone new this month – next month.",
+  "Hai già conosciuto qualcuno questo mese – il mese prossimo."
+ ],
+ "🤝 Vitamin B: Du wurdest vorgestellt – das Kennenlernen fällt leichter.": [
+  "🤝 Connections: you were introduced – getting acquainted is easier.",
+  "🤝 Raccomandazione: sei stato presentato – conoscersi è più facile."
+ ],
+ "Vitamin B: Vorstellung durch {0} (♥ {1})": [
+  "Connections: introduction by {0} (♥ {1})",
+  "Raccomandazione: presentazione da {0} (♥ {1})"
+ ],
+ "Ansehen ★ {0}": [
+  "Reputation ★ {0}",
+  "Reputazione ★ {0}"
+ ],
+ "Jahr": [
+  "Year",
+  "Anno"
+ ],
+ "Qualität": [
+  "Quality",
+  "Qualità"
+ ],
+ "Öl": [
+  "Oil",
+  "Olio"
+ ],
+ "Oliven": [
+  "Olives",
+  "Olive"
+ ],
+ "🕰️ Eine neue Bekanntschaft pro Monat reicht – die Leute hier brauchen Zeit.": [
+  "🕰️ One new acquaintance per month is enough – people here need time.",
+  "🕰️ Una nuova conoscenza al mese basta – qui la gente ha bisogno di tempo."
+ ],
+ "Vitamin B: Stell mich {0} vor": [
+  "Connections: introduce me to {0}",
+  "Raccomandazione: presentami a {0}"
+ ],
+ "ab {0} Jahr {1}": [
+  "from {0}, year {1}",
+  "da {0}, anno {1}"
+ ],
+ "JANUAR": [
+  "JANUARY",
+  "GENNAIO"
+ ],
+ "Januar": [
+  "January",
+  "Gennaio"
+ ],
+ "FEBRUAR": [
+  "FEBRUARY",
+  "FEBBRAIO"
+ ],
+ "Februar": [
+  "February",
+  "Febbraio"
+ ],
+ "MÄRZ": [
+  "MARCH",
+  "MARZO"
+ ],
+ "März": [
+  "March",
+  "Marzo"
+ ],
+ "APRIL": [
+  "APRIL",
+  "APRILE"
+ ],
+ "April": [
+  "April",
+  "Aprile"
+ ],
+ "MAI": [
+  "MAY",
+  "MAGGIO"
+ ],
+ "Mai": [
+  "May",
+  "Maggio"
+ ],
+ "JUNI": [
+  "JUNE",
+  "GIUGNO"
+ ],
+ "Juni": [
+  "June",
+  "Giugno"
+ ],
+ "JULI": [
+  "JULY",
+  "LUGLIO"
+ ],
+ "Juli": [
+  "July",
+  "Luglio"
+ ],
+ "AUGUST": [
+  "AUGUST",
+  "AGOSTO"
+ ],
+ "August": [
+  "August",
+  "Agosto"
+ ],
+ "SEPTEMBER": [
+  "SEPTEMBER",
+  "SETTEMBRE"
+ ],
+ "September": [
+  "September",
+  "Settembre"
+ ],
+ "OKTOBER": [
+  "OCTOBER",
+  "OTTOBRE"
+ ],
+ "Oktober": [
+  "October",
+  "Ottobre"
+ ],
+ "NOVEMBER": [
+  "NOVEMBER",
+  "NOVEMBRE"
+ ],
+ "November": [
+  "November",
+  "Novembre"
+ ],
+ "DEZEMBER": [
+  "DECEMBER",
+  "DICEMBRE"
+ ],
+ "Dezember": [
+  "December",
+  "Dicembre"
+ ],
+ "Lager & Haine": [
+  "Stock & groves",
+  "Magazzino e uliveti"
+ ],
+ "{0} · {1} Person da": [
+  "{0} · {1} person here",
+  "{0} · {1} persona qui"
+ ],
+ "{0} · {1} Personen da": [
+  "{0} · {1} people here",
+  "{0} · {1} persone qui"
+ ],
+ "{0} · 🔒 {1}": [
+  "{0} · 🔒 {1}",
+  "{0} · 🔒 {1}"
+ ],
+ "Zio Turis Oberhang": [
+  "Zio Turi's upper slope",
+  "Il pendio alto di Zio Turi"
+ ],
+ "Masseria abbandonata": [
+  "Masseria abbandonata",
+  "Masseria abbandonata"
+ ],
+ "DEIN BÜRO": [
+  "YOUR OFFICE",
+  "IL TUO UFFICIO"
+ ],
+ "Raus aufs Land": [
+  "Out to the countryside",
+  "Fuori in campagna"
+ ],
+ "Schneide mindestens einen Hain": [
+  "Prune at least one grove",
+  "Pota almeno un uliveto"
+ ],
+ "HAUPTGEWINN! +250 €.": [
+  "JACKPOT! +250 €.",
+  "PRIMO PREMIO! +250 €."
+ ],
+ "NEUER KONTAKT!": [
+  "NEW CONTACT!",
+  "NUOVO CONTATTO!"
+ ],
+ "ABGEBLITZT": [
+  "BRUSHED OFF",
+  "RESPINTO"
+ ],
+ "NETT!": [
+  "NICE!",
+  "CARINO!"
+ ],
+ "HOLPRIG…": [
+  "BUMPY…",
+  "IMPACCIATO…"
+ ],
+ "STURM!": [
+  "STORM!",
+  "TEMPESTA!"
+ ],
+ "FLUT!": [
+  "FLOOD!",
+  "ALLUVIONE!"
+ ],
+ "FEUER!": [
+  "FIRE!",
+  "FUOCO!"
+ ],
+ "FLIEGENJAGD!": [
+  "FLY HUNT!",
+  "CACCIA ALLA MOSCA!"
+ ],
+ "🧱 SANDSÄCKE": [
+  "🧱 SANDBAGS",
+  "🧱 SACCHI DI SABBIA"
+ ],
+ "GERETTET!": [
+  "SAVED!",
+  "SALVATO!"
+ ],
+ "HALBWEGS…": [
+  "SO-SO…",
+  "COSÌ COSÌ…"
+ ],
+ "MUNICIPIO": [
+  "MUNICIPIO",
+  "MUNICIPIO"
+ ],
+ "FEUDO ARANCIO": [
+  "FEUDO ARANCIO",
+  "FEUDO ARANCIO"
+ ],
+ "DEIN HAIN": [
+  "YOUR GROVE",
+  "IL TUO ULIVETO"
+ ],
+ "LIDO BOOMERANG": [
+  "LIDO BOOMERANG",
+  "LIDO BOOMERANG"
+ ],
+ "Kaufen (6 €)": [
+  "Buy (6 €)",
+  "Compra (6 €)"
+ ],
+ "Du erbst einen verwilderten Hain bei Pandolfina, 6.000 € und 150 l von Nonnos Öl. Im Dorf kennst du nur deine Nonna.": [
+  "You inherit an overgrown grove near Pandolfina, 6,000 € and 150 l of your Nonno's oil. In the village you only know your Nonna.",
+  "Erediti un uliveto inselvatichito vicino a Pandolfina, 6.000 € e 150 l dell'olio del Nonno. In paese conosci solo la tua Nonna."
+ ],
+ "Casa in der Via Delfino · bescheidener Anfang": [
+  "Casa in Via Delfino · humble beginnings",
+  "Casa in Via Delfino · inizi modesti"
+ ],
+ "1×/Jahr: 1.500–3.500 € PSR-Mittel": [
+  "1×/year: 1,500–3,500 € PSR funds",
+  "1×/anno: 1.500–3.500 € fondi PSR"
+ ],
+ "1×/Jahr: 800–1.500 € Agrarförderung": [
+  "1×/year: 800–1,500 € farm subsidy",
+  "1×/anno: 800–1.500 € contributi agricoli"
+ ],
+ "Küchenchef: 20 l zu 160 %": [
+  "Head chef: 20 l at 160 %",
+  "Chef: 20 l al 160 %"
+ ],
+ "Restaurant: 15 l zu 150 %": [
+  "Restaurant: 15 l at 150 %",
+  "Ristorante: 15 l al 150 %"
+ ],
+ "„Ich spür’s in den Knien: {0}. Bereite dich vor!“ {1}": [
+  "“I can feel it in my knees: {0}. Get ready!” {1}",
+  "“Lo sento nelle ginocchia: {0}. Preparati!” {1}"
+ ],
+ "🎁 5 l Öl für {0}.{1}": [
+  "🎁 5 l of oil for {0}.{1}",
+  "🎁 5 l di olio per {0}.{1}"
+ ],
+ "{0} Oliven · Ertrag ×{1}": [
+  "{0} olives · yield ×{1}",
+  "{0} olive · resa ×{1}"
+ ],
+ "Qualität {0} · Ausbeute ×{1}": [
+  "Quality {0} · output ×{1}",
+  "Qualità {0} · resa ×{1}"
+ ],
+ "Gesprächs-Chemie: {0} %": [
+  "Conversation chemistry: {0} %",
+  "Sintonia: {0} %"
+ ],
+ "{0} 8 Sekunden. {1} Treffer = kein Schaden.{2}{3}{4}": [
+  "{0} 8 seconds. {1} hits = no damage.{2}{3}{4}",
+  "{0} 8 secondi. {1} colpi = nessun danno.{2}{3}{4}"
+ ],
+ "{0} Treffer · Schutz {1} %": [
+  "{0} hits · protection {1} %",
+  "{0} colpi · protezione {1} %"
+ ],
+ "Jahr {0} · {1}": [
+  "Year {0} · {1}",
+  "Anno {0} · {1}"
+ ],
+ "🌳 Haine {0} · 🫙 Lager & Deals {1}": [
+  "🌳 Groves {0} · 🫙 Stock & deals {1}",
+  "🌳 Uliveti {0} · 🫙 Magazzino e accordi {1}"
+ ],
+ "📊 Vermögen je Jahr: {0}": [
+  "📊 Wealth per year: {0}",
+  "📊 Patrimonio per anno: {0}"
+ ],
+ "Gerade nichts zu tun in den Hainen ({0}).": [
+  "Nothing to do in the groves right now ({0}).",
+  "Al momento niente da fare negli uliveti ({0})."
+ ],
+ "💻 Aufträge · {0}": [
+  "💻 Jobs · {0}",
+  "💻 Incarichi · {0}"
+ ],
+ "🏠 Büro: Stufe {0}/4": [
+  "🏠 Office: level {0}/4",
+  "🏠 Ufficio: livello {0}/4"
+ ],
+ "Nicht interessiert an dir. Nötig: {0}": [
+  "Not interested in you. Needed: {0}",
+  "Non è interessato a te. Serve: {0}"
+ ],
+ "Was {0} für dich tun kann": [
+  "What {0} can do for you",
+  "Cosa può fare {0} per te"
+ ],
+ "🔒 ab ♥ {0}": [
+  "🔒 from ♥ {0}",
+  "🔒 da ♥ {0}"
+ ],
+ "{0} Bäume · Zustand {1} %{2}": [
+  "{0} trees · condition {1} %{2}",
+  "{0} alberi · stato {1} %{2}"
+ ],
+ "🔒 Besitz von {0} – verkauft erst ab Jahr {1} und ab ♥ 40": [
+  "🔒 Owned by {0} – sells only from year {1} and ♥ 40",
+  "🔒 Proprietà di {0} – vende solo dall’anno {1} e da ♥ 40"
+ ],
+ "⚔️ {0} will ihn bis Ende {1}!": [
+  "⚔️ {0} wants it by the end of {1}!",
+  "⚔️ {0} lo vuole entro fine {1}!"
+ ],
+ "Kredit: {0} · Zins 1 %/Monat": [
+  "Loan: {0} · interest 1 %/month",
+  "Prestito: {0} · interesse 1 %/mese"
+ ],
+ "{0} Bäume · Zustand {1} % · {2}": [
+  "{0} trees · condition {1} % · {2}",
+  "{0} alberi · stato {1} % · {2}"
+ ],
+ "⚔️ {0} bis {1}": [
+  "⚔️ {0} until {1}",
+  "⚔️ {0} fino a {1}"
+ ],
+ "Die Sekretärin schaut nicht mal hoch: „Der Sindaco empfängt nur Leute, die er kennt.“ {0}{1}": [
+  "The secretary doesn’t even look up: “The Sindaco only sees people he knows.” {0}{1}",
+  "La segretaria non alza nemmeno lo sguardo: “Il Sindaco riceve solo chi conosce.” {0}{1}"
+ ],
+ "{0}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.": [
+  "{0}. On the town map: 🎆 Piazza – lots of people there today.",
+  "{0}. Sulla mappa del paese: 🎆 Piazza – oggi c’è tanta gente."
+ ],
+ "{0} Bäume · {1}Ertrag ×{2}": [
+  "{0} trees · {1}yield ×{2}",
+  "{0} alberi · {1}resa ×{2}"
+ ],
+ "🔒 Besitz von {0}, ab Jahr {1} & ♥ 40": [
+  "🔒 Owned by {0}, from year {1} & ♥ 40",
+  "🔒 Proprietà di {0}, dall’anno {1} e ♥ 40"
+ ],
+ "Umziehen: {0} · {1}": [
+  "Move: {0} · {1}",
+  "Trasloco: {0} · {1}"
+ ],
+ "Kauf {0} oder Pacht {1} €/Monat": [
+  "Buy {0} or lease {1} €/month",
+  "Acquisto {0} o affitto {1} €/mese"
+ ],
+ "Noch {0} Leute im Dorf, die du nicht kennst. Triff sie in der Bar, Kirche, im Rathaus, auf Festen und an kleinen Orten der Karte.": [
+  "{0} more people in the village you don’t know yet. Meet them at the bar, church, town hall, festivals and the small places on the map.",
+  "Ancora {0} persone in paese che non conosci. Incontrale al bar, in chiesa, in municipio, alle feste e nei piccoli luoghi della mappa."
+ ],
+ "Jan": [
+  "Jan",
+  "Gen"
+ ],
+ "Feb": [
+  "Feb",
+  "Feb"
+ ],
+ "Mär": [
+  "Mar",
+  "Mar"
+ ],
+ "Apr": [
+  "Apr",
+  "Apr"
+ ],
+ "Jul": [
+  "Jul",
+  "Lug"
+ ],
+ "Aug": [
+  "Aug",
+  "Ago"
+ ],
+ "Okt": [
+  "Oct",
+  "Ott"
+ ],
+ "Nov": [
+  "Nov",
+  "Nov"
+ ],
+ "Dez": [
+  "Dec",
+  "Dic"
+ ],
+ "es läuft": [
+  "business is going well",
+  "gli affari vanno"
+ ],
+ "man kennt deinen Namen": [
+  "people know your name",
+  "conoscono il tuo nome"
+ ],
+ "der Padrino des Öls": [
+  "the Padrino of oil",
+  "il Padrino dell’olio"
+ ],
+ "bescheidener Anfang": [
+  "humble beginnings",
+  "inizio modesto"
+ ],
+ "Casa in der Via Delfino": [
+  "Casa in Via Delfino",
+  "Casa in Via Delfino"
+ ],
+ "bis 40 l zu 135 %": [
+  "up to 40 l at 135 %",
+  "fino a 40 l al 135 %"
+ ],
+ "50 l zu 200 %": [
+  "50 l at 200 %",
+  "50 l al 200 %"
+ ],
+ "einmalig": [
+  "one-off",
+  "una tantum"
+ ],
+ "Billig-Rüttler": [
+  "Cheap shaker",
+  "Scuotitore economico"
+ ],
+ "Kaufen (40 €)": [
+  "Buy (40 €)",
+  "Compra (40 €)"
+ ],
+ "Starkregen: Der Belice tritt über die Ufer": [
+  "Heavy rain: the Belice bursts its banks",
+  "Nubifragio: il Belice esonda"
+ ],
+ "DEAL: Wein-Kooperation! Crew & Rüttler teilen, Löhne −30 %.": [
+  "DEAL: wine cooperation! Share crew & shakers, wages −30 %.",
+  "DEAL: cooperativa del vino! Squadra e scuotitori in comune, salari −30 %."
+ ],
+ "Setz die Rüttler-Zange am Stamm an – am Rindenring, nicht an den Ästen.": [
+  "Put the shaker clamp on the trunk – on the bark ring, not on the branches.",
+  "Applica la pinza dello scuotitore al tronco – sull’anello di corteccia, non sui rami."
+ ],
+ "Klaus erzählt zwei Stunden von Bad Tölz.": [
+  "Klaus talks about Bad Tölz for two hours.",
+  "Klaus racconta di Bad Tölz per due ore."
+ ],
+ "Januar 2027": [
+  "January 2027",
+  "Gennaio 2027"
+ ],
+ "Februar 2027": [
+  "February 2027",
+  "Febbraio 2027"
+ ],
+ "März 2027": [
+  "March 2027",
+  "Marzo 2027"
+ ],
+ "April 2027": [
+  "April 2027",
+  "Aprile 2027"
+ ],
+ "Mai 2027": [
+  "May 2027",
+  "Maggio 2027"
+ ],
+ "Juni 2027": [
+  "June 2027",
+  "Giugno 2027"
+ ],
+ "Juli 2027": [
+  "July 2027",
+  "Luglio 2027"
+ ],
+ "August 2027": [
+  "August 2027",
+  "Agosto 2027"
+ ],
+ "September 2027": [
+  "September 2027",
+  "Settembre 2027"
+ ],
+ "Oktober 2027": [
+  "October 2027",
+  "Ottobre 2027"
+ ],
+ "November 2027": [
+  "November 2027",
+  "Novembre 2027"
+ ],
+ "Dezember 2027": [
+  "December 2027",
+  "Dicembre 2027"
+ ],
+ "Einkäufer vom Feudo Arancio": [
+  "Buyer from Feudo Arancio",
+  "Compratore del Feudo Arancio"
+ ],
+ "Deine Nonna": [
+  "Your Nonna",
+  "La tua nonna"
+ ],
+ "Nachbarin": [
+  "Neighbour",
+  "Vicina di casa"
+ ],
+ "Schäfer": [
+  "Shepherd",
+  "Pastore"
+ ],
+ "Pfarrer": [
+  "Priest",
+  "Parroco"
+ ],
+ "Rivale vom Nachbarhang": [
+  "Rival from the next hillside",
+  "Rivale del versante accanto"
+ ],
+ "Winzerin": [
+  "Winemaker",
+  "Viticoltrice"
+ ],
+ "Aussteiger aus München": [
+  "Dropout from Munich",
+  "Emigrato da Monaco di Baviera"
+ ],
+ "Reiche Amerikanerin": [
+  "Rich American",
+  "Ricca americana"
+ ],
+ "Bürgermeister": [
+  "Mayor",
+  "Sindaco"
+ ],
+ "Y&L Haushaltswaren": [
+  "Y&L Household Goods",
+  "Y&L Casalinghi"
+ ],
+ "Tabacchi & Lotto": [
+  "Tabacchi & Lotto",
+  "Tabacchi & Lotto"
+ ]
 }

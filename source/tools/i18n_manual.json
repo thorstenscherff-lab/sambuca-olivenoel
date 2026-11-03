@@ -826,5 +826,217 @@
 "Casa in der Via Delfino · bescheidener Anfang": [
 "Casa in Via Delfino · humble beginnings",
 "Casa in Via Delfino · inizi modesti"
+],
+"1×/Jahr: 1.500–3.500 € PSR-Mittel": [
+"1×/year: 1,500–3,500 € PSR funds",
+"1×/anno: 1.500–3.500 € fondi PSR"
+],
+"1×/Jahr: 800–1.500 € Agrarförderung": [
+"1×/year: 800–1,500 € farm subsidy",
+"1×/anno: 800–1.500 € contributi agricoli"
+],
+"Küchenchef: 20 l zu 160 %": [
+"Head chef: 20 l at 160 %",
+"Chef: 20 l al 160 %"
+],
+"Restaurant: 15 l zu 150 %": [
+"Restaurant: 15 l at 150 %",
+"Ristorante: 15 l al 150 %"
+],
+"„Ich spür’s in den Knien: {0}. Bereite dich vor!“ {1}": [
+"“I can feel it in my knees: {0}. Get ready!” {1}",
+"“Lo sento nelle ginocchia: {0}. Preparati!” {1}"
+],
+"🎁 5 l Öl für {0}.{1}": [
+"🎁 5 l of oil for {0}.{1}",
+"🎁 5 l di olio per {0}.{1}"
+],
+"{0} Oliven · Ertrag ×{1}": [
+"{0} olives · yield ×{1}",
+"{0} olive · resa ×{1}"
+],
+"Qualität {0} · Ausbeute ×{1}": [
+"Quality {0} · output ×{1}",
+"Qualità {0} · resa ×{1}"
+],
+"Gesprächs-Chemie: {0} %": [
+"Conversation chemistry: {0} %",
+"Sintonia: {0} %"
+],
+"{0} 8 Sekunden. {1} Treffer = kein Schaden.{2}{3}{4}": [
+"{0} 8 seconds. {1} hits = no damage.{2}{3}{4}",
+"{0} 8 secondi. {1} colpi = nessun danno.{2}{3}{4}"
+],
+"{0} Treffer · Schutz {1} %": [
+"{0} hits · protection {1} %",
+"{0} colpi · protezione {1} %"
+],
+"Jahr {0} · {1}": [
+"Year {0} · {1}",
+"Anno {0} · {1}"
+],
+"🌳 Haine {0} · 🫙 Lager & Deals {1}": [
+"🌳 Groves {0} · 🫙 Stock & deals {1}",
+"🌳 Uliveti {0} · 🫙 Magazzino e accordi {1}"
+],
+"📊 Vermögen je Jahr: {0}": [
+"📊 Wealth per year: {0}",
+"📊 Patrimonio per anno: {0}"
+],
+"Gerade nichts zu tun in den Hainen ({0}).": [
+"Nothing to do in the groves right now ({0}).",
+"Al momento niente da fare negli uliveti ({0})."
+],
+"💻 Aufträge · {0}": [
+"💻 Jobs · {0}",
+"💻 Incarichi · {0}"
+],
+"🏠 Büro: Stufe {0}/4": [
+"🏠 Office: level {0}/4",
+"🏠 Ufficio: livello {0}/4"
+],
+"Nicht interessiert an dir. Nötig: {0}": [
+"Not interested in you. Needed: {0}",
+"Non è interessato a te. Serve: {0}"
+],
+"Was {0} für dich tun kann": [
+"What {0} can do for you",
+"Cosa può fare {0} per te"
+],
+"🔒 ab ♥ {0}": [
+"🔒 from ♥ {0}",
+"🔒 da ♥ {0}"
+],
+"{0} Bäume · Zustand {1} %{2}": [
+"{0} trees · condition {1} %{2}",
+"{0} alberi · stato {1} %{2}"
+],
+"🔒 Besitz von {0} – verkauft erst ab Jahr {1} und ab ♥ 40": [
+"🔒 Owned by {0} – sells only from year {1} and ♥ 40",
+"🔒 Proprietà di {0} – vende solo dall’anno {1} e da ♥ 40"
+],
+"⚔️ {0} will ihn bis Ende {1}!": [
+"⚔️ {0} wants it by the end of {1}!",
+"⚔️ {0} lo vuole entro fine {1}!"
+],
+"Kredit: {0} · Zins 1 %/Monat": [
+"Loan: {0} · interest 1 %/month",
+"Prestito: {0} · interesse 1 %/mese"
+],
+"{0} Bäume · Zustand {1} % · {2}": [
+"{0} trees · condition {1} % · {2}",
+"{0} alberi · stato {1} % · {2}"
+],
+"⚔️ {0} bis {1}": [
+"⚔️ {0} until {1}",
+"⚔️ {0} fino a {1}"
+],
+"Die Sekretärin schaut nicht mal hoch: „Der Sindaco empfängt nur Leute, die er kennt.“ {0}{1}": [
+"The secretary doesn’t even look up: “The Sindaco only sees people he knows.” {0}{1}",
+"La segretaria non alza nemmeno lo sguardo: “Il Sindaco riceve solo chi conosce.” {0}{1}"
+],
+"{0}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.": [
+"{0}. On the town map: 🎆 Piazza – lots of people there today.",
+"{0}. Sulla mappa del paese: 🎆 Piazza – oggi c’è tanta gente."
+],
+"{0} Bäume · {1}Ertrag ×{2}": [
+"{0} trees · {1}yield ×{2}",
+"{0} alberi · {1}resa ×{2}"
+],
+"🔒 Besitz von {0}, ab Jahr {1} & ♥ 40": [
+"🔒 Owned by {0}, from year {1} & ♥ 40",
+"🔒 Proprietà di {0}, dall’anno {1} e ♥ 40"
+],
+"Umziehen: {0} · {1}": [
+"Move: {0} · {1}",
+"Trasloco: {0} · {1}"
+],
+"Kauf {0} oder Pacht {1} €/Monat": [
+"Buy {0} or lease {1} €/month",
+"Acquisto {0} o affitto {1} €/mese"
+],
+"Noch {0} Leute im Dorf, die du nicht kennst. Triff sie in der Bar, Kirche, im Rathaus, auf Festen und an kleinen Orten der Karte.": [
+"{0} more people in the village you don’t know yet. Meet them at the bar, church, town hall, festivals and the small places on the map.",
+"Ancora {0} persone in paese che non conosci. Incontrale al bar, in chiesa, in municipio, alle feste e nei piccoli luoghi della mappa."
+],
+"Jan": [
+"Jan",
+"Gen"
+],
+"Feb": [
+"Feb",
+"Feb"
+],
+"Mär": [
+"Mar",
+"Mar"
+],
+"Apr": [
+"Apr",
+"Apr"
+],
+"Jul": [
+"Jul",
+"Lug"
+],
+"Aug": [
+"Aug",
+"Ago"
+],
+"Okt": [
+"Oct",
+"Ott"
+],
+"Nov": [
+"Nov",
+"Nov"
+],
+"Dez": [
+"Dec",
+"Dic"
+],
+"es läuft": [
+"business is going well",
+"gli affari vanno"
+],
+"man kennt deinen Namen": [
+"people know your name",
+"conoscono il tuo nome"
+],
+"der Padrino des Öls": [
+"the Padrino of oil",
+"il Padrino dell’olio"
+],
+"bescheidener Anfang": [
+"humble beginnings",
+"inizio modesto"
+],
+"Casa in der Via Delfino": [
+"Casa in Via Delfino",
+"Casa in Via Delfino"
+],
+"bis 40 l zu 135 %": [
+"up to 40 l at 135 %",
+"fino a 40 l al 135 %"
+],
+"50 l zu 200 %": [
+"50 l at 200 %",
+"50 l al 200 %"
+],
+"einmalig": [
+"one-off",
+"una tantum"
+],
+"Billig-Rüttler": [
+"Cheap shaker",
+"Scuotitore economico"
+],
+"Kaufen (40 €)": [
+"Buy (40 €)",
+"Compra (40 €)"
+],
+"Starkregen: Der Belice tritt über die Ufer": [
+"Heavy rain: the Belice bursts its banks",
+"Nubifragio: il Belice esonda"
 ]
 }

@@ -132,6 +132,14 @@ const I18N_DICT: Record<string, [string, string]> = {
 "1×/year",
 "1×/anno"
 ],
+"1×/Jahr: 1.500–3.500 € PSR-Mittel": [
+"1×/year: 1,500–3,500 € PSR funds",
+"1×/anno: 1.500–3.500 € fondi PSR"
+],
+"1×/Jahr: 800–1.500 € Agrarförderung": [
+"1×/year: 800–1,500 € farm subsidy",
+"1×/anno: 800–1.500 € contributi agricoli"
+],
 "1×/Jahr: Ertrag +5 %": [
 "1×/year: Yield +5 %",
 "1×/anno: Rendimento +5 %"
@@ -219,6 +227,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "50 %: alle Haine −15 %": [
 "50%: all groves −15 %",
 "50%: tutti i boschetti −15 %"
+],
+"50 l zu 200 %": [
+"50 l at 200 %",
+"50 l al 200 %"
 ],
 "50 € Geschenk, Padre ♥+4, Sindaco ♥+4": [
 "50 € Gift, Padre ♥+4, Sindaco ♥+4",
@@ -360,6 +372,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Apicoltore · Beekeepers in Belice",
 "Apicoltore · Beekeepers in Belice"
 ],
+"Apr": [
+"Apr",
+"Apr"
+],
 "April": [
 "April",
 "Aprile"
@@ -403,6 +419,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Auftrag": [
 "Order",
 "Ordine"
+],
+"Aug": [
+"Aug",
+"Ago"
 ],
 "August": [
 "August",
@@ -528,6 +548,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Secure cheap networks (180 €)",
 "Reti economiche sicure (180 €)"
 ],
+"Billig-Rüttler": [
+"Cheap shaker",
+"Scuotitore economico"
+],
 "Bio-zertifiziert.": [
 "Organic certified.",
 "Certificato biologico."
@@ -609,7 +633,7 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Carmelas limoni + olio: +540 €."
 ],
 "Casa in der Via Delfino": [
-"Casa in the Via Delfino",
+"Casa in Via Delfino",
 "Casa in Via Delfino"
 ],
 "Casa in der Via Delfino · bescheidener Anfang": [
@@ -1005,8 +1029,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Il grande mercato bovino: muli, trattori, reti, shaker – e tutti gli agricoltori della valle in un unico luogo."
 ],
 "Dez": [
-"Decree",
-"Decreto"
+"Dec",
+"Dic"
 ],
 "Dezember": [
 "December",
@@ -1167,6 +1191,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Die Sekretärin schaut nicht mal hoch: „Der Sindaco empfängt nur Leute, die er kennt.“": [
 "The secretary doesn’t even look up: “The Sindaco only receives people he knows.”",
 "Il segretario non guarda nemmeno: “Il Sindaco riceve solo persone che conosce.”"
+],
+"Die Sekretärin schaut nicht mal hoch: „Der Sindaco empfängt nur Leute, die er kennt.“ {0}{1}": [
+"The secretary doesn’t even look up: “The Sindaco only sees people he knows.” {0}{1}",
+"La segretaria non alza nemmeno lo sguardo: “Il Sindaco riceve solo chi conosce.” {0}{1}"
 ],
 "Die Sicilbanca leiht dir Geld zu 1 % pro Monat.": [
 "The Sicilbanca lends you money at 1% per month.",
@@ -1716,6 +1744,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Farmacia · Cosmetics from olive oil",
 "Farmacia · Cosmetici da olio d'oliva"
 ],
+"Feb": [
+"Feb",
+"Feb"
+],
 "Februar": [
 "February",
 "Febbraio"
@@ -1924,6 +1956,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Nothing to do in the groves right now (",
 "Al momento niente da fare negli uliveti ("
 ],
+"Gerade nichts zu tun in den Hainen ({0}).": [
+"Nothing to do in the groves right now ({0}).",
+"Al momento niente da fare negli uliveti ({0})."
+],
 "Gerät verleihen": [
 "Loaning equipment",
 "Attrezzature per la costruzione"
@@ -1939,6 +1975,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Gesprächs-Chemie:": [
 "Conversation chemistry:",
 "Chimica di conversazione:"
+],
+"Gesprächs-Chemie: {0} %": [
+"Conversation chemistry: {0} %",
+"Sintonia: {0} %"
 ],
 "Gestempelt, unterschrieben, bewilligt: +{0}.": [
 "Stamped, signed, approved: +{0}.",
@@ -1967,6 +2007,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Giusi hält Wort – die Crew ist pünktlich da, mit einer Kiste Wein.": [
 "Giusi keeps his word – the crew is on time, with a box of wine.",
 "Giusi mantiene la sua parola – l'equipaggio è in tempo, con una scatola di vino."
+],
+"Giusi skizziert einen Plan auf einer Serviette: Wein + Öl = Kombi-Kisten.": [
+"Giusi outlines a plan on a napkin: wine + oil = combi boxes.",
+"Giusi delinea un piano su un tovagliolo: vino + olio = scatole combi."
 ],
 "Giusi – Wein-Kooperation": [
 "Giusi – wine cooperation",
@@ -2099,6 +2143,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Hallo sagen": [
 "Say hello",
 "Di' ciao."
+],
+"Halten = Intensität. Im grünen Bereich loslassen – zu viel bricht Äste.": [
+"Hold = intensity. Let go in the green area – too much breaks branches.",
+"Tenere = intensità. Lasciare andare nella zona verde – troppo rompe rami."
 ],
 "Handschlag": [
 "Handshake",
@@ -2236,6 +2284,14 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Year",
 "Anno"
 ],
+"Jahr {0} · {1}": [
+"Year {0} · {1}",
+"Anno {0} · {1}"
+],
+"Jan": [
+"Jan",
+"Gen"
+],
 "Januar": [
 "January",
 "Gennaio"
@@ -2251,6 +2307,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Jugendliche aus Sambuca feiern hier.": [
 "Young people from Sambuca celebrate here.",
 "I giovani di Sambuca festeggiano qui."
+],
+"Jul": [
+"Jul",
+"Lug"
 ],
 "Juli": [
 "July",
@@ -2292,13 +2352,17 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Buy",
 "Acquisto"
 ],
+"Kauf {0} oder Pacht {1} €/Monat": [
+"Buy {0} or lease {1} €/month",
+"Acquisto {0} o affitto {1} €/mese"
+],
 "Kaufen": [
 "Buy",
 "Compra"
 ],
 "Kaufen (40 €)": [
-"Buying (40 €)",
-"Comprare (40 €)"
+"Buy (40 €)",
+"Compra (40 €)"
 ],
 "Kaufen (6 €)": [
 "Buy (6 €)",
@@ -2444,6 +2508,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Loan:",
 "Prestito:"
 ],
+"Kredit: {0} · Zins 1 %/Monat": [
+"Loan: {0} · interest 1 %/month",
+"Prestito: {0} · interesse 1 %/mese"
+],
 "Kreditschalter": [
 "Credit switches",
 "Interruttori di credito"
@@ -2455,6 +2523,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Kupplung durch. Ohne Traktor wird jede Arbeit teurer.": [
 "coupling through. Without a tractor, all work becomes more expensive.",
 "Accostamento. Senza un trattore, tutto il lavoro diventa più costoso."
+],
+"Küchenchef: 20 l zu 160 %": [
+"Head chef: 20 l at 160 %",
+"Chef: 20 l al 160 %"
 ],
 "Kühles Quellwasser.": [
 "Cool spring water.",
@@ -2665,8 +2737,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "MARZO"
 ],
 "Mär": [
-"Margin",
-"Margine"
+"Mar",
+"Mar"
 ],
 "März": [
 "March",
@@ -2760,6 +2832,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Not interested in you. Needed:",
 "Non è interessato a te. Serve:"
 ],
+"Nicht interessiert an dir. Nötig: {0}": [
+"Not interested in you. Needed: {0}",
+"Non è interessato a te. Serve: {0}"
+],
 "Nicht meine Baustelle": [
 "Not my construction site",
 "Non il mio sito di costruzione"
@@ -2800,6 +2876,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "No entries yet – be the first!",
 "Ancora nessuna voce – sii il primo!"
 ],
+"Noch {0} Leute im Dorf, die du nicht kennst. Triff sie in der Bar, Kirche, im Rathaus, auf Festen und an kleinen Orten der Karte.": [
+"{0} more people in the village you don’t know yet. Meet them at the bar, church, town hall, festivals and the small places on the map.",
+"Ancora {0} persone in paese che non conosci. Incontrale al bar, in chiesa, in municipio, alle feste e nei piccoli luoghi della mappa."
+],
 "Nochmal": [
 "Again",
 "Di nuovo"
@@ -2823,6 +2903,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Nonnas Geheimrezept": [
 "Nonna's secret recipe",
 "La ricetta segreta di Nonna"
+],
+"Nov": [
+"Nov",
+"Nov"
 ],
 "Novello-Abend in Salvos Bar": [
 "Novello evening at Salvos Bar",
@@ -2882,7 +2966,7 @@ const I18N_DICT: Record<string, [string, string]> = {
 ],
 "Okt": [
 "Oct",
-"Ottobre"
+"Ott"
 ],
 "Oktober": [
 "October",
@@ -3076,6 +3160,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Price trend",
 "Tendenza dei prezzi"
 ],
+"Press-Minispiel mit Thermometer: alle Gänge ≤ 27 °C = kaltgepresst (+8 Qualität)": [
+"Press mini-game with thermometer: all gears ≤ 27 °C = cold pressed (+8 quality)",
+"Premere il mini-gioco con termometro: tutti gli ingranaggi ≤ 27 °C = pressato a freddo (+8 qualità)"
+],
 "Presse starten": [
 "Start pressing",
 "Avvia la pressa"
@@ -3115,6 +3203,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Qualität": [
 "Quality",
 "Qualità"
+],
+"Qualität {0} · Ausbeute ×{1}": [
+"Quality {0} · output ×{1}",
+"Qualità {0} · resa ×{1}"
 ],
 "Qualität −6": [
 "Quality −6",
@@ -3175,6 +3267,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Reparieren (450 €)": [
 "Repair (450 €)",
 "Riparazione (450 €)"
+],
+"Restaurant: 15 l zu 150 %": [
+"Restaurant: 15 l at 150 %",
+"Ristorante: 15 l al 150 %"
 ],
 "Restposten: Etiketten und Glasflaschen, 40 € für alles.": [
 "Residuals: labels and glass bottles, 40 € for everything.",
@@ -3541,8 +3637,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Stand con scatole regalo"
 ],
 "Starkregen: Der Belice tritt über die Ufer": [
-"Heavy rain: The Belice crosses the shore",
-"Pioggia pesante: il Belice attraversa la riva"
+"Heavy rain: the Belice bursts its banks",
+"Nubifragio: il Belice esonda"
 ],
 "Stempel. Preis +8 % dauerhaft.": [
 "Stamp. Price +8% permanently.",
@@ -3664,6 +3760,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Dream weather for flowering",
 "Tempo di sogno per la fioritura"
 ],
+"Treffer = kein Schaden.": [
+"Hit = no damage.",
+"Colpo = nessun danno."
+],
 "Treffer · Schutz": [
 "Hit · Protection",
 "Hit · Protezione"
@@ -3747,6 +3847,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Umsatz · 🎯": [
 "revenue · 🎯",
 "fatturato · 🎯"
+],
+"Umziehen: {0} · {1}": [
+"Move: {0} · {1}",
+"Trasloco: {0} · {1}"
 ],
 "Unterschreiben & mitplanen": [
 "Sign & plan",
@@ -3859,6 +3963,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Was steht am Brett? Nächstes Fest und wie viele Haine Don Calogero gerade anbietet.": [
 "What's on the board? Next party and how many groves Don Calogero offers right now.",
 "Cosa c'e' sulla lavagna? Il prossimo partito e quanti boschetti Don Calogero offre in questo momento."
+],
+"Was {0} für dich tun kann": [
+"What {0} can do for you",
+"Cosa può fare {0} per te"
 ],
 "Wasser & Öl-Brot für Pilger (200 €)": [
 "Water & Oil Bread for Pilgrims (200 €)",
@@ -4132,6 +4240,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "All sales +8 %",
 "Tutte le vendite +8 %"
 ],
+"bescheidener Anfang": [
+"humble beginnings",
+"inizio modesto"
+],
 "bis 120 l zu 170 %, ★ +5": [
 "up to 120 l at 170%, ★ +5",
 "fino a 120 l al 170%, ★ +5"
@@ -4139,6 +4251,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "bis 150 l zu 165 %, ★ +6": [
 "up to 150 l at 165%, ★ +6",
 "fino a 150 l al 165%, ★ +6"
+],
+"bis 40 l zu 135 %": [
+"up to 40 l at 135 %",
+"fino a 40 l al 135 %"
 ],
 "bis 40 l zu 150 %, Salvo ♥+6": [
 "up to 40 l to 150%, salvo ♥+6",
@@ -4168,6 +4284,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "The Tabaccaio",
 "Il Tabaccaio"
 ],
+"der Padrino des Öls": [
+"the Padrino of oil",
+"il Padrino dell’olio"
+],
 "die Bar del Corso": [
 "The Bar del Corso",
 "Il Bar del Corso"
@@ -4196,6 +4316,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "own labels, sale from Nov.",
 "proprie etichette, vendita da Nov."
 ],
+"einmalig": [
+"one-off",
+"una tantum"
+],
 "einmalig: Wachhund gratis (Schutz vor Olivendieben)": [
 "Unique: Watchdog free of charge (protection from olive thieves)",
 "Unico: Watchdog gratuitamente (protezione da ladri di olive)"
@@ -4207,6 +4331,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "einmalig: ★ +5": [
 "Unique: ★ +5",
 "Unico: ★ +5"
+],
+"es läuft": [
+"business is going well",
+"gli affari vanno"
 ],
 "für dich tun kann": [
 "can do for you",
@@ -4263,6 +4391,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "l gepresst · 💶": [
 "l pressed · 💶",
 "l spremuti · 💶"
+],
+"man kennt deinen Namen": [
+"people know your name",
+"conoscono il tuo nome"
 ],
 "neuer Rüttler für 700 € (hält)": [
 "new vibrator for 700 € (holds)",
@@ -4348,9 +4480,37 @@ const I18N_DICT: Record<string, [string, string]> = {
 "140 %, ★ +4",
 "140 %, ★ +4"
 ],
+"zählen dreifach. Mehr Treffer = mehr Ertrag (×0,70 bis ×1,30).": [
+"count triple. More hits = more yield (x0.70 to x1.30).",
+"Conto triplo. Più colpi = più rendimento (x0.70 a x1.30)."
+],
+"{0} 8 Sekunden. {1} Treffer = kein Schaden.{2}{3}{4}": [
+"{0} 8 seconds. {1} hits = no damage.{2}{3}{4}",
+"{0} 8 secondi. {1} colpi = nessun danno.{2}{3}{4}"
+],
+"{0} Bäume · Zustand {1} % · {2}": [
+"{0} trees · condition {1} % · {2}",
+"{0} alberi · stato {1} % · {2}"
+],
+"{0} Bäume · Zustand {1} %{2}": [
+"{0} trees · condition {1} %{2}",
+"{0} alberi · stato {1} %{2}"
+],
+"{0} Bäume · {1}Ertrag ×{2}": [
+"{0} trees · {1}yield ×{2}",
+"{0} alberi · {1}resa ×{2}"
+],
 "{0} Jahr(e) · {1}": [
 "{0} Year(s) · {1}",
 "{0} Anno(i) · {1}"
+],
+"{0} Oliven · Ertrag ×{1}": [
+"{0} olives · yield ×{1}",
+"{0} olive · resa ×{1}"
+],
+"{0} Treffer · Schutz {1} %": [
+"{0} hits · protection {1} %",
+"{0} colpi · protezione {1} %"
 ],
 "{0} für {1} l": [
 "{0} for {1} l",
@@ -4399,6 +4559,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "{0} € Kredit getilgt.": [
 "{0} € credit repaid.",
 "{0} € di credito rimborsato."
+],
+"{0}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.": [
+"{0}. On the town map: 🎆 Piazza – lots of people there today.",
+"{0}. Sulla mappa del paese: 🎆 Piazza – oggi c’è tanta gente."
 ],
 "{0}× Astbruch ·": [
 "{0}x Branch ·",
@@ -4728,6 +4892,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "“I rarely see you at Mass.”",
 "“Vi vedo raramente a messa.”"
 ],
+"„Ich spür’s in den Knien: {0}. Bereite dich vor!“ {1}": [
+"“I can feel it in my knees: {0}. Get ready!” {1}",
+"“Lo sento nelle ginocchia: {0}. Preparati!” {1}"
+],
 "„Ihre Unterlagen sind … ungewöhnlich vollständig.“": [
 "“Your documents are...unusually complete.”",
 "“I suoi documenti sono... insolitamente completi.”"
@@ -5024,9 +5192,17 @@ const I18N_DICT: Record<string, [string, string]> = {
 "☕ Caffè and rumors",
 "☕ Caffè e voci"
 ],
+"⚔️ {0} bis {1}": [
+"⚔️ {0} until {1}",
+"⚔️ {0} fino a {1}"
+],
 "⚔️ {0} schnappt dir „{1}“ weg!": [
 "⚔️ {0} grabs “{1}” from you!",
 "⚔️ {0} afferra “{1}” da voi!"
+],
+"⚔️ {0} will ihn bis Ende {1}!": [
+"⚔️ {0} wants it by the end of {1}!",
+"⚔️ {0} lo vuole entro fine {1}!"
 ],
 "⚙️ Pressen: {0} kg Oliven (Frantoio)": [
 "⚙️ Presses: {0} kg of olives (Frantoio)",
@@ -5128,6 +5304,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "🌳 Groves",
 "🌳 Uliveti"
 ],
+"🌳 Haine {0} · 🫙 Lager & Deals {1}": [
+"🌳 Groves {0} · 🫙 Stock & deals {1}",
+"🌳 Uliveti {0} · 🫙 Magazzino e accordi {1}"
+],
 "🌿 Bio-Zertifikat beantragen": [
 "🌿 Application for organic certificate",
 "🌿 Applicazione per certificato organico"
@@ -5147,6 +5327,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "🍹 Spritz an der Poolbar. ★ +1": [
 "🍹 Spritz at the pool bar. ★ +1",
 "🍹 Spritz al bar della piscina. ★ +1"
+],
+"🎁 5 l Öl für {0}.{1}": [
+"🎁 5 l of oil for {0}.{1}",
+"🎁 5 l di olio per {0}.{1}"
 ],
 "🎁 5 l Öl schenken (♥ +6)": [
 "🎁 Give 5 l of oil (♥ +6)",
@@ -5212,6 +5396,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "🏠 Office: level",
 "🏠 Ufficio: livello"
 ],
+"🏠 Büro: Stufe {0}/4": [
+"🏠 Office: level {0}/4",
+"🏠 Ufficio: livello {0}/4"
+],
 "🏠 Umzug! Neues Büro: {0} (−{1}, ★ +3).": [
 "🏠 Moving! New office: {0} (−{1}, ★ +3).",
 "🏠 Muoversi! Nuovo ufficio: {0} (−{1}, ★ +3)."
@@ -5219,6 +5407,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "🏭 Eigene Mini-Presse": [
 "🏭 Own mini-press",
 "🏭 Mini-stampa propria"
+],
+"🏭 Eigene Presse: das Thermometer steigt mit der Zeit. Alle drei Gänge bei höchstens 27 °C = kaltgepresst.": [
+"🏭 Own press: the thermometer increases with time. All three gears at maximum 27 °C = cold pressed.",
+"🏭 Pressa propria: il termometro aumenta con il tempo. Tutti e tre gli ingranaggi al massimo 27 °C = pressato a freddo."
 ],
 "🐕 30 € Futterspende fürs Tierheim. ★ +1": [
 "🐕 30 € food donation for the animal shelter. ★ +1",
@@ -5300,6 +5492,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "💻 Orders & Emails",
 "💻 Ordini e email"
 ],
+"💻 Aufträge · {0}": [
+"💻 Jobs · {0}",
+"💻 Incarichi · {0}"
+],
 "📈 steigt": [
 "📈 Increase",
 "📈 Aumento"
@@ -5319,6 +5515,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "📊 Vermögen je Jahr:": [
 "📊 Assets per year:",
 "📊 Attività all'anno:"
+],
+"📊 Vermögen je Jahr: {0}": [
+"📊 Wealth per year: {0}",
+"📊 Patrimonio per anno: {0}"
 ],
 "📌 Aushang am Rathaus": [
 "📌 Town hall notice board",
@@ -5344,9 +5544,17 @@ const I18N_DICT: Record<string, [string, string]> = {
 "🔒 Owned by",
 "🔒 Proprietà di"
 ],
+"🔒 Besitz von {0} – verkauft erst ab Jahr {1} und ab ♥ 40": [
+"🔒 Owned by {0} – sells only from year {1} and ♥ 40",
+"🔒 Proprietà di {0} – vende solo dall’anno {1} e da ♥ 40"
+],
 "🔒 Besitz von {0}, ab Jahr {1} & ♥ 40": [
 "🔒 Owned by {0}, from year {1} & ♥ 40",
-"🔒 di proprietà di {0}, dall'anno {1} & ♥ 40"
+"🔒 Proprietà di {0}, dall’anno {1} e ♥ 40"
+],
+"🔒 ab ♥ {0}": [
+"🔒 from ♥ {0}",
+"🔒 da ♥ {0}"
 ],
 "🔥 zu warm: max. {0} °C (Grenze 27 °C)": [
 "🔥 Too hot: max. {0} °C (27 °C limit)",

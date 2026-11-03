@@ -1,0 +1,32 @@
+{
+ "_doc": "Eigennamen, die im EN/IT-Check nicht als Deutsch zählen (Personen, Orte). Siehe I18N.md.",
+ "names": [
+  "Sambuca",
+  "Nonna Pina",
+  "Zia Carmela",
+  "Salvo",
+  "Signor Wang",
+  "Signora Rosalia",
+  "Ciccio u Pasturi",
+  "Padre Vito",
+  "Zio Turi",
+  "Giusi Ferrante",
+  "Chiara Mulè",
+  "Klaus Berger",
+  "Dolores Whitfield",
+  "Sindaco Totò Bonura",
+  "Signora Lin",
+  "Nunzia",
+  "Barbiere Gaspare",
+  "Pippo",
+  "Dott.ssa Lo Bue",
+  "Enzo",
+  "Peppe",
+  "Nino",
+  "Marta",
+  "Ragioniere Mangiaracina",
+  "Hotel Don Giovanni",
+  "Thorsten",
+  "Klaus"
+ ]
+}

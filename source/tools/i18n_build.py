@@ -14,8 +14,9 @@ def fix(k, v):
     v = re.sub(r'\$\s?([\d.,]+)', r'\1 €', v)            # MT macht aus € gern $
     if k.startswith('„') and not v.lstrip('“"').startswith(('“','"')) and not v.startswith('“'): v = '“' + v.strip('"“”') + '”'
     return v
+GERW = re.compile(r'[äöüßÄÖÜ]|\b(der|die|das|und|ist|nicht|mit|für|auf|ein|eine|zu|kein|Treffer|Sekunden|Bäume)\b')
 CSS = re.compile(r'(\d\.?\d*s\b|translate\(|linear|infinite|^\[|^[a-z]+/[a-z]+|^[A-Z]{3,5}$|=)')
-mt = {k: [fix(k, v[0]), fix(k, v[1])] for k, v in mt.items() if not CSS.search(k)}
+mt = {k: [fix(k, v[0]), fix(k, v[1])] for k, v in mt.items() if not CSS.search(k) or GERW.search(k)}
 d = dict(mt); d.update(man)
 d = {k: v for k, v in sorted(d.items()) if v and v[0] != k or k in man}
 with open(os.path.join(H, '..', 'game', 'i18n_dict.tsx'), 'w') as f:

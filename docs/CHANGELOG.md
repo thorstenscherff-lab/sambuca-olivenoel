@@ -3,7 +3,7 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
-## v0.8.2 – 03.11.2026 (Commits siehe unten)
+## v0.8.2 – 03.11.2026 (Commits 549ca92 Code, d8ff2be Doku)
 **Feedback:** Thorsten, 03.11. 02:16: „Ja und deine Vorschläge umsetzen. Dann ist Schluss für heute und du kannst alles was noch nicht dokumentiert ist dokumentieren“. Gemeint sind die Geräte-Vorschläge aus MINIGAMES.md (v0.8.1). Sie wurden zuerst in Notion (FB-32…FB-36) und in OPEN_ISSUES/MINIGAMES dokumentiert und danach gebaut.
 
 **Änderungen:**
@@ -19,7 +19,7 @@ Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App 
 
 **Prozessfehler (nachgetragen):** In v0.8.1 wurden FB-29 und FB-30 erst nach der Umsetzung in Notion eingetragen. Die Konvention „erst Notion + Doku, dann Bau“ wurde dabei verletzt. Ab v0.8.2 wird sie eingehalten (siehe README.md, Review-Prozess).
 
-**QA:** 390×844, Screenshots in `/workspace/sambuca-game/v08/qa/geraete/` (je Variante Spiel + Ergebnis; Messwerte in MINIGAMES.md).
+**QA:** 390×844, lokal und live (app.js sha256 d9eacbf8…b20d7), Screenshots in `/workspace/sambuca-game/v08/qa/geraete/` (lokal) und mit Präfix `live_` (live); je Variante Spiel + Ergebnis, Messwerte in MINIGAMES.md.
 
 ## v0.8.1 – 03.11.2026 (Commits 9886f11, 5584f95)
 **Feedback:** Thorsten, 03.11. 01:57: „Ich finde die Icons für die Haupt-Orte besser als die Sprechblasen. Lass uns das auf allen Zoomstufen machen. Vielleicht kann ein kleines Personen-Icon dran, wenn jemand da ist.“ (FB-29/OI-036). Nachtrag: „Die Icons von Bar del Corso und Bank liegen übereinander“ – alle Pins prüfen, nahe Orte mit Führungslinie auflösen (FB-30/OI-037). Supabase für den Live-Highscore von Thorsten freigegeben (FB-19/OI-007).

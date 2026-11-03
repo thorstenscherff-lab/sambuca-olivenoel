@@ -5,7 +5,7 @@ set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; ROOT="$(dirname "$HERE")"; G="$HERE/game"; H="$HERE/harness"
 cd "$H"; [ -d node_modules ] || npm ci --no-audit --no-fund
 # 1) Verketten (Reihenfolge ist relevant: Typen/Konstanten vor Nutzung)
-cat "$G/imports.tsx" "$G/imgs.tsx" "$G/src/a.tsx" "$G/src/c.tsx" "$G/evs.tsx" "$G/src/d.tsx" "$G/ui_old.tsx" "$G/src/e.tsx" "$G/src/f.tsx" > "$H/game.tsx"
+cat "$G/imports.tsx" "$G/i18n_dict.tsx" "$G/i18n.tsx" "$G/imgs.tsx" "$G/src/a.tsx" "$G/src/c.tsx" "$G/evs.tsx" "$G/src/d.tsx" "$G/ui_old.tsx" "$G/src/e.tsx" "$G/src/f.tsx" > "$H/game.tsx"
 # 2) Typecheck (strict)
 npx tsc --noEmit -p .
 # 3) Bundle + Minify

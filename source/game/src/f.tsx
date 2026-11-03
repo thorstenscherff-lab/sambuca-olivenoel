@@ -77,12 +77,14 @@ export default function SambucaGame(): ReactNode {
   const [g, setG] = useState<G | null>(null); const [boot, setBoot] = useState(false);
   const [scr, setScr] = useState<"buero" | "stadt" | "umland" | "tal">("buero"); const [scene, setScene] = useState<string | null>(null);
   const [sheet, setSheet] = useState<Sheet>(null); const [toast, setToast] = useState<string>(""); const [splash, setSplash] = useState<number>(-1);
-  const [name, setName] = useState<string>(""); const [hs, setHs] = useState<HS[]>([]);
+  const [name, setName] = useState<string>(""); const [lang, setLangS] = useState<Lang | null>(null); const [hs, setHs] = useState<HS[]>([]);
   const [conf, setConf] = useState(false); const [W, setW] = useState(390); const [VH, setVH] = useState(844);
   const mapRef = useRef<HTMLDivElement | null>(null); const [mz, setMz] = useState(1); const pinch = useRef<{ d: number; z: number } | null>(null);
   useEffect(() => {
     const f = (): void => { setW(Math.min(window.innerWidth, 520)); setVH(window.innerHeight); }; f(); window.addEventListener("resize", f);
-    try { const s = store.get(SAVE); if (s) { const x = JSON.parse(s) as G; if (x && x.v === 5) setG(x); } } catch { }
+    let l: Lang | null = getLangStored();
+    try { const s = store.get(SAVE); if (s) { const x = JSON.parse(s) as G; if (x && x.v === 5) { setG(x); if (x.lang) l = x.lang; } } } catch { }
+    if (l) { setLang(l); setLangS(l); }
     setName(store.get("sambuca5_name") || ""); setHs(hsLoad()); setBoot(true);
     return () => window.removeEventListener("resize", f);
   }, []);
@@ -104,14 +106,20 @@ export default function SambucaGame(): ReactNode {
     }
     if (n.over && !before.over && a.k !== "end") { setHs(hsPut(n, name)); setSheet({ k: "end" }); }
   };
-  const start = (): void => { let seen: string[] = []; try { seen = JSON.parse(store.get("sambuca5_seen") || "[]") as string[]; } catch { } const n = newGame(seen); store.set("sambuca5_name", name); setG(n); setScr("buero"); setScene(null); setSheet(null); setSplash(-1); };
+  const start = (): void => { let seen: string[] = []; try { seen = JSON.parse(store.get("sambuca5_seen") || "[]") as string[]; } catch { } const n = newGame(seen); n.lang = LANG; store.set("sambuca5_name", name); setG(n); setScr("buero"); setScene(null); setSheet(null); setSplash(-1); };
 
   const css = <style>{CSS + CSS4}</style>;
   if (!boot) return <div className="sb3" style={{ background: C.bar, minHeight: "100vh" }}>{css}</div>;
   // ---------- Intro ----------
+  // v0.9.0 (FB-37): Sprachwahl einmalig vor dem Intro (gespeichert in localStorage sambuca5_lang + g.lang)
+  if (!g && !lang) return <div className="sb3" style={{ minHeight: "100vh", background: `linear-gradient(180deg,rgba(23,11,38,.3),${C.bar} 70%), url(${IMG_SC.start}) center top/cover no-repeat`, color: "#fff", fontFamily: SANS, padding: "40px 18px 30px", display: "flex", flexDirection: "column", gap: 12, maxWidth: 520, margin: "0 auto" }}>{css}
+    <div className="gta" style={{ fontSize: 50, color: C.fg, lineHeight: 0.95, marginTop: 120 }}>SAMBUCA</div>
+    <div style={{ fontWeight: 900, fontSize: 18, color: C.gold, textShadow: "0 2px 6px rgba(0,0,0,.85)" }}>Sprache · Language · Lingua</div>
+    {LANGS.map((l) => <button key={l.id} data-lang={l.id} onClick={() => { setLang(l.id); setLangS(l.id); }} style={bigBtn(l.id === "de" ? C.pink : "#6b4a90")}>{l.flag} {l.n}</button>)}
+  </div>;
   if (!g) return <div className="sb3" style={{ minHeight: "100vh", background: `linear-gradient(180deg,rgba(23,11,38,.2),${C.bar} 70%), url(${IMG_SC.start}) center top/cover no-repeat`, color: "#fff", fontFamily: SANS, padding: "40px 18px 30px", display: "flex", flexDirection: "column", gap: 12, maxWidth: 520, margin: "0 auto" }}>{css}
     <div className="gta" style={{ fontSize: 50, color: C.fg, lineHeight: 0.95, marginTop: 120 }}>SAMBUCA</div>
-    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.8.2</div>
+    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.9.0</div>
     <p style={{ margin: 0, fontWeight: 600, textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.</p>
     <div style={{ fontWeight: 900, fontSize: 18, color: C.gold, textShadow: "0 2px 6px rgba(0,0,0,.85)" }}>🏆 Werde der größte Olivenöl-Mogul Sambucas!</div>
     <label style={{ fontWeight: 700, fontSize: 14 }}>Dein Name für den Highscore
@@ -329,7 +337,7 @@ export default function SambucaGame(): ReactNode {
   </div>;
 }
 // v0.8.1 (FB-19/OI-007): Live-Highscore über Supabase REST (ohne SDK). Publishable Key ist öffentlich; RLS erlaubt anon nur select + insert. Offline → lokale Liste.
-const SB_URL = "https://aqgigngeksgpbhcdaiar.supabase.co/rest/v1/highscores"; const SB_KEY = "sb_publishable_wU2pe73e-cWRpppIgNICpQ_eart3DN5"; const GAME_V = "0.8.2";
+const SB_URL = "https://aqgigngeksgpbhcdaiar.supabase.co/rest/v1/highscores"; const SB_KEY = "sb_publishable_wU2pe73e-cWRpppIgNICpQ_eart3DN5"; const GAME_V = "0.9.0";
 type GHS = { name: string; wealth: number; years: number; version: string; created_at: string };
 const sbHead = { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json" };
 async function ghsTop(): Promise<GHS[]> { const r = await fetch(SB_URL + "?select=name,wealth,years,version,created_at&order=wealth.desc&limit=20", { headers: sbHead }); if (!r.ok) throw new Error("HTTP " + r.status); return await r.json() as GHS[]; }

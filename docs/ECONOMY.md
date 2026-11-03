@@ -86,16 +86,18 @@ Die Rivalen wachsen monatlich um ±5 % (seed) und legen im Nov/Dez Sprünge hin.
 | `SHOP-spade1` | 🪓 Billig-Spaten | 3 Einsätze, Pflege ohne Spaten +25 % | 19 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:148` |
 | `SHOP-netz1` | 🕸️ Billig-Windnetze | Sturmschutz für 1 Sturm | 180 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:149` |
 | `SHOP-sand` | 🧱 Sandsäcke | Flutschaden-Puffer (1×) | 60 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:150` |
-| `SHOP-gear1` | 🔩 Billig-Rüttler | Ernte +15 %, aber 35 % Bruch pro Ernte | 850 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:151` |
-| `SHOP-spade2` | ⛏️ Profi-Spaten | 12 Einsätze | 89 € | MIN-consorzio | `source/game/src/c.tsx:152` |
-| `SHOP-netz2` | 🛡️ Windschutznetze | hält 3 Stürme | 450 € | MIN-consorzio | `source/game/src/c.tsx:153` |
-| `SHOP-drain` | 🚧 Drainagegräben | Flutschaden dauerhaft −70 % | 900 € | MIN-consorzio | `source/game/src/c.tsx:154` |
-| `SHOP-gear2` | 🔧 Rüttler (neu) | Ernte +15 %, Lohn halbiert | 1800 € | MIN-consorzio | `source/game/src/c.tsx:155` |
-| `SHOP-bio` | 🌿 Bio-Zertifikat beantragen | Preis +10 %, Qualität +10 | 800 € | PIN-muni | `source/game/src/c.tsx:156` |
-| `SHOP-dop` | 🏅 DOP Val di Mazara | Preis +8 % dauerhaft | 1200 € | PIN-muni | `source/game/src/c.tsx:157` |
-| `SHOP-schneise` | 🚜 Brandschneise mähen | Schutz vor Flächenbrand für 12 Monate: Gras und Gestrüpp um alle Haine wird gemäht (100 € + 0,40 €/Baum) | 100 + trees(g) * 0.4) € | MIN-consorzio | `source/game/src/c.tsx:158` |
-| `SHOP-dog` | 🐕 Wachhund adoptieren | Schutz vor Olivendieben: im Ereignis „Olivendiebe“ gibt es die sichere Option „Wachhunde“, Risiko sonst nur 10 % statt 40 % | 350 € | MIN-dogs | `source/game/src/c.tsx:159` |
-| `SHOP-water` | 💧 Wasserrecht am Lago | Wirkung: alle Haine gelten dauerhaft als bewässert (💧, keine Bewässerungs-Kosten), Dürre & Hitzewelle ohne Schaden, erfüllt das Juni-Ziel | 1500 € | PIN-lago | `source/game/src/c.tsx:160` |
+| `SHOP-kamm` | 🪮 Erntekamm + Bodennetze | Ernte-Minispiel: wischen statt tippen, mehr Oliven (Deckel 40) | 120 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:151` |
+| `SHOP-gear1` | 🔩 Billig-Rüttler | Ernte +15 %, aber 35 % Bruch pro Ernte | 850 × Wang-Rabatt € | MIN-ferr | `source/game/src/c.tsx:152` |
+| `SHOP-spade2` | ⛏️ Profi-Spaten | 12 Einsätze | 89 € | MIN-consorzio | `source/game/src/c.tsx:153` |
+| `SHOP-netz2` | 🛡️ Windschutznetze | hält 3 Stürme | 450 € | MIN-consorzio | `source/game/src/c.tsx:154` |
+| `SHOP-drain` | 🚧 Drainagegräben | Flutschaden dauerhaft −70 % | 900 € | MIN-consorzio | `source/game/src/c.tsx:155` |
+| `SHOP-presse` | 🏭 Eigene Mini-Presse | Press-Minispiel mit Thermometer: alle Gänge ≤ 27 °C = kaltgepresst (+8 Qualität) | 4500 € | MIN-consorzio | `source/game/src/c.tsx:156` |
+| `SHOP-gear2` | 🔧 Rüttler (neu) | Ernte +15 %, Lohn halbiert | 1800 € | MIN-consorzio | `source/game/src/c.tsx:157` |
+| `SHOP-bio` | 🌿 Bio-Zertifikat beantragen | Preis +10 %, Qualität +10 | 800 € | PIN-muni | `source/game/src/c.tsx:158` |
+| `SHOP-dop` | 🏅 DOP Val di Mazara | Preis +8 % dauerhaft | 1200 € | PIN-muni | `source/game/src/c.tsx:159` |
+| `SHOP-schneise` | 🚜 Brandschneise mähen | Schutz vor Flächenbrand für 12 Monate: Gras und Gestrüpp um alle Haine wird gemäht (100 € + 0,40 €/Baum) | 100 + trees(g) * 0.4) € | MIN-consorzio | `source/game/src/c.tsx:160` |
+| `SHOP-dog` | 🐕 Wachhund adoptieren | Schutz vor Olivendieben: im Ereignis „Olivendiebe“ gibt es die sichere Option „Wachhunde“, Risiko sonst nur 10 % statt 40 % | 350 € | MIN-dogs | `source/game/src/c.tsx:161` |
+| `SHOP-water` | 💧 Wasserrecht am Lago | Wirkung: alle Haine gelten dauerhaft als bewässert (💧, keine Bewässerungs-Kosten), Dürre & Hitzewelle ohne Schaden, erfüllt das Juni-Ziel | 1500 € | PIN-lago | `source/game/src/c.tsx:162` |
 <!-- END GENERATED:shop -->
 
 ## Alle Wirtschafts-Symbole im Code
@@ -124,7 +126,7 @@ Die Rivalen wachsen monatlich um ±5 % (seed) und legen im Nov/Dez Sprünge hin.
 | `ECO-disc` | `source/game/src/c.tsx:146` |
 | `ECO-DMG` | `source/game/src/c.tsx:2` |
 | `ECO-storm` | `source/game/src/c.tsx:3` |
-| `ECO-offStage` | `source/game/src/e.tsx:85` |
+| `ECO-offStage` | `source/game/src/e.tsx:90` |
 | `ECO-hsPut` | `source/game/src/d.tsx:225` |
 | `ECO-MEETNEED` | `source/game/src/d.tsx:73` |
 <!-- END GENERATED:eco -->

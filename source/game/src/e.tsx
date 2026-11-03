@@ -48,22 +48,27 @@ const MGK: Record<string, { n: string; txt: string; it: string[]; bg: string; go
   brand: { n: "FEUER!", txt: "Schlag die Flammen aus – tippe jedes 🔥, bevor es auf die Bäume überspringt.", it: ["🔥"], bg: "linear-gradient(180deg,#3a1a0a,#7a2a0a 55%,#c2571a)", goal: 15 },
   fliege: { n: "FLIEGENJAGD!", txt: "Klatsch die Olivenfliegen weg, bevor sie stechen.", it: ["🪰"], bg: "radial-gradient(circle at 30% 20%,#5a8a3a,#2d4a1e 60%,#1b2a12)", goal: 16 },
 };
-function MiniRescue(p: { kind: string; onDone: (s: number) => void }): ReactNode {
-  const K = MGK[p.kind] || MGK.sturm; const END = 80;
+function MiniRescue(p: { kind: string; netz?: boolean; sand?: boolean; drain?: boolean; onDone: (s: number) => void }): ReactNode {
+  const K0 = MGK[p.kind] || MGK.sturm; const END = 80;
+  // v0.8.2 (FB-32/OI-039, FB-36/OI-043): Geräte verändern die Rettung
+  const nz = p.kind === "sturm" && !!p.netz; const sd = p.kind === "flut" && !!p.sand; const dr = p.kind === "flut" && !!p.drain;
+  const K = nz ? { ...K0, it: ["🪜", "📦", "🛞", "🪣", "🪢"], goal: 10 } : dr ? { ...K0, goal: 8 } : sd ? { ...K0, goal: 10 } : K0; const LIFE = dr ? 16 : 13;
   const [t, setT] = useState(0); const [run, setRun] = useState(false); const [n, setN] = useState(0); const [miss, setMiss] = useState(0);
   const [it, setIt] = useState<{ id: number; x: number; y: number; b: number; e: string; dx: number }[]>([]); const idr = useRef(0);
   useEffect(() => { if (!run) return; const iv = setInterval(() => setT((v) => v + 1), 100); return () => clearInterval(iv); }, [run]);
   useEffect(() => {
     if (!run) return; if (t >= END) { setRun(false); setIt([]); return; }
-    setIt((o) => { const alive = o.filter((x) => t - x.b < 13); const lost = o.length - alive.length; if (lost) setMiss((m) => m + lost); let a = alive; if (t % 3 === 0 || a.length < 2) a = [...a, { id: ++idr.current, x: 10 + Math.random() * 75, y: 12 + Math.random() * 70, b: t, e: K.it[Math.floor(Math.random() * K.it.length)], dx: p.kind === "sturm" ? 1 : 0 }]; return a; });
+    setIt((o) => { const alive = o.filter((x) => t - x.b < LIFE); const lost = o.length - alive.length; if (lost) setMiss((m) => m + lost); let a = alive; if (t % 3 === 0 || a.length < 2) a = [...a, { id: ++idr.current, x: 10 + Math.random() * 75, y: 12 + Math.random() * 70, b: t, e: K.it[Math.floor(Math.random() * K.it.length)], dx: p.kind === "sturm" ? 1 : 0 }]; return a; });
   }, [t, run]);
   const s = Math.min(1, n / K.goal); const done = t >= END;
   return <div>
-    <p style={{ margin: "0 0 8px" }}>{K.txt} 8 Sekunden. {K.goal} Treffer = kein Schaden.</p>
+    <p style={{ margin: "0 0 8px" }}>{K.txt} 8 Sekunden. {K.goal} Treffer = kein Schaden.{nz ? " 🕸️ Windnetze halten mit: 🪢 Netz-Seile zählen doppelt." : ""}{sd ? " 🧱 Sandsäcke liegen bereit: nur 10 Treffer nötig." : ""}{dr ? " 🚧 Drainage: Lecks bleiben länger, 8 Treffer reichen." : ""}</p>
     <div style={{ display: "flex", justifyContent: "space-between", fontFamily: FONT, fontSize: 22 }}><span>✅ {n}</span><span style={{ color: C.bad }}>✗ {miss}</span><span>⏱ {Math.max(0, (END - t) / 10).toFixed(1)}</span></div>
     <div style={{ position: "relative", height: 300, borderRadius: 16, overflow: "hidden", background: K.bg, border: "2px solid #000", marginTop: 6 }}>
       {p.kind === "sturm" && <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(170deg,rgba(255,255,255,.07) 0 2px,transparent 2px 22px)" }} />}
-      {it.map((o) => { const age = t - o.b; return <button key={o.id} data-x="1" aria-label="Ziel" onClick={() => { buzz(8); setN((v) => v + 1); setIt((a) => a.filter((x) => x.id !== o.id)); }} style={{ position: "absolute", left: `${o.x + o.dx * age * 1.6}%`, top: o.y + "%", width: 56, height: 56, padding: 0, border: "none", background: "transparent", fontSize: 38, transform: `translate(-50%,-50%) rotate(${o.dx * age * 12}deg)`, transition: "left .1s linear", opacity: age > 9 ? 0.5 : 1, cursor: "pointer" }}>{o.e}</button>; })}
+      {nz && <div data-gear="netz" style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "repeating-linear-gradient(45deg,rgba(125,255,176,.18) 0 2px,transparent 2px 18px),repeating-linear-gradient(-45deg,rgba(125,255,176,.18) 0 2px,transparent 2px 18px)" }} />}
+      {(sd || dr) && <div data-gear={dr ? "drain" : "sand"} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 26, pointerEvents: "none", background: dr ? "repeating-linear-gradient(90deg,#555 0 30px,#888 30px 36px)" : "repeating-linear-gradient(90deg,#c9a66b 0 34px,#8a6a3a 34px 38px)", color: "#000", fontSize: 13, textAlign: "center", lineHeight: "26px", fontWeight: 700 }}>{dr ? "🚧 DRAINAGE" : "🧱 SANDSÄCKE"}</div>}
+      {it.map((o) => { const age = t - o.b; return <button key={o.id} data-x="1" aria-label="Ziel" onClick={() => { buzz(8); setN((v) => v + (nz && o.e === "🪢" ? 2 : 1)); setIt((a) => a.filter((x) => x.id !== o.id)); }} data-e={o.e} style={{ position: "absolute", left: `${o.x + o.dx * age * 1.6}%`, top: o.y + "%", width: 56, height: 56, padding: 0, border: "none", background: "transparent", fontSize: 38, transform: `translate(-50%,-50%) rotate(${o.dx * age * 12}deg)`, transition: "left .1s linear", opacity: age > 9 ? 0.5 : 1, cursor: "pointer" }}>{o.e}</button>; })}
       {!run && <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, background: "rgba(20,8,34,.6)" }}>
         <div className="gta" style={{ fontSize: 34, color: done ? (s >= 0.8 ? C.ok : s >= 0.4 ? C.gold : C.bad) : "#fff" }}>{done ? (s >= 0.8 ? "GERETTET!" : s >= 0.4 ? "HALBWEGS…" : "CHAOS!") : K.n}</div>
         {done && <div>{n} Treffer · Schutz {Math.round(s * 100)} %</div>}

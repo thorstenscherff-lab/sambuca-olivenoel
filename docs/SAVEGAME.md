@@ -65,7 +65,7 @@ Speicherung erfolgt im Browser per `localStorage`, **nur lokal auf dem Gerät**.
 
 **Grove-Felder:** `id`, `name`, `trees`, `cond`, `lease`, `prune`, `fert`, `irr`, `traps`, `harvested`, `x`, `y`
 
-**Flags `g.fl.*` (im Code gefunden):** `agri`, `apb`, `bees`, `carmelaHere`, `cheap`, `dach`, `dog`, `drain`, `early`, `lyG`, `lyH`, `lyO`, `lyR`, `metM`, `netz`, `office`, `po_`, `pray`, `py_`, `sand`, `schneise`, `share`, `trapdisc`, `try_`
+**Flags `g.fl.*` (im Code gefunden):** `agri`, `apb`, `bees`, `carmelaHere`, `cheap`, `dach`, `dog`, `drain`, `early`, `kamm`, `lyG`, `lyH`, `lyO`, `lyR`, `metM`, `netz`, `office`, `po_`, `pray`, `presse`, `py_`, `sand`, `schneise`, `share`, `trapdisc`, `try_`
 
 **Monats-Sperren `g.acts` (Präfixe):** `enc`, `gift`, `pk`, `sp`
 

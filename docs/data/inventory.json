@@ -1419,7 +1419,7 @@
     "source/game/src/c.tsx:69",
     "source/game/src/d.tsx:66",
     "source/game/src/d.tsx:69",
-    "source/game/src/e.tsx:89",
+    "source/game/src/e.tsx:94",
     "source/game/src/f.tsx:73",
     "source/game/src/f.tsx:132",
     "source/game/src/f.tsx:291",
@@ -4872,12 +4872,20 @@
    "loc": "source/game/src/c.tsx:150"
   },
   {
+   "id": "kamm",
+   "at": "ferr",
+   "n": "🪮 Erntekamm + Bodennetze",
+   "d": "Ernte-Minispiel: wischen statt tippen, mehr Oliven (Deckel 40)",
+   "cost": "120 × Wang-Rabatt",
+   "loc": "source/game/src/c.tsx:151"
+  },
+  {
    "id": "gear1",
    "at": "ferr",
    "n": "🔩 Billig-Rüttler",
    "d": "Ernte +15 %, aber 35 % Bruch pro Ernte",
    "cost": "850 × Wang-Rabatt",
-   "loc": "source/game/src/c.tsx:151"
+   "loc": "source/game/src/c.tsx:152"
   },
   {
    "id": "spade2",
@@ -4885,7 +4893,7 @@
    "n": "⛏️ Profi-Spaten",
    "d": "12 Einsätze",
    "cost": "89",
-   "loc": "source/game/src/c.tsx:152"
+   "loc": "source/game/src/c.tsx:153"
   },
   {
    "id": "netz2",
@@ -4893,7 +4901,7 @@
    "n": "🛡️ Windschutznetze",
    "d": "hält 3 Stürme",
    "cost": "450",
-   "loc": "source/game/src/c.tsx:153"
+   "loc": "source/game/src/c.tsx:154"
   },
   {
    "id": "drain",
@@ -4901,7 +4909,15 @@
    "n": "🚧 Drainagegräben",
    "d": "Flutschaden dauerhaft −70 %",
    "cost": "900",
-   "loc": "source/game/src/c.tsx:154"
+   "loc": "source/game/src/c.tsx:155"
+  },
+  {
+   "id": "presse",
+   "at": "consorzio",
+   "n": "🏭 Eigene Mini-Presse",
+   "d": "Press-Minispiel mit Thermometer: alle Gänge ≤ 27 °C = kaltgepresst (+8 Qualität)",
+   "cost": "4500",
+   "loc": "source/game/src/c.tsx:156"
   },
   {
    "id": "gear2",
@@ -4909,7 +4925,7 @@
    "n": "🔧 Rüttler (neu)",
    "d": "Ernte +15 %, Lohn halbiert",
    "cost": "1800",
-   "loc": "source/game/src/c.tsx:155"
+   "loc": "source/game/src/c.tsx:157"
   },
   {
    "id": "bio",
@@ -4917,7 +4933,7 @@
    "n": "🌿 Bio-Zertifikat beantragen",
    "d": "Preis +10 %, Qualität +10",
    "cost": "800",
-   "loc": "source/game/src/c.tsx:156"
+   "loc": "source/game/src/c.tsx:158"
   },
   {
    "id": "dop",
@@ -4925,7 +4941,7 @@
    "n": "🏅 DOP Val di Mazara",
    "d": "Preis +8 % dauerhaft",
    "cost": "1200",
-   "loc": "source/game/src/c.tsx:157"
+   "loc": "source/game/src/c.tsx:159"
   },
   {
    "id": "schneise",
@@ -4933,7 +4949,7 @@
    "n": "🚜 Brandschneise mähen",
    "d": "Schutz vor Flächenbrand für 12 Monate: Gras und Gestrüpp um alle Haine wird gemäht (100 € + 0,40 €/Baum)",
    "cost": "100 + trees(g) * 0.4)",
-   "loc": "source/game/src/c.tsx:158"
+   "loc": "source/game/src/c.tsx:160"
   },
   {
    "id": "dog",
@@ -4941,7 +4957,7 @@
    "n": "🐕 Wachhund adoptieren",
    "d": "Schutz vor Olivendieben: im Ereignis „Olivendiebe“ gibt es die sichere Option „Wachhunde“, Risiko sonst nur 10 % statt 40 %",
    "cost": "350",
-   "loc": "source/game/src/c.tsx:159"
+   "loc": "source/game/src/c.tsx:161"
   },
   {
    "id": "water",
@@ -4949,7 +4965,7 @@
    "n": "💧 Wasserrecht am Lago",
    "d": "Wirkung: alle Haine gelten dauerhaft als bewässert (💧, keine Bewässerungs-Kosten), Dürre & Hitzewelle ohne Schaden, erfüllt das Juni-Ziel",
    "cost": "1500",
-   "loc": "source/game/src/c.tsx:160"
+   "loc": "source/game/src/c.tsx:162"
   }
  ],
  "scenes": [
@@ -4964,46 +4980,46 @@
      "id": "pc",
      "l": "Computer · Aufträge",
      "e": "",
-     "loc": "source/game/src/e.tsx:77",
+     "loc": "source/game/src/e.tsx:82",
      "handled": true
     },
     {
      "id": "tel",
      "l": "Telefon",
      "e": "",
-     "loc": "source/game/src/e.tsx:77",
+     "loc": "source/game/src/e.tsx:82",
      "handled": true
     },
     {
      "id": "regal",
      "l": "Lager & Haine",
      "e": "",
-     "loc": "source/game/src/e.tsx:77",
+     "loc": "source/game/src/e.tsx:82",
      "handled": true
     },
     {
      "id": "kal",
      "l": "Kalender",
      "e": "",
-     "loc": "source/game/src/e.tsx:77",
+     "loc": "source/game/src/e.tsx:82",
      "handled": true
     },
     {
      "id": "fenster",
      "l": "Zur Stadt",
      "e": "",
-     "loc": "source/game/src/e.tsx:77",
+     "loc": "source/game/src/e.tsx:82",
      "handled": true
     },
     {
      "id": "tuer",
      "l": "Raus aufs Land",
      "e": "",
-     "loc": "source/game/src/e.tsx:77",
+     "loc": "source/game/src/e.tsx:82",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:87"
+   "loc": "source/game/src/e.tsx:92"
   },
   {
    "id": "rathaus",
@@ -5016,25 +5032,25 @@
      "id": "schalter",
      "l": "Schalter · Anträge",
      "e": "🛎️",
-     "loc": "source/game/src/e.tsx:89",
+     "loc": "source/game/src/e.tsx:94",
      "handled": true
     },
     {
      "id": "sindaco",
      "l": "Büro des Sindaco",
      "e": "🚪",
-     "loc": "source/game/src/e.tsx:89",
+     "loc": "source/game/src/e.tsx:94",
      "handled": true
     },
     {
      "id": "aushang",
      "l": "Aushang",
      "e": "📌",
-     "loc": "source/game/src/e.tsx:89",
+     "loc": "source/game/src/e.tsx:94",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:88"
+   "loc": "source/game/src/e.tsx:93"
   },
   {
    "id": "bar",
@@ -5047,25 +5063,25 @@
      "id": "caffe",
      "l": "Caffè & Gerüchte (2 €)",
      "e": "☕",
-     "loc": "source/game/src/e.tsx:91",
+     "loc": "source/game/src/e.tsx:96",
      "handled": true
     },
     {
      "id": "wette",
      "l": "Calcio-Wette (50 €)",
      "e": "📺",
-     "loc": "source/game/src/e.tsx:91",
+     "loc": "source/game/src/e.tsx:96",
      "handled": true
     },
     {
      "id": "zeitung",
      "l": "Ölpreis",
      "e": "📰",
-     "loc": "source/game/src/e.tsx:91",
+     "loc": "source/game/src/e.tsx:96",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:90"
+   "loc": "source/game/src/e.tsx:95"
   },
   {
    "id": "banca",
@@ -5078,11 +5094,11 @@
      "id": "pin:banca",
      "l": "Kreditschalter",
      "e": "🏦",
-     "loc": "source/game/src/e.tsx:92",
+     "loc": "source/game/src/e.tsx:97",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:92"
+   "loc": "source/game/src/e.tsx:97"
   },
   {
    "id": "teatro",
@@ -5095,11 +5111,11 @@
      "id": "pin:palazzo",
      "l": "Don Calogero sprechen",
      "e": "🎭",
-     "loc": "source/game/src/e.tsx:93",
+     "loc": "source/game/src/e.tsx:98",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:93"
+   "loc": "source/game/src/e.tsx:98"
   },
   {
    "id": "belv",
@@ -5112,11 +5128,11 @@
      "id": "pin:belv",
      "l": "Ausblick",
      "e": "🔭",
-     "loc": "source/game/src/e.tsx:94",
+     "loc": "source/game/src/e.tsx:99",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:94"
+   "loc": "source/game/src/e.tsx:99"
   },
   {
    "id": "feudo",
@@ -5129,11 +5145,11 @@
      "id": "pin:feudo",
      "l": "Zum Gutshaus",
      "e": "🍷",
-     "loc": "source/game/src/e.tsx:95",
+     "loc": "source/game/src/e.tsx:100",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:95"
+   "loc": "source/game/src/e.tsx:100"
   },
   {
    "id": "frantoio",
@@ -5146,11 +5162,11 @@
      "id": "pin:frantoio",
      "l": "Mühle",
      "e": "🫒",
-     "loc": "source/game/src/e.tsx:96",
+     "loc": "source/game/src/e.tsx:101",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:96"
+   "loc": "source/game/src/e.tsx:101"
   },
   {
    "id": "hain",
@@ -5163,11 +5179,11 @@
      "id": "regal",
      "l": "Haine verwalten",
      "e": "🌳",
-     "loc": "source/game/src/e.tsx:97",
+     "loc": "source/game/src/e.tsx:102",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:97"
+   "loc": "source/game/src/e.tsx:102"
   },
   {
    "id": "lago",
@@ -5180,11 +5196,11 @@
      "id": "pin:lago",
      "l": "Am Steg",
      "e": "⛵",
-     "loc": "source/game/src/e.tsx:98",
+     "loc": "source/game/src/e.tsx:103",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:98"
+   "loc": "source/game/src/e.tsx:103"
   },
   {
    "id": "ruine",
@@ -5197,11 +5213,11 @@
      "id": "pin:torre",
      "l": "Am Turm",
      "e": "🗼",
-     "loc": "source/game/src/e.tsx:100",
+     "loc": "source/game/src/e.tsx:105",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:100"
+   "loc": "source/game/src/e.tsx:105"
   },
   {
    "id": "chiesa",
@@ -5214,18 +5230,18 @@
      "id": "beichte",
      "l": "Beichtstuhl",
      "e": "🙏",
-     "loc": "source/game/src/e.tsx:103",
+     "loc": "source/game/src/e.tsx:108",
      "handled": true
     },
     {
      "id": "spende",
      "l": "Opferstock (150 €)",
      "e": "💶",
-     "loc": "source/game/src/e.tsx:103",
+     "loc": "source/game/src/e.tsx:108",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:102"
+   "loc": "source/game/src/e.tsx:107"
   },
   {
    "id": "santuario",
@@ -5238,25 +5254,25 @@
      "id": "altar",
      "l": "Madonna dell'Udienza",
      "e": "✨",
-     "loc": "source/game/src/e.tsx:105",
+     "loc": "source/game/src/e.tsx:110",
      "handled": true
     },
     {
      "id": "kerze",
      "l": "Kerze (5 €)",
      "e": "🕯️",
-     "loc": "source/game/src/e.tsx:105",
+     "loc": "source/game/src/e.tsx:110",
      "handled": true
     },
     {
      "id": "spende",
      "l": "Opferstock (150 €)",
      "e": "💶",
-     "loc": "source/game/src/e.tsx:105",
+     "loc": "source/game/src/e.tsx:110",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:104"
+   "loc": "source/game/src/e.tsx:109"
   },
   {
    "id": "hotel",
@@ -5269,18 +5285,18 @@
      "id": "pooldeal",
      "l": "Küchenchef: 20 l zu 160 %",
      "e": "🏊",
-     "loc": "source/game/src/e.tsx:108",
+     "loc": "source/game/src/e.tsx:113",
      "handled": true
     },
     {
      "id": "aperitivo",
      "l": "Aperitivo (12 €)",
      "e": "🍹",
-     "loc": "source/game/src/e.tsx:108",
+     "loc": "source/game/src/e.tsx:113",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:107"
+   "loc": "source/game/src/e.tsx:112"
   },
   {
    "id": "lido",
@@ -5293,18 +5309,18 @@
      "id": "strand",
      "l": "Strandtag (20 €)",
      "e": "🏖️",
-     "loc": "source/game/src/e.tsx:111",
+     "loc": "source/game/src/e.tsx:116",
      "handled": true
     },
     {
      "id": "lidodeal",
      "l": "Restaurant: 15 l zu 150 %",
      "e": "🍤",
-     "loc": "source/game/src/e.tsx:111",
+     "loc": "source/game/src/e.tsx:116",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:110"
+   "loc": "source/game/src/e.tsx:115"
   },
   {
    "id": "fest",
@@ -5317,11 +5333,11 @@
      "id": "prog",
      "l": "Festprogramm",
      "e": "🎪",
-     "loc": "source/game/src/e.tsx:112",
+     "loc": "source/game/src/e.tsx:117",
      "handled": true
     }
    ],
-   "loc": "source/game/src/e.tsx:112"
+   "loc": "source/game/src/e.tsx:117"
   }
  ],
  "pins": [
@@ -5740,12 +5756,12 @@
   {
    "id": "press",
    "fn": "MiniPress",
-   "loc": "source/game/ui_old.tsx:59"
+   "loc": "source/game/ui_old.tsx:64"
   },
   {
    "id": "haggle",
    "fn": "MiniHaggle",
-   "loc": "source/game/ui_old.tsx:81"
+   "loc": "source/game/ui_old.tsx:91"
   },
   {
    "id": "rescue-sturm",
@@ -6040,6 +6056,7 @@
    "dog",
    "drain",
    "early",
+   "kamm",
    "lyG",
    "lyH",
    "lyO",
@@ -6049,6 +6066,7 @@
    "office",
    "po_",
    "pray",
+   "presse",
    "py_",
    "sand",
    "schneise",
@@ -6157,7 +6175,7 @@
   },
   {
    "id": "offStage",
-   "loc": "source/game/src/e.tsx:85"
+   "loc": "source/game/src/e.tsx:90"
   },
   {
    "id": "hsPut",

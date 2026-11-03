@@ -111,7 +111,7 @@ export default function SambucaGame(): ReactNode {
   // ---------- Intro ----------
   if (!g) return <div className="sb3" style={{ minHeight: "100vh", background: `linear-gradient(180deg,rgba(23,11,38,.2),${C.bar} 70%), url(${IMG_SC.start}) center top/cover no-repeat`, color: "#fff", fontFamily: SANS, padding: "40px 18px 30px", display: "flex", flexDirection: "column", gap: 12, maxWidth: 520, margin: "0 auto" }}>{css}
     <div className="gta" style={{ fontSize: 50, color: C.fg, lineHeight: 0.95, marginTop: 120 }}>SAMBUCA</div>
-    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.8.1</div>
+    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.8.2</div>
     <p style={{ margin: 0, fontWeight: 600, textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.</p>
     <div style={{ fontWeight: 900, fontSize: 18, color: C.gold, textShadow: "0 2px 6px rgba(0,0,0,.85)" }}>🏆 Werde der größte Olivenöl-Mogul Sambucas!</div>
     <label style={{ fontWeight: 700, fontSize: 14 }}>Dein Name für den Highscore
@@ -261,10 +261,10 @@ export default function SambucaGame(): ReactNode {
     case "talk": shT = sheet.mode === "call" ? "☎️ Telefonat" : "💬 Plaudern";
       sh = <MiniTalk key={sheet.id + sheet.mode} id={sheet.id} mode={sheet.mode} onCancel={() => setSheet(null)} onDone={(s) => { const id = sheet.id; run({ k: sheet.mode === "meet" ? "meet" : sheet.mode, id, f: s }); setSheet({ k: "person", id }); }} />; break;
     case "mg": shT = sheet.t === "h" ? "🧺 Ernte" : sheet.t === "p" ? "⚙️ Frantoio" : sheet.t === "s" ? "🤝 Feilschen" : "🚨 Rettung!";
-      if (sheet.t === "h") { const gr = g.groves.find((x) => x.id === sheet.id); sh = g.gear ? <MiniShaker name={gr ? gr.name : ""} cheap={!!g.fl.cheap} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} /> : <MiniHarvest name={gr ? gr.name : ""} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} />; }
-      else if (sheet.t === "p") sh = <MiniPress kg={g.olives} onDone={(f, q) => { run({ k: "mill", f, q }); setSheet(null); }} />;
+      if (sheet.t === "h") { const gr = g.groves.find((x) => x.id === sheet.id); sh = g.gear ? <MiniShaker name={gr ? gr.name : ""} cheap={!!g.fl.cheap} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} /> : <MiniHarvest name={gr ? gr.name : ""} kamm={!!g.fl.kamm} crew={g.crew > 0} onDone={(f) => { run({ k: "harvest", id: sheet.id, f }); setSheet(null); }} onSkip={() => { run({ k: "harvest", id: sheet.id, f: 0.85 }); setSheet(null); }} />; }
+      else if (sheet.t === "p") sh = <MiniPress kg={g.olives} presse={!!g.fl.presse} onDone={(f, q) => { run({ k: "mill", f, q }); setSheet(null); }} />;
       else if (sheet.t === "s") sh = <MiniHaggle oil={g.oil} unit={unit(g)} limit={1.12 + g.rep / 500 + R(g, "giusi") / 600} who="Einkäufer vom Feudo Arancio" onDone={(f, n) => { run({ k: "sell", f, n }); setSheet(null); }} />;
-      else sh = <MiniRescue kind={sheet.kind || "sturm"} onDone={(s) => { run({ k: "choice", id: sheet.id, n: sheet.n, f: s }); setSheet({ k: "missions" }); }} />;
+      else sh = <MiniRescue kind={sheet.kind || "sturm"} netz={!!g.fl.netz} sand={!!g.fl.sand} drain={!!g.fl.drain} onDone={(s) => { run({ k: "choice", id: sheet.id, n: sheet.n, f: s }); setSheet({ k: "missions" }); }} />;
       break;
     case "pin": { const id = sheet.id;
       if (id.startsWith("g:")) { const gr = g.groves.find((x) => "g:" + x.id === id); if (gr) { shT = "🌳 " + gr.name; sh = <><div style={card}>{gr.trees} Bäume · Zustand {gr.cond} %{gr.lease ? ` · Pacht ${gr.lease} €/Monat` : " · Eigentum"}</div>{careList(gr.id)}{id === "g:erbe" && peopleRow("torre")}</>; } }
@@ -329,7 +329,7 @@ export default function SambucaGame(): ReactNode {
   </div>;
 }
 // v0.8.1 (FB-19/OI-007): Live-Highscore über Supabase REST (ohne SDK). Publishable Key ist öffentlich; RLS erlaubt anon nur select + insert. Offline → lokale Liste.
-const SB_URL = "https://aqgigngeksgpbhcdaiar.supabase.co/rest/v1/highscores"; const SB_KEY = "sb_publishable_wU2pe73e-cWRpppIgNICpQ_eart3DN5"; const GAME_V = "0.8.1";
+const SB_URL = "https://aqgigngeksgpbhcdaiar.supabase.co/rest/v1/highscores"; const SB_KEY = "sb_publishable_wU2pe73e-cWRpppIgNICpQ_eart3DN5"; const GAME_V = "0.8.2";
 type GHS = { name: string; wealth: number; years: number; version: string; created_at: string };
 const sbHead = { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json" };
 async function ghsTop(): Promise<GHS[]> { const r = await fetch(SB_URL + "?select=name,wealth,years,version,created_at&order=wealth.desc&limit=20", { headers: sbHead }); if (!r.ok) throw new Error("HTTP " + r.status); return await r.json() as GHS[]; }

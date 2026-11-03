@@ -13,22 +13,22 @@ Auf den Karten führen **Pins** (`PIN-*`) entweder zu einer illustrierten **Szen
 <!-- BEGIN GENERATED:scenes -->
 | ID | Szene | Untertitel | venue | Hotspots | Stammgäste (at) | Code |
 |---|---|---|---|---|---|---|
-| `LOC-buero` | DEIN BÜRO | Casa in der Via Delfino | buero | HOT-buero-pc (Computer · Aufträge), HOT-buero-tel (Telefon), HOT-buero-regal (Lager & Haine), HOT-buero-kal (Kalender), HOT-buero-fenster (Zur Stadt), HOT-buero-tuer (Raus aufs Land) | CH-carmela | `source/game/src/e.tsx:87` |
-| `LOC-rathaus` | MUNICIPIO | Rathaus von Sambuca | muni | HOT-rathaus-schalter (Schalter · Anträge), HOT-rathaus-sindaco (Büro des Sindaco), HOT-rathaus-aushang (Aushang) | CH-chiara, CH-sindaco | `source/game/src/e.tsx:88` |
-| `LOC-bar` | BAR DEL CORSO | Corso Umberto I · Pasticceria | bar | HOT-bar-caffe (Caffè & Gerüchte (2 €)), HOT-bar-wette (Calcio-Wette (50 €)), HOT-bar-zeitung (Ölpreis) | CH-salvo, CH-wang, CH-ciccio, CH-turi, CH-chiara, CH-klaus, CH-dolores | `source/game/src/e.tsx:90` |
-| `LOC-banca` | BANCA | Corso Umberto I · Kredit zu 1 % | banca | HOT-banca-pin-banca (Kreditschalter) | CH-wang, CH-giusi | `source/game/src/e.tsx:92` |
-| `LOC-teatro` | PALAZZO & TEATRO | Don Calogero · Haine von Erben | palazzo | HOT-teatro-pin-palazzo (Don Calogero sprechen) | CH-chiara, CH-dolores | `source/game/src/e.tsx:93` |
-| `LOC-belv` | BELVEDERE | Blick über das Belice-Tal | belv | HOT-belv-pin-belv (Ausblick) | CH-ciccio, CH-klaus | `source/game/src/e.tsx:94` |
-| `LOC-feudo` | FEUDO ARANCIO | Weingut · Großkunde | feudo | HOT-feudo-pin-feudo (Zum Gutshaus) | CH-giusi | `source/game/src/e.tsx:95` |
-| `LOC-frantoio` | FRANTOIO | Die Ölmühle | frantoio | HOT-frantoio-pin-frantoio (Mühle) | CH-rosalia | `source/game/src/e.tsx:96` |
-| `LOC-hain` | DEIN HAIN | Olivenbäume unter der Stadt | hain | HOT-hain-regal (Haine verwalten) | CH-ciccio, CH-turi | `source/game/src/e.tsx:97` |
-| `LOC-lago` | LAGO ARANCIO | Wasser · Villen | lago | HOT-lago-pin-lago (Am Steg) | CH-klaus, CH-dolores | `source/game/src/e.tsx:98` |
-| `LOC-ruine` | TORRE DI PANDOLFINA | Wachturm · Zio Turis Hang | torre | HOT-ruine-pin-torre (Am Turm) | CH-turi | `source/game/src/e.tsx:100` |
-| `LOC-chiesa` | CHIESA MADRE | Hauptkirche · Padre Vito | chiesa | HOT-chiesa-beichte (Beichtstuhl), HOT-chiesa-spende (Opferstock (150 €)) | CH-nonna, CH-carmela, CH-rosalia, CH-padre | `source/game/src/e.tsx:102` |
-| `LOC-santuario` | SANTUARIO | Madonna dell'Udienza | santuario | HOT-santuario-altar (Madonna dell'Udienza), HOT-santuario-kerze (Kerze (5 €)), HOT-santuario-spende (Opferstock (150 €)) | CH-nonna, CH-carmela, CH-rosalia, CH-padre | `source/game/src/e.tsx:104` |
-| `LOC-hotel` | HOTEL DON GIOVANNI | Pool · Restaurant · Tourist:innen | hotel | HOT-hotel-pooldeal (Küchenchef: 20 l zu 160 %), HOT-hotel-aperitivo (Aperitivo (12 €)) | CH-giusi, CH-klaus, CH-dolores | `source/game/src/e.tsx:107` |
-| `LOC-lido` | LIDO BOOMERANG | Strandbar am Meer | lido | HOT-lido-strand (Strandtag (20 €)), HOT-lido-lidodeal (Restaurant: 15 l zu 150 %) | CH-salvo, CH-chiara, CH-dolores | `source/game/src/e.tsx:110` |
-| `LOC-fest` | FESTA | – | fest | HOT-fest-prog (Festprogramm) | CH-carmela, CH-rosalia, CH-ciccio, CH-padre, CH-turi, CH-giusi, CH-chiara, CH-klaus, CH-dolores, CH-sindaco | `source/game/src/e.tsx:112` |
+| `LOC-buero` | DEIN BÜRO | Casa in der Via Delfino | buero | HOT-buero-pc (Computer · Aufträge), HOT-buero-tel (Telefon), HOT-buero-regal (Lager & Haine), HOT-buero-kal (Kalender), HOT-buero-fenster (Zur Stadt), HOT-buero-tuer (Raus aufs Land) | CH-carmela | `source/game/src/e.tsx:92` |
+| `LOC-rathaus` | MUNICIPIO | Rathaus von Sambuca | muni | HOT-rathaus-schalter (Schalter · Anträge), HOT-rathaus-sindaco (Büro des Sindaco), HOT-rathaus-aushang (Aushang) | CH-chiara, CH-sindaco | `source/game/src/e.tsx:93` |
+| `LOC-bar` | BAR DEL CORSO | Corso Umberto I · Pasticceria | bar | HOT-bar-caffe (Caffè & Gerüchte (2 €)), HOT-bar-wette (Calcio-Wette (50 €)), HOT-bar-zeitung (Ölpreis) | CH-salvo, CH-wang, CH-ciccio, CH-turi, CH-chiara, CH-klaus, CH-dolores | `source/game/src/e.tsx:95` |
+| `LOC-banca` | BANCA | Corso Umberto I · Kredit zu 1 % | banca | HOT-banca-pin-banca (Kreditschalter) | CH-wang, CH-giusi | `source/game/src/e.tsx:97` |
+| `LOC-teatro` | PALAZZO & TEATRO | Don Calogero · Haine von Erben | palazzo | HOT-teatro-pin-palazzo (Don Calogero sprechen) | CH-chiara, CH-dolores | `source/game/src/e.tsx:98` |
+| `LOC-belv` | BELVEDERE | Blick über das Belice-Tal | belv | HOT-belv-pin-belv (Ausblick) | CH-ciccio, CH-klaus | `source/game/src/e.tsx:99` |
+| `LOC-feudo` | FEUDO ARANCIO | Weingut · Großkunde | feudo | HOT-feudo-pin-feudo (Zum Gutshaus) | CH-giusi | `source/game/src/e.tsx:100` |
+| `LOC-frantoio` | FRANTOIO | Die Ölmühle | frantoio | HOT-frantoio-pin-frantoio (Mühle) | CH-rosalia | `source/game/src/e.tsx:101` |
+| `LOC-hain` | DEIN HAIN | Olivenbäume unter der Stadt | hain | HOT-hain-regal (Haine verwalten) | CH-ciccio, CH-turi | `source/game/src/e.tsx:102` |
+| `LOC-lago` | LAGO ARANCIO | Wasser · Villen | lago | HOT-lago-pin-lago (Am Steg) | CH-klaus, CH-dolores | `source/game/src/e.tsx:103` |
+| `LOC-ruine` | TORRE DI PANDOLFINA | Wachturm · Zio Turis Hang | torre | HOT-ruine-pin-torre (Am Turm) | CH-turi | `source/game/src/e.tsx:105` |
+| `LOC-chiesa` | CHIESA MADRE | Hauptkirche · Padre Vito | chiesa | HOT-chiesa-beichte (Beichtstuhl), HOT-chiesa-spende (Opferstock (150 €)) | CH-nonna, CH-carmela, CH-rosalia, CH-padre | `source/game/src/e.tsx:107` |
+| `LOC-santuario` | SANTUARIO | Madonna dell'Udienza | santuario | HOT-santuario-altar (Madonna dell'Udienza), HOT-santuario-kerze (Kerze (5 €)), HOT-santuario-spende (Opferstock (150 €)) | CH-nonna, CH-carmela, CH-rosalia, CH-padre | `source/game/src/e.tsx:109` |
+| `LOC-hotel` | HOTEL DON GIOVANNI | Pool · Restaurant · Tourist:innen | hotel | HOT-hotel-pooldeal (Küchenchef: 20 l zu 160 %), HOT-hotel-aperitivo (Aperitivo (12 €)) | CH-giusi, CH-klaus, CH-dolores | `source/game/src/e.tsx:112` |
+| `LOC-lido` | LIDO BOOMERANG | Strandbar am Meer | lido | HOT-lido-strand (Strandtag (20 €)), HOT-lido-lidodeal (Restaurant: 15 l zu 150 %) | CH-salvo, CH-chiara, CH-dolores | `source/game/src/e.tsx:115` |
+| `LOC-fest` | FESTA | – | fest | HOT-fest-prog (Festprogramm) | CH-carmela, CH-rosalia, CH-ciccio, CH-padre, CH-turi, CH-giusi, CH-chiara, CH-klaus, CH-dolores, CH-sindaco | `source/game/src/e.tsx:117` |
 <!-- END GENERATED:scenes -->
 
 Spot-Aktionen (Hotspots mit Kosten):

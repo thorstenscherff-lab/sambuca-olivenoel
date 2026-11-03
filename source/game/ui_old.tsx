@@ -25,29 +25,34 @@ const CSS = `
 const bigBtn = (bg: string, fg: string = "#000"): CSSProperties => ({ width: "100%", minHeight: 48, padding: "10px 14px", fontWeight: 800, fontSize: 16, background: bg, color: fg, border: "none", borderRadius: 14, cursor: "pointer", boxShadow: "0 4px 0 rgba(0,0,0,.45)" });
 
 //
-function MiniHarvest(p: { name: string; onDone: (f: number) => void; onSkip: () => void }): ReactNode {
+function MiniHarvest(p: { name: string; kamm?: boolean; crew?: boolean; onDone: (f: number) => void; onSkip: () => void }): ReactNode {
   const [t, setT] = useState(0); const [run, setRun] = useState(false); const [n, setN] = useState(0);
   const [ol, setOl] = useState<{ id: number; x: number; y: number; b: number; gold: boolean }[]>([]);
   const [pops, setPops] = useState<{ id: number; x: number; y: number; s: string }[]>([]);
-  const idr = useRef(0); const END = 80;
+  const idr = useRef(0); const END = p.crew ? 60 : 80; const CAP = p.kamm ? 40 : 30; const [hn, setHn] = useState(0);
+  // v0.8.2 (FB-33/OI-040 Erntekamm, FB-34/OI-041 Crew)
   useEffect(() => { if (!run) return; const iv = setInterval(() => setT((v) => v + 1), 100); return () => clearInterval(iv); }, [run]);
   useEffect(() => {
     if (!run) return; if (t >= END) { setRun(false); setOl([]); return; }
-    setOl((o) => { let a = o.filter((x) => t - x.b < 14); if (t % 3 === 0 || a.length < 2) a = [...a, { id: ++idr.current, x: 8 + Math.random() * 80, y: 10 + Math.random() * 72, b: t, gold: Math.random() < 0.12 }]; return a; });
+    if (p.crew && t > 0 && t % 10 === 0) { setN((v) => v + 1); setHn((v) => v + 1); }
+    const life = p.kamm ? 18 : 14, every = p.kamm ? 2 : 3;
+    setOl((o) => { let a = o.filter((x) => t - x.b < life); if (t % every === 0 || a.length < 2) a = [...a, { id: ++idr.current, x: 8 + Math.random() * 80, y: p.kamm ? [18, 38, 58][Math.floor(Math.random() * 3)] + Math.random() * 6 : 10 + Math.random() * 72, b: t, gold: Math.random() < 0.12 }]; return a; });
   }, [t, run]);
-  const f = Math.round((0.7 + Math.min(n, 30) / 30 * 0.6) * 100) / 100; const done = t >= END;
+  const f = Math.round((0.7 + Math.min(n, CAP) / CAP * 0.6) * 100) / 100; const done = t >= END;
   const hit = (o: { id: number; x: number; y: number; gold: boolean }): void => { buzz(8); setN((v) => v + (o.gold ? 3 : 1)); setOl((a) => a.filter((x) => x.id !== o.id)); setPops((a) => [...a.slice(-6), { id: o.id, x: o.x, y: o.y, s: o.gold ? "+3" : "+1" }]); };
   return <div>
-    <p style={{ margin: "0 0 8px" }}>Tippe 8 Sekunden lang so viele Oliven wie möglich. <b style={{ color: C.gold }}>Goldene</b> zählen dreifach. Mehr Treffer = mehr Ertrag (×0,70 bis ×1,30).</p>
-    <div style={{ display: "flex", justifyContent: "space-between", fontFamily: FONT, fontSize: 22, margin: "4px 0" }}><span>🫒 {n}</span><span style={{ color: C.fg }}>×{f.toFixed(2)}</span><span>⏱ {Math.max(0, (END - t) / 10).toFixed(1)}</span></div>
+    <p style={{ margin: "0 0 8px" }}>{p.kamm ? "🪮 Mit dem Erntekamm wischst du über die Äste, die Oliven fallen ins Bodennetz." : "Tippe so viele Oliven wie möglich."}{p.crew ? " 👷 Deine Crew pflückt mit (+1 pro Sekunde), dafür ist die Runde kürzer." : ""} <b style={{ color: C.gold }}>Goldene</b> zählen dreifach. Mehr Treffer = mehr Ertrag (×0,70 bis ×1,30).</p>
+    <div style={{ display: "flex", justifyContent: "space-between", fontFamily: FONT, fontSize: 22, margin: "4px 0" }}><span>🫒 {n}{p.crew && <span data-gear="crew" style={{ fontSize: 15, color: C.ok }}> 👷 +{hn}</span>}</span><span style={{ color: C.fg }}>×{f.toFixed(2)}</span><span>⏱ {Math.max(0, (END - t) / 10).toFixed(1)}</span></div>
     <div style={{ height: 8, background: "#000", borderRadius: 4, overflow: "hidden", marginBottom: 6 }}><div style={{ height: "100%", width: `${100 - (t / END) * 100}%`, background: `linear-gradient(90deg,${C.pink},${C.fg})`, transition: "width .1s linear" }} /></div>
-    <div style={{ position: "relative", height: 280, borderRadius: 16, overflow: "hidden", background: "radial-gradient(circle at 30% 20%,#5a8a3a,#2d4a1e 60%,#1b2a12)", border: "2px solid #000" }}>
+    <div data-mode={p.kamm ? "kamm" : "tap"} onPointerMove={p.kamm && run ? (ev) => { const el = document.elementFromPoint(ev.clientX, ev.clientY); const b = el && (el as HTMLElement).closest ? (el as HTMLElement).closest("[data-oid]") : null; if (b) { const id = Number(b.getAttribute("data-oid")); const o = ol.find((x) => x.id === id); if (o) hit(o); } } : undefined} style={{ position: "relative", height: 280, borderRadius: 16, overflow: "hidden", background: "radial-gradient(circle at 30% 20%,#5a8a3a,#2d4a1e 60%,#1b2a12)", border: "2px solid #000", touchAction: p.kamm ? "none" : undefined }}>
+      {p.kamm && [22, 42, 62].map((y) => <div key={y} style={{ position: "absolute", left: 0, right: 0, top: y + "%", height: 6, background: "#5a3a1a", borderRadius: 3, pointerEvents: "none" }} />)}
+      {p.kamm && <div data-gear="bodennetz" style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 22, pointerEvents: "none", background: "repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 2px,transparent 2px 10px),#1f6b45", fontSize: 12, textAlign: "center", lineHeight: "22px" }}>BODENNETZ</div>}
       <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(115deg,rgba(255,255,255,.04) 0 14px,transparent 14px 30px)" }} />
-      {ol.map((o) => <button key={o.id} data-x="1" aria-label="Olive" onClick={() => hit(o)} style={{ position: "absolute", left: o.x + "%", top: o.y + "%", width: 52, height: 52, padding: 0, border: "none", background: "transparent", cursor: "pointer", animation: "sbBob .8s ease-in-out infinite", transform: "translate(-50%,-50%)" }}>
+      {ol.map((o) => <button key={o.id} data-x="1" aria-label="Olive" data-oid={o.id} onClick={() => hit(o)} style={{ position: "absolute", left: o.x + "%", top: o.y + "%", width: 52, height: 52, padding: 0, border: "none", background: "transparent", cursor: "pointer", animation: "sbBob .8s ease-in-out infinite", transform: "translate(-50%,-50%)" }}>
         <span style={{ display: "block", width: 34, height: 42, margin: "0 auto", borderRadius: "50%", background: o.gold ? "radial-gradient(circle at 35% 30%,#fff6b0,#ffc94a 45%,#b27b00)" : "radial-gradient(circle at 35% 30%,#b58ad6,#5b2a86 50%,#2a0f45)", boxShadow: "0 3px 6px rgba(0,0,0,.5)", transform: "rotate(-20deg)" }} /></button>)}
       {pops.map((q) => <span key={"p" + q.id} style={{ position: "absolute", left: q.x + "%", top: q.y + "%", fontFamily: FONT, fontSize: 26, color: q.s === "+3" ? C.gold : "#fff", textShadow: "0 2px 6px rgba(0,0,0,.8)", animation: "sbFloat .7s ease-out forwards", pointerEvents: "none" }}>{q.s}</span>)}
       {!run && <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, background: "rgba(20,8,34,.55)", animation: "sbFade .3s" }}>
-        {done ? <><div style={{ fontFamily: FONT, fontSize: 34, color: C.fg, animation: "sbPop .5s" }}>{n >= 24 ? "BRAVISSIMO!" : n >= 14 ? "BENE!" : "NA JA…"}</div><div>{n} Oliven · Ertrag ×{f.toFixed(2)}</div></>
+        {done ? <><div style={{ fontFamily: FONT, fontSize: 34, color: C.fg, animation: "sbPop .5s" }}>{n >= CAP * 0.8 ? "BRAVISSIMO!" : n >= CAP * 0.47 ? "BENE!" : "NA JA…"}</div><div>{n} Oliven · Ertrag ×{f.toFixed(2)}</div></>
           : <div style={{ fontFamily: FONT, fontSize: 30, color: "#fff" }}>{p.name}</div>}
         <div style={{ width: 220 }}><button onClick={() => { if (done) p.onDone(f); else { setRun(true); setT(0); setN(0); } }} style={bigBtn(C.pink)}>{done ? "Ernte einfahren ▶" : "Start!"}</button></div>
       </div>}
@@ -56,23 +61,28 @@ function MiniHarvest(p: { name: string; onDone: (f: number) => void; onSkip: () 
   </div>;
 }
 //
-function MiniPress(p: { kg: number; onDone: (f: number, q: number) => void }): ReactNode {
+function MiniPress(p: { kg: number; presse?: boolean; onDone: (f: number, q: number) => void }): ReactNode {
   const [t, setT] = useState(0); const [res, setRes] = useState<number[]>([]); const [run, setRun] = useState(false);
+  // v0.8.2 (FB-35/OI-042): eigene Presse mit Thermometer, ≤ 27 °C in allen Gängen = kaltgepresst
+  const gs = useRef(0); const [tmp, setTmp] = useState<number[]>([]);
   const zone = useRef<number[]>([30 + Math.random() * 40, 25 + Math.random() * 50, 20 + Math.random() * 60]);
   useEffect(() => { if (!run) return; const iv = setInterval(() => setT((v) => v + 1), 30); return () => clearInterval(iv); }, [run]);
   const r = res.length; const W = [26, 18, 12][Math.min(r, 2)]; const spd = [0.07, 0.095, 0.12][Math.min(r, 2)];
   const pos = 50 + 48 * Math.sin(t * spd); const c = zone.current[Math.min(r, 2)];
   const done = r >= 3; const avg = done ? res.reduce((s, x) => s + x, 0) / 3 : 0;
-  const stop = (): void => { if (!run) { setRun(true); return; } buzz(15); const d = Math.abs(pos - c); const s = d <= W / 2 ? 1 - (d / W) * 0.3 : Math.max(0, 0.85 - (d - W / 2) / 30); const nr = [...res, s]; setRes(nr); if (nr.length >= 3) setRun(false); };
-  const q = Math.round(40 + avg * 60), f = Math.round((0.9 + avg * 0.25) * 100) / 100;
+  const temp = Math.round((22 + Math.max(0, t - gs.current) / 10) * 10) / 10;
+  const stop = (): void => { if (!run) { gs.current = t; setRun(true); return; } if (p.presse) setTmp((a) => [...a, temp]); buzz(15); const d = Math.abs(pos - c); const s = d <= W / 2 ? 1 - (d / W) * 0.3 : Math.max(0, 0.85 - (d - W / 2) / 30); const nr = [...res, s]; setRes(nr); if (nr.length >= 3) setRun(false); };
+  const cold = !!p.presse && tmp.length >= 3 && tmp.every((x) => x <= 27);
+  const q = Math.min(100, Math.round(40 + avg * 60) + (cold ? 8 : 0)), f = Math.round((0.9 + avg * 0.25) * 100) / 100;
   return <div>
-    <p style={{ margin: "0 0 8px" }}>Drei Pressgänge: tippe <b>STOPP</b>, wenn die Nadel in der grünen Zone steht. Je genauer, desto besser Qualität und Ausbeute. {p.kg} kg Oliven warten.</p>
+    <p style={{ margin: "0 0 8px" }}>Drei Pressgänge: tippe <b>STOPP</b>, wenn die Nadel in der grünen Zone steht.{p.presse ? " 🏭 Eigene Presse: das Thermometer steigt mit der Zeit. Alle drei Gänge bei höchstens 27 °C = kaltgepresst." : ""} Je genauer, desto besser Qualität und Ausbeute. {p.kg} kg Oliven warten.</p>
     <div style={{ position: "relative", height: 70, borderRadius: 35, background: "linear-gradient(90deg,#3a1a5c,#5b2a86 50%,#3a1a5c)", border: "3px solid #000", overflow: "hidden", margin: "10px 0" }}>
       {!done && <div style={{ position: "absolute", top: 0, bottom: 0, left: `${c - W / 2}%`, width: `${W}%`, background: "linear-gradient(#7dffb0,#2fbf71)", opacity: 0.9, boxShadow: "0 0 18px #7dffb0" }} />}
       <div style={{ position: "absolute", top: -4, bottom: -4, left: `calc(${pos}% - 4px)`, width: 8, background: "#fff", boxShadow: "0 0 10px #fff", borderRadius: 4 }} />
     </div>
+    {p.presse && <div data-gear="presse" style={{ display: "flex", alignItems: "center", gap: 8, margin: "4px 0" }}><span>🌡️</span><div style={{ flex: 1, height: 12, background: "#000", borderRadius: 6, overflow: "hidden" }}><div style={{ height: "100%", width: `${Math.min(100, ((run ? temp : 22) - 18) / 16 * 100)}%`, background: (run ? temp : 22) <= 27 ? "#4ab0ff" : C.bad }} /></div><b style={{ minWidth: 64, textAlign: "right" }}>{(run ? temp : 22).toFixed(1)} °C</b></div>}
     <div style={{ display: "flex", gap: 8, justifyContent: "center", margin: "8px 0", fontFamily: FONT, fontSize: 20 }}>{[0, 1, 2].map((i) => <span key={i} style={{ flex: 1, textAlign: "center", padding: 6, borderRadius: 10, background: i < r ? (res[i] > 0.85 ? "#1f6b45" : res[i] > 0.5 ? "#6b5a1f" : "#6b1f2f") : "#2a1543", animation: i === r - 1 ? "sbPop .4s" : undefined }}>{i < r ? (res[i] > 0.85 ? "PERFETTO" : res[i] > 0.5 ? "GUT" : "DANEBEN") : `Gang ${i + 1}`}</span>)}</div>
-    {done ? <div style={{ textAlign: "center", animation: "sbIn .3s" }}><div style={{ fontFamily: FONT, fontSize: 28, color: C.fg }}>Qualität {q} · Ausbeute ×{f.toFixed(2)}</div><button onClick={() => p.onDone(f, q)} style={{ ...bigBtn(C.pink), marginTop: 8 }}>Öl abfüllen ▶</button></div>
+    {done ? <div style={{ textAlign: "center", animation: "sbIn .3s" }}><div style={{ fontFamily: FONT, fontSize: 28, color: C.fg }}>Qualität {q} · Ausbeute ×{f.toFixed(2)}</div>{p.presse && <div data-gear="presse-ergebnis" style={{ color: cold ? "#7dd3ff" : C.gold }}>{cold ? "❄️ KALTGEPRESST (+8 Qualität)" : `🔥 zu warm: max. ${Math.max(...tmp).toFixed(1)} °C (Grenze 27 °C)`}</div>}<button onClick={() => p.onDone(f, q)} style={{ ...bigBtn(C.pink), marginTop: 8 }}>Öl abfüllen ▶</button></div>
       : <button onClick={stop} style={{ ...bigBtn(run ? C.fg : C.pink), minHeight: 64, fontSize: 22, fontFamily: FONT, letterSpacing: ".05em" }}>{run ? "STOPP!" : r ? "Weiter" : "Presse starten"}</button>}
     {!done && r === 0 && !run && <button onClick={() => p.onDone(1, 55)} style={{ ...bigBtn("transparent", "#fff"), boxShadow: "none", border: "2px solid #6b4a90", marginTop: 8 }}>Rosalia machen lassen (Qualität 55)</button>}
   </div>;

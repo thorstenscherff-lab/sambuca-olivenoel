@@ -618,5 +618,213 @@
 "ab {0} Jahr {1}": [
 "from {0}, year {1}",
 "da {0}, anno {1}"
+],
+"JANUAR": [
+"JANUARY",
+"GENNAIO"
+],
+"Januar": [
+"January",
+"Gennaio"
+],
+"FEBRUAR": [
+"FEBRUARY",
+"FEBBRAIO"
+],
+"Februar": [
+"February",
+"Febbraio"
+],
+"MÄRZ": [
+"MARCH",
+"MARZO"
+],
+"März": [
+"March",
+"Marzo"
+],
+"APRIL": [
+"APRIL",
+"APRILE"
+],
+"April": [
+"April",
+"Aprile"
+],
+"MAI": [
+"MAY",
+"MAGGIO"
+],
+"Mai": [
+"May",
+"Maggio"
+],
+"JUNI": [
+"JUNE",
+"GIUGNO"
+],
+"Juni": [
+"June",
+"Giugno"
+],
+"JULI": [
+"JULY",
+"LUGLIO"
+],
+"Juli": [
+"July",
+"Luglio"
+],
+"AUGUST": [
+"AUGUST",
+"AGOSTO"
+],
+"August": [
+"August",
+"Agosto"
+],
+"SEPTEMBER": [
+"SEPTEMBER",
+"SETTEMBRE"
+],
+"September": [
+"September",
+"Settembre"
+],
+"OKTOBER": [
+"OCTOBER",
+"OTTOBRE"
+],
+"Oktober": [
+"October",
+"Ottobre"
+],
+"NOVEMBER": [
+"NOVEMBER",
+"NOVEMBRE"
+],
+"November": [
+"November",
+"Novembre"
+],
+"DEZEMBER": [
+"DECEMBER",
+"DICEMBRE"
+],
+"Dezember": [
+"December",
+"Dicembre"
+],
+"Lager & Haine": [
+"Stock & groves",
+"Magazzino e uliveti"
+],
+"{0} · {1} Person da": [
+"{0} · {1} person here",
+"{0} · {1} persona qui"
+],
+"{0} · {1} Personen da": [
+"{0} · {1} people here",
+"{0} · {1} persone qui"
+],
+"{0} · 🔒 {1}": [
+"{0} · 🔒 {1}",
+"{0} · 🔒 {1}"
+],
+"Zio Turis Oberhang": [
+"Zio Turi's upper slope",
+"Il pendio alto di Zio Turi"
+],
+"Masseria abbandonata": [
+"Masseria abbandonata",
+"Masseria abbandonata"
+],
+"DEIN BÜRO": [
+"YOUR OFFICE",
+"IL TUO UFFICIO"
+],
+"Raus aufs Land": [
+"Out to the countryside",
+"Fuori in campagna"
+],
+"Schneide mindestens einen Hain": [
+"Prune at least one grove",
+"Pota almeno un uliveto"
+],
+"HAUPTGEWINN! +250 €.": [
+"JACKPOT! +250 €.",
+"PRIMO PREMIO! +250 €."
+],
+"NEUER KONTAKT!": [
+"NEW CONTACT!",
+"NUOVO CONTATTO!"
+],
+"ABGEBLITZT": [
+"BRUSHED OFF",
+"RESPINTO"
+],
+"NETT!": [
+"NICE!",
+"CARINO!"
+],
+"HOLPRIG…": [
+"BUMPY…",
+"IMPACCIATO…"
+],
+"STURM!": [
+"STORM!",
+"TEMPESTA!"
+],
+"FLUT!": [
+"FLOOD!",
+"ALLUVIONE!"
+],
+"FEUER!": [
+"FIRE!",
+"FUOCO!"
+],
+"FLIEGENJAGD!": [
+"FLY HUNT!",
+"CACCIA ALLA MOSCA!"
+],
+"🧱 SANDSÄCKE": [
+"🧱 SANDBAGS",
+"🧱 SACCHI DI SABBIA"
+],
+"GERETTET!": [
+"SAVED!",
+"SALVATO!"
+],
+"HALBWEGS…": [
+"SO-SO…",
+"COSÌ COSÌ…"
+],
+"MUNICIPIO": [
+"MUNICIPIO",
+"MUNICIPIO"
+],
+"FEUDO ARANCIO": [
+"FEUDO ARANCIO",
+"FEUDO ARANCIO"
+],
+"DEIN HAIN": [
+"YOUR GROVE",
+"IL TUO ULIVETO"
+],
+"LIDO BOOMERANG": [
+"LIDO BOOMERANG",
+"LIDO BOOMERANG"
+],
+"Kaufen (6 €)": [
+"Buy (6 €)",
+"Compra (6 €)"
+],
+"Du erbst einen verwilderten Hain bei Pandolfina, 6.000 € und 150 l von Nonnos Öl. Im Dorf kennst du nur deine Nonna.": [
+"You inherit an overgrown grove near Pandolfina, 6,000 € and 150 l of your Nonno's oil. In the village you only know your Nonna.",
+"Erediti un uliveto inselvatichito vicino a Pandolfina, 6.000 € e 150 l dell'olio del Nonno. In paese conosci solo la tua Nonna."
+],
+"Casa in der Via Delfino · bescheidener Anfang": [
+"Casa in Via Delfino · humble beginnings",
+"Casa in Via Delfino · inizi modesti"
 ]
 }

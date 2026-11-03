@@ -249,8 +249,16 @@ const I18N_DICT: Record<string, [string, string]> = {
 "8 secondi."
 ],
 "ABGEBLITZT": [
-"DEFINED",
-"DEFINED"
+"BRUSHED OFF",
+"RESPINTO"
+],
+"APRIL": [
+"APRIL",
+"APRILE"
+],
+"AUGUST": [
+"AUGUST",
+"AGOSTO"
 ],
 "AUSRÜSTUNG": [
 "EQUIPMENT",
@@ -352,6 +360,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Apicoltore · Beekeepers in Belice",
 "Apicoltore · Beekeepers in Belice"
 ],
+"April": [
+"April",
+"Aprile"
+],
 "Apr–Okt: bis 25 l zu 145 %, ★ +2": [
 "Apr–Oct: up to 25 l at 145%, ★ +2",
 "Apr-Otto: fino a 25 l al 145%, ★ +2"
@@ -391,6 +403,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Auftrag": [
 "Order",
 "Ordine"
+],
+"August": [
+"August",
+"Agosto"
 ],
 "Ausblick": [
 "View",
@@ -597,8 +613,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Casa in Via Delfino"
 ],
 "Casa in der Via Delfino · bescheidener Anfang": [
-"Casa in the Via Delfino · modest beginning",
-"Casa in Via Delfino · modesto inizio"
+"Casa in Via Delfino · humble beginnings",
+"Casa in Via Delfino · inizi modesti"
 ],
 "Cassatelle und Cuddure gehen weg wie nichts.": [
 "Cassatelle and Cuddure go away like nothing.",
@@ -741,12 +757,16 @@ const I18N_DICT: Record<string, [string, string]> = {
 "DEAL: Cooperazione del vino! Quota Crew & rüttler, salari −30 %."
 ],
 "DEIN BÜRO": [
-"Your brother",
-"Tuo fratello"
+"YOUR OFFICE",
+"IL TUO UFFICIO"
 ],
 "DEIN HAIN": [
-"Your grove",
-"Il tuo groviglio"
+"YOUR GROVE",
+"IL TUO ULIVETO"
+],
+"DEZEMBER": [
+"DECEMBER",
+"DICEMBRE"
 ],
 "DOP Val di Mazara! Das Siegel klebt auf jeder Flasche.": [
 "DOP Val di Mazara! The seal sticks to each bottle.",
@@ -1273,8 +1293,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Sei l'eroe della serata."
 ],
 "Du erbst einen verwilderten Hain bei Pandolfina, 6.000 € und 150 l von Nonnos Öl. Im Dorf kennst du nur deine Nonna.": [
-"You inherit a wild grove at Pandolfina, €6,000 and 150 l of Nonnos oil. In the village you only know your Nonna.",
-"Eredite un grove selvatico a Pandolfina, 6000 e 150 l di olio di Nonnos. Nel villaggio conosci solo la tua Nonna."
+"You inherit an overgrown grove near Pandolfina, 6,000 € and 150 l of your Nonno's oil. In the village you only know your Nonna.",
+"Erediti un uliveto inselvatichito vicino a Pandolfina, 6.000 € e 150 l dell'olio del Nonno. In paese conosci solo la tua Nonna."
 ],
 "Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.": [
 "You inherit an overgrown olive grove near Sambuca di Sicilia. Get to know the village, survive storms, flies and festivals – year after year.",
@@ -1660,13 +1680,25 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Extra fertiliser (1 €/tree)",
 "Concimi extra (1 €/tree)"
 ],
+"FEBRUAR": [
+"FEBRUARY",
+"FEBBRAIO"
+],
+"FEUDO ARANCIO": [
+"FEUDO ARANCIO",
+"FEUDO ARANCIO"
+],
 "FEUER!": [
 "FIRE!",
-"FIRE!"
+"FUOCO!"
 ],
 "FLIEGENJAGD!": [
-"FLYING HOUR!",
-"A FLYING HOUR!"
+"FLY HUNT!",
+"CACCIA ALLA MOSCA!"
+],
+"FLUT!": [
+"FLOOD!",
+"ALLUVIONE!"
 ],
 "Familie": [
 "Family",
@@ -1829,8 +1861,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Per un'applicazione UE \"Strada dell'Olio Terre Sicane\" ha bisogno di aziende che partecipano."
 ],
 "GERETTET!": [
-"RESERVED!",
-"RISERVATO!"
+"SAVED!",
+"SALVATO!"
 ],
 "GUT": [
 "GOOD",
@@ -2009,16 +2041,16 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Inserisci una buona parola (50 €)"
 ],
 "HALBWEGS…": [
-"HALFWAYS…",
-"HALFWAY…"
+"SO-SO…",
+"COSÌ COSÌ…"
 ],
 "HAUPTGEWINN! +250 €.": [
-"MAIN win! +250 €.",
-"MAIN win! +250 €."
+"JACKPOT! +250 €.",
+"PRIMO PREMIO! +250 €."
 ],
 "HOLPRIG…": [
-"HOLD…",
-"HOLD…"
+"BUMPY…",
+"IMPACCIATO…"
 ],
 "Haarschnitt 12 € – und der komplette Dorfklatsch.": [
 "Haircut 12 € – and the complete village gossip.",
@@ -2184,9 +2216,21 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Interview in the Hain",
 "Intervista nell'Hain"
 ],
+"JANUAR": [
+"JANUARY",
+"GENNAIO"
+],
 "JETZT FORDERN!": [
 "ASK NOW!",
 "CHIEDI ORA!"
+],
+"JULI": [
+"JULY",
+"LUGLIO"
+],
+"JUNI": [
+"JUNE",
+"GIUGNO"
 ],
 "Jahr": [
 "Year",
@@ -2257,8 +2301,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Comprare (40 €)"
 ],
 "Kaufen (6 €)": [
-"Buying (€6)",
-"Comprare (€6)"
+"Buy (6 €)",
+"Compra (6 €)"
 ],
 "Kaufen · {0}": [
 "Buy · {0]}",
@@ -2417,8 +2461,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Acqua di sorgente fredda."
 ],
 "LIDO BOOMERANG": [
-"Lido Boomerang",
-"Lido Boomerang"
+"LIDO BOOMERANG",
+"LIDO BOOMERANG"
 ],
 "Labortest (300 €)": [
 "Laboratory test (300 €)",
@@ -2431,6 +2475,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Laden": [
 "Shop",
 "Negozio"
+],
+"Lager & Haine": [
+"Stock & groves",
+"Magazzino e uliveti"
 ],
 "Laut wird es auf der Piazza della Vittoria.": [
 "It is heard in Piazza della Vittoria.",
@@ -2484,6 +2532,14 @@ const I18N_DICT: Record<string, [string, string]> = {
 "MADONNA DELL’UDIENZA",
 "MADONNA DELL’UDIENZA"
 ],
+"MAI": [
+"MAY",
+"MAGGIO"
+],
+"MUNICIPIO": [
+"MUNICIPIO",
+"MUNICIPIO"
+],
 "Macelleria · Salsiccia-König": [
 "Macelleria · Salsiccia King",
 "Macelleria · Salsiccia King"
@@ -2519,6 +2575,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Marktpreis annehmen (100 %)": [
 "Accept market price (100 %)",
 "Accettare il prezzo di mercato (100 %)"
+],
+"Masseria abbandonata": [
+"Masseria abbandonata",
+"Masseria abbandonata"
 ],
 "Meer · über SP41": [
 "Sea · via SP41",
@@ -2600,6 +2660,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Monthly income from Pro Loco",
 "Reddito mensile da Pro Loco"
 ],
+"MÄRZ": [
+"MARCH",
+"MARZO"
+],
 "Mär": [
 "Margin",
 "Margine"
@@ -2625,12 +2689,16 @@ const I18N_DICT: Record<string, [string, string]> = {
 "MAH…"
 ],
 "NETT!": [
-"NEW!",
-"NUOVO!"
+"NICE!",
+"CARINO!"
 ],
 "NEUER KONTAKT!": [
-"New contact!",
-"Nuovo contatto!"
+"NEW CONTACT!",
+"NUOVO CONTATTO!"
+],
+"NOVEMBER": [
+"NOVEMBER",
+"NOVEMBRE"
 ],
 "Nach der Messe reichen sich Turi und du die Hand. Halbwegs.": [
 "After Mass, Turi and you reach out. Halfway.",
@@ -2760,6 +2828,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Novello evening at Salvos Bar",
 "Novello sera al Salvos Bar"
 ],
+"November": [
+"November",
+"Novembre"
+],
 "Nur Juni–September: Die Küche kauft 15 l zu 150 % des Marktpreises.": [
 "June–September only: The kitchen buys 15 l at 150% of the market price.",
 "Solo giugno – settembre: la cucina acquista 15 l al 150% del prezzo di mercato."
@@ -2783,6 +2855,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "O-Dogs Garden · Hundepension": [
 "O-Dogs Garden · Dog Boarding",
 "O-Dogs Giardino · Cane Boarding"
+],
+"OKTOBER": [
+"OCTOBER",
+"OTTOBRE"
 ],
 "Offline – nicht gesendet. Lokal ist dein Ergebnis gespeichert, versuch es später nochmal.": [
 "Offline – not sent. Locally your result is stored, try again later.",
@@ -3077,8 +3153,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Municipio di Sambuca"
 ],
 "Raus aufs Land": [
-"Get out on land",
-"Esci a terra"
+"Out to the countryside",
+"Fuori in campagna"
 ],
 "Reiche Amerikanerin · Villa am Lago": [
 "Rich American · Villa on the Lago",
@@ -3172,13 +3248,17 @@ const I18N_DICT: Record<string, [string, string]> = {
 "PROTECTION",
 "PROTEZIONE"
 ],
+"SEPTEMBER": [
+"SEPTEMBER",
+"SETTEMBRE"
+],
 "STOPP!": [
 "STOP!",
 "STOP!"
 ],
 "STURM!": [
-"Storm!",
-"Storm!"
+"STORM!",
+"TEMPESTA!"
 ],
 "Sabotage am Bewässerungsschlauch": [
 "Sabotage on the irrigation hose",
@@ -3257,8 +3337,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Chiudi"
 ],
 "Schneide mindestens einen Hain": [
-"Cut at least one grove",
-"Tagliare almeno un boschetto"
+"Prune at least one grove",
+"Pota almeno un uliveto"
 ],
 "Schneiden lassen (12 €)": [
 "Cutting (12 €)",
@@ -3367,6 +3447,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Sep": [
 "Sep",
 "Set"
+],
+"September": [
+"September",
+"Settembre"
 ],
 "Settimana Santa: Prozession des Cristo Morto": [
 "Settimana Santa: Procession of Cristo Morto",
@@ -3952,6 +4036,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Goal",
 "Obiettivo"
 ],
+"Zio Turis Oberhang": [
+"Zio Turi's upper slope",
+"Il pendio alto di Zio Turi"
+],
 "Zitronen-Öl (Agrumato)": [
 "Lemon oil (Agrumato)",
 "Olio di limone (Agrumato)"
@@ -4295,6 +4383,18 @@ const I18N_DICT: Record<string, [string, string]> = {
 "{0} · zu haben": [
 "{0} · to have",
 "{0} · avere"
+],
+"{0} · {1} Person da": [
+"{0} · {1} person here",
+"{0} · {1} persona qui"
+],
+"{0} · {1} Personen da": [
+"{0} · {1} people here",
+"{0} · {1} persone qui"
+],
+"{0} · 🔒 {1}": [
+"{0} · 🔒 {1}",
+"{0} · 🔒 {1}"
 ],
 "{0} € Kredit getilgt.": [
 "{0} € credit repaid.",
@@ -5393,8 +5493,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "🤝 Vendita di olio (bargaining) · {0} l · 1 ⏳"
 ],
 "🧱 SANDSÄCKE": [
-"🧱 SANDAGE",
-"🧱 GESTIONE"
+"🧱 SANDBAGS",
+"🧱 SACCHI DI SABBIA"
 ],
 "🧱 Sandsäcke": [
 "🧱 Sandbags",

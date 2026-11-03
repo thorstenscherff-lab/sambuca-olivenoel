@@ -27,5 +27,6 @@ Thorsten testet auf dem eigenen Telefon. Sein Feedback wird in CHANGELOG.md wör
 
 ## Ergebnisse v0.9.0 (03.11.2026)
 - `logic9.mjs`: 23 Figuren; Monat 1 erreichbar: nonna, carmela, salvo, nunzia; zweites Kennenlernen im selben Monat blockiert; 7 Vitamin-B-Figuren ohne Vorstellung gesperrt, mit Vorstellung erreichbar; alle `vb_*`-Perks vorhanden.
-- `qa9.js`: Titel v0.9.0; Sprachwahl mit 3 Buttons; Intro EN/IT/DE übersetzt; `save.lang` korrekt; nach Reload bleiben Sprache und Spiel, keine erneute Auswahl; Misses EN 11 / IT 11 (nur Eigennamen), DE 0; kein „Karte“-Button/-Text in Szenen; Szene per Tab verlassen; Laden-Icons 0 px Abweichung auf beiden Karten bei allen 4 Zoomstufen; keine Konsolenfehler.
+- `qa9.js`: Titel v0.9.0; Sprachwahl mit 3 Buttons; Intro EN/IT/DE übersetzt; `save.lang` korrekt; nach Reload bleiben Sprache und Spiel, keine erneute Auswahl; Misses EN/IT je 11–12 (nur Eigennamen), DE 0; kein „Karte“-Button/-Text in Szenen; Szene per Tab verlassen; Laden-Icons 0 px Abweichung auf beiden Karten bei allen 4 Zoomstufen; keine Konsolenfehler.
 - Screenshots: `docs/qa/v0.9.0/`.
+- **Live-QA** (03.11.2026, gegen GitHub Pages, `app.js` sha256 `3a95e196…` = lokaler Build): `qa9.js` identisch grün, keine Konsolenfehler.

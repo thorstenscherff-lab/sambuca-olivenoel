@@ -57,7 +57,7 @@
 | OI-051 | hoch | erledigt (v0.9.0) | Review (Beta, FB-41) | Klickbare Laden-Icons driften beim Zoomen gegenüber der gezeichneten Karte | MAPS (Pin-Verifikation v0.9.0) · UI |
 | OI-052 | mittel | erledigt (v0.9.0) | Review (Beta, FB-42) | Doppelter Navigationspunkt „🗺️ Karte“ in Szenen entfernen (Tabs Stadt/Umland reichen) | UI |
 | OI-053 | mittel | offen | v0.9.0 (I18N) | Englisch/Italienisch der langen Ereignis- und Dialogtexte ist maschinell (Argos, IT über EN) und stellenweise holprig; UI, Intro, Tabs, Monate, Gating-Texte sind handkorrigiert. Muttersprachliches Lektorat von `source/tools/i18n_manual.json` nötig | I18N.md |
-| OI-054 | niedrig | offen | v0.9.0 (I18N) | Eigennamen (Figuren-/Ortsnamen, 11 Strings je Sprache) bleiben bewusst unübersetzt und erscheinen in `__i18n.miss`; Sprache lässt sich nach dem Start nur über „Neues Spiel“/Website-Daten löschen ändern | I18N.md |
+| OI-054 | niedrig | offen | v0.9.0 (I18N) | Eigennamen (Figuren-/Ortsnamen, 11–12 Strings je Sprache) bleiben bewusst unübersetzt und erscheinen in `__i18n.miss`; Sprache lässt sich nach dem Start nur über „Neues Spiel“/Website-Daten löschen ändern | I18N.md |
 
 ## Nächste Schritte (Stand 03.11.2026, nach v0.8.2)
 1. Thorsten spielt v0.8.2 auf dem Handy und reviewt per Plaud (Ernte mit Kamm/Crew, eigene Presse, Sturm/Flut mit Geräten).

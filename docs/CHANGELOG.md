@@ -3,6 +3,24 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
+## v0.8.2 – 03.11.2026 (Commits siehe unten)
+**Feedback:** Thorsten, 03.11. 02:16: „Ja und deine Vorschläge umsetzen. Dann ist Schluss für heute und du kannst alles was noch nicht dokumentiert ist dokumentieren“. Gemeint sind die Geräte-Vorschläge aus MINIGAMES.md (v0.8.1). Sie wurden zuerst in Notion (FB-32…FB-36) und in OPEN_ISSUES/MINIGAMES dokumentiert und danach gebaut.
+
+**Änderungen:**
+- **Windnetze (FB-32/OI-039):** Mit `fl.netz` zeigt die Sturm-Rettung ein Netz-Overlay; 🪢 Netz-Seile zählen doppelt, Ziel 10 statt 14.
+- **Erntekamm + Bodennetze (FB-33/OI-040):** neues Gerät `SHOP-kamm` (Ferramenta, 120 € × Rabatt). Das Handpflücken wird zum Wisch-Spiel über 3 Äste, mit Bodennetz; Deckel 40 statt 30 Oliven.
+- **Crew (FB-34/OI-041):** Mit Crew zählt das Ernte-Spiel +1 Olive je Sekunde („👷 +n“), dafür dauert die Runde 6 s statt 8 s.
+- **Eigene Mini-Presse (FB-35/OI-042):** neues Gerät `SHOP-presse` (Consorzio, 4 500 €). Das Press-Spiel zeigt ein Thermometer; alle drei Gänge ≤ 27 °C = „❄️ KALTGEPRESST“, +8 Qualität.
+- **Sandsäcke/Drainage (FB-36/OI-043):** Flut-Rettung mit Sandsäcken Ziel 10, mit Drainage Ziel 8 und länger sichtbare Lecks.
+- **Spaten:** unverändert (kein Minispiel).
+- **Version:** v0.8.2 (Titel, Manifest, Startbild, `GAME_V` für den Highscore).
+
+**Zwischenfall:** Gegen 02:30 wurde die Build-Box zurückgesetzt. Die erste, noch nicht committete Umsetzung ging verloren und wurde aus dem Repo-Stand v0.8.1 neu gebaut. Neue Regel: nach jedem Zwischenschritt sofort committen und auf den Branch `wip/v0.8.2` pushen; main erst nach dem QA (OI-044).
+
+**Prozessfehler (nachgetragen):** In v0.8.1 wurden FB-29 und FB-30 erst nach der Umsetzung in Notion eingetragen. Die Konvention „erst Notion + Doku, dann Bau“ wurde dabei verletzt. Ab v0.8.2 wird sie eingehalten (siehe README.md, Review-Prozess).
+
+**QA:** 390×844, Screenshots in `/workspace/sambuca-game/v08/qa/geraete/` (je Variante Spiel + Ergebnis; Messwerte in MINIGAMES.md).
+
 ## v0.8.1 – 03.11.2026 (Commits 9886f11, 5584f95)
 **Feedback:** Thorsten, 03.11. 01:57: „Ich finde die Icons für die Haupt-Orte besser als die Sprechblasen. Lass uns das auf allen Zoomstufen machen. Vielleicht kann ein kleines Personen-Icon dran, wenn jemand da ist.“ (FB-29/OI-036). Nachtrag: „Die Icons von Bar del Corso und Bank liegen übereinander“ – alle Pins prüfen, nahe Orte mit Führungslinie auflösen (FB-30/OI-037). Supabase für den Live-Highscore von Thorsten freigegeben (FB-19/OI-007).
 

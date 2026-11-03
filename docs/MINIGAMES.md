@@ -51,7 +51,7 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 - **Code:** `MiniShaker` in `source/game/src/f.tsx`; Auswahl im Ernte-Sheet `sheet.t === "h"`. Test-Hooks: `data-net="0|1|2"`, `data-trunk`, `data-shake`, `data-lean`.
 - **QA:** `/workspace/sambuca-game/v08/qa/icons/FB-31_*.png` (Handpflücken vs. Rüttler).
 
-### Vorschläge (nicht umgesetzt) – weitere Geräte, die ein Minispiel verändern könnten
+### Vorschläge – weitere Geräte (freigegeben 03.11. 02:16, umgesetzt in v0.8.2, siehe unten)
 - **Windschutznetze (`netz1`/`netz2`):** in MiniRescue „sturm“ schon wirksam als Schaden ×0,4; Vorschlag: im Sturm-Rettungsspiel liegen Netze schon gespannt → weniger fliegende Teile, dafür „Netz nachspannen“-Ziele.
 - **Erntenetze / Erntekamm (gibt es noch nicht im Shop):** Vorschlag neues Gerät „Erntekamm + Bodennetze“ (Ferramenta, ~120 €): Handpflücken-Spiel wird zum Wisch-Spiel (über Zweige wischen statt einzeln tippen), Oliven landen gesammelt im Netz.
 - **Crew (`crew`):** Vorschlag: im Ernte-Spiel pflücken 1–2 Helfer automatisch mit (Zusatz-Oliven), Spiel dafür kürzer.
@@ -88,3 +88,20 @@ Alle Minispiele laufen im Sheet `UI-mg` bzw. `UI-talk`. Steuerung: Tippen, also 
 ## v0.8
 - MiniRescue hat die Variante `brand` („FEUER!“): Flammen 🔥 antippen, Ziel 15 Treffer in 8 s. Schutz s = Treffer/15.
 - MiniTalk zieht Antworten ohne Wiederholung (FB-10).
+
+## Geräte-Varianten v0.8.2 (FB-32…FB-36 · OI-039…OI-043)
+Freigegeben von Thorsten am 03.11.2026 02:16. Die Geräte ändern nur das Minispiel; die Schadens- und Ertragsformeln in ECONOMY.md bleiben gleich.
+
+| Flag | Minispiel | Änderung | Wirkung |
+|---|---|---|---|
+| `fl.netz` (SHOP-netz1/netz2) | MG-rescue-sturm | grünes Netz-Overlay (`data-gear="netz"`), Teile 🪜📦🛞🪣🪢 | 🪢 zählt 2, Ziel 10 statt 14 |
+| `fl.kamm` (SHOP-kamm, neu) | MG-harvest | Wisch-Spiel: Finger über 3 Äste ziehen (pointermove + elementFromPoint), Bodennetz (`data-gear="bodennetz"`) | Oliven alle 0,2 s, 1,8 s sichtbar, Deckel 40 statt 30 |
+| `crew > 0` | MG-harvest | Zähler „👷 +n“ (`data-gear="crew"`) | +1 Olive je Sekunde, Runde 6 s statt 8 s |
+| `fl.presse` (SHOP-presse, neu) | MG-press | Thermometer (`data-gear="presse"`): 22 °C beim Start, +1 °C je 10 Ticks (0,3 s) | alle 3 STOPP ≤ 27 °C → „❄️ KALTGEPRESST“, Qualität +8 (max. 100); sonst „🔥 zu warm: max. …“ |
+| `fl.sand` (SHOP-sand) | MG-rescue-flut | Sandsack-Leiste (`data-gear="sand"`) | Ziel 10 statt 14 |
+| `fl.drain` (SHOP-drain) | MG-rescue-flut | Drainage-Leiste (`data-gear="drain"`), hat Vorrang vor Sand | Ziel 8, Lecks 16 statt 13 Ticks |
+| `spade` | – | keine Änderung (Pflege, kein Minispiel) | – |
+
+Reihenfolge: Das Rettungsspiel läuft vor `storm()`. Deshalb sind `netz`/`sand` noch gesetzt, wenn das Spiel startet; `storm()` verbraucht sie danach wie bisher.
+
+QA 390×844 (Skript `/workspace/sbtest/geraete.js`, je Teil ≤ 120 s): Screenshots in `/workspace/sambuca-game/v08/qa/geraete/`. Messwerte bei gleicher Eingabe (9 Treffer): Sturm ohne Netze 64 %, mit Netzen 100 %; Flut ohne 64 %, Sandsäcke 90 %, Drainage 100 %. Presse: Frantoio ohne Anzeige; eigene Presse schnell = kaltgepresst (+8), langsam = zu warm (41,7 °C).

@@ -1,4 +1,4 @@
-# Offene Punkte (Stand 03.11.2026, Spiel v0.8)
+# Offene Punkte (Stand 03.11.2026, Spiel v0.8.2)
 
 **Priorität:** hoch / mittel / niedrig. **Status:** offen, umgesetzt v0.8, in Doku behoben, Wunsch. Die Quellen sind Code-Audit (A) oder Thorstens Feedback (F, siehe CHANGELOG).
 
@@ -42,3 +42,17 @@
 | OI-036 | hoch | umgesetzt v0.8.1 | Review (Nachtrag FB-29) | Thorsten 03.11. 01:57: Haupt-Orte auf ALLEN Zoomstufen als bunte Icons statt Sprechblasen; kleines Personen-Badge (👤 bzw. 👤n), wenn dort jemand anwesend ist; Stadt- und Umlandkarte; lesbar am Handy, keine Überlappung | UI (Karte) · MAPS (F Review v0.8) |
 | OI-037 | hoch | umgesetzt v0.8.1 | Review (Nachtrag FB-30) | Thorsten 03.11.: Bar del Corso und Sicilbanca lagen übereinander. Alle Pins gegen Koordinaten prüfen; nahe Orte: echten Punkt behalten, Icon versetzen, feine Führungslinie – auf jeder Zoomstufe; Prüftabelle in MAPS.md | MAPS · UI (Karte) (F Review v0.8) |
 | OI-038 | hoch | umgesetzt v0.8.1 | Review (Nachtrag FB-31) | Thorsten 03.11. 02:07: Mit Rüttler eigenes Ernte-Minispiel (Netz legen, am Stamm ansetzen, Intensität ohne Astbruch). Vorschläge für weitere Geräte in MINIGAMES.md (nicht umgesetzt) | MG-harvest-shaker · MG-harvest (F Review v0.8) |
+| OI-039 | mittel | umgesetzt v0.8.2 | Review (Vorschlag, freigegeben 03.11. 02:16, FB-32) | Windnetze im Sturm-Rettungsspiel: Netz-Overlay, 🪢 Netz-Seile zählen doppelt, Ziel 10 statt 14. Der Schaden ×0,4 in ECO-DMG bleibt. | MG-rescue-sturm · SHOP-netz1 · SHOP-netz2 (F) |
+| OI-040 | mittel | umgesetzt v0.8.2 | Review (Vorschlag, FB-33) | Neues Gerät Erntekamm + Bodennetze (Ferramenta, 120 € × Rabatt, `fl.kamm`): Handpflücken wird Wisch-Spiel auf 3 Ästen, Oliven länger sichtbar, Deckel 40 statt 30. | MG-harvest · SHOP-kamm (F) |
+| OI-041 | mittel | umgesetzt v0.8.2 | Review (Vorschlag, FB-34) | Crew (`crew > 0`) pflückt im Ernte-Spiel mit: +1 Olive pro Sekunde, Runde 6 s statt 8 s. | MG-harvest (F) |
+| OI-042 | mittel | umgesetzt v0.8.2 | Review (Vorschlag, FB-35) | Eigene Mini-Presse (Consorzio, 4 500 €, `fl.presse`): Thermometer im Press-Spiel (22 °C + 1 °C je 0,3 s); alle drei Gänge ≤ 27 °C = kaltgepresst, +8 Qualität (max. 100). | MG-press · SHOP-presse (F) |
+| OI-043 | mittel | umgesetzt v0.8.2 | Review (Vorschlag, FB-36) | Flut-Rettung: mit Sandsäcken Ziel 10 statt 14 (Sandsack-Leiste); mit Drainage Ziel 8, Lecks bleiben 1,6 s statt 1,3 s. Behebt OI-001 nur im Minispiel-Ziel; der Schadenspuffer in ECO-DMG wirkt weiter nur über `storm()`. | MG-rescue-flut · SHOP-sand · SHOP-drain (F) |
+| OI-044 | mittel | offen | Prozess | FB-29/FB-30 (v0.8.1) wurden erst nach der Umsetzung in Notion eingetragen; Regel: erst Notion + Doku, dann Bau. Am 03.11. ~02:30 ging zudem ungepushte Arbeit durch ein Box-Zurücksetzen verloren; Regel jetzt: nach jedem Zwischenschritt Commit + Push auf WIP-Branch. | README.md (Prozess) |
+| OI-045 | niedrig | offen | Doku | Supabase-Region und -Organisation sind nicht dokumentiert (nur im Dashboard sichtbar, ohne Zugang nicht ermittelbar). | BACKEND.md |
+| OI-046 | niedrig | offen | Balancing | v0.8.2-Werte (Kamm-Deckel 40, Crew +1/s, Kaltpress +8, Rettungsziele 10/8) sind nur per QA-Skript geprüft, nicht im echten Spiel balanciert. | MINIGAMES.md |
+
+## Nächste Schritte (Stand 03.11.2026, nach v0.8.2)
+1. Thorsten spielt v0.8.2 auf dem Handy und reviewt per Plaud (Ernte mit Kamm/Crew, eigene Presse, Sturm/Flut mit Geräten).
+2. Balancing der v0.8.2-Werte (OI-046) nach dem Review.
+3. Offene Wünsche: Sprachwahl DE/EN/IT (OI-005), Offline/App (OI-006).
+4. Supabase-Region/Organisation im Dashboard nachtragen (OI-045).

@@ -103,9 +103,10 @@ CHARS.forEach((c) => { if (!c.vb) return; const [w, mn] = c.vb; PERKS.push({ id:
 type Enc = { t: string; l: string; d: string; ok?: (g: G) => boolean; f: (g: G, r: number) => string };
 // v0.8 (FB-05/OI-017): px = echte Kartenposition in Karten-% (aus OSM/Poster), hat Vorrang vor x/y (Canvas-Altwerte)
 type Minor = { id: string; n: string; e: string; x: number; y: number; px?: [number, number]; map: "s" | "u"; enc: Enc[] };
+// v0.9.0 (FB-41/OI-051): px der Stadt-Läden barb/casal/farm/ferr/tabac auf die Mitte des gezeichneten Laden-Symbols nachkalibriert (Messung bei Zoom 4, siehe docs/MAPS.md „Pin-Verifikation v0.9.0“)
 const MINOR: Minor[] = [
   // v0.8 (FB-16/OI-023): Y&L Haushaltswaren (Casalinghi) – echter Laden in Sambuca
-  { id: "casal", n: "Y&L Haushaltswaren", e: "🧴", x: 0, y: 0, px: [56.43, 31.38], map: "s", enc: [
+  { id: "casal", n: "Y&L Haushaltswaren", e: "🧴", x: 0, y: 0, px: [56.84, 30.44], map: "s", enc: [
     { t: "Die Inhaberin sucht Öl in kleinen Flaschen für ihr Regal.", l: "5 l liefern", d: "5 l zu 140 %", ok: (g) => g.oil >= 5, f: (g) => sellAt(g, 5, 1.4, "Y&L Haushaltswaren") },
     { t: "Restposten: Etiketten und Glasflaschen, 40 € für alles.", l: "Kaufen (40 €)", d: "★ +2 – schönere Flaschen", f: (g) => { pay(g, 40); repAdd(g, 2); return "Deine Flaschen sehen jetzt aus wie aus Palermo. ★ +2"; } },
     { t: "Ein Kunde fragt, ob dein Öl auch hier zu haben ist.", l: "Probe dalassen (1 l)", d: "★ +1", ok: (g) => g.oil >= 1, f: (g) => { g.oil -= 1; repAdd(g, 1); return "Die Probe ist in einer Stunde leer. ★ +1"; } }] },
@@ -113,7 +114,7 @@ const MINOR: Minor[] = [
   { id: "dogs", n: "O-Dogs Garden", e: "🐕", x: 0, y: 0, px: [76.03, 76.69], map: "u", enc: [
     { t: "Ein Rudel Hunde begrüßt dich am Zaun. Die Betreiberin sucht Paten.", l: "Gassi gehen", d: "★ +1", f: (g) => { repAdd(g, 1); return "Eine Stunde mit sechs Hunden. ★ +1"; } },
     { t: "Futterspende? Die Säcke sind leer.", l: "Spenden (30 €)", d: "★ +2", f: (g) => { pay(g, 30); repAdd(g, 2); return "Die Hunde danken lautstark. ★ +2"; } }] },
-  { id: "ferr", n: "Ferramenta Cinese", e: "🔧", x: 45.4, y: 71, map: "s", px: [38.79, 49.06], enc: [
+  { id: "ferr", n: "Ferramenta Cinese", e: "🔧", x: 45.4, y: 71, map: "s", px: [37.29, 48.71], enc: [
     { t: "Ein Bauer reklamiert lautstark seinen kaputten Spaten.", l: "Mitlachen", d: "Wang ♥+3", f: (g) => "Wang zuckt die Schultern: „19 Euro!“" + rel(g, "wang", 3) },
     { t: "Restposten: Fliegenfallen, Kiste zu 40 €.", l: "Kiste kaufen (40 €)", d: "nächste Fallen −50 %", f: (g) => { pay(g, 40); g.fl.trapdisc = 1; return "Eine Kiste gelber Leimtafeln."; } },
     { t: "Wang zeigt dir ein Video vom Großhandel in Palermo.", l: "Zuschauen", d: "Wang ♥+4", f: (g) => "Er zeigt dir 40 Minuten lang Kartons." + rel(g, "wang", 4) }] },
@@ -121,13 +122,13 @@ const MINOR: Minor[] = [
     { t: "Die Bäckerin braucht Öl für ihre Focaccia.", l: "10 l verkaufen (130 %)", d: "", ok: (g) => g.oil >= 10, f: (g) => sellAt(g, 10, 1.3, "das Panificio") },
     { t: "Schlange vor der Theke – alle reden über Zio Turi.", l: "Zuhören", d: "★ +1", f: (g) => { repAdd(g, 1); return "Turi soll einen neuen Traktor haben. Auf Kredit."; } },
     { t: "Frische Cuccidati für die Nonna?", l: "Kaufen (6 €)", d: "Nonna ♥+4", f: (g) => { pay(g, 6); return "Nonna strahlt." + rel(g, "nonna", 4); } }] },
-  { id: "tabac", n: "Tabacchi & Lotto", e: "🎟️", x: 40.3, y: 92.4, map: "s", px: [61.79, 62.8], enc: [
+  { id: "tabac", n: "Tabacchi & Lotto", e: "🎟️", x: 40.3, y: 92.4, map: "s", px: [61.52, 61.83], enc: [
     { t: "Gratta e Vinci, das Los zu 5 €.", l: "Rubbeln (5 €)", d: "10 %: 250 €", f: (g, r) => { pay(g, 5); if (r < 0.1) { g.money += 250; return "HAUPTGEWINN! +250 €."; } return r < 0.35 ? (g.money += 10, "+10 €. Immerhin.") : "Niete."; } },
     { t: "Der Tabaccaio sucht ein Geschenk für seine Schwiegermutter.", l: "5 l Öl verkaufen (150 %)", d: "", ok: (g) => g.oil >= 5, f: (g) => sellAt(g, 5, 1.5, "den Tabaccaio") }] },
-  { id: "barb", n: "Barbiere Gaspare", e: "💈", x: 17, y: 63, map: "s", px: [52.94, 71.41], enc: [
+  { id: "barb", n: "Barbiere Gaspare", e: "💈", x: 17, y: 63, map: "s", px: [52.39, 70.89], enc: [
     { t: "Haarschnitt 12 € – und der komplette Dorfklatsch.", l: "Schneiden lassen (12 €)", d: "★ +2", f: (g) => { pay(g, 12); repAdd(g, 2); return "Frisch frisiert grüßt dich das halbe Dorf."; } },
     { t: "Gaspare rasiert sonst den Sekretär des Sindaco.", l: "Gutes Wort einlegen (50 €)", d: "Sindaco ♥+6 (auch unbekannt)", f: (g) => { pay(g, 50); g.rel.sindaco = clamp((g.rel.sindaco ?? 30) + 6, 0, 100); return "„Ich sag’s ihm beim Rasieren.“"; } }] },
-  { id: "farm", n: "Farmacia", e: "⚕️", x: 63.5, y: 58.7, map: "s", px: [66.19, 55.27], enc: [
+  { id: "farm", n: "Farmacia", e: "⚕️", x: 63.5, y: 58.7, map: "s", px: [65.92, 54.92], enc: [
     { t: "Dein Rücken nach der Arbeit im Hain …", l: "Wärmesalbe (15 €)", d: "+2 ⏳ nächsten Monat", f: (g) => { pay(g, 15); g.fl.apb = (g.fl.apb || 0) + 2; return "Riecht nach Kampfer. Hilft aber."; } },
     { t: "Die Apothekerin fragt nach Öl für Naturkosmetik.", l: "15 l verkaufen (140 %)", d: "", ok: (g) => g.oil >= 15, f: (g) => sellAt(g, 15, 1.4, "die Farmacia") }] },
   { id: "edic", n: "Edicola", e: "📰", x: 31, y: 47, map: "s", px: [38.92, 56.34], enc: [

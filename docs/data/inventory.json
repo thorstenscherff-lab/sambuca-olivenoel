@@ -935,7 +935,7 @@
     "source/game/src/c.tsx:81",
     "source/game/src/d.tsx:47",
     "source/game/src/d.tsx:153",
-    "source/game/src/f.tsx:236"
+    "source/game/src/f.tsx:266"
    ]
   },
   {
@@ -1420,12 +1420,12 @@
     "source/game/src/d.tsx:66",
     "source/game/src/d.tsx:69",
     "source/game/src/e.tsx:89",
-    "source/game/src/f.tsx:57",
-    "source/game/src/f.tsx:115",
-    "source/game/src/f.tsx:261",
-    "source/game/src/f.tsx:262",
-    "source/game/src/f.tsx:263",
-    "source/game/src/f.tsx:265"
+    "source/game/src/f.tsx:73",
+    "source/game/src/f.tsx:132",
+    "source/game/src/f.tsx:291",
+    "source/game/src/f.tsx:292",
+    "source/game/src/f.tsx:293",
+    "source/game/src/f.tsx:295"
    ]
   }
  ],
@@ -6061,7 +6061,8 @@
    "sambuca5_hs",
    "sambuca5_name",
    "sambuca5_save",
-   "sambuca5_seen"
+   "sambuca5_seen",
+   "sambuca5_sub_"
   ]
  },
  "eco": [

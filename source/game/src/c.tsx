@@ -115,7 +115,7 @@ const MINOR: Minor[] = [
     { t: "Haarschnitt 12 € – und der komplette Dorfklatsch.", l: "Schneiden lassen (12 €)", d: "★ +2", f: (g) => { pay(g, 12); repAdd(g, 2); return "Frisch frisiert grüßt dich das halbe Dorf."; } },
     { t: "Gaspare rasiert sonst den Sekretär des Sindaco.", l: "Gutes Wort einlegen (50 €)", d: "Sindaco ♥+6 (auch unbekannt)", f: (g) => { pay(g, 50); g.rel.sindaco = clamp((g.rel.sindaco ?? 30) + 6, 0, 100); return "„Ich sag’s ihm beim Rasieren.“"; } }] },
   { id: "farm", n: "Farmacia", e: "⚕️", x: 63.5, y: 58.7, map: "s", px: [66.19, 55.27], enc: [
-    { t: "Dein Rücken nach der Arbeit im Hain …", l: "Wärmesalbe (15 €)", d: "+2 ⏳ nächsten Monat", f: (g) => { pay(g, 15); g.fl.apb = 2; return "Riecht nach Kampfer. Hilft aber."; } },
+    { t: "Dein Rücken nach der Arbeit im Hain …", l: "Wärmesalbe (15 €)", d: "+2 ⏳ nächsten Monat", f: (g) => { pay(g, 15); g.fl.apb = (g.fl.apb || 0) + 2; return "Riecht nach Kampfer. Hilft aber."; } },
     { t: "Die Apothekerin fragt nach Öl für Naturkosmetik.", l: "15 l verkaufen (140 %)", d: "", ok: (g) => g.oil >= 15, f: (g) => sellAt(g, 15, 1.4, "die Farmacia") }] },
   { id: "edic", n: "Edicola", e: "📰", x: 31, y: 47, map: "s", px: [38.92, 56.34], enc: [
     { t: "Giornale di Sicilia: Ölpreis-Prognose.", l: "Zeitung (2 €)", d: "Preis-Trend", f: (g) => { pay(g, 2); const p = nextPrice(g, abs(g) + 1); return `Analysten erwarten ${p > g.price ? "steigende" : "fallende"} Preise (≈ ${p.toFixed(2)} €/l).`; } },

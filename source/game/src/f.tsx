@@ -24,6 +24,22 @@ const PU: Pin[] = [
 ];
 // v0.8 (FB-27/OI-033): Symbol je Ort für die herausgezoomte Karte (nur Icons, glitzernd)
 const PIN_E: Record<string, string> = { casa: "🏠", banca: "🏦", muni: "🏛️", palazzo: "🎭", caffe: "☕", chiesa: "⛪", belv: "🔭", santuario: "✨", torre: "🗼", frantoio: "🫒", hain: "🌳", feudo: "🍷", lago: "⛵", sambuca: "🏘️", hotel: "🏊", lido: "🏖️" };
+// v0.8.1 (FB-29/OI-036): bunte Orts-Icons auf allen Zoomstufen statt Sprechblasen; Personen-Badge; Überlappungsfreies Layout
+const PIN_COL: Record<string, string> = { casa: "#f59e0b", banca: "#10b981", muni: "#3b82f6", palazzo: "#a855f7", caffe: "#ef6c3a", chiesa: "#eab308", belv: "#06b6d4", santuario: "#ec4899", torre: "#d97706", frantoio: "#65a30d", hain: "#16a34a", feudo: "#be123c", lago: "#0ea5e9", sambuca: "#f97316", hotel: "#14b8a6", lido: "#38bdf8" };
+type LB = { k: string; x: number; y: number; w: number; h: number; m: number };
+// Verschiebt kollidierende Boxen (px, Mittelpunkt) deterministisch auseinander; m = Beweglichkeit (0 = fest)
+function layoutBoxes(bs: LB[], W: number, H: number, gap = 4): Record<string, [number, number]> {
+  const p = bs.map((b) => ({ ...b }));
+  for (let it = 0; it < 80; it++) { let moved = false;
+    for (let i = 0; i < p.length; i++) for (let j = i + 1; j < p.length; j++) { const a = p[i], b = p[j];
+      const ox = (a.w + b.w) / 2 + gap - Math.abs(a.x - b.x), oy = (a.h + b.h) / 2 + gap - Math.abs(a.y - b.y);
+      if (ox <= 0 || oy <= 0) continue; moved = true; const tm = a.m + b.m || 1;
+      if (ox < oy) { const d = (a.x < b.x || (a.x === b.x && i < j) ? -1 : 1) * ox; a.x += d * a.m / tm; b.x -= d * b.m / tm; }
+      else { const d = (a.y < b.y || (a.y === b.y && i < j) ? -1 : 1) * oy; a.y += d * a.m / tm; b.y -= d * b.m / tm; } }
+    p.forEach((b) => { b.x = Math.max(b.w / 2, Math.min(W - b.w / 2, b.x)); b.y = Math.max(b.h / 2, Math.min(H - b.h / 2, b.y)); });
+    if (!moved) break; }
+  const r: Record<string, [number, number]> = {}; p.forEach((b) => { r[b.k] = [b.x, b.y]; }); return r;
+}
 // v0.8 (FB-08/09/11/OI-020): Beschreibung je Aktionspunkt in Szenen – [Titel, Erklärung, Kosten €, ⏳]
 const SPOT_INFO: Record<string, [string, string, number, number]> = {
   caffe: ["☕ Caffè & Gerüchte", "Ein Espresso an der Theke. Du hörst den Dorftratsch: Ölpreis-Trend oder was demnächst passiert.", 2, 0],
@@ -95,12 +111,13 @@ export default function SambucaGame(): ReactNode {
   // ---------- Intro ----------
   if (!g) return <div className="sb3" style={{ minHeight: "100vh", background: `linear-gradient(180deg,rgba(23,11,38,.2),${C.bar} 70%), url(${IMG_SC.start}) center top/cover no-repeat`, color: "#fff", fontFamily: SANS, padding: "40px 18px 30px", display: "flex", flexDirection: "column", gap: 12, maxWidth: 520, margin: "0 auto" }}>{css}
     <div className="gta" style={{ fontSize: 50, color: C.fg, lineHeight: 0.95, marginTop: 120 }}>SAMBUCA</div>
-    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.8</div>
+    <div className="gta" style={{ fontSize: 22, color: C.gold }}>DAS ÖL DER MADONNA · v0.8.1</div>
     <p style={{ margin: 0, fontWeight: 600, textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>Du erbst einen verwilderten Olivenhain bei Sambuca di Sicilia. Lerne das Dorf kennen, überlebe Stürme, Fliegen und Feste – Jahr für Jahr.</p>
     <div style={{ fontWeight: 900, fontSize: 18, color: C.gold, textShadow: "0 2px 6px rgba(0,0,0,.85)" }}>🏆 Werde der größte Olivenöl-Mogul Sambucas!</div>
     <label style={{ fontWeight: 700, fontSize: 14 }}>Dein Name für den Highscore
       <input value={name} maxLength={18} onChange={(e) => setName(e.target.value)} placeholder="z. B. Thorsten" style={{ display: "block", width: "100%", marginTop: 4, padding: "12px 14px", fontSize: 16, borderRadius: 12, border: "2px solid #6b4a90", background: C.panel, color: "#fff" }} /></label>
     <button onClick={start} style={bigBtn(C.pink)}>▶ Neues Spiel</button>
+    <LiveHS name={name} wealth={0} years={0} local={hs} me="" />
     {hs.length > 0 && <HSList hs={hs} me="" />}
   </div>;
 
@@ -134,14 +151,26 @@ export default function SambucaGame(): ReactNode {
       <div style={{ position: "relative", width: mw, height: mh }}>
         <img src={which === "s" ? IMG_S : IMG_U} alt={which === "s" ? "Stadtplan Sambuca" : "Umland Sambuca"} draggable={false} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block", userSelect: "none" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(rgba(139,92,246,.22),rgba(255,79,160,.16))", mixBlendMode: "multiply", pointerEvents: "none" }} />
-        {MINOR.filter((m) => m.map === which).map((m) => { const [mx, my] = m.px || cvXY(which, m.x, m.y); return <button key={m.id} data-minor={m.id} onClick={() => open({ k: "minor", id: m.id })} style={{ position: "absolute", left: mx + "%", top: my + "%", transform: "translate(-50%,-50%)", width: 30, height: 30, borderRadius: 15, border: "2px solid #000", background: g.acts.includes("enc_" + m.id) ? "#9a8aa8" : "#fff", fontSize: 15, padding: 0, boxShadow: "2px 2px 0 rgba(0,0,0,.5)", cursor: "pointer" }} aria-label={m.n}>{m.e}</button>; })}
-        {z < 1.6 && pins.map((p) => <button key={p.id} data-pin={p.id} aria-label={p.label} onClick={() => { buzz(); if (p.scene) { if (p.scene === "buero") { setScr("buero"); setScene(null); } else setScene(p.scene); } else if (p.id === "sambuca") { setScr("stadt"); setScene(null); } else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: "translate(-50%,-50%)", width: 46, height: 46, borderRadius: 23, background: "rgba(23,11,38,.9)", border: `3px solid ${p.scene ? C.pink : C.fg}`, fontSize: 24, padding: 0, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", animation: "sbGlint 2.4s infinite", boxShadow: "0 3px 10px rgba(0,0,0,.6)" }}>{PIN_E[p.id] || "📍"}</button>)}
-        {z >= 1.6 && pins.map((p) => <button key={p.id} data-pin={p.id} onClick={() => { buzz(); if (p.scene) { if (p.scene === "buero") { setScr("buero"); setScene(null); } else setScene(p.scene); } else if (p.id === "sambuca") { setScr("stadt"); setScene(null); } else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: p.below ? "translate(-50%,0)" : p.al === "l" ? "translate(calc(-100% + 9px),-100%)" : "translate(-50%,-100%)", background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: p.below ? "column-reverse" : "column", alignItems: p.al === "l" ? "flex-end" : "center" }}>
-          <span style={{ background: C.bar, color: "#fff", border: `2px solid ${p.scene ? C.pink : C.fg}`, borderRadius: 10, padding: "3px 8px", fontSize: 12, fontWeight: 800, whiteSpace: "nowrap", boxShadow: "3px 3px 0 #000" }}>{p.label}<span style={{ display: "block", fontSize: 10, color: C.fg, fontWeight: 600 }}>{p.role}{p.scene && p.scene !== "buero" ? ` · ${present(g, SCN[p.scene].venue).length} 👤` : ""}</span></span>
-          <span style={{ width: 0, height: 0, marginRight: p.al === "l" ? 2 : 0, borderLeft: "7px solid transparent", borderRight: "7px solid transparent", [p.below ? "borderBottom" : "borderTop"]: `9px solid ${p.scene ? C.pink : C.fg}` }} /></button>)}
-        {extra.map((p) => <button key={p.id} data-pin={p.id} onClick={() => { buzz(); if (p.id === "festa") setScene("fest"); else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: p.x + "%", top: p.y + "%", transform: "translate(-50%,-50%)", background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <span style={{ width: 40, height: 40, borderRadius: 20, background: C.bar, border: `3px solid ${p.c}`, fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", animation: p.id === "festa" ? "sbPulse 1.4s infinite" : undefined }}>{p.e}</span>
-          <span style={{ fontSize: 11, fontWeight: 800, background: "rgba(0,0,0,.78)", color: p.c, padding: "1px 6px", borderRadius: 6, whiteSpace: "nowrap" }}>{p.l}</span></button>)}
+        {(() => { const lab = z >= 1.6; const IC = lab ? 50 : 46;
+          const pinW = (l: string): number => lab ? Math.max(IC, Math.min(150, l.length * 6.6 + 14)) : IC; const pinH = lab ? IC + 20 : IC;
+          const bs: LB[] = [];
+          MINOR.filter((m) => m.map === which).forEach((m) => { const [mx, my] = m.px || cvXY(which, m.x, m.y); bs.push({ k: "m:" + m.id, x: mx / 100 * mw, y: my / 100 * mh, w: 30, h: 30, m: 1 }); });
+          pins.forEach((p) => bs.push({ k: "p:" + p.id, x: p.x / 100 * mw, y: p.y / 100 * mh + (lab ? 10 : 0), w: pinW(p.label), h: pinH, m: 0.6 }));
+          extra.forEach((p) => bs.push({ k: "e:" + p.id, x: p.x / 100 * mw, y: p.y / 100 * mh + (lab ? 9 : 0), w: lab ? Math.max(40, Math.min(150, p.l.length * 6.2 + 12)) : 40, h: lab ? 58 : 40, m: 0.8 }));
+          const L = layoutBoxes(bs, mw, mh);
+          const lead = (k: string, x0: number, y0: number): ReactNode => { const [x, y] = L[k]; const d = Math.hypot(x - x0, y - y0); if (d < 8) return null; return <svg key={"l" + k} style={{ position: "absolute", left: 0, top: 0, width: mw, height: mh, pointerEvents: "none", overflow: "visible" }}><line x1={x0} y1={y0} x2={x} y2={y} stroke="#fff" strokeWidth={2} strokeDasharray="3 3" opacity={0.85} /><circle cx={x0} cy={y0} r={4} fill="#fff" stroke="#000" strokeWidth={1.5} /></svg>; };
+          const go = (p: Pin): void => { buzz(); if (p.scene) { if (p.scene === "buero") { setScr("buero"); setScene(null); } else setScene(p.scene); } else if (p.id === "sambuca") { setScr("stadt"); setScene(null); } else open({ k: "pin", id: p.id }); };
+          return <>
+          {MINOR.filter((m) => m.map === which).map((m) => { const [mx, my] = m.px || cvXY(which, m.x, m.y); const [x, y] = L["m:" + m.id]; return <span key={m.id} style={{ display: "contents" }}>{lead("m:" + m.id, mx / 100 * mw, my / 100 * mh)}<button data-minor={m.id} data-ax={mx} data-ay={my} onClick={() => open({ k: "minor", id: m.id })} style={{ position: "absolute", left: x, top: y, transform: "translate(-50%,-50%)", width: 30, height: 30, borderRadius: 15, border: "2px solid #000", background: g.acts.includes("enc_" + m.id) ? "#9a8aa8" : "#fff", fontSize: 15, padding: 0, boxShadow: "2px 2px 0 rgba(0,0,0,.5)", cursor: "pointer" }} aria-label={m.n}>{m.e}</button></span>; })}
+          {pins.map((p) => { const [x, y] = L["p:" + p.id]; const n = p.scene && p.scene !== "buero" && SCN[p.scene] ? present(g, SCN[p.scene].venue).length : 0; const col = PIN_COL[p.id] || C.pink;
+            return <span key={p.id} style={{ display: "contents" }}>{lead("p:" + p.id, p.x / 100 * mw, p.y / 100 * mh)}<button data-pin={p.id} data-people={n} data-ax={p.x} data-ay={p.y} aria-label={p.label + (n ? ` · ${n} Person${n > 1 ? "en" : ""} da` : "")} onClick={() => go(p)} style={{ position: "absolute", left: x, top: y, transform: "translate(-50%,-50%)", width: pinW(p.label), height: pinH, background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start" }}>
+              <span style={{ position: "relative", width: IC, height: IC, borderRadius: "50%", background: `radial-gradient(circle at 35% 30%, #fff8 0, ${col} 45%, ${col} 100%)`, border: "3px solid #fff", boxShadow: "0 3px 10px rgba(0,0,0,.65)", fontSize: lab ? 26 : 24, display: "flex", alignItems: "center", justifyContent: "center", animation: "sbGlint 2.4s infinite", flexShrink: 0 }}>{PIN_E[p.id] || "📍"}
+                {n > 0 && <span data-badge="person" style={{ position: "absolute", right: -6, top: -6, minWidth: 22, height: 22, borderRadius: 11, background: "#fff", color: "#1a0b2e", border: `2px solid ${col}`, fontSize: 11, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 3px", boxShadow: "0 1px 4px rgba(0,0,0,.6)", lineHeight: 1 }}>👤{n > 1 ? n : ""}</span>}</span>
+              {lab && <span style={{ marginTop: 2, fontSize: 11, fontWeight: 800, color: "#fff", background: "rgba(10,4,20,.82)", padding: "1px 6px", borderRadius: 6, whiteSpace: "nowrap", maxWidth: 150, overflow: "hidden", textOverflow: "ellipsis" }}>{p.label}</span>}</button></span>; })}
+          {extra.map((p) => { const [x, y] = L["e:" + p.id]; return <span key={p.id} style={{ display: "contents" }}>{lead("e:" + p.id, p.x / 100 * mw, p.y / 100 * mh)}<button data-pin={p.id} data-ax={p.x} data-ay={p.y} aria-label={p.l} onClick={() => { buzz(); if (p.id === "festa") setScene("fest"); else open({ k: "pin", id: p.id }); }} style={{ position: "absolute", left: x, top: y, transform: "translate(-50%,-50%)", background: "transparent", border: "none", padding: 0, cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <span style={{ width: 40, height: 40, borderRadius: 20, background: C.bar, border: `3px solid ${p.c}`, fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", animation: p.id === "festa" ? "sbPulse 1.4s infinite" : undefined }}>{p.e}</span>
+            {lab && <span style={{ fontSize: 11, fontWeight: 800, background: "rgba(0,0,0,.78)", color: p.c, padding: "1px 6px", borderRadius: 6, whiteSpace: "nowrap", maxWidth: 150, overflow: "hidden", textOverflow: "ellipsis" }}>{p.l}</span>}</button></span>; })}
+          </>; })()}
       </div></div>
       <div style={{ position: "absolute", right: 10, bottom: 12, display: "flex", flexDirection: "column", gap: 8 }}>
         <button data-zoom="in" aria-label="Hineinzoomen" onClick={() => zoomTo(z * 1.6)} style={zb}>+</button>
@@ -167,6 +196,7 @@ export default function SambucaGame(): ReactNode {
         <div>💶 Kasse {eur(g.money)} · Kredit {eur(g.debt)}</div><div>🌳 Haine {eur(sc.groves)} · 🫙 Lager & Deals {eur(sc.oil)}</div>
         <div>👥 Bekannt: {g.met.length}/{CHARS.length} · 🤝 Deals: {g.deals.map((d) => DEALN[d] || d).join(", ") || "–"}</div>
         {g.yhist.length > 0 && <div>📊 Vermögen je Jahr: {g.yhist.map((v, i) => `J${i + 1} ${eur(v)}`).join(" · ")}</div>}</div>
+      <LiveHS name={name} wealth={0} years={0} local={hs} me={g.run} />
       <HSList hs={hs} me={g.run} />
       <button onClick={() => { if (conf) { setConf(false); run({ k: "retire" }); } else setConf(true); }} style={{ ...bigBtn(conf ? C.bad : "transparent", "#fff"), boxShadow: "none", border: "2px solid #6b4a90", marginTop: 10 }}>{conf ? "Wirklich? Nochmal tippen zum Beenden" : "🏁 Karriere beenden"}</button>
     </div>;
@@ -206,7 +236,7 @@ export default function SambucaGame(): ReactNode {
         <div style={{ fontSize: 12, color: C.fg, margin: "6px 0 4px", fontWeight: 800, letterSpacing: 0.5 }}>AUSRÜSTUNG</div>
         <div>{chip(g.spade > 0 ? `🪓 Spaten ×${g.spade}` : "🪓 kein Spaten (Pflege +25 %)", g.spade > 0)}{chip(`🔧 Rüttler ${g.gear ? (g.fl.cheap ? "(billig)" : "✔") : "–"}`, !!g.gear)}{chip(`👷 Crew ${g.crew ? "✔" : "–"}`, !!g.crew)}{g.wine ? chip(`🍷 ${g.wine} Fl.`, true) : null}</div>
         <div style={{ fontSize: 12, color: C.fg, margin: "6px 0 4px", fontWeight: 800, letterSpacing: 0.5 }}>SCHUTZ</div>
-        <div>{chip(g.fl.netz ? `🕸️ Netze ×${g.fl.netz}` : "🕸️ keine Netze", !!g.fl.netz)}{chip(g.fl.drain ? "🚧 Drainage" : "🚧 keine Drainage", !!g.fl.drain)}{chip(g.fl.sand ? `🧱 Sandsäcke ×${g.fl.sand}` : "🧱 keine Sandsäcke", !!g.fl.sand)}{chip(g.water ? "💧 Wasserrecht: Dürre-Schutz, alles bewässert" : "💧 kein Wasserrecht", !!g.water)}{chip(g.fl.dog ? "🐕 Wachhund" : "🐕 kein Wachhund", !!g.fl.dog)}</div>
+        <div>{chip(g.fl.netz ? `🕸️ Netze ×${g.fl.netz}` : "🕸️ keine Netze", !!g.fl.netz)}{chip(g.fl.drain ? "🚧 Drainage" : "🚧 keine Drainage", !!g.fl.drain)}{chip(g.fl.sand ? `🧱 Sandsäcke ×${g.fl.sand}` : "🧱 keine Sandsäcke", !!g.fl.sand)}{chip(g.water ? "💧 Wasserrecht: Dürre-Schutz, alles bewässert" : "💧 kein Wasserrecht", !!g.water)}{chip(g.fl.dog ? "🐕 Wachhund" : "🐕 kein Wachhund", !!g.fl.dog)}{chip(g.fl.schneise !== undefined && abs(g) - g.fl.schneise < 12 ? `🚜 Brandschneise (noch ${12 - (abs(g) - g.fl.schneise)} Mon.)` : "🚜 keine Brandschneise", !!(g.fl.schneise !== undefined && abs(g) - g.fl.schneise < 12))}</div>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 50, marginTop: 8 }}>{g.hist.map((v, i) => <span key={i} style={{ flex: 1, height: `${20 + ((v - mn) / Math.max(0.01, mx - mn)) * 80}%`, background: i === g.hist.length - 1 ? C.pink : "#6b4a90", borderRadius: 2 }} />)}</div>{sub("Ölpreis der letzten Monate")}</div>
         {g.groves.map((x) => <div key={x.id} style={card}><b>🌳 {x.name}</b> · {x.trees} Bäume · Zustand <b style={{ color: x.cond >= 60 ? C.ok : x.cond >= 35 ? C.gold : C.bad }}>{x.cond} %</b>{x.lease ? ` · Pacht ${x.lease} €` : ""}
           {sub(`${x.prune ? "✂️" : "·"} ${x.fert ? "🌱" : "·"} ${x.irr || g.water ? "💧" : "·"} ${x.traps ? "🪤" : "·"} ${x.harvested ? "🧺 geerntet" : ""}`)}</div>)}
@@ -268,10 +298,11 @@ export default function SambucaGame(): ReactNode {
     case "year": shT = `🎆 Jahresbilanz ${YEAR0 + g.y - 2}`;
       sh = <><div style={{ textAlign: "center" }}><div className="gta" style={{ fontSize: 34, color: C.fg }}>{eur(g.yhist[g.yhist.length - 1] || 0)}</div>{sub("Vermögen am Jahresende · " + titel(g.yhist[g.yhist.length - 1] || 0))}</div>
         <div style={card}>🧺 {g.fl.lyH || 0} kg geerntet · 🫙 {g.fl.lyO || 0} l gepresst · 💶 {eur(g.fl.lyR || 0)} Umsatz · 🎯 {g.fl.lyG || 0}/12 Ziele</div>
-        <div style={card}>Das Spiel geht weiter: neues Erntejahr, neue Haine bei Don Calogero, neue Leute, neue Katastrophen. Dein Highscore-Eintrag wurde aktualisiert.</div>
+        <div style={card}>Das Spiel geht weiter: neues Erntejahr, neue Haine bei Don Calogero, neue Leute, neue Katastrophen. Dein lokaler Highscore wurde aktualisiert – trag dich unten in die Live-Liste ein.</div>
+        <LiveHS name={name} wealth={g.yhist[g.yhist.length - 1] || 0} years={g.y - 1} subKey={g.run + "_y" + g.y} local={hs} me={g.run} />
         {btn(`Weiter ins Jahr ${YEAR0 + g.y - 1} ▶`, () => setSheet(null))}</>; break;
     case "end": shT = "🏁 Karriere-Ende";
-      sh = <><div style={{ textAlign: "center" }}><div className="gta" style={{ fontSize: 34, color: g.money < -8000 ? C.bad : C.fg }}>{g.money < -8000 ? "PLEITE!" : eur(sc.verm)}</div>{sub(`${g.y} Jahr(e) · ${titel(Math.max(sc.verm, g.best))}`)}</div><HSList hs={hs} me={g.run} />{btn("▶ Neues Spiel", () => { store.del(SAVE); setG(null); setSheet(null); })}</>; break;
+      sh = <><div style={{ textAlign: "center" }}><div className="gta" style={{ fontSize: 34, color: g.money < -8000 ? C.bad : C.fg }}>{g.money < -8000 ? "PLEITE!" : eur(sc.verm)}</div>{sub(`${g.y} Jahr(e) · ${titel(Math.max(sc.verm, g.best))}`)}</div><LiveHS name={name} wealth={Math.max(sc.verm, g.best)} years={g.y} subKey={g.run + "_end"} local={hs} me={g.run} /><HSList hs={hs} me={g.run} />{btn("▶ Neues Spiel", () => { store.del(SAVE); setG(null); setSheet(null); })}</>; break;
     case "log": shT = "📜 Tagebuch"; sh = <>{g.log.slice(0, 40).map((l, i) => <div key={i} style={{ fontSize: 13, padding: "5px 0", borderBottom: "1px solid #3b2a4f" }}>{l}</div>)}</>; break;
   }
   const canClose = !sheet || !(sheet.k === "mg" || sheet.k === "end" || sheet.k === "year");
@@ -295,6 +326,25 @@ export default function SambucaGame(): ReactNode {
       <div className="gta" style={{ fontSize: 38, color: C.fg, lineHeight: 1, animation: "sbStamp .6s" }}>{FEST[splash].n}</div><div style={{ fontWeight: 700, margin: "8px 0 16px", textShadow: "0 1px 4px rgba(0,0,0,.9)" }}>{FEST[splash].s}. Auf der Stadtkarte: 🎆 Piazza – dort sind heute viele Leute.</div>
       <button onClick={(e) => { e.stopPropagation(); setSplash(-1); setScr("stadt"); setScene("fest"); }} style={bigBtn(C.pink)}>Zum Fest ▶</button></div>}
     {toast && <div key={toast} style={{ position: "absolute", left: 12, right: 12, top: HUD + 8, zIndex: 40, background: "rgba(23,11,38,.95)", border: `2px solid ${C.pink}`, borderRadius: 12, padding: "8px 12px", fontSize: 13, fontWeight: 700, animation: "sbToast 2.6s forwards", pointerEvents: "none" }}>{toast}</div>}
+  </div>;
+}
+// v0.8.1 (FB-19/OI-007): Live-Highscore über Supabase REST (ohne SDK). Publishable Key ist öffentlich; RLS erlaubt anon nur select + insert. Offline → lokale Liste.
+const SB_URL = "https://aqgigngeksgpbhcdaiar.supabase.co/rest/v1/highscores"; const SB_KEY = "sb_publishable_wU2pe73e-cWRpppIgNICpQ_eart3DN5"; const GAME_V = "0.8.1";
+type GHS = { name: string; wealth: number; years: number; version: string; created_at: string };
+const sbHead = { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json" };
+async function ghsTop(): Promise<GHS[]> { const r = await fetch(SB_URL + "?select=name,wealth,years,version,created_at&order=wealth.desc&limit=20", { headers: sbHead }); if (!r.ok) throw new Error("HTTP " + r.status); return await r.json() as GHS[]; }
+async function ghsPost(name: string, wealth: number, years: number): Promise<void> { const r = await fetch(SB_URL, { method: "POST", headers: { ...sbHead, Prefer: "return=minimal" }, body: JSON.stringify({ name: (name.trim() || "Anonimo").slice(0, 24), wealth: Math.max(-10000000, Math.min(1000000000, Math.round(wealth))), years: Math.max(0, Math.min(200, years)), version: GAME_V }) }); if (!r.ok) throw new Error("HTTP " + r.status); }
+function LiveHS(p: { name: string; wealth: number; years: number; subKey?: string; local: HS[]; me: string }): ReactNode {
+  const [list, setList] = useState<GHS[] | null>(null); const [err, setErr] = useState(false); const [nm, setNm] = useState(p.name); const [st, setSt] = useState<"" | "busy" | "ok" | "fail">(p.subKey && store.get("sambuca5_sub_" + p.subKey) ? "ok" : "");
+  const load = (): void => { ghsTop().then((l) => { setList(l); setErr(false); }).catch(() => setErr(true)); };
+  useEffect(() => { load(); }, []);
+  const send = (): void => { if (!p.subKey) return; setSt("busy"); store.set("sambuca5_name", nm); ghsPost(nm, p.wealth, p.years).then(() => { store.set("sambuca5_sub_" + p.subKey, "1"); setSt("ok"); load(); }).catch(() => setSt("fail")); };
+  return <div data-livehs="1" style={{ background: "rgba(31,15,51,.92)", borderRadius: 14, padding: 10, border: "2px solid #000", marginTop: 8 }}>
+    <div className="gta" style={{ fontSize: 20, color: C.gold }}>🌍 LIVE-HIGHSCORE · TOP 20</div>
+    {p.subKey && st !== "ok" && <div style={{ display: "flex", gap: 6, margin: "6px 0" }}><input data-hsname="1" value={nm} maxLength={24} onChange={(e) => setNm(e.target.value)} placeholder="Dein Name" style={{ flex: 1, padding: "10px 12px", fontSize: 16, borderRadius: 10, border: "2px solid #6b4a90", background: C.panel, color: "#fff", minWidth: 0 }} /><button data-hssend="1" disabled={st === "busy"} onClick={send} style={{ padding: "0 14px", borderRadius: 10, border: "none", background: C.pink, color: "#fff", fontWeight: 900, fontSize: 15 }}>{st === "busy" ? "…" : "Eintragen"}</button></div>}
+    {st === "ok" && p.subKey && <div style={{ fontSize: 13, color: C.ok, margin: "4px 0" }}>✔ Eingetragen ({eur(p.wealth)}).</div>}
+    {st === "fail" && <div style={{ fontSize: 13, color: C.bad, margin: "4px 0" }}>Offline – nicht gesendet. Lokal ist dein Ergebnis gespeichert, versuch es später nochmal.</div>}
+    {err ? <><div style={{ fontSize: 13, opacity: 0.8 }}>📴 Offline – es gilt die Liste dieses Geräts.</div></> : list === null ? <div style={{ fontSize: 13, opacity: 0.7 }}>Lade …</div> : list.length ? list.map((h, i) => <div key={i} style={{ display: "flex", justifyContent: "space-between", fontSize: 14, padding: "4px 0" }}><span>{i + 1}. {h.name} · J{h.years}</span><b>{eur(h.wealth)}</b></div>) : <div style={{ fontSize: 13, opacity: 0.7 }}>Noch keine Einträge – sei der Erste!</div>}
   </div>;
 }
 function HSList(p: { hs: HS[]; me: string }): ReactNode {

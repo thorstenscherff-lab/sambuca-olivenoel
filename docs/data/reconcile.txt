@@ -1,7 +1,7 @@
 Code-IDs: 304  ·  in docs gefunden: 304
 Fehlend in docs (0): –
-Phantom-IDs in docs (0): –
-Veraltete GENERATED-Blöcke: CHARACTERS.md, ECONOMY.md (erneuert)
+Phantom-IDs in docs (1): UI-map
+Veraltete GENERATED-Blöcke: SAVEGAME.md (erneuert)
 Ereignisse ohne Auslöser: –
 Hotspots ohne Handler: –
 Minispiel-Komponenten im Code: MiniHaggle, MiniHarvest, MiniPress, MiniRescue, MiniTalk

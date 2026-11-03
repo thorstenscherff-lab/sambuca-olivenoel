@@ -69,5 +69,5 @@ Speicherung erfolgt im Browser per `localStorage`, **nur lokal auf dem Gerät**.
 
 **Monats-Sperren `g.acts` (Präfixe):** `enc`, `gift`, `pk`, `sp`
 
-**localStorage-Schlüssel:** `sambuca5_hs`, `sambuca5_name`, `sambuca5_save`, `sambuca5_seen`
+**localStorage-Schlüssel:** `sambuca5_hs`, `sambuca5_name`, `sambuca5_save`, `sambuca5_seen`, `sambuca5_sub_`
 <!-- END GENERATED:save -->

@@ -3,6 +3,19 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
+## v0.8.1 – 03.11.2026 (Commit COMMIT_HASH)
+**Feedback:** Thorsten, 03.11. 01:57: „Ich finde die Icons für die Haupt-Orte besser als die Sprechblasen. Lass uns das auf allen Zoomstufen machen. Vielleicht kann ein kleines Personen-Icon dran, wenn jemand da ist.“ (FB-29/OI-036). Nachtrag: „Die Icons von Bar del Corso und Bank liegen übereinander“ – alle Pins prüfen, nahe Orte mit Führungslinie auflösen (FB-30/OI-037). Supabase für den Live-Highscore von Thorsten freigegeben (FB-19/OI-007).
+
+**Änderungen:**
+- **Karten-Icons (FB-29/OI-036):** Sprechblasen entfallen. Jeder Haupt-Ort ist auf jeder Zoomstufe ein buntes rundes Icon (Farbe je Ort, `PIN_COL` in f.tsx; 46 px bei Zoom < 1,6, 50 px ab 1,6). Ab Zoom ≥ 1,6 steht der Ortsname klein (11 px, dunkler Hintergrund) unter dem Icon. Sind Personen anwesend (`present()`), sitzt oben rechts ein weißes Badge 👤 bzw. 👤n; `aria-label` nennt die Zahl.
+- **Überlappung (FB-30/OI-037):** neue Funktion `layoutBoxes()` (f.tsx): deterministische Kollisionsauflösung in Pixeln je Zoomstufe für Haupt-Orte, Minor-Läden, eigene Haine und Angebote (Rechteck-Boxen inkl. Label, 4 px Abstand, max. 80 Iterationen, Ränder geklemmt). Die echte Koordinate bleibt als weißer Punkt; ist ein Icon > 8 px versetzt, verbindet eine gestrichelte Führungslinie Punkt und Icon. Live geprüft: 0 Überlappungen auf allen 4 Zoomstufen beider Karten; Prüftabelle in MAPS.md.
+- **Live-Highscore (FB-19/OI-007):** Supabase REST per `fetch` (kein SDK), Tabelle `public.highscores` (SQL in `supabase/001_highscores.sql`). Top 20 auf Startbild, Tal, Jahresbilanz und Karriere-Ende; Eintragen mit Name in Jahresbilanz und Karriere-Ende (einmal je Spiel+Jahr). Offline: Hinweis, lokale Liste bleibt. Details in BACKEND.md.
+- **Schutzliste:** Chip „🚜 Brandschneise (noch n Mon.)“ bzw. „keine Brandschneise“ im Regal.
+- **fl.apb geprüft:** `startMonth()` setzt `ap = AP + fl.apb` und danach `apb = 0`. Test: apb = 2 im Juni → Juli 9 ⏳ (7 + 2). Fix: Wärmesalbe addiert jetzt (`apb += 2`) statt zu überschreiben (Strandtag + Salbe im selben Monat gingen sonst verloren).
+- **Version:** v0.8.1 (Titel, Manifest, Startbild).
+
+**QA:** 390×844, Screenshots in `/workspace/sambuca-game/v08/qa/icons/` (Zoomstufen, je Pin, mit/ohne Person, FB-08/14/15/19/21/23/26, apb).
+
 ## v0.8 – 03.11.2026 (Commit 5aa5423)
 **Feedback:** Thorsten hat v0.7.1 in einer Plaud-Aufnahme reviewt. Auftrag: „Ich hab ein review gemacht. Bitte aus Plaud holen und eine neue Version bauen. Idealerweise erst in notion dokumentieren und dann umsetzen“. Die 28 Punkte (FB-01…FB-28) stehen auf der Notion-Seite „Review v0.7.1 → v0.8“ und in OPEN_ISSUES (OI-016…OI-034). Plaud-KI-Vorschläge wurden nicht als Punkte übernommen.
 Nachtrag 03.11. 01:24: Thorsten hat sechs Fest- und Ortsfotos in Google Drive gelegt. Sie wurden als Referenz im Spielstil nachgezeichnet (siehe ASSETS.md, Abschnitt v0.8).

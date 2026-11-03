@@ -3,7 +3,7 @@
 Alle Zeiten sind Europe/Berlin. Das Feedback stammt von Thorsten Scherff und ist wörtlich oder sinngemäß aus dem Chat bzw. der Plaud-Aufnahme übernommen. Wo eine Rückmeldung nicht mehr vorliegt, steht das ausdrücklich dabei.
 Commits in diesem Repo gibt es seit v0.5; v0.1–v0.4 entstanden als Canvas-App auf der Build-Box (`/workspace/sambuca-game/v01…v04`).
 
-## v0.8 – 03.11.2026 (Commit COMMIT_V08)
+## v0.8 – 03.11.2026 (Commit 5aa5423)
 **Feedback:** Thorsten hat v0.7.1 in einer Plaud-Aufnahme reviewt. Auftrag: „Ich hab ein review gemacht. Bitte aus Plaud holen und eine neue Version bauen. Idealerweise erst in notion dokumentieren und dann umsetzen“. Die 28 Punkte (FB-01…FB-28) stehen auf der Notion-Seite „Review v0.7.1 → v0.8“ und in OPEN_ISSUES (OI-016…OI-034). Plaud-KI-Vorschläge wurden nicht als Punkte übernommen.
 Nachtrag 03.11. 01:24: Thorsten hat sechs Fest- und Ortsfotos in Google Drive gelegt. Sie wurden als Referenz im Spielstil nachgezeichnet (siehe ASSETS.md, Abschnitt v0.8).
 

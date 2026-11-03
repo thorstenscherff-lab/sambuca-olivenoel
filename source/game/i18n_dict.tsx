@@ -380,6 +380,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "April",
 "Aprile"
 ],
+"April 2027": [
+"April 2027",
+"Aprile 2027"
+],
 "Apr–Okt: bis 25 l zu 145 %, ★ +2": [
 "Apr–Oct: up to 25 l at 145%, ★ +2",
 "Apr-Otto: fino a 25 l al 145%, ★ +2"
@@ -427,6 +431,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "August": [
 "August",
 "Agosto"
+],
+"August 2027": [
+"August 2027",
+"Agosto 2027"
 ],
 "Ausblick": [
 "View",
@@ -777,8 +785,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "DEAL: Vino e olio insieme."
 ],
 "DEAL: Wein-Kooperation! Crew & Rüttler teilen, Löhne −30 %.": [
-"DEAL: Wine cooperation! Crew & rüttler share, wages −30 %.",
-"DEAL: Cooperazione del vino! Quota Crew & rüttler, salari −30 %."
+"DEAL: wine cooperation! Share crew & shakers, wages −30 %.",
+"DEAL: cooperativa del vino! Squadra e scuotitori in comune, salari −30 %."
 ],
 "DEIN BÜRO": [
 "YOUR OFFICE",
@@ -1035,6 +1043,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Dezember": [
 "December",
 "Dicembre"
+],
+"Dezember 2027": [
+"December 2027",
+"Dicembre 2027"
 ],
 "Die Apothekerin fragt nach Öl für Naturkosmetik.": [
 "The pharmacist asks for oil for natural cosmetics.",
@@ -1544,6 +1556,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Just look forward",
 "Guarda avanti"
 ],
+"Einkäufer vom Feudo Arancio": [
+"Buyer from Feudo Arancio",
+"Compratore del Feudo Arancio"
+],
 "Einlage verloren": [
 "Lost deposit",
 "Deposito perso"
@@ -1751,6 +1767,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Februar": [
 "February",
 "Febbraio"
+],
+"Februar 2027": [
+"February 2027",
+"Febbraio 2027"
 ],
 "Feilschen starten": [
 "Start haggling",
@@ -2296,6 +2316,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "January",
 "Gennaio"
 ],
+"Januar 2027": [
+"January 2027",
+"Gennaio 2027"
+],
 "Je genauer, desto besser Qualität und Ausbeute.": [
 "The more accurate, the better the quality and yield.",
 "Più accurato, migliore è la qualità e la resa."
@@ -2316,6 +2340,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "July",
 "Luglio"
 ],
+"Juli 2027": [
+"July 2027",
+"Luglio 2027"
+],
 "Jun": [
 "Jun",
 "Giu"
@@ -2323,6 +2351,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Juni": [
 "June",
 "Giugno"
+],
+"Juni 2027": [
+"June 2027",
+"Giugno 2027"
 ],
 "Kalender": [
 "Calendar",
@@ -2441,8 +2473,8 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Incontro Klaus & suo Monaco di Baviera Spezl"
 ],
 "Klaus erzählt zwei Stunden von Bad Tölz.": [
-"Klaus tells two hours of Bad Tölz.",
-"Klaus dice due ore di Bad Tölz."
+"Klaus talks about Bad Tölz for two hours.",
+"Klaus racconta di Bad Tölz per due ore."
 ],
 "Klaus fliegt enttäuscht nach München.": [
 "Klaus flies disappointed to Munich.",
@@ -2636,6 +2668,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "May",
 "Maggio"
 ],
+"Mai 2027": [
+"May 2027",
+"Maggio 2027"
+],
 "Man nennt sie/ihn „{0}“": [
 "They call him/her “{0}”",
 "Lo chiamano \"{0}”"
@@ -2743,6 +2779,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "März": [
 "March",
 "Marzo"
+],
+"März 2027": [
+"March 2027",
+"Marzo 2027"
 ],
 "Mühle": [
 "Mill",
@@ -2916,6 +2956,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "November",
 "Novembre"
 ],
+"November 2027": [
+"November 2027",
+"Novembre 2027"
+],
 "Nur Juni–September: Die Küche kauft 15 l zu 150 % des Marktpreises.": [
 "June–September only: The kitchen buys 15 l at 150% of the market price.",
 "Solo giugno – settembre: la cucina acquista 15 l al 150% del prezzo di mercato."
@@ -2971,6 +3015,10 @@ const I18N_DICT: Record<string, [string, string]> = {
 "Oktober": [
 "October",
 "Ottobre"
+],
+"Oktober 2027": [
+"October 2027",
+"Ottobre 2027"
 ],
 "Olio-Novello-Hype": [
 "Olio Novello hype",
@@ -3548,13 +3596,17 @@ const I18N_DICT: Record<string, [string, string]> = {
 "September",
 "Settembre"
 ],
+"September 2027": [
+"September 2027",
+"Settembre 2027"
+],
 "Settimana Santa: Prozession des Cristo Morto": [
 "Settimana Santa: Procession of Cristo Morto",
 "Settimana Santa: Processione del Cristo Morto"
 ],
 "Setz die Rüttler-Zange am Stamm an – am Rindenring, nicht an den Ästen.": [
-"Put the rüttler forceps on the trunk – on the bark ring, not on the branches.",
-"Mettere i forcipi rüttler sul tronco – sull'anello della corteccia, non sui rami."
+"Put the shaker clamp on the trunk – on the bark ring, not on the branches.",
+"Applica la pinza dello scuotitore al tronco – sull’anello di corteccia, non sui rami."
 ],
 "Sicilbanca": [
 "Sicilbanca",

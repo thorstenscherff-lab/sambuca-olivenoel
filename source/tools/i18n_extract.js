@@ -16,7 +16,7 @@ function visit(n) {
     let s = '', i = 0; for (const c of n.children) { if (ts.isJsxText(c)) s += c.text.replace(/\s*\n\s*/g, '').replace(/\s+/g, ' '); else if (c.expression) s += '{' + (i++) + '}'; }
     if (i > 0 && isText(s.replace(/\{\d+\}/g, ''))) pat.add(s.trim()); }
   if ((ts.isStringLiteral(n) || ts.isNoSubstitutionTemplateLiteral(n))) { const p = n.parent;
-    if (p && (ts.isPropertyAssignment(p) && p.name === n)) {} else if (p && ts.isElementAccessExpression(p)) {} else if (p && ts.isJsxAttribute(p) && !['aria-label','placeholder','title','alt'].includes(p.name.getText())) {} else if (isText(n.text)) lit.add(n.text.trim()); }
+    if (p && (ts.isPropertyAssignment(p) && p.name === n)) {} else if (p && ts.isElementAccessExpression(p)) {} else if (p && ts.isJsxAttribute(p) && !['aria-label','placeholder','title','alt','label','who'].includes(p.name.getText())) {} else if (isText(n.text)) lit.add(n.text.trim()); }
   else if (ts.isTemplateExpression(n)) { let s = n.head.text; n.templateSpans.forEach((sp, i) => { s += '{' + i + '}' + sp.literal.text; }); if (isText(s.replace(/\{\d+\}/g, ''))) pat.add(s.trim()); }
   else if (ts.isJsxText(n)) { const t = n.text.replace(/\s+/g, ' ').trim(); if (isText(t)) lit.add(t); }
   ts.forEachChild(n, visit);

@@ -47,7 +47,7 @@ const trCore = (s: string, depth: number, seg = true): string | null => {
 };
 const trCore2 = (s: string, depth: number, seg: boolean): string | null => {
   for (const p of i18nPats()) {
-    if (!seg && p.lit < 3) continue; // reine Trenner-Muster ({0}: {1}) nicht für Teilstücke
+    if (!seg && p.lit < 2) continue; // reine Trenner-Muster ({0}: {1}) nicht für Teilstücke
     const m = p.re.exec(s); if (!m) continue;
     const vals: Record<number, string> = {}; let ok = true; p.idx.forEach((n, i) => { const v = m[i + 1]; const t = /[A-Za-zÄÖÜäöüß]{2}/.test(v) ? trCore(v.trim(), depth + 1) : null; if (t === null && GERM.test(v)) ok = false; vals[n] = t === null ? v : v.replace(v.trim(), t); });
     if (!ok) continue;
